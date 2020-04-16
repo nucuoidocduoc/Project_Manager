@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9BA3DDE3-8252-435D-A2DC-2CAB8020B653}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QLDA</RootNamespace>
+    <AssemblyName>QLDA</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework">
+      <HintPath>Lib\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>Lib\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>Lib\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Common\DanhSachDAQL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Common\DanhSachDAQL.Designer.cs">
+      <DependentUpon>DanhSachDAQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\XemTheoDuAnLv1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Common\XemTheoDuAnLv1.Designer.cs">
+      <DependentUpon>XemTheoDuAnLv1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\XemToanBo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Common\XemToanBo.Designer.cs">
+      <DependentUpon>XemToanBo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DanhMuc\KhachHang\DanhSachKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\DanhMuc\KhachHang\DanhSachKhachHang.Designer.cs">
+      <DependentUpon>DanhSachKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DanhMuc\KhachHang\TaoHoacCapNhatKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DanhMuc\KhachHang\TaoHoacCapNhatKH.Designer.cs">
+      <DependentUpon>TaoHoacCapNhatKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DanhMuc\KhachHang\XemChiTietKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DanhMuc\KhachHang\XemChiTietKH.Designer.cs">
+      <DependentUpon>XemChiTietKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DanhMuc\NhanVien\DanhSachNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\DanhMuc\NhanVien\DanhSachNhanVien.Designer.cs">
+      <DependentUpon>DanhSachNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DanhMuc\NhanVien\TaoHoacCapNhatNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DanhMuc\NhanVien\TaoHoacCapNhatNV.Designer.cs">
+      <DependentUpon>TaoHoacCapNhatNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLCV\CongViec\CheDoXem\XemCongViecTheoDuAn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\QLCV\CongViec\CheDoXem\XemCongViecTheoDuAn.Designer.cs">
+      <DependentUpon>XemCongViecTheoDuAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLCV\CongViec\TaoHoacCapNhatCV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLCV\CongViec\TaoHoacCapNhatCV.Designer.cs">
+      <DependentUpon>TaoHoacCapNhatCV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLCV\QuyTrinh\TaoHoacCapNhatQuyTrinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLCV\QuyTrinh\TaoHoacCapNhatQuyTrinh.Designer.cs">
+      <DependentUpon>TaoHoacCapNhatQuyTrinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLCV\QuyTrinh\XemChiTietQuyTrinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLCV\QuyTrinh\XemChiTietQuyTrinh.Designer.cs">
+      <DependentUpon>XemChiTietQuyTrinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLDA\DuAn\DanhSachDuAn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\QLDA\DuAn\DanhSachDuAn.Designer.cs">
+      <DependentUpon>DanhSachDuAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLDA\DuAn\TaoHoacCapNhatDuAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLDA\DuAn\TaoHoacCapNhatDuAn.Designer.cs">
+      <DependentUpon>TaoHoacCapNhatDuAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLDA\DuAn\XemChiTietDuAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLDA\DuAn\XemChiTietDuAn.Designer.cs">
+      <DependentUpon>XemChiTietDuAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLDA\HopDong\TaoHoacCapNhatHopDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLDA\HopDong\TaoHoacCapNhatHopDong.Designer.cs">
+      <DependentUpon>TaoHoacCapNhatHopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLDA\HopDong\XemChiTietHopDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLDA\HopDong\XemChiTietHopDong.Designer.cs">
+      <DependentUpon>XemChiTietHopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLDA\ThanhToan\CheDoXem\XemThanhToanTheoDuAn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\QLDA\ThanhToan\CheDoXem\XemThanhToanTheoDuAn.Designer.cs">
+      <DependentUpon>XemThanhToanTheoDuAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLDA\ThanhToan\TaoHoacCapNhatTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLDA\ThanhToan\TaoHoacCapNhatTT.Designer.cs">
+      <DependentUpon>TaoHoacCapNhatTT.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Common\DanhSachDAQL.resx">
+      <DependentUpon>DanhSachDAQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Common\XemTheoDuAnLv1.resx">
+      <DependentUpon>XemTheoDuAnLv1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Common\XemToanBo.resx">
+      <DependentUpon>XemToanBo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DanhMuc\KhachHang\DanhSachKhachHang.resx">
+      <DependentUpon>DanhSachKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DanhMuc\KhachHang\TaoHoacCapNhatKH.resx">
+      <DependentUpon>TaoHoacCapNhatKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DanhMuc\KhachHang\XemChiTietKH.resx">
+      <DependentUpon>XemChiTietKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DanhMuc\NhanVien\DanhSachNhanVien.resx">
+      <DependentUpon>DanhSachNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DanhMuc\NhanVien\TaoHoacCapNhatNV.resx">
+      <DependentUpon>TaoHoacCapNhatNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLCV\CongViec\CheDoXem\XemCongViecTheoDuAn.resx">
+      <DependentUpon>XemCongViecTheoDuAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLCV\CongViec\TaoHoacCapNhatCV.resx">
+      <DependentUpon>TaoHoacCapNhatCV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLCV\QuyTrinh\TaoHoacCapNhatQuyTrinh.resx">
+      <DependentUpon>TaoHoacCapNhatQuyTrinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLCV\QuyTrinh\XemChiTietQuyTrinh.resx">
+      <DependentUpon>XemChiTietQuyTrinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLDA\DuAn\DanhSachDuAn.resx">
+      <DependentUpon>DanhSachDuAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLDA\DuAn\TaoHoacCapNhatDuAn.resx">
+      <DependentUpon>TaoHoacCapNhatDuAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLDA\DuAn\XemChiTietDuAn.resx">
+      <DependentUpon>XemChiTietDuAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLDA\HopDong\TaoHoacCapNhatHopDong.resx">
+      <DependentUpon>TaoHoacCapNhatHopDong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLDA\HopDong\XemChiTietHopDong.resx">
+      <DependentUpon>XemChiTietHopDong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLDA\ThanhToan\CheDoXem\XemThanhToanTheoDuAn.resx">
+      <DependentUpon>XemThanhToanTheoDuAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLDA\ThanhToan\TaoHoacCapNhatTT.resx">
+      <DependentUpon>TaoHoacCapNhatTT.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource\manager.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\BaoCao\" />
+    <Folder Include="View\TaiKhoan\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
