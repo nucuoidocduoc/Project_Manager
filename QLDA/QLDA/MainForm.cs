@@ -17,7 +17,7 @@ namespace QLDA
         {
             InitializeComponent();
             InitForm();
-            panelMainContent.Controls.Add(new DanhSachKhachHang());
+            //panelMainContent.Controls.Add(new DanhSachKhachHang());
         }
 
         private void InitForm()

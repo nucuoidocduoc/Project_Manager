@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLDA.View.DanhMuc.NhanVien
+namespace QLDA.View.Common
 {
-    public partial class DanhSachNhanVien : UserControl
+    public partial class DanhSachLv0 : UserControl
     {
-        public DanhSachNhanVien()
+        public DanhSachLv0()
         {
             InitializeComponent();
         }

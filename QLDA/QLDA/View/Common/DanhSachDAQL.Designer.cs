@@ -35,10 +35,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbtnXemTheoDuAn = new System.Windows.Forms.RadioButton();
+            this.rbtnXemTatCa = new System.Windows.Forms.RadioButton();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelDanhSach = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -113,55 +113,55 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.radioButton2);
-            this.panel5.Controls.Add(this.radioButton1);
+            this.panel5.Controls.Add(this.rbtnXemTheoDuAn);
+            this.panel5.Controls.Add(this.rbtnXemTatCa);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 40);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1206, 60);
             this.panel5.TabIndex = 1;
             // 
-            // radioButton2
+            // rbtnXemTheoDuAn
             // 
-            this.radioButton2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.radioButton2.Location = new System.Drawing.Point(896, 0);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(155, 60);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Xem theo dự án";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbtnXemTheoDuAn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rbtnXemTheoDuAn.Location = new System.Drawing.Point(896, 0);
+            this.rbtnXemTheoDuAn.Name = "rbtnXemTheoDuAn";
+            this.rbtnXemTheoDuAn.Size = new System.Drawing.Size(155, 60);
+            this.rbtnXemTheoDuAn.TabIndex = 1;
+            this.rbtnXemTheoDuAn.TabStop = true;
+            this.rbtnXemTheoDuAn.Text = "Xem theo dự án";
+            this.rbtnXemTheoDuAn.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbtnXemTatCa
             // 
-            this.radioButton1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.radioButton1.Location = new System.Drawing.Point(1051, 0);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(155, 60);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Xem tất cả";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtnXemTatCa.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rbtnXemTatCa.Location = new System.Drawing.Point(1051, 0);
+            this.rbtnXemTatCa.Name = "rbtnXemTatCa";
+            this.rbtnXemTatCa.Size = new System.Drawing.Size(155, 60);
+            this.rbtnXemTatCa.TabIndex = 0;
+            this.rbtnXemTatCa.TabStop = true;
+            this.rbtnXemTatCa.Text = "Xem tất cả";
+            this.rbtnXemTatCa.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.labelDanhSach);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1206, 40);
             this.panel4.TabIndex = 0;
             // 
-            // label1
+            // labelDanhSach
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(241, 40);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Danh sách quy trình";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelDanhSach.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelDanhSach.Location = new System.Drawing.Point(0, 0);
+            this.labelDanhSach.Name = "labelDanhSach";
+            this.labelDanhSach.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.labelDanhSach.Size = new System.Drawing.Size(241, 40);
+            this.labelDanhSach.TabIndex = 0;
+            this.labelDanhSach.Text = "Danh sách";
+            this.labelDanhSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // DanhSachDAQL
             // 
@@ -192,9 +192,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbtnXemTheoDuAn;
+        private System.Windows.Forms.RadioButton rbtnXemTatCa;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelDanhSach;
     }
 }

@@ -27,21 +27,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lvHopDong = new System.Windows.Forms.ListView();
+            this.lvDanhSachLv1 = new System.Windows.Forms.ListView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lvDuAn = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lvHopDong
+            // lvDanhSachLv1
             // 
-            this.lvHopDong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvHopDong.HideSelection = false;
-            this.lvHopDong.Location = new System.Drawing.Point(258, 0);
-            this.lvHopDong.Name = "lvHopDong";
-            this.lvHopDong.Size = new System.Drawing.Size(948, 592);
-            this.lvHopDong.TabIndex = 5;
-            this.lvHopDong.UseCompatibleStateImageBehavior = false;
+            this.lvDanhSachLv1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvDanhSachLv1.HideSelection = false;
+            this.lvDanhSachLv1.Location = new System.Drawing.Point(258, 0);
+            this.lvDanhSachLv1.Name = "lvDanhSachLv1";
+            this.lvDanhSachLv1.Size = new System.Drawing.Size(948, 592);
+            this.lvDanhSachLv1.TabIndex = 5;
+            this.lvDanhSachLv1.UseCompatibleStateImageBehavior = false;
             // 
             // pictureBox1
             // 
@@ -67,7 +67,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(78)))));
-            this.Controls.Add(this.lvHopDong);
+            this.Controls.Add(this.lvDanhSachLv1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lvDuAn);
             this.ForeColor = System.Drawing.Color.LightGray;
@@ -80,7 +80,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView lvHopDong;
+        private System.Windows.Forms.ListView lvDanhSachLv1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListView lvDuAn;
     }
