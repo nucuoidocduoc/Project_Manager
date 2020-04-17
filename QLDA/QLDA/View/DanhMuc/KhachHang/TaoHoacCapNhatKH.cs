@@ -17,14 +17,18 @@ namespace QLDA.View.DanhMuc.KhachHang
             InitializeComponent();
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void btnLuu_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void metroTextBox6_Click(object sender, EventArgs e)
-        {
-
+            Model.KhachHang khachHang = new Model.KhachHang() {
+                Ten = txtTenKH.Text,
+                Dia_Chi = txtDC.Text,
+                SDT = txtSDT.Text,
+                MST = txtMST.Text,
+                STK = txtSTK.Text,
+                Ten_NH = txtTenNH.Text
+            };
+            MainForm.RepositoryWrapper.KhachHang.Add(khachHang);
+            MainForm.RepositoryWrapper.SaveChange();
         }
     }
 }

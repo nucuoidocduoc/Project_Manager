@@ -35,6 +35,28 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
@@ -104,6 +126,7 @@
       <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
@@ -132,15 +155,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Define.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\ApplicationContext.cs" />
+    <Compile Include="Context\RepositoryContext.cs" />
+    <Compile Include="Model\CongViec.cs" />
+    <Compile Include="Model\DangNhap.cs" />
+    <Compile Include="Model\DuAn.cs" />
+    <Compile Include="Model\HopDong.cs" />
+    <Compile Include="Model\KhachHang.cs" />
+    <Compile Include="Model\NhanVien.cs" />
+    <Compile Include="Model\QuyTrinh.cs" />
+    <Compile Include="Model\ThanhToan.cs" />
+    <Compile Include="Processing\DanhMucProcessing.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CongViecRepository.cs" />
+    <Compile Include="Repository\DuAnRepository.cs" />
+    <Compile Include="Repository\HopDongRepository.cs" />
+    <Compile Include="Repository\IRepositoryBase.cs" />
+    <Compile Include="Repository\KhachHangRepository.cs" />
+    <Compile Include="Repository\NhanVienRepository.cs" />
+    <Compile Include="Repository\QuyTrinhRepository.cs" />
+    <Compile Include="Repository\RepositoryBase.cs" />
+    <Compile Include="Repository\RepositoryWrapper.cs" />
+    <Compile Include="Repository\DangNhapRepository.cs" />
+    <Compile Include="Repository\ThanhToanRepository.cs" />
     <Compile Include="View\Common\DanhSachDAQL.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -183,66 +227,67 @@
     <Compile Include="View\DanhMuc\NhanVien\TaoHoacCapNhatNV.Designer.cs">
       <DependentUpon>TaoHoacCapNhatNV.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\QLCV\CongViec\CheDoXem\XemCongViecTheoDuAn.cs">
+    <Compile Include="View\QuanLyCongViec\CongViec\CheDoXem\XemCongViecTheoDuAn.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\QLCV\CongViec\CheDoXem\XemCongViecTheoDuAn.Designer.cs">
+    <Compile Include="View\QuanLyCongViec\CongViec\CheDoXem\XemCongViecTheoDuAn.Designer.cs">
       <DependentUpon>XemCongViecTheoDuAn.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\QLCV\CongViec\TaoHoacCapNhatCV.cs">
+    <Compile Include="View\QuanLyCongViec\CongViec\TaoHoacCapNhatCV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\QLCV\CongViec\TaoHoacCapNhatCV.Designer.cs">
+    <Compile Include="View\QuanLyCongViec\CongViec\TaoHoacCapNhatCV.Designer.cs">
       <DependentUpon>TaoHoacCapNhatCV.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\QLCV\QuyTrinh\TaoHoacCapNhatQuyTrinh.cs">
+    <Compile Include="View\QuanLyCongViec\QuyTrinh\TaoHoacCapNhatQuyTrinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\QLCV\QuyTrinh\TaoHoacCapNhatQuyTrinh.Designer.cs">
+    <Compile Include="View\QuanLyCongViec\QuyTrinh\TaoHoacCapNhatQuyTrinh.Designer.cs">
       <DependentUpon>TaoHoacCapNhatQuyTrinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\QLCV\QuyTrinh\XemChiTietQuyTrinh.cs">
+    <Compile Include="View\QuanLyCongViec\QuyTrinh\XemChiTietQuyTrinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\QLCV\QuyTrinh\XemChiTietQuyTrinh.Designer.cs">
+    <Compile Include="View\QuanLyCongViec\QuyTrinh\XemChiTietQuyTrinh.Designer.cs">
       <DependentUpon>XemChiTietQuyTrinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\QLDA\DuAn\TaoHoacCapNhatDuAn.cs">
+    <Compile Include="View\QuanLyDuAn\DuAn\TaoHoacCapNhatDuAn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\QLDA\DuAn\TaoHoacCapNhatDuAn.Designer.cs">
+    <Compile Include="View\QuanLyDuAn\DuAn\TaoHoacCapNhatDuAn.Designer.cs">
       <DependentUpon>TaoHoacCapNhatDuAn.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\QLDA\DuAn\XemChiTietDuAn.cs">
+    <Compile Include="View\QuanLyDuAn\DuAn\XemChiTietDuAn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\QLDA\DuAn\XemChiTietDuAn.Designer.cs">
+    <Compile Include="View\QuanLyDuAn\DuAn\XemChiTietDuAn.Designer.cs">
       <DependentUpon>XemChiTietDuAn.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\QLDA\HopDong\TaoHoacCapNhatHopDong.cs">
+    <Compile Include="View\QuanLyDuAn\HopDong\TaoHoacCapNhatHopDong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\QLDA\HopDong\TaoHoacCapNhatHopDong.Designer.cs">
+    <Compile Include="View\QuanLyDuAn\HopDong\TaoHoacCapNhatHopDong.Designer.cs">
       <DependentUpon>TaoHoacCapNhatHopDong.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\QLDA\HopDong\XemChiTietHopDong.cs">
+    <Compile Include="View\QuanLyDuAn\HopDong\XemChiTietHopDong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\QLDA\HopDong\XemChiTietHopDong.Designer.cs">
+    <Compile Include="View\QuanLyDuAn\HopDong\XemChiTietHopDong.Designer.cs">
       <DependentUpon>XemChiTietHopDong.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\QLDA\ThanhToan\CheDoXem\XemThanhToanTheoDuAn.cs">
+    <Compile Include="View\QuanLyDuAn\ThanhToan\CheDoXem\XemThanhToanTheoDuAn.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\QLDA\ThanhToan\CheDoXem\XemThanhToanTheoDuAn.Designer.cs">
+    <Compile Include="View\QuanLyDuAn\ThanhToan\CheDoXem\XemThanhToanTheoDuAn.Designer.cs">
       <DependentUpon>XemThanhToanTheoDuAn.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\QLDA\ThanhToan\TaoHoacCapNhatTT.cs">
+    <Compile Include="View\QuanLyDuAn\ThanhToan\TaoHoacCapNhatTT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\QLDA\ThanhToan\TaoHoacCapNhatTT.Designer.cs">
+    <Compile Include="View\QuanLyDuAn\ThanhToan\TaoHoacCapNhatTT.Designer.cs">
       <DependentUpon>TaoHoacCapNhatTT.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Template\DanhSachKhachHangTemplate.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,34 +321,34 @@
     <EmbeddedResource Include="View\DanhMuc\NhanVien\TaoHoacCapNhatNV.resx">
       <DependentUpon>TaoHoacCapNhatNV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\QLCV\CongViec\CheDoXem\XemCongViecTheoDuAn.resx">
+    <EmbeddedResource Include="View\QuanLyCongViec\CongViec\CheDoXem\XemCongViecTheoDuAn.resx">
       <DependentUpon>XemCongViecTheoDuAn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\QLCV\CongViec\TaoHoacCapNhatCV.resx">
+    <EmbeddedResource Include="View\QuanLyCongViec\CongViec\TaoHoacCapNhatCV.resx">
       <DependentUpon>TaoHoacCapNhatCV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\QLCV\QuyTrinh\TaoHoacCapNhatQuyTrinh.resx">
+    <EmbeddedResource Include="View\QuanLyCongViec\QuyTrinh\TaoHoacCapNhatQuyTrinh.resx">
       <DependentUpon>TaoHoacCapNhatQuyTrinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\QLCV\QuyTrinh\XemChiTietQuyTrinh.resx">
+    <EmbeddedResource Include="View\QuanLyCongViec\QuyTrinh\XemChiTietQuyTrinh.resx">
       <DependentUpon>XemChiTietQuyTrinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\QLDA\DuAn\TaoHoacCapNhatDuAn.resx">
+    <EmbeddedResource Include="View\QuanLyDuAn\DuAn\TaoHoacCapNhatDuAn.resx">
       <DependentUpon>TaoHoacCapNhatDuAn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\QLDA\DuAn\XemChiTietDuAn.resx">
+    <EmbeddedResource Include="View\QuanLyDuAn\DuAn\XemChiTietDuAn.resx">
       <DependentUpon>XemChiTietDuAn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\QLDA\HopDong\TaoHoacCapNhatHopDong.resx">
+    <EmbeddedResource Include="View\QuanLyDuAn\HopDong\TaoHoacCapNhatHopDong.resx">
       <DependentUpon>TaoHoacCapNhatHopDong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\QLDA\HopDong\XemChiTietHopDong.resx">
+    <EmbeddedResource Include="View\QuanLyDuAn\HopDong\XemChiTietHopDong.resx">
       <DependentUpon>XemChiTietHopDong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\QLDA\ThanhToan\CheDoXem\XemThanhToanTheoDuAn.resx">
+    <EmbeddedResource Include="View\QuanLyDuAn\ThanhToan\CheDoXem\XemThanhToanTheoDuAn.resx">
       <DependentUpon>XemThanhToanTheoDuAn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\QLDA\ThanhToan\TaoHoacCapNhatTT.resx">
+    <EmbeddedResource Include="View\QuanLyDuAn\ThanhToan\TaoHoacCapNhatTT.resx">
       <DependentUpon>TaoHoacCapNhatTT.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -324,10 +369,8 @@
     <Content Include="Resource\manager.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
     <Folder Include="View\BaoCao\" />
     <Folder Include="View\TaiKhoan\" />
-    <Folder Include="View\Template\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

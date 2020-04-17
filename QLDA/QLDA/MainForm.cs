@@ -1,8 +1,13 @@
-﻿using QLDA.View.DanhMuc.KhachHang;
+﻿using QLDA.Context;
+using QLDA.Model;
+using QLDA.Processing;
+using QLDA.Repository;
+using QLDA.View.DanhMuc.KhachHang;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,14 +18,36 @@ namespace QLDA
 {
     public partial class MainForm : Form
     {
+        public static RepositoryWrapper RepositoryWrapper;
+        private ViewMode _viewSelected;
+
+        private DanhMucProcessing _danhMucProcess;
+
         public MainForm()
         {
             InitializeComponent();
-            InitForm();
-            //panelMainContent.Controls.Add(new DanhSachKhachHang());
+            VisiblePanel();
+            InitConnectDatabase();
+            _viewSelected = ViewMode.DanhMucKhachHang;
+            InitProcessing();
         }
 
-        private void InitForm()
+        private void InitProcessing()
+        {
+            _danhMucProcess = new DanhMucProcessing(this);
+        }
+
+        private void InitConnectDatabase()
+        {
+            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["sqlConnection"].ConnectionString;
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            RepositoryContext repositoryContext = new RepositoryContext(connection, false);
+            //MessageBox.Show(repositoryContext.KhachHangs.FirstOrDefault().Ten_NH);
+            RepositoryWrapper = new RepositoryWrapper(repositoryContext);
+        }
+
+        private void VisiblePanel()
         {
             panelDanhMuc.Visible = false;
             panelQLDA.Visible = false;
@@ -33,11 +60,11 @@ namespace QLDA
                 panelDanhMuc.Visible = false;
                 return;
             }
-            InitForm();
+            VisiblePanel();
 
             panelDanhMuc.Visible = true;
-            XemChiTietKH xemChiTietKH = new XemChiTietKH();
-            xemChiTietKH.ShowDialog();
+
+            _danhMucProcess.Show(ViewMode.DanhMucKhachHang);
         }
 
         private void btnQLDA_Click(object sender, EventArgs e)
@@ -46,7 +73,7 @@ namespace QLDA
                 panelQLDA.Visible = false;
                 return;
             }
-            InitForm();
+            VisiblePanel();
             panelQLDA.Visible = true;
         }
 
@@ -56,7 +83,7 @@ namespace QLDA
                 panelQLCV.Visible = false;
                 return;
             }
-            InitForm();
+            VisiblePanel();
             panelQLCV.Visible = true;
         }
 

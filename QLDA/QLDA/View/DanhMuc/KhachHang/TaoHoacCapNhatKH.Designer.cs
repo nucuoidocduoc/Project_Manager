@@ -362,6 +362,7 @@
             this.btnLuu.TabIndex = 0;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseSelectable = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // TaoHoacCapNhatKH
             // 

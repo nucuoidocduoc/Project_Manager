@@ -361,6 +361,9 @@
         private System.Windows.Forms.Button btnTrangChu;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelMainContent;
+
+        public System.Windows.Forms.Panel PanelMenu=>panelMenu;    
+        public System.Windows.Forms.Panel PanelMainContent=>panelMainContent;
     }
 }
 
