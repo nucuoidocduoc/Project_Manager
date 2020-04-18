@@ -14,6 +14,7 @@ namespace QLDA.Repository
             _repositoryContext = repositoryContext;
         }
 
+        public RepositoryContext RepositoryContext { get => _repositoryContext; }
         private RepositoryContext _repositoryContext;
         private KhachHangRepository _khachHangRepository;
         private NhanVienRepository _nhanVienRepository;

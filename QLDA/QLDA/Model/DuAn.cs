@@ -19,14 +19,15 @@ namespace QLDA.Model
         public string Dia_Diem { get; set; }
         public DateTime Thoi_Gian_BD { get; set; }
         public DateTime Thoi_Gian_KT { get; set; }
-        public DateTime Thoi_Gian_TT { get; set; }
+        public DateTime Thoi_Gian_KT_TT { get; set; }
         public string Trang_Thai { get; set; }
-        public int Ma_NV { get; set; }
+        public string Dien_Giai { get; set; }
+        public int? Ma_NV { get; set; }
 
         [ForeignKey(nameof(Ma_NV))]
         public NhanVien NhanVien { get; set; }
 
-        public int Ma_KH { get; set; }
+        public int? Ma_KH { get; set; }
 
         [ForeignKey(nameof(Ma_KH))]
         public KhachHang KhachHang { get; set; }

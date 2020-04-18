@@ -77,6 +77,7 @@
             this.btnTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTaiKhoan.FlatAppearance.BorderSize = 0;
             this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaiKhoan.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnTaiKhoan.Location = new System.Drawing.Point(0, 623);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
@@ -93,6 +94,7 @@
             this.btnBaoCao.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBaoCao.FlatAppearance.BorderSize = 0;
             this.btnBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBaoCao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBaoCao.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnBaoCao.Location = new System.Drawing.Point(0, 578);
             this.btnBaoCao.Name = "btnBaoCao";
@@ -120,6 +122,7 @@
             this.btnCongViec.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCongViec.FlatAppearance.BorderSize = 0;
             this.btnCongViec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCongViec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCongViec.ForeColor = System.Drawing.Color.LightGray;
             this.btnCongViec.Location = new System.Drawing.Point(0, 40);
             this.btnCongViec.Name = "btnCongViec";
@@ -135,6 +138,7 @@
             this.btnQuyTrinh.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQuyTrinh.FlatAppearance.BorderSize = 0;
             this.btnQuyTrinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuyTrinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuyTrinh.ForeColor = System.Drawing.Color.LightGray;
             this.btnQuyTrinh.Location = new System.Drawing.Point(0, 0);
             this.btnQuyTrinh.Name = "btnQuyTrinh";
@@ -150,6 +154,7 @@
             this.btnQLCV.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQLCV.FlatAppearance.BorderSize = 0;
             this.btnQLCV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQLCV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLCV.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnQLCV.Location = new System.Drawing.Point(0, 449);
             this.btnQLCV.Name = "btnQLCV";
@@ -178,6 +183,7 @@
             this.btnThanhToan.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnThanhToan.FlatAppearance.BorderSize = 0;
             this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThanhToan.ForeColor = System.Drawing.Color.LightGray;
             this.btnThanhToan.Location = new System.Drawing.Point(0, 80);
             this.btnThanhToan.Name = "btnThanhToan";
@@ -187,12 +193,14 @@
             this.btnThanhToan.Text = "Thanh toán";
             this.btnThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThanhToan.UseVisualStyleBackColor = true;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // btnHopDong
             // 
             this.btnHopDong.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnHopDong.FlatAppearance.BorderSize = 0;
             this.btnHopDong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHopDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHopDong.ForeColor = System.Drawing.Color.LightGray;
             this.btnHopDong.Location = new System.Drawing.Point(0, 40);
             this.btnHopDong.Name = "btnHopDong";
@@ -202,12 +210,14 @@
             this.btnHopDong.Text = "Hợp đồng";
             this.btnHopDong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHopDong.UseVisualStyleBackColor = true;
+            this.btnHopDong.Click += new System.EventHandler(this.btnHopDong_Click);
             // 
             // btnDuAn
             // 
             this.btnDuAn.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDuAn.FlatAppearance.BorderSize = 0;
             this.btnDuAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDuAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDuAn.ForeColor = System.Drawing.Color.LightGray;
             this.btnDuAn.Location = new System.Drawing.Point(0, 0);
             this.btnDuAn.Name = "btnDuAn";
@@ -217,12 +227,14 @@
             this.btnDuAn.Text = "Dự án";
             this.btnDuAn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDuAn.UseVisualStyleBackColor = true;
+            this.btnDuAn.Click += new System.EventHandler(this.btnDuAn_Click);
             // 
             // btnQLDA
             // 
             this.btnQLDA.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQLDA.FlatAppearance.BorderSize = 0;
             this.btnQLDA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQLDA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLDA.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnQLDA.Location = new System.Drawing.Point(0, 274);
             this.btnQLDA.Name = "btnQLDA";
@@ -250,6 +262,7 @@
             this.btnDanhMucNV.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDanhMucNV.FlatAppearance.BorderSize = 0;
             this.btnDanhMucNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDanhMucNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDanhMucNV.ForeColor = System.Drawing.Color.LightGray;
             this.btnDanhMucNV.Location = new System.Drawing.Point(0, 40);
             this.btnDanhMucNV.Name = "btnDanhMucNV";
@@ -259,12 +272,14 @@
             this.btnDanhMucNV.Text = "Danh mục nhân viên";
             this.btnDanhMucNV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDanhMucNV.UseVisualStyleBackColor = true;
+            this.btnDanhMucNV.Click += new System.EventHandler(this.btnDanhMucNV_Click);
             // 
             // btnDanhMucKH
             // 
             this.btnDanhMucKH.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDanhMucKH.FlatAppearance.BorderSize = 0;
             this.btnDanhMucKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDanhMucKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDanhMucKH.ForeColor = System.Drawing.Color.LightGray;
             this.btnDanhMucKH.Location = new System.Drawing.Point(0, 0);
             this.btnDanhMucKH.Name = "btnDanhMucKH";
@@ -274,12 +289,14 @@
             this.btnDanhMucKH.Text = "Danh mục khách hàng";
             this.btnDanhMucKH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDanhMucKH.UseVisualStyleBackColor = true;
+            this.btnDanhMucKH.Click += new System.EventHandler(this.btnDanhMucKH_Click);
             // 
             // btnDanhMuc
             // 
             this.btnDanhMuc.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDanhMuc.FlatAppearance.BorderSize = 0;
             this.btnDanhMuc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDanhMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDanhMuc.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnDanhMuc.Location = new System.Drawing.Point(0, 145);
             this.btnDanhMuc.Name = "btnDanhMuc";
@@ -296,6 +313,7 @@
             this.btnTrangChu.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTrangChu.FlatAppearance.BorderSize = 0;
             this.btnTrangChu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrangChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTrangChu.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnTrangChu.Location = new System.Drawing.Point(0, 100);
             this.btnTrangChu.Name = "btnTrangChu";

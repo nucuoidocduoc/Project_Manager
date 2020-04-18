@@ -8,26 +8,30 @@ using System.Windows.Forms;
 
 namespace QLDA.Processing
 {
-    public class DanhMucProcessing
+    public class QLDAProcessing
     {
         private MainForm _mainForm;
 
-        public DanhMucProcessing(MainForm mainForm)
+        public QLDAProcessing(MainForm mainForm)
         {
             _mainForm = mainForm;
         }
 
         public void Show(ViewMode viewMode)
         {
-            DanhSachLv0 controlSelected = null;
+            Control controlSelected = null;
             _mainForm.PanelMainContent.Controls.Clear();
             switch (viewMode) {
-                case ViewMode.DanhMucKhachHang:
-                    controlSelected = new DanhSachLv0(Lv0.KhachHang);
+                case ViewMode.DuAn:
+                    controlSelected = new DanhSachLv0(Lv0.DuAn);
                     break;
 
-                case ViewMode.DanhMucNhanVien:
-                    controlSelected = new DanhSachLv0(Lv0.NhanVien);
+                case ViewMode.HopDong:
+                    controlSelected = new XemTheoDuAnLv1();
+                    break;
+
+                case ViewMode.ThanhToan:
+                    controlSelected = new XemTheoDuAnLv1();
                     break;
 
                 default:

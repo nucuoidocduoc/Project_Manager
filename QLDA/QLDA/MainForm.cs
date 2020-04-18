@@ -1,17 +1,8 @@
 ﻿using QLDA.Context;
-using QLDA.Model;
 using QLDA.Processing;
 using QLDA.Repository;
-using QLDA.View.DanhMuc.KhachHang;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLDA
@@ -22,19 +13,22 @@ namespace QLDA
         private ViewMode _viewSelected;
 
         private DanhMucProcessing _danhMucProcess;
+        private QLDAProcessing _quanLyDuAnProcess;
 
         public MainForm()
         {
             InitializeComponent();
             VisiblePanel();
             InitConnectDatabase();
-            _viewSelected = ViewMode.DanhMucKhachHang;
             InitProcessing();
         }
+
+        #region init
 
         private void InitProcessing()
         {
             _danhMucProcess = new DanhMucProcessing(this);
+            _quanLyDuAnProcess = new QLDAProcessing(this);
         }
 
         private void InitConnectDatabase()
@@ -43,6 +37,7 @@ namespace QLDA
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             RepositoryContext repositoryContext = new RepositoryContext(connection, false);
+
             //MessageBox.Show(repositoryContext.KhachHangs.FirstOrDefault().Ten_NH);
             RepositoryWrapper = new RepositoryWrapper(repositoryContext);
         }
@@ -54,6 +49,10 @@ namespace QLDA
             panelQLCV.Visible = false;
         }
 
+        #endregion init
+
+        #region main panel
+
         private void btnDanhMuc_Click(object sender, EventArgs e)
         {
             if (panelDanhMuc.Visible) {
@@ -64,7 +63,7 @@ namespace QLDA
 
             panelDanhMuc.Visible = true;
 
-            _danhMucProcess.Show(ViewMode.DanhMucKhachHang);
+            //_danhMucProcess.Show(ViewMode.DanhMucKhachHang);
         }
 
         private void btnQLDA_Click(object sender, EventArgs e)
@@ -87,6 +86,43 @@ namespace QLDA
             panelQLCV.Visible = true;
         }
 
+        #endregion main panel
+
+        #region danh muc
+
+        private void btnDanhMucKH_Click(object sender, EventArgs e)
+        {
+            _danhMucProcess.Show(ViewMode.DanhMucKhachHang);
+        }
+
+        private void btnDanhMucNV_Click(object sender, EventArgs e)
+        {
+            _danhMucProcess.Show(ViewMode.DanhMucNhanVien);
+        }
+
+        #endregion danh muc
+
+        #region quan ly du an
+
+        private void btnDuAn_Click(object sender, EventArgs e)
+        {
+            _quanLyDuAnProcess.Show(ViewMode.DuAn);
+        }
+
+        private void btnHopDong_Click(object sender, EventArgs e)
+        {
+            _quanLyDuAnProcess.Show(ViewMode.HopDong);
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            _quanLyDuAnProcess.Show(ViewMode.ThanhToan);
+        }
+
+        #endregion quan ly du an
+
+        #region other
+
         private void btnBaoCao_Click(object sender, EventArgs e)
         {
         }
@@ -94,5 +130,7 @@ namespace QLDA
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
         }
+
+        #endregion other
     }
 }

@@ -12,9 +12,17 @@ namespace QLDA.View.Common
 {
     public partial class XemTheoDuAnLv1 : UserControl
     {
+        private Lv1 _lv1Type;
+
         public XemTheoDuAnLv1()
         {
             InitializeComponent();
+        }
+
+        public XemTheoDuAnLv1(Lv1 lv1Type)
+        {
+            InitializeComponent();
+            _lv1Type = lv1Type;
         }
     }
 }

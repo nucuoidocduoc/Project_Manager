@@ -12,9 +12,17 @@ namespace QLDA.View.QuanLyDuAn.DuAn
 {
     public partial class XemChiTietDuAn : Form
     {
+        private int? _idViewDetial;
+
         public XemChiTietDuAn()
         {
             InitializeComponent();
+        }
+
+        public XemChiTietDuAn(int idViewDetail)
+        {
+            InitializeComponent();
+            _idViewDetial = idViewDetail;
         }
     }
 }

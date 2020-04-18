@@ -53,7 +53,7 @@
             // 
             // btnXemChiTiet
             // 
-            this.btnXemChiTiet.Location = new System.Drawing.Point(739, 6);
+            this.btnXemChiTiet.Location = new System.Drawing.Point(741, 7);
             this.btnXemChiTiet.Name = "btnXemChiTiet";
             this.btnXemChiTiet.Size = new System.Drawing.Size(75, 23);
             this.btnXemChiTiet.TabIndex = 3;
@@ -69,6 +69,7 @@
             this.btnThemMoi.TabIndex = 2;
             this.btnThemMoi.Text = "Thêm mới";
             this.btnThemMoi.UseSelectable = true;
+            this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
             // 
             // btnCapNhat
             // 
@@ -78,6 +79,7 @@
             this.btnCapNhat.TabIndex = 1;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseSelectable = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnXoa
             // 
@@ -87,6 +89,7 @@
             this.btnXoa.TabIndex = 0;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseSelectable = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // panelHeader
             // 
@@ -113,6 +116,7 @@
             // lvDanhSach
             // 
             this.lvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvDanhSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvDanhSach.FullRowSelect = true;
             this.lvDanhSach.HideSelection = false;
             this.lvDanhSach.Location = new System.Drawing.Point(0, 38);
