@@ -22,12 +22,12 @@ namespace QLDA.Processing
             DanhSachLv0 controlSelected = null;
             _mainForm.PanelMainContent.Controls.Clear();
             switch (viewMode) {
-                case ViewMode.DanhMucKhachHang:
-                    controlSelected = new DanhSachLv0(Lv0.KhachHang);
+                case ViewMode.KhachHang:
+                    controlSelected = new DanhSachLv0(ViewMode.KhachHang);
                     break;
 
-                case ViewMode.DanhMucNhanVien:
-                    controlSelected = new DanhSachLv0(Lv0.NhanVien);
+                case ViewMode.NhanVien:
+                    controlSelected = new DanhSachLv0(ViewMode.NhanVien);
                     break;
 
                 default:

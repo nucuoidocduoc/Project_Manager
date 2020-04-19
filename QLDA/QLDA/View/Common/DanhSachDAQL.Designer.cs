@@ -32,7 +32,7 @@
             this.btnThemMoi = new MetroFramework.Controls.MetroButton();
             this.btnCapNhat = new MetroFramework.Controls.MetroButton();
             this.btnXoa = new MetroFramework.Controls.MetroButton();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelContent = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.rbtnXemTheoDuAn = new System.Windows.Forms.RadioButton();
@@ -59,12 +59,13 @@
             // 
             // btnXemChiTiet
             // 
-            this.btnXemChiTiet.Location = new System.Drawing.Point(754, 17);
+            this.btnXemChiTiet.Location = new System.Drawing.Point(755, 18);
             this.btnXemChiTiet.Name = "btnXemChiTiet";
             this.btnXemChiTiet.Size = new System.Drawing.Size(75, 23);
             this.btnXemChiTiet.TabIndex = 7;
             this.btnXemChiTiet.Text = "Xem chi tiết";
             this.btnXemChiTiet.UseSelectable = true;
+            this.btnXemChiTiet.Click += new System.EventHandler(this.btnXemChiTiet_Click);
             // 
             // btnThemMoi
             // 
@@ -74,6 +75,7 @@
             this.btnThemMoi.TabIndex = 6;
             this.btnThemMoi.Text = "Thêm mới";
             this.btnThemMoi.UseSelectable = true;
+            this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
             // 
             // btnCapNhat
             // 
@@ -83,6 +85,7 @@
             this.btnCapNhat.TabIndex = 5;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseSelectable = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnXoa
             // 
@@ -92,14 +95,15 @@
             this.btnXoa.TabIndex = 4;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseSelectable = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // panel2
+            // panelContent
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 100);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1206, 592);
-            this.panel2.TabIndex = 7;
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelContent.Location = new System.Drawing.Point(0, 100);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(1206, 592);
+            this.panelContent.TabIndex = 7;
             // 
             // panel1
             // 
@@ -123,6 +127,7 @@
             // 
             // rbtnXemTheoDuAn
             // 
+            this.rbtnXemTheoDuAn.Checked = true;
             this.rbtnXemTheoDuAn.Dock = System.Windows.Forms.DockStyle.Right;
             this.rbtnXemTheoDuAn.Location = new System.Drawing.Point(896, 0);
             this.rbtnXemTheoDuAn.Name = "rbtnXemTheoDuAn";
@@ -169,7 +174,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(78)))));
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.LightGray;
             this.Name = "DanhSachDAQL";
@@ -189,7 +194,7 @@
         private MetroFramework.Controls.MetroButton btnThemMoi;
         private MetroFramework.Controls.MetroButton btnCapNhat;
         private MetroFramework.Controls.MetroButton btnXoa;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.RadioButton rbtnXemTheoDuAn;

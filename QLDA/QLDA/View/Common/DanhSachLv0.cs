@@ -1,4 +1,5 @@
-﻿using QLDA.View.DanhMuc.KhachHang;
+﻿using QLDA.Repository;
+using QLDA.View.DanhMuc.KhachHang;
 using QLDA.View.DanhMuc.NhanVien;
 using QLDA.View.QuanLyDuAn.DuAn;
 using QLDA.View.Template;
@@ -10,26 +11,29 @@ namespace QLDA.View.Common
 {
     public partial class DanhSachLv0 : UserControl
     {
-        private Lv0 _lvTypeSelected;
+        private ViewMode _lvTypeSelected;
+        private RepositoryWrapper _repository;
 
         public DanhSachLv0()
         {
             InitializeComponent();
             this.Dock = DockStyle.Fill;
+            _repository = RepositoryWrapper.Create();
         }
 
-        public DanhSachLv0(Lv0 lvType)
+        public DanhSachLv0(ViewMode lvType)
         {
             InitializeComponent();
+            _repository = RepositoryWrapper.Create();
             this.Dock = DockStyle.Fill;
             _lvTypeSelected = lvType;
-            if (lvType.Equals(Lv0.KhachHang)) {
+            if (lvType.Equals(ViewMode.KhachHang)) {
                 InitKhachHang();
             }
-            else if (lvType.Equals(Lv0.NhanVien)) {
+            else if (lvType.Equals(ViewMode.NhanVien)) {
                 InitNhanVien();
             }
-            else if (lvType.Equals(Lv0.DuAn)) {
+            else if (lvType.Equals(ViewMode.DuAn)) {
                 InitDuAn();
             }
         }
@@ -80,7 +84,7 @@ namespace QLDA.View.Common
 
         public void InitDataListViewKhachHang()
         {
-            var items = MainForm.RepositoryWrapper.KhachHang.FindAll().ToList();
+            var items = RepositoryWrapper.Create().KhachHang.FindAll().ToList();
             foreach (var item in items) {
                 string[] itemValues = new string[] { Define.PREFIX_KHACH_HANG + item.Ma_KH, item.Ten, item.Dia_Chi, item.SDT, item.MST, item.STK, item.Ten_NH };
 
@@ -92,7 +96,7 @@ namespace QLDA.View.Common
 
         public void InitDataListViewNhanVien()
         {
-            var items = MainForm.RepositoryWrapper.NhanVien.FindAll().ToList();
+            var items = _repository.NhanVien.FindAll().ToList();
             foreach (var item in items) {
                 string[] itemValues = new string[] { Define.PREFIX_NHAN_VIEN + item.Ma_NV, item.Ten, item.Dia_Chi, item.SDT, item.Email };
 
@@ -104,7 +108,7 @@ namespace QLDA.View.Common
 
         public void InitDataListViewDuAn()
         {
-            var items = MainForm.RepositoryWrapper.RepositoryContext.DuAns.Include("KhachHang").ToList();
+            var items = _repository.RepositoryContext.DuAns.Include("KhachHang").ToList();
             foreach (var item in items) {
                 string[] itemValues = new string[] {
                     Define.PREFIX_DU_AN + item.Ma_DA,
@@ -129,11 +133,11 @@ namespace QLDA.View.Common
                 return;
             }
             int idViewDetial = (int)lvDanhSach.SelectedItems[0].Tag;
-            if (_lvTypeSelected.Equals(Lv0.KhachHang)) {
+            if (_lvTypeSelected.Equals(ViewMode.KhachHang)) {
                 var viewDetailKh = new XemChiTietKH(idViewDetial);
                 viewDetailKh.ShowDialog();
             }
-            else if (_lvTypeSelected.Equals(Lv0.DuAn)) {
+            else if (_lvTypeSelected.Equals(ViewMode.DuAn)) {
                 var viewDetailDuAn = new XemChiTietDuAn(idViewDetial);
                 viewDetailDuAn.ShowDialog();
             }
@@ -141,7 +145,7 @@ namespace QLDA.View.Common
 
         private void btnThemMoi_Click(object sender, EventArgs e)
         {
-            if (_lvTypeSelected.Equals(Lv0.KhachHang)) {
+            if (_lvTypeSelected.Equals(ViewMode.KhachHang)) {
                 var addKh = new TaoHoacCapNhatKH();
                 addKh.ShowDialog();
                 if (addKh.HasReloadList) {
@@ -149,7 +153,7 @@ namespace QLDA.View.Common
                     InitDataListViewKhachHang();
                 }
             }
-            else if (_lvTypeSelected.Equals(Lv0.NhanVien)) {
+            else if (_lvTypeSelected.Equals(ViewMode.NhanVien)) {
                 var addNv = new TaoHoacCapNhatNV();
                 addNv.ShowDialog();
                 if (addNv.HasReloadList) {
@@ -158,7 +162,7 @@ namespace QLDA.View.Common
                     InitDataListViewNhanVien();
                 }
             }
-            else if (_lvTypeSelected.Equals(Lv0.DuAn)) {
+            else if (_lvTypeSelected.Equals(ViewMode.DuAn)) {
                 var addDA = new TaoHoacCapNhatDuAn();
                 addDA.ShowDialog();
                 if (addDA.HasReloadList) {
@@ -176,7 +180,7 @@ namespace QLDA.View.Common
             }
             int idUpdate = (int)lvDanhSach.SelectedItems[0].Tag;
 
-            if (_lvTypeSelected.Equals(Lv0.KhachHang)) {
+            if (_lvTypeSelected.Equals(ViewMode.KhachHang)) {
                 var addKh = new TaoHoacCapNhatKH(idUpdate);
                 addKh.ShowDialog();
                 if (addKh.HasReloadList) {
@@ -184,7 +188,7 @@ namespace QLDA.View.Common
                     InitDataListViewKhachHang();
                 }
             }
-            else if (_lvTypeSelected.Equals(Lv0.NhanVien)) {
+            else if (_lvTypeSelected.Equals(ViewMode.NhanVien)) {
                 var addNv = new TaoHoacCapNhatNV(idUpdate);
                 addNv.ShowDialog();
                 if (addNv.HasReloadList) {
@@ -193,7 +197,13 @@ namespace QLDA.View.Common
                     InitDataListViewNhanVien();
                 }
             }
-            else if (_lvTypeSelected.Equals(Lv0.DuAn)) {
+            else if (_lvTypeSelected.Equals(ViewMode.DuAn)) {
+                var addDA = new TaoHoacCapNhatDuAn(idUpdate);
+                addDA.ShowDialog();
+                if (addDA.HasReloadList) {
+                    lvDanhSach.Items.Clear();
+                    InitDataListViewDuAn();
+                }
             }
         }
 
@@ -205,39 +215,34 @@ namespace QLDA.View.Common
             }
             int idUpdate = (int)lvDanhSach.SelectedItems[0].Tag;
 
-            if (_lvTypeSelected.Equals(Lv0.KhachHang)) {
-                var record = MainForm.RepositoryWrapper.KhachHang.FindByCondition(x => x.Ma_KH == idUpdate).FirstOrDefault();
-                if (record != null && ConfirmDelete()) {
-                    MainForm.RepositoryWrapper.KhachHang.Delete(record);
-                    MainForm.RepositoryWrapper.SaveChange();
+            if (_lvTypeSelected.Equals(ViewMode.KhachHang)) {
+                var record = _repository.KhachHang.FindByCondition(x => x.Ma_KH == idUpdate).FirstOrDefault();
+                if (record != null && Define.ConfirmDelete()) {
+                    _repository.KhachHang.Delete(record);
+                    _repository.SaveChange();
+
                     lvDanhSach.Items.Clear();
                     InitDataListViewKhachHang();
                 }
             }
-            else if (_lvTypeSelected.Equals(Lv0.NhanVien)) {
-                var record = MainForm.RepositoryWrapper.NhanVien.FindByCondition(x => x.Ma_NV == idUpdate).FirstOrDefault();
-                if (record != null && ConfirmDelete()) {
-                    MainForm.RepositoryWrapper.NhanVien.Delete(record);
-                    MainForm.RepositoryWrapper.SaveChange();
+            else if (_lvTypeSelected.Equals(ViewMode.NhanVien)) {
+                var record = _repository.NhanVien.FindByCondition(x => x.Ma_NV == idUpdate).FirstOrDefault();
+                if (record != null && Define.ConfirmDelete()) {
+                    _repository.NhanVien.Delete(record);
+                    _repository.SaveChange();
                     lvDanhSach.Items.Clear();
                     InitDataListViewNhanVien();
                 }
             }
-            else if (_lvTypeSelected.Equals(Lv0.DuAn)) {
-                var record = MainForm.RepositoryWrapper.DuAn.FindByCondition(x => x.Ma_DA == idUpdate).FirstOrDefault();
-                if (record != null && ConfirmDelete()) {
-                    MainForm.RepositoryWrapper.DuAn.Delete(record);
-                    MainForm.RepositoryWrapper.SaveChange();
+            else if (_lvTypeSelected.Equals(ViewMode.DuAn)) {
+                var record = _repository.DuAn.FindByCondition(x => x.Ma_DA == idUpdate).FirstOrDefault();
+                if (record != null && Define.ConfirmDelete()) {
+                    _repository.DuAn.Delete(record);
+                    _repository.SaveChange();
                     lvDanhSach.Items.Clear();
                     InitDataListViewDuAn();
                 }
             }
-        }
-
-        private bool ConfirmDelete()
-        {
-            var btn = MessageBox.Show(Define.CONFIRM_DELETE, Define.TITLE_CONFIRM, MessageBoxButtons.YesNo);
-            return btn.Equals(DialogResult.Yes);
         }
     }
 }

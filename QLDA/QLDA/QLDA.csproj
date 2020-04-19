@@ -205,12 +205,6 @@
     <Compile Include="View\Common\XemTheoDuAnLv1.Designer.cs">
       <DependentUpon>XemTheoDuAnLv1.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Common\XemToanBo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\Common\XemToanBo.Designer.cs">
-      <DependentUpon>XemToanBo.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\DanhMuc\KhachHang\TaoHoacCapNhatKH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,8 +284,11 @@
       <DependentUpon>TaoHoacCapNhatTT.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Template\DanhSachDuAnTemplate.cs" />
+    <Compile Include="View\Template\DanhSachHopDongTemplate.cs" />
     <Compile Include="View\Template\DanhSachKhachHangTemplate.cs" />
     <Compile Include="View\Template\DanhSachNhanVienTemplate.cs" />
+    <Compile Include="View\Template\DanhSachQuyTrinhTemplate.cs" />
+    <Compile Include="View\Template\DanhSachThanhToanTemplate.cs" />
     <Compile Include="View\Template\ItemComboboxTemplate.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -313,9 +310,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Common\XemTheoDuAnLv1.resx">
       <DependentUpon>XemTheoDuAnLv1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Common\XemToanBo.resx">
-      <DependentUpon>XemToanBo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\DanhMuc\KhachHang\TaoHoacCapNhatKH.resx">
       <DependentUpon>TaoHoacCapNhatKH.cs</DependentUpon>

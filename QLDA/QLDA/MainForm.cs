@@ -9,8 +9,8 @@ namespace QLDA
 {
     public partial class MainForm : Form
     {
-        public static RepositoryWrapper RepositoryWrapper;
-        private ViewMode _viewSelected;
+        //public static RepositoryWrapper RepositoryWrapper;
+        //private ViewMode _viewSelected;
 
         private DanhMucProcessing _danhMucProcess;
         private QLDAProcessing _quanLyDuAnProcess;
@@ -19,7 +19,7 @@ namespace QLDA
         {
             InitializeComponent();
             VisiblePanel();
-            InitConnectDatabase();
+            //InitConnectDatabase();
             InitProcessing();
         }
 
@@ -31,16 +31,16 @@ namespace QLDA
             _quanLyDuAnProcess = new QLDAProcessing(this);
         }
 
-        private void InitConnectDatabase()
-        {
-            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["sqlConnection"].ConnectionString;
-            SqlConnection connection = new SqlConnection(connectionString);
-            connection.Open();
-            RepositoryContext repositoryContext = new RepositoryContext(connection, false);
+        //private void InitConnectDatabase()
+        //{
+        //    string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["sqlConnection"].ConnectionString;
+        //    SqlConnection connection = new SqlConnection(connectionString);
+        //    connection.Open();
+        //    RepositoryContext repositoryContext = new RepositoryContext(connection, false);
 
-            //MessageBox.Show(repositoryContext.KhachHangs.FirstOrDefault().Ten_NH);
-            RepositoryWrapper = new RepositoryWrapper(repositoryContext);
-        }
+        //    //MessageBox.Show(repositoryContext.KhachHangs.FirstOrDefault().Ten_NH);
+        //    RepositoryWrapper = new RepositoryWrapper(repositoryContext);
+        //}
 
         private void VisiblePanel()
         {
@@ -92,12 +92,12 @@ namespace QLDA
 
         private void btnDanhMucKH_Click(object sender, EventArgs e)
         {
-            _danhMucProcess.Show(ViewMode.DanhMucKhachHang);
+            _danhMucProcess.Show(ViewMode.KhachHang);
         }
 
         private void btnDanhMucNV_Click(object sender, EventArgs e)
         {
-            _danhMucProcess.Show(ViewMode.DanhMucNhanVien);
+            _danhMucProcess.Show(ViewMode.NhanVien);
         }
 
         #endregion danh muc

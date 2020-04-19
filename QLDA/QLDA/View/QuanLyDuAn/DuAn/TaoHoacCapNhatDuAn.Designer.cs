@@ -34,6 +34,7 @@
             this.panelThongTin2 = new System.Windows.Forms.Panel();
             this.panelContent2 = new System.Windows.Forms.Panel();
             this.cbxTrangThai = new MetroFramework.Controls.MetroComboBox();
+            this.dtThoiGianBD = new MetroFramework.Controls.MetroDateTime();
             this.dtThoiGianTT = new MetroFramework.Controls.MetroDateTime();
             this.dtThoiGianKT = new MetroFramework.Controls.MetroDateTime();
             this.panelHeader2 = new System.Windows.Forms.Panel();
@@ -43,8 +44,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panelThongTin1 = new System.Windows.Forms.Panel();
             this.panelContent1 = new System.Windows.Forms.Panel();
-            this.cbxChuDauTu = new MetroFramework.Controls.MetroComboBox();
-            this.cbxGiamDoc = new MetroFramework.Controls.MetroComboBox();
+            this.cbxKhachHang = new MetroFramework.Controls.MetroComboBox();
+            this.cbxNhanVien = new MetroFramework.Controls.MetroComboBox();
             this.txtDiaDiem = new MetroFramework.Controls.MetroTextBox();
             this.txtNhom = new MetroFramework.Controls.MetroTextBox();
             this.txtTen = new MetroFramework.Controls.MetroTextBox();
@@ -57,7 +58,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnHuy = new MetroFramework.Controls.MetroButton();
             this.btnLuu = new MetroFramework.Controls.MetroButton();
-            this.dtThoiGianBD = new MetroFramework.Controls.MetroDateTime();
             this.panelThongTinDuAn.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelThongTin2.SuspendLayout();
@@ -164,6 +164,15 @@
             this.cbxTrangThai.TabIndex = 9;
             this.cbxTrangThai.UseSelectable = true;
             // 
+            // dtThoiGianBD
+            // 
+            this.dtThoiGianBD.AllowDrop = true;
+            this.dtThoiGianBD.Location = new System.Drawing.Point(9, 12);
+            this.dtThoiGianBD.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtThoiGianBD.Name = "dtThoiGianBD";
+            this.dtThoiGianBD.Size = new System.Drawing.Size(200, 29);
+            this.dtThoiGianBD.TabIndex = 8;
+            // 
             // dtThoiGianTT
             // 
             this.dtThoiGianTT.AllowDrop = true;
@@ -246,8 +255,8 @@
             // 
             // panelContent1
             // 
-            this.panelContent1.Controls.Add(this.cbxChuDauTu);
-            this.panelContent1.Controls.Add(this.cbxGiamDoc);
+            this.panelContent1.Controls.Add(this.cbxKhachHang);
+            this.panelContent1.Controls.Add(this.cbxNhanVien);
             this.panelContent1.Controls.Add(this.txtDiaDiem);
             this.panelContent1.Controls.Add(this.txtNhom);
             this.panelContent1.Controls.Add(this.txtTen);
@@ -259,23 +268,23 @@
             // 
             // cbxChuDauTu
             // 
-            this.cbxChuDauTu.FormattingEnabled = true;
-            this.cbxChuDauTu.ItemHeight = 23;
-            this.cbxChuDauTu.Location = new System.Drawing.Point(6, 60);
-            this.cbxChuDauTu.Name = "cbxChuDauTu";
-            this.cbxChuDauTu.Size = new System.Drawing.Size(198, 29);
-            this.cbxChuDauTu.TabIndex = 5;
-            this.cbxChuDauTu.UseSelectable = true;
+            this.cbxKhachHang.FormattingEnabled = true;
+            this.cbxKhachHang.ItemHeight = 23;
+            this.cbxKhachHang.Location = new System.Drawing.Point(6, 60);
+            this.cbxKhachHang.Name = "cbxChuDauTu";
+            this.cbxKhachHang.Size = new System.Drawing.Size(198, 29);
+            this.cbxKhachHang.TabIndex = 5;
+            this.cbxKhachHang.UseSelectable = true;
             // 
             // cbxGiamDoc
             // 
-            this.cbxGiamDoc.FormattingEnabled = true;
-            this.cbxGiamDoc.ItemHeight = 23;
-            this.cbxGiamDoc.Location = new System.Drawing.Point(6, 212);
-            this.cbxGiamDoc.Name = "cbxGiamDoc";
-            this.cbxGiamDoc.Size = new System.Drawing.Size(198, 29);
-            this.cbxGiamDoc.TabIndex = 4;
-            this.cbxGiamDoc.UseSelectable = true;
+            this.cbxNhanVien.FormattingEnabled = true;
+            this.cbxNhanVien.ItemHeight = 23;
+            this.cbxNhanVien.Location = new System.Drawing.Point(6, 212);
+            this.cbxNhanVien.Name = "cbxGiamDoc";
+            this.cbxNhanVien.Size = new System.Drawing.Size(198, 29);
+            this.cbxNhanVien.TabIndex = 4;
+            this.cbxNhanVien.UseSelectable = true;
             // 
             // txtDiaDiem
             // 
@@ -366,6 +375,7 @@
             this.txtTen.UseSelectable = true;
             this.txtTen.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTen.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTen.TextChanged += new System.EventHandler(this.txtTen_TextChanged);
             // 
             // panelHeader1
             // 
@@ -460,15 +470,6 @@
             this.btnLuu.UseSelectable = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // dtThoiGianBD
-            // 
-            this.dtThoiGianBD.AllowDrop = true;
-            this.dtThoiGianBD.Location = new System.Drawing.Point(9, 12);
-            this.dtThoiGianBD.MinimumSize = new System.Drawing.Size(0, 29);
-            this.dtThoiGianBD.Name = "dtThoiGianBD";
-            this.dtThoiGianBD.Size = new System.Drawing.Size(200, 29);
-            this.dtThoiGianBD.TabIndex = 8;
-            // 
             // TaoHoacCapNhatDuAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,8 +511,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panelThongTin1;
         private System.Windows.Forms.Panel panelContent1;
-        private MetroFramework.Controls.MetroComboBox cbxChuDauTu;
-        private MetroFramework.Controls.MetroComboBox cbxGiamDoc;
+        private MetroFramework.Controls.MetroComboBox cbxKhachHang;
+        private MetroFramework.Controls.MetroComboBox cbxNhanVien;
         private MetroFramework.Controls.MetroTextBox txtDiaDiem;
         private MetroFramework.Controls.MetroTextBox txtNhom;
         private MetroFramework.Controls.MetroTextBox txtTen;

@@ -35,6 +35,8 @@
             this.panelThongTin2 = new System.Windows.Forms.Panel();
             this.panelContent2 = new System.Windows.Forms.Panel();
             this.dtThoiGianTT = new MetroFramework.Controls.MetroDateTime();
+            this.dtThoiGianKT = new MetroFramework.Controls.MetroDateTime();
+            this.dtThoiGianBD = new MetroFramework.Controls.MetroDateTime();
             this.txtTrangThai = new MetroFramework.Controls.MetroTextBox();
             this.txtThanhTien = new MetroFramework.Controls.MetroTextBox();
             this.panelHeader2 = new System.Windows.Forms.Panel();
@@ -59,13 +61,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lvDSHD = new System.Windows.Forms.ListView();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lvDSQT = new MetroFramework.Controls.MetroListView();
             this.label11 = new System.Windows.Forms.Label();
-            this.dtThoiGianKT = new MetroFramework.Controls.MetroDateTime();
-            this.dtThoiGianBD = new MetroFramework.Controls.MetroDateTime();
-            this.lvDanhSachDA = new System.Windows.Forms.ListView();
+            this.lvDSQT = new System.Windows.Forms.ListView();
             this.panelThongTinDuAn.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -155,11 +155,30 @@
             // 
             // dtThoiGianTT
             // 
+            this.dtThoiGianTT.Enabled = false;
             this.dtThoiGianTT.Location = new System.Drawing.Point(6, 125);
             this.dtThoiGianTT.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtThoiGianTT.Name = "dtThoiGianTT";
             this.dtThoiGianTT.Size = new System.Drawing.Size(200, 29);
             this.dtThoiGianTT.TabIndex = 9;
+            // 
+            // dtThoiGianKT
+            // 
+            this.dtThoiGianKT.Enabled = false;
+            this.dtThoiGianKT.Location = new System.Drawing.Point(6, 87);
+            this.dtThoiGianKT.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtThoiGianKT.Name = "dtThoiGianKT";
+            this.dtThoiGianKT.Size = new System.Drawing.Size(200, 29);
+            this.dtThoiGianKT.TabIndex = 8;
+            // 
+            // dtThoiGianBD
+            // 
+            this.dtThoiGianBD.Enabled = false;
+            this.dtThoiGianBD.Location = new System.Drawing.Point(6, 46);
+            this.dtThoiGianBD.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtThoiGianBD.Name = "dtThoiGianBD";
+            this.dtThoiGianBD.Size = new System.Drawing.Size(200, 29);
+            this.dtThoiGianBD.TabIndex = 7;
             // 
             // txtTrangThai
             // 
@@ -572,13 +591,23 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lvDanhSachDA);
+            this.panel1.Controls.Add(this.lvDSHD);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 306);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(928, 195);
             this.panel1.TabIndex = 1;
+            // 
+            // lvDSHD
+            // 
+            this.lvDSHD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvDSHD.HideSelection = false;
+            this.lvDSHD.Location = new System.Drawing.Point(0, 43);
+            this.lvDSHD.Name = "lvDSHD";
+            this.lvDSHD.Size = new System.Drawing.Size(928, 152);
+            this.lvDSHD.TabIndex = 2;
+            this.lvDSHD.UseCompatibleStateImageBehavior = false;
             // 
             // label10
             // 
@@ -601,19 +630,6 @@
             this.panel2.Size = new System.Drawing.Size(928, 144);
             this.panel2.TabIndex = 2;
             // 
-            // lvDSQT
-            // 
-            this.lvDSQT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvDSQT.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lvDSQT.FullRowSelect = true;
-            this.lvDSQT.Location = new System.Drawing.Point(0, 43);
-            this.lvDSQT.Name = "lvDSQT";
-            this.lvDSQT.OwnerDraw = true;
-            this.lvDSQT.Size = new System.Drawing.Size(928, 101);
-            this.lvDSQT.TabIndex = 3;
-            this.lvDSQT.UseCompatibleStateImageBehavior = false;
-            this.lvDSQT.UseSelectable = true;
-            // 
             // label11
             // 
             this.label11.Dock = System.Windows.Forms.DockStyle.Top;
@@ -625,31 +641,15 @@
             this.label11.Text = "Các quy trình của dự án";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dtThoiGianKT
+            // lvDSQT
             // 
-            this.dtThoiGianKT.Location = new System.Drawing.Point(6, 87);
-            this.dtThoiGianKT.MinimumSize = new System.Drawing.Size(0, 29);
-            this.dtThoiGianKT.Name = "dtThoiGianKT";
-            this.dtThoiGianKT.Size = new System.Drawing.Size(200, 29);
-            this.dtThoiGianKT.TabIndex = 8;
-            // 
-            // dtThoiGianBD
-            // 
-            this.dtThoiGianBD.Location = new System.Drawing.Point(6, 46);
-            this.dtThoiGianBD.MinimumSize = new System.Drawing.Size(0, 29);
-            this.dtThoiGianBD.Name = "dtThoiGianBD";
-            this.dtThoiGianBD.Size = new System.Drawing.Size(200, 29);
-            this.dtThoiGianBD.TabIndex = 7;
-            // 
-            // lvDanhSachDA
-            // 
-            this.lvDanhSachDA.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvDanhSachDA.HideSelection = false;
-            this.lvDanhSachDA.Location = new System.Drawing.Point(0, 43);
-            this.lvDanhSachDA.Name = "lvDanhSachDA";
-            this.lvDanhSachDA.Size = new System.Drawing.Size(928, 152);
-            this.lvDanhSachDA.TabIndex = 2;
-            this.lvDanhSachDA.UseCompatibleStateImageBehavior = false;
+            this.lvDSQT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvDSQT.HideSelection = false;
+            this.lvDSQT.Location = new System.Drawing.Point(0, 43);
+            this.lvDSQT.Name = "lvDSQT";
+            this.lvDSQT.Size = new System.Drawing.Size(928, 101);
+            this.lvDSQT.TabIndex = 3;
+            this.lvDSQT.UseCompatibleStateImageBehavior = false;
             // 
             // XemChiTietDuAn
             // 
@@ -703,7 +703,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel2;
-        private MetroFramework.Controls.MetroListView lvDSQT;
         private System.Windows.Forms.Label label11;
         private MetroFramework.Controls.MetroTextBox txtThanhTien;
         private MetroFramework.Controls.MetroTextBox txtDiaDiem;
@@ -719,6 +718,7 @@
         private MetroFramework.Controls.MetroDateTime dtThoiGianTT;
         private MetroFramework.Controls.MetroDateTime dtThoiGianKT;
         private MetroFramework.Controls.MetroDateTime dtThoiGianBD;
-        private System.Windows.Forms.ListView lvDanhSachDA;
+        private System.Windows.Forms.ListView lvDSHD;
+        private System.Windows.Forms.ListView lvDSQT;
     }
 }

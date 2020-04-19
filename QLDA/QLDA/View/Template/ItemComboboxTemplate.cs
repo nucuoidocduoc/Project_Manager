@@ -15,6 +15,9 @@ namespace QLDA.View.Template
 
         public override string ToString()
         {
+            if (string.IsNullOrEmpty(Prefix)) {
+                return Content;
+            }
             return Prefix + " " + Content + " " + Subfix;
         }
     }

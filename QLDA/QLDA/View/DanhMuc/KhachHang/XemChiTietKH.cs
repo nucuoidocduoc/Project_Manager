@@ -1,4 +1,5 @@
 ﻿using QLDA.Model;
+using QLDA.Repository;
 using QLDA.View.Template;
 using System;
 using System.Collections.Generic;
@@ -14,24 +15,27 @@ namespace QLDA.View.DanhMuc.KhachHang
 {
     public partial class XemChiTietKH : Form
     {
+        private RepositoryWrapper _repository;
         private int? _idViewDetail;
 
         public XemChiTietKH()
         {
             InitializeComponent();
+            _repository = RepositoryWrapper.Create();
         }
 
         public XemChiTietKH(int idViewDetail)
         {
             InitializeComponent();
+            _repository = RepositoryWrapper.Create();
             _idViewDetail = idViewDetail;
             InitDuAn();
-            var kh = MainForm.RepositoryWrapper.KhachHang.FindByCondition(x => x.Ma_KH == _idViewDetail).FirstOrDefault();
+            var kh = _repository.KhachHang.FindByCondition(x => x.Ma_KH == _idViewDetail).FirstOrDefault();
             if (kh == null) {
                 return;
             }
 
-            MainForm.RepositoryWrapper.RepositoryContext.Entry(kh).Collection(x => x.Cac_Du_An).Load();
+            _repository.RepositoryContext.Entry(kh).Collection(x => x.Cac_Du_An).Load();
             txtMaKH.Text = kh.Ma_KH.ToString();
             txtTenKH.Text = kh.Ten;
             txtDC.Text = kh.Dia_Chi;

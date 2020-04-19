@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLDA.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,17 +15,21 @@ namespace QLDA.View.DanhMuc.KhachHang
     {
         private int? _idUpdate;
         private Model.KhachHang _khachHangUpdate;
+        private RepositoryWrapper _repository;
+
         public bool HasReloadList { get; private set; } = false;
 
         public TaoHoacCapNhatKH()
         {
             InitializeComponent();
             btnLuu.Enabled = false;
+            _repository = RepositoryWrapper.Create();
         }
 
         public TaoHoacCapNhatKH(int idUpdate)
         {
             InitializeComponent();
+            _repository = RepositoryWrapper.Create();
             _idUpdate = idUpdate;
             InitUpdate();
         }
@@ -44,8 +49,8 @@ namespace QLDA.View.DanhMuc.KhachHang
                     STK = txtSTK.Text,
                     Ten_NH = txtTenNH.Text
                 };
-                MainForm.RepositoryWrapper.KhachHang.Add(khachHang);
-                MainForm.RepositoryWrapper.SaveChange();
+                _repository.KhachHang.Add(khachHang);
+                _repository.SaveChange();
                 HasReloadList = true;
             }
             else {
@@ -55,7 +60,7 @@ namespace QLDA.View.DanhMuc.KhachHang
                 _khachHangUpdate.MST = txtMST.Text;
                 _khachHangUpdate.STK = txtSTK.Text;
                 _khachHangUpdate.Ten_NH = txtTenNH.Text;
-                MainForm.RepositoryWrapper.SaveChange();
+                _repository.SaveChange();
                 HasReloadList = true;
             }
 
@@ -64,7 +69,7 @@ namespace QLDA.View.DanhMuc.KhachHang
 
         private void InitUpdate()
         {
-            _khachHangUpdate = MainForm.RepositoryWrapper.KhachHang.FindByCondition(k => k.Ma_KH == _idUpdate).FirstOrDefault();
+            _khachHangUpdate = _repository.KhachHang.FindByCondition(k => k.Ma_KH == _idUpdate).FirstOrDefault();
             if (_khachHangUpdate == null) {
                 return;
             }

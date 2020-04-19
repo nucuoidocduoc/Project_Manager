@@ -1,6 +1,7 @@
 ﻿using QLDA.Context;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,9 +10,20 @@ namespace QLDA.Repository
 {
     public class RepositoryWrapper
     {
-        public RepositoryWrapper(RepositoryContext repositoryContext)
+        protected RepositoryWrapper(RepositoryContext repositoryContext)
         {
             _repositoryContext = repositoryContext;
+        }
+
+        public static RepositoryWrapper Create()
+        {
+            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["sqlConnection"].ConnectionString;
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            RepositoryContext repositoryContext = new RepositoryContext(connection, false);
+
+            //MessageBox.Show(repositoryContext.KhachHangs.FirstOrDefault().Ten_NH);
+            return new RepositoryWrapper(repositoryContext);
         }
 
         public RepositoryContext RepositoryContext { get => _repositoryContext; }

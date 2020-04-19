@@ -23,15 +23,15 @@ namespace QLDA.Processing
             _mainForm.PanelMainContent.Controls.Clear();
             switch (viewMode) {
                 case ViewMode.DuAn:
-                    controlSelected = new DanhSachLv0(Lv0.DuAn);
+                    controlSelected = new DanhSachLv0(ViewMode.DuAn);
                     break;
 
                 case ViewMode.HopDong:
-                    controlSelected = new XemTheoDuAnLv1();
+                    controlSelected = new DanhSachDAQL(ViewMode.HopDong);
                     break;
 
                 case ViewMode.ThanhToan:
-                    controlSelected = new XemTheoDuAnLv1();
+                    controlSelected = new DanhSachDAQL(ViewMode.ThanhToan);
                     break;
 
                 default:

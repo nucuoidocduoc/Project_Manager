@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLDA.Repository;
+using System;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -8,11 +9,14 @@ namespace QLDA.View.DanhMuc.NhanVien
     {
         private int? _idUpdate;
         private Model.NhanVien _nhanVienUpdate;
+        private RepositoryWrapper _repository;
+
         public bool HasReloadList { get; private set; } = false;
 
         public TaoHoacCapNhatNV()
         {
             InitializeComponent();
+            _repository = RepositoryWrapper.Create();
             Text = Define.THEM_MOI_NHAN_VIEN;
             btnLuu.Enabled = false;
         }
@@ -20,6 +24,7 @@ namespace QLDA.View.DanhMuc.NhanVien
         public TaoHoacCapNhatNV(int idUpdate)
         {
             InitializeComponent();
+            _repository = RepositoryWrapper.Create();
             Text = Define.CHINH_SUA_NHAN_VIEN;
             _idUpdate = idUpdate;
             InitUpdate();
@@ -27,7 +32,7 @@ namespace QLDA.View.DanhMuc.NhanVien
 
         private void InitUpdate()
         {
-            _nhanVienUpdate = MainForm.RepositoryWrapper.NhanVien.FindByCondition(x => x.Ma_NV == _idUpdate).FirstOrDefault();
+            _nhanVienUpdate = _repository.NhanVien.FindByCondition(x => x.Ma_NV == _idUpdate).FirstOrDefault();
             if (_nhanVienUpdate == null) {
                 return;
             }
@@ -49,8 +54,8 @@ namespace QLDA.View.DanhMuc.NhanVien
                     SDT = txtSDT.Text,
                     Email = txtEmail.Text,
                 };
-                MainForm.RepositoryWrapper.NhanVien.Add(nhanVien);
-                MainForm.RepositoryWrapper.SaveChange();
+                _repository.NhanVien.Add(nhanVien);
+                _repository.SaveChange();
                 HasReloadList = true;
                 this.Close();
             }
@@ -62,7 +67,7 @@ namespace QLDA.View.DanhMuc.NhanVien
                 _nhanVienUpdate.Dia_Chi = txtDC.Text;
                 _nhanVienUpdate.SDT = txtSDT.Text;
                 _nhanVienUpdate.Email = txtEmail.Text;
-                MainForm.RepositoryWrapper.SaveChange();
+                _repository.SaveChange();
                 HasReloadList = true;
                 this.Close();
             }
