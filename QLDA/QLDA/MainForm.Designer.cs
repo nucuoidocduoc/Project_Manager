@@ -132,6 +132,7 @@
             this.btnCongViec.Text = "Công việc";
             this.btnCongViec.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCongViec.UseVisualStyleBackColor = true;
+            this.btnCongViec.Click += new System.EventHandler(this.btnCongViec_Click);
             // 
             // btnQuyTrinh
             // 
@@ -148,6 +149,7 @@
             this.btnQuyTrinh.Text = "Quy trình";
             this.btnQuyTrinh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuyTrinh.UseVisualStyleBackColor = true;
+            this.btnQuyTrinh.Click += new System.EventHandler(this.btnQuyTrinh_Click);
             // 
             // btnQLCV
             // 

@@ -82,7 +82,7 @@ namespace QLDA.View.Common
             InitDataListViewDuAn();
         }
 
-        public void InitDataListViewKhachHang()
+        public void InitDataListViewKhachHang(bool isReNewRepository = false)
         {
             var items = RepositoryWrapper.Create().KhachHang.FindAll().ToList();
             foreach (var item in items) {
@@ -94,8 +94,11 @@ namespace QLDA.View.Common
             }
         }
 
-        public void InitDataListViewNhanVien()
+        public void InitDataListViewNhanVien(bool isReNewRepository = false)
         {
+            if (isReNewRepository) {
+                _repository = RepositoryWrapper.Create();
+            }
             var items = _repository.NhanVien.FindAll().ToList();
             foreach (var item in items) {
                 string[] itemValues = new string[] { Define.PREFIX_NHAN_VIEN + item.Ma_NV, item.Ten, item.Dia_Chi, item.SDT, item.Email };
@@ -106,8 +109,12 @@ namespace QLDA.View.Common
             }
         }
 
-        public void InitDataListViewDuAn()
+        public void InitDataListViewDuAn(bool isReNewRepository = false)
         {
+            if (isReNewRepository) {
+                _repository = RepositoryWrapper.Create();
+            }
+
             var items = _repository.RepositoryContext.DuAns.Include("KhachHang").ToList();
             foreach (var item in items) {
                 string[] itemValues = new string[] {
@@ -150,7 +157,7 @@ namespace QLDA.View.Common
                 addKh.ShowDialog();
                 if (addKh.HasReloadList) {
                     lvDanhSach.Items.Clear();
-                    InitDataListViewKhachHang();
+                    InitDataListViewKhachHang(true);
                 }
             }
             else if (_lvTypeSelected.Equals(ViewMode.NhanVien)) {
@@ -159,7 +166,7 @@ namespace QLDA.View.Common
                 if (addNv.HasReloadList) {
                     lvDanhSach.Items.Clear();
 
-                    InitDataListViewNhanVien();
+                    InitDataListViewNhanVien(true);
                 }
             }
             else if (_lvTypeSelected.Equals(ViewMode.DuAn)) {
@@ -167,7 +174,7 @@ namespace QLDA.View.Common
                 addDA.ShowDialog();
                 if (addDA.HasReloadList) {
                     lvDanhSach.Items.Clear();
-                    InitDataListViewDuAn();
+                    InitDataListViewDuAn(true);
                 }
             }
         }
@@ -185,7 +192,7 @@ namespace QLDA.View.Common
                 addKh.ShowDialog();
                 if (addKh.HasReloadList) {
                     lvDanhSach.Items.Clear();
-                    InitDataListViewKhachHang();
+                    InitDataListViewKhachHang(true);
                 }
             }
             else if (_lvTypeSelected.Equals(ViewMode.NhanVien)) {
@@ -194,7 +201,7 @@ namespace QLDA.View.Common
                 if (addNv.HasReloadList) {
                     lvDanhSach.Items.Clear();
 
-                    InitDataListViewNhanVien();
+                    InitDataListViewNhanVien(true);
                 }
             }
             else if (_lvTypeSelected.Equals(ViewMode.DuAn)) {
@@ -202,7 +209,7 @@ namespace QLDA.View.Common
                 addDA.ShowDialog();
                 if (addDA.HasReloadList) {
                     lvDanhSach.Items.Clear();
-                    InitDataListViewDuAn();
+                    InitDataListViewDuAn(true);
                 }
             }
         }
@@ -222,7 +229,7 @@ namespace QLDA.View.Common
                     _repository.SaveChange();
 
                     lvDanhSach.Items.Clear();
-                    InitDataListViewKhachHang();
+                    InitDataListViewKhachHang(true);
                 }
             }
             else if (_lvTypeSelected.Equals(ViewMode.NhanVien)) {
@@ -231,7 +238,7 @@ namespace QLDA.View.Common
                     _repository.NhanVien.Delete(record);
                     _repository.SaveChange();
                     lvDanhSach.Items.Clear();
-                    InitDataListViewNhanVien();
+                    InitDataListViewNhanVien(true);
                 }
             }
             else if (_lvTypeSelected.Equals(ViewMode.DuAn)) {
@@ -240,7 +247,7 @@ namespace QLDA.View.Common
                     _repository.DuAn.Delete(record);
                     _repository.SaveChange();
                     lvDanhSach.Items.Clear();
-                    InitDataListViewDuAn();
+                    InitDataListViewDuAn(true);
                 }
             }
         }

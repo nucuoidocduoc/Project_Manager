@@ -28,13 +28,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lvHopDong = new System.Windows.Forms.ListView();
+            this.lvCv = new System.Windows.Forms.ListView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.cbxQT = new MetroFramework.Controls.MetroComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lvDuAn = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -42,7 +43,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lvHopDong);
+            this.panel1.Controls.Add(this.lvCv);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(226, 0);
@@ -50,20 +51,21 @@
             this.panel1.Size = new System.Drawing.Size(980, 592);
             this.panel1.TabIndex = 11;
             // 
-            // lvHopDong
+            // lvCv
             // 
-            this.lvHopDong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvHopDong.HideSelection = false;
-            this.lvHopDong.Location = new System.Drawing.Point(0, 45);
-            this.lvHopDong.Name = "lvHopDong";
-            this.lvHopDong.Size = new System.Drawing.Size(980, 547);
-            this.lvHopDong.TabIndex = 6;
-            this.lvHopDong.UseCompatibleStateImageBehavior = false;
+            this.lvCv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvCv.FullRowSelect = true;
+            this.lvCv.HideSelection = false;
+            this.lvCv.Location = new System.Drawing.Point(0, 45);
+            this.lvCv.Name = "lvCv";
+            this.lvCv.Size = new System.Drawing.Size(980, 547);
+            this.lvCv.TabIndex = 6;
+            this.lvCv.UseCompatibleStateImageBehavior = false;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.metroComboBox1);
+            this.panel2.Controls.Add(this.cbxQT);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -81,15 +83,16 @@
             this.label2.Text = "Chọn quy trình";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // metroComboBox1
+            // cbxQT
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(574, 10);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(184, 29);
-            this.metroComboBox1.TabIndex = 2;
-            this.metroComboBox1.UseSelectable = true;
+            this.cbxQT.FormattingEnabled = true;
+            this.cbxQT.ItemHeight = 23;
+            this.cbxQT.Location = new System.Drawing.Point(574, 10);
+            this.cbxQT.Name = "cbxQT";
+            this.cbxQT.Size = new System.Drawing.Size(184, 29);
+            this.cbxQT.TabIndex = 2;
+            this.cbxQT.UseSelectable = true;
+            this.cbxQT.SelectedIndexChanged += new System.EventHandler(this.cbxQT_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -112,13 +115,24 @@
             // 
             // lvDuAn
             // 
+            this.lvDuAn.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
             this.lvDuAn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lvDuAn.FullRowSelect = true;
             this.lvDuAn.HideSelection = false;
             this.lvDuAn.Location = new System.Drawing.Point(0, 0);
+            this.lvDuAn.MultiSelect = false;
             this.lvDuAn.Name = "lvDuAn";
             this.lvDuAn.Size = new System.Drawing.Size(190, 592);
             this.lvDuAn.TabIndex = 9;
             this.lvDuAn.UseCompatibleStateImageBehavior = false;
+            this.lvDuAn.View = System.Windows.Forms.View.Details;
+            this.lvDuAn.SelectedIndexChanged += new System.EventHandler(this.lvDuAn_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Dự án";
+            this.columnHeader1.Width = 185;
             // 
             // XemCongViecTheoDuAn
             // 
@@ -141,12 +155,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListView lvHopDong;
+        private System.Windows.Forms.ListView lvCv;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroComboBox cbxQT;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListView lvDuAn;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

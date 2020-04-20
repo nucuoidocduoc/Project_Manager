@@ -101,7 +101,7 @@ namespace QLDA.View.QuanLyDuAn.HopDong
                     Ten = txtTen.Text,
                     Thoi_Diem_Ky = dtStartDate.Value,
                     Thoi_Gian_KT = dtEndDate.Value,
-                    Ma_DA = _id,
+                    Ma_DA = (int)((ItemComboboxTemplate)cbxDuAn.SelectedItem).Id,
                     Tong_Gia_Tri = txtTongGiaTri.Text,
                     Trang_Thai = cbxTrangThai.SelectedItem.ToString(),
                     Dien_Giai = txtDienGiai.Text

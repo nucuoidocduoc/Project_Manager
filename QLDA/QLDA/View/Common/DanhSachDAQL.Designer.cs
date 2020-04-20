@@ -136,6 +136,7 @@
             this.rbtnXemTheoDuAn.TabStop = true;
             this.rbtnXemTheoDuAn.Text = "Xem theo dự án";
             this.rbtnXemTheoDuAn.UseVisualStyleBackColor = true;
+            this.rbtnXemTheoDuAn.CheckedChanged += new System.EventHandler(this.rbtnXemTheoDuAn_CheckedChanged);
             // 
             // rbtnXemTatCa
             // 

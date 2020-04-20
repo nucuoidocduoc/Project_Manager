@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using QLDA.Repository;
 using QLDA.View.Template;
 using QLDA.View.QuanLyDuAn.HopDong;
+using QLDA.View.QuanLyCongViec.QuyTrinh;
 
 namespace QLDA.View.Common
 {
@@ -128,8 +129,14 @@ namespace QLDA.View.Common
                 MessageBox.Show(Define.PLEASE_SELECT);
                 return;
             }
-            var chiTietHD = new XemChiTietHopDong((int)lvDanhSachLv1.SelectedItems[0].Tag);
-            chiTietHD.ShowDialog();
+            if (_viewType.Equals(ViewMode.HopDong)) {
+                var chiTietHD = new XemChiTietHopDong((int)lvDanhSachLv1.SelectedItems[0].Tag);
+                chiTietHD.ShowDialog();
+            }
+            else {
+                var chiTietQT = new XemChiTietQuyTrinh((int)lvDanhSachLv1.SelectedItems[0].Tag);
+                chiTietQT.ShowDialog();
+            }
         }
 
         public void Updatee()
@@ -147,6 +154,13 @@ namespace QLDA.View.Common
                     InitDsHD(true);
                 }
             }
+            else if (_viewType.Equals(ViewMode.QuyTrinh)) {
+                var updateQT = new TaoHoacCapNhatQuyTrinh((int)lvDanhSachLv1.SelectedItems[0].Tag);
+                updateQT.ShowDialog();
+                if (updateQT.HasReloadList) {
+                    InitDsQT(true);
+                }
+            }
         }
 
         public void Create()
@@ -162,6 +176,13 @@ namespace QLDA.View.Common
                 createHd.ShowDialog();
                 if (createHd.HasReloadList) {
                     InitDsHD(true);
+                }
+            }
+            else if (_viewType.Equals(ViewMode.QuyTrinh)) {
+                var createdQT = new TaoHoacCapNhatQuyTrinh((int)_currentIdDASelected, true);
+                createdQT.ShowDialog();
+                if (createdQT.HasReloadList) {
+                    InitDsQT(true);
                 }
             }
         }
@@ -186,9 +207,10 @@ namespace QLDA.View.Common
 
         private void lvDuAn_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lvDuAn.SelectedItems.Count > 0) {
-                _currentIdDASelected = (int)lvDuAn.SelectedItems[0].Tag;
+            if (lvDuAn.SelectedItems.Count < 1) {
+                return;
             }
+            _currentIdDASelected = (int)lvDuAn.SelectedItems[0].Tag;
             if (_viewType.Equals(ViewMode.HopDong)) {
                 InitDsHD();
             }

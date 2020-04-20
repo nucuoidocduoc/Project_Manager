@@ -29,13 +29,13 @@
         {
             this.panelThongTin = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.metroComboBox4 = new MetroFramework.Controls.MetroComboBox();
-            this.metroDateTime2 = new MetroFramework.Controls.MetroDateTime();
-            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
-            this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.txtMaKH = new MetroFramework.Controls.MetroTextBox();
+            this.cbxTrangThai = new MetroFramework.Controls.MetroComboBox();
+            this.dtEndDate = new MetroFramework.Controls.MetroDateTime();
+            this.dtStartDate = new MetroFramework.Controls.MetroDateTime();
+            this.cbxDuAn = new MetroFramework.Controls.MetroComboBox();
+            this.cbxNhanVien = new MetroFramework.Controls.MetroComboBox();
+            this.cbxLoaiQT = new MetroFramework.Controls.MetroComboBox();
+            this.txtTen = new MetroFramework.Controls.MetroTextBox();
             this.panelLabel = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,8 +44,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.btnLuu = new MetroFramework.Controls.MetroButton();
+            this.btnHuy = new MetroFramework.Controls.MetroButton();
             this.panelThongTin.SuspendLayout();
             this.panelContent.SuspendLayout();
             this.panelLabel.SuspendLayout();
@@ -63,105 +63,104 @@
             // 
             // panelContent
             // 
-            this.panelContent.Controls.Add(this.metroComboBox4);
-            this.panelContent.Controls.Add(this.metroDateTime2);
-            this.panelContent.Controls.Add(this.metroDateTime1);
-            this.panelContent.Controls.Add(this.metroComboBox3);
-            this.panelContent.Controls.Add(this.metroComboBox2);
-            this.panelContent.Controls.Add(this.metroComboBox1);
-            this.panelContent.Controls.Add(this.txtMaKH);
+            this.panelContent.Controls.Add(this.cbxTrangThai);
+            this.panelContent.Controls.Add(this.dtEndDate);
+            this.panelContent.Controls.Add(this.dtStartDate);
+            this.panelContent.Controls.Add(this.cbxDuAn);
+            this.panelContent.Controls.Add(this.cbxNhanVien);
+            this.panelContent.Controls.Add(this.cbxLoaiQT);
+            this.panelContent.Controls.Add(this.txtTen);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(226, 0);
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(446, 361);
             this.panelContent.TabIndex = 1;
             // 
-            // metroComboBox4
+            // cbxTrangThai
             // 
-            this.metroComboBox4.FormattingEnabled = true;
-            this.metroComboBox4.ItemHeight = 23;
-            this.metroComboBox4.Location = new System.Drawing.Point(17, 312);
-            this.metroComboBox4.Name = "metroComboBox4";
-            this.metroComboBox4.Size = new System.Drawing.Size(240, 29);
-            this.metroComboBox4.TabIndex = 12;
-            this.metroComboBox4.UseSelectable = true;
+            this.cbxTrangThai.FormattingEnabled = true;
+            this.cbxTrangThai.ItemHeight = 23;
+            this.cbxTrangThai.Location = new System.Drawing.Point(17, 312);
+            this.cbxTrangThai.Name = "cbxTrangThai";
+            this.cbxTrangThai.Size = new System.Drawing.Size(240, 29);
+            this.cbxTrangThai.TabIndex = 12;
+            this.cbxTrangThai.UseSelectable = true;
             // 
-            // metroDateTime2
+            // dtEndDate
             // 
-            this.metroDateTime2.Location = new System.Drawing.Point(17, 264);
-            this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 29);
-            this.metroDateTime2.Name = "metroDateTime2";
-            this.metroDateTime2.Size = new System.Drawing.Size(200, 29);
-            this.metroDateTime2.TabIndex = 11;
+            this.dtEndDate.Location = new System.Drawing.Point(17, 264);
+            this.dtEndDate.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtEndDate.Name = "dtEndDate";
+            this.dtEndDate.Size = new System.Drawing.Size(200, 29);
+            this.dtEndDate.TabIndex = 11;
             // 
-            // metroDateTime1
+            // dtStartDate
             // 
-            this.metroDateTime1.Location = new System.Drawing.Point(17, 212);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
-            this.metroDateTime1.Name = "metroDateTime1";
-            this.metroDateTime1.Size = new System.Drawing.Size(200, 29);
-            this.metroDateTime1.TabIndex = 10;
+            this.dtStartDate.Location = new System.Drawing.Point(17, 212);
+            this.dtStartDate.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtStartDate.Name = "dtStartDate";
+            this.dtStartDate.Size = new System.Drawing.Size(200, 29);
+            this.dtStartDate.TabIndex = 10;
             // 
-            // metroComboBox3
+            // cbxDuAn
             // 
-            this.metroComboBox3.FormattingEnabled = true;
-            this.metroComboBox3.ItemHeight = 23;
-            this.metroComboBox3.Location = new System.Drawing.Point(17, 162);
-            this.metroComboBox3.Name = "metroComboBox3";
-            this.metroComboBox3.Size = new System.Drawing.Size(240, 29);
-            this.metroComboBox3.TabIndex = 9;
-            this.metroComboBox3.UseSelectable = true;
+            this.cbxDuAn.FormattingEnabled = true;
+            this.cbxDuAn.ItemHeight = 23;
+            this.cbxDuAn.Location = new System.Drawing.Point(17, 162);
+            this.cbxDuAn.Name = "cbxDuAn";
+            this.cbxDuAn.Size = new System.Drawing.Size(240, 29);
+            this.cbxDuAn.TabIndex = 9;
+            this.cbxDuAn.UseSelectable = true;
             // 
-            // metroComboBox2
+            // cbxNhanVien
             // 
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 23;
-            this.metroComboBox2.Location = new System.Drawing.Point(17, 112);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(240, 29);
-            this.metroComboBox2.TabIndex = 8;
-            this.metroComboBox2.UseSelectable = true;
+            this.cbxNhanVien.FormattingEnabled = true;
+            this.cbxNhanVien.ItemHeight = 23;
+            this.cbxNhanVien.Location = new System.Drawing.Point(17, 112);
+            this.cbxNhanVien.Name = "cbxNhanVien";
+            this.cbxNhanVien.Size = new System.Drawing.Size(240, 29);
+            this.cbxNhanVien.TabIndex = 8;
+            this.cbxNhanVien.UseSelectable = true;
             // 
-            // metroComboBox1
+            // cbxLoaiQT
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(17, 61);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(240, 29);
-            this.metroComboBox1.TabIndex = 7;
-            this.metroComboBox1.UseSelectable = true;
+            this.cbxLoaiQT.FormattingEnabled = true;
+            this.cbxLoaiQT.ItemHeight = 23;
+            this.cbxLoaiQT.Location = new System.Drawing.Point(17, 61);
+            this.cbxLoaiQT.Name = "cbxLoaiQT";
+            this.cbxLoaiQT.Size = new System.Drawing.Size(240, 29);
+            this.cbxLoaiQT.TabIndex = 7;
+            this.cbxLoaiQT.UseSelectable = true;
             // 
-            // txtMaKH
-            // 
-            // 
+            // txtTen
             // 
             // 
-            this.txtMaKH.CustomButton.Image = null;
-            this.txtMaKH.CustomButton.Location = new System.Drawing.Point(218, 1);
-            this.txtMaKH.CustomButton.Name = "";
-            this.txtMaKH.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtMaKH.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtMaKH.CustomButton.TabIndex = 1;
-            this.txtMaKH.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtMaKH.CustomButton.UseSelectable = true;
-            this.txtMaKH.CustomButton.Visible = false;
-            this.txtMaKH.Lines = new string[0];
-            this.txtMaKH.Location = new System.Drawing.Point(17, 12);
-            this.txtMaKH.MaxLength = 32767;
-            this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.PasswordChar = '\0';
-            this.txtMaKH.ReadOnly = true;
-            this.txtMaKH.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtMaKH.SelectedText = "";
-            this.txtMaKH.SelectionLength = 0;
-            this.txtMaKH.SelectionStart = 0;
-            this.txtMaKH.ShortcutsEnabled = true;
-            this.txtMaKH.Size = new System.Drawing.Size(240, 23);
-            this.txtMaKH.TabIndex = 0;
-            this.txtMaKH.UseSelectable = true;
-            this.txtMaKH.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtMaKH.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // 
+            this.txtTen.CustomButton.Image = null;
+            this.txtTen.CustomButton.Location = new System.Drawing.Point(218, 1);
+            this.txtTen.CustomButton.Name = "";
+            this.txtTen.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtTen.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtTen.CustomButton.TabIndex = 1;
+            this.txtTen.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtTen.CustomButton.UseSelectable = true;
+            this.txtTen.CustomButton.Visible = false;
+            this.txtTen.Lines = new string[0];
+            this.txtTen.Location = new System.Drawing.Point(17, 12);
+            this.txtTen.MaxLength = 32767;
+            this.txtTen.Name = "txtTen";
+            this.txtTen.PasswordChar = '\0';
+            this.txtTen.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtTen.SelectedText = "";
+            this.txtTen.SelectionLength = 0;
+            this.txtTen.SelectionStart = 0;
+            this.txtTen.ShortcutsEnabled = true;
+            this.txtTen.Size = new System.Drawing.Size(240, 23);
+            this.txtTen.TabIndex = 0;
+            this.txtTen.UseSelectable = true;
+            this.txtTen.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtTen.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // panelLabel
             // 
@@ -262,23 +261,25 @@
             this.label1.Text = "Tên quy trình";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // metroButton1
+            // btnLuu
             // 
-            this.metroButton1.Location = new System.Drawing.Point(151, 377);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(75, 23);
-            this.metroButton1.TabIndex = 2;
-            this.metroButton1.Text = "Lưu";
-            this.metroButton1.UseSelectable = true;
+            this.btnLuu.Location = new System.Drawing.Point(151, 377);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.TabIndex = 2;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseSelectable = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // metroButton2
+            // btnHuy
             // 
-            this.metroButton2.Location = new System.Drawing.Point(408, 377);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(75, 23);
-            this.metroButton2.TabIndex = 3;
-            this.metroButton2.Text = "Hủy";
-            this.metroButton2.UseSelectable = true;
+            this.btnHuy.Location = new System.Drawing.Point(408, 377);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.TabIndex = 3;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseSelectable = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // TaoHoacCapNhatQuyTrinh
             // 
@@ -286,8 +287,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(78)))));
             this.ClientSize = new System.Drawing.Size(672, 422);
-            this.Controls.Add(this.metroButton2);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.btnHuy);
+            this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.panelThongTin);
             this.ForeColor = System.Drawing.Color.LightGray;
             this.Name = "TaoHoacCapNhatQuyTrinh";
@@ -303,13 +304,13 @@
 
         private System.Windows.Forms.Panel panelThongTin;
         private System.Windows.Forms.Panel panelContent;
-        private MetroFramework.Controls.MetroComboBox metroComboBox4;
-        private MetroFramework.Controls.MetroDateTime metroDateTime2;
-        private MetroFramework.Controls.MetroDateTime metroDateTime1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox3;
-        private MetroFramework.Controls.MetroComboBox metroComboBox2;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private MetroFramework.Controls.MetroTextBox txtMaKH;
+        private MetroFramework.Controls.MetroComboBox cbxTrangThai;
+        private MetroFramework.Controls.MetroDateTime dtEndDate;
+        private MetroFramework.Controls.MetroDateTime dtStartDate;
+        private MetroFramework.Controls.MetroComboBox cbxDuAn;
+        private MetroFramework.Controls.MetroComboBox cbxNhanVien;
+        private MetroFramework.Controls.MetroComboBox cbxLoaiQT;
+        private MetroFramework.Controls.MetroTextBox txtTen;
         private System.Windows.Forms.Panel panelLabel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -318,7 +319,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private MetroFramework.Controls.MetroButton metroButton1;
-        private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroButton btnLuu;
+        private MetroFramework.Controls.MetroButton btnHuy;
     }
 }

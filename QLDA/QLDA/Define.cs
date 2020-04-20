@@ -26,7 +26,7 @@ namespace QLDA
         public const string PREFIX_NHAN_VIEN = "NV-";
         public const string PREFIX_KHACH_HANG = "KH-";
         public const string PREFIX_HOP_DONG = "HD-";
-        public const string PREFIX_QUA_TRINH = "QT-";
+        public const string PREFIX_QUI_TRINH = "QT-";
         public const string PREFIX_CONG_VIEC = "CV-";
         public const string PREFIX_THANH_TOAN = "TT-";
 

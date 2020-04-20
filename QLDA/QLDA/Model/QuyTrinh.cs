@@ -24,7 +24,7 @@ namespace QLDA.Model
         [ForeignKey(nameof(Ma_DA))]
         public DuAn DuAn { get; set; }
 
-        public int Ma_NV { get; set; }
+        public int? Ma_NV { get; set; }
 
         [ForeignKey(nameof(Ma_NV))]
         public NhanVien NhanVien { get; set; }

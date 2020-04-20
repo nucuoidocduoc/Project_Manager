@@ -14,6 +14,7 @@ namespace QLDA
 
         private DanhMucProcessing _danhMucProcess;
         private QLDAProcessing _quanLyDuAnProcess;
+        private QLCVProcessing _quanLyCongViecProcessing;
 
         public MainForm()
         {
@@ -29,6 +30,7 @@ namespace QLDA
         {
             _danhMucProcess = new DanhMucProcessing(this);
             _quanLyDuAnProcess = new QLDAProcessing(this);
+            _quanLyCongViecProcessing = new QLCVProcessing(this);
         }
 
         //private void InitConnectDatabase()
@@ -120,6 +122,20 @@ namespace QLDA
         }
 
         #endregion quan ly du an
+
+        #region quan ly cong viec
+
+        private void btnQuyTrinh_Click(object sender, EventArgs e)
+        {
+            _quanLyCongViecProcessing.Show(ViewMode.QuyTrinh);
+        }
+
+        private void btnCongViec_Click(object sender, EventArgs e)
+        {
+            _quanLyCongViecProcessing.Show(ViewMode.CongViec);
+        }
+
+        #endregion quan ly cong viec
 
         #region other
 

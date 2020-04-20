@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using QLDA.Repository;
-using QLDA.View.QuanLyDuAn.ThanhToan.CheDoXem;
+﻿using QLDA.Repository;
 using QLDA.View.QuanLyCongViec.CongViec.CheDoXem;
+using QLDA.View.QuanLyDuAn.ThanhToan.CheDoXem;
+using System;
+using System.Windows.Forms;
 
 namespace QLDA.View.Common
 {
@@ -62,44 +55,95 @@ namespace QLDA.View.Common
                 Create = control.Create;
                 Updatee = control.Updatee;
                 Delete = control.Delete;
+                btnXemChiTiet.Visible = true;
             }
             else {
+                XemTatCa control = new XemTatCa(ViewMode.HopDong);
+                control.Dock = DockStyle.Fill;
+                panelContent.Controls.Clear();
+                panelContent.Controls.Add(control);
+                ViewDetail = control.ViewDetail;
+                Create = control.Create;
+                Updatee = control.Updatee;
+                Delete = control.Delete;
+                btnXemChiTiet.Visible = true;
             }
         }
 
         private void InitThanhToan()
         {
             if (rbtnXemTheoDuAn.Checked) {
-                Control control = new XemThanhToanTheoDuAn();
+                XemThanhToanTheoDuAn control = new XemThanhToanTheoDuAn();
                 control.Dock = DockStyle.Fill;
                 panelContent.Controls.Clear();
                 panelContent.Controls.Add(control);
+                Create = control.Create;
+                Updatee = control.Updatee;
+                Delete = control.Delete;
+                btnXemChiTiet.Visible = false;
             }
             else {
+                XemTatCa control = new XemTatCa(ViewMode.ThanhToan);
+                control.Dock = DockStyle.Fill;
+                panelContent.Controls.Clear();
+                panelContent.Controls.Add(control);
+                ViewDetail = control.ViewDetail;
+                Create = control.Create;
+                Updatee = control.Updatee;
+                Delete = control.Delete;
+                btnXemChiTiet.Visible = false;
             }
         }
 
         private void InitQuyTrinh()
         {
             if (rbtnXemTheoDuAn.Checked) {
-                Control control = new XemTheoDuAnLv1(ViewMode.QuyTrinh);
+                XemTheoDuAnLv1 control = new XemTheoDuAnLv1(ViewMode.QuyTrinh);
                 control.Dock = DockStyle.Fill;
                 panelContent.Controls.Clear();
                 panelContent.Controls.Add(control);
+                ViewDetail = control.ViewDetail;
+                Create = control.Create;
+                Updatee = control.Updatee;
+                Delete = control.Delete;
+                btnXemChiTiet.Visible = true;
             }
             else {
+                XemTatCa control = new XemTatCa(ViewMode.QuyTrinh);
+                control.Dock = DockStyle.Fill;
+                panelContent.Controls.Clear();
+                panelContent.Controls.Add(control);
+                ViewDetail = control.ViewDetail;
+                Create = control.Create;
+                Updatee = control.Updatee;
+                Delete = control.Delete;
+                btnXemChiTiet.Visible = true;
             }
         }
 
         private void InitCongViec()
         {
             if (rbtnXemTheoDuAn.Checked) {
-                Control control = new XemCongViecTheoDuAn();
+                XemCongViecTheoDuAn control = new XemCongViecTheoDuAn();
                 control.Dock = DockStyle.Fill;
                 panelContent.Controls.Clear();
                 panelContent.Controls.Add(control);
+
+                Create = control.Create;
+                Updatee = control.Updatee;
+                Delete = control.Delete;
+                btnXemChiTiet.Visible = false;
             }
             else {
+                XemTatCa control = new XemTatCa(ViewMode.CongViec);
+                control.Dock = DockStyle.Fill;
+                panelContent.Controls.Clear();
+                panelContent.Controls.Add(control);
+                ViewDetail = control.ViewDetail;
+                Create = control.Create;
+                Updatee = control.Updatee;
+                Delete = control.Delete;
+                btnXemChiTiet.Visible = false;
             }
         }
 
@@ -121,6 +165,27 @@ namespace QLDA.View.Common
         private void btnXoa_Click(object sender, EventArgs e)
         {
             Delete.Invoke();
+        }
+
+        private void rbtnXemTheoDuAn_CheckedChanged(object sender, EventArgs e)
+        {
+            switch (_viewMode) {
+                case ViewMode.HopDong:
+                    InitHopDong();
+                    break;
+
+                case ViewMode.ThanhToan:
+                    InitThanhToan();
+                    break;
+
+                case ViewMode.QuyTrinh:
+                    InitQuyTrinh();
+                    break;
+
+                case ViewMode.CongViec:
+                    InitCongViec();
+                    break;
+            }
         }
     }
 }

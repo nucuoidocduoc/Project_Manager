@@ -16,11 +16,11 @@ namespace QLDA.Model
 
         public string Ten { get; set; }
         public int Muc_Do_UT { get; set; }
-        public DateTime Thoi_Gian_BD { get; set; }
-        public DateTime Time { get; set; }
+        public DateTime Thoi_Gian_Giao { get; set; }
+        public DateTime Thoi_Gian_HH { get; set; }
         public string Trang_Thai { get; set; }
         public string Tai_Lieu { get; set; }
-        public int Ma_NV { get; set; }
+        public int? Ma_NV { get; set; }
 
         [ForeignKey(nameof(Ma_NV))]
         public NhanVien NhanVien { get; set; }

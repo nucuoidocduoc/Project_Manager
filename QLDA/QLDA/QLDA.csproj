@@ -199,6 +199,12 @@
     <Compile Include="View\Common\DanhSachLv0.Designer.cs">
       <DependentUpon>DanhSachLv0.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Common\XemTatCa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Common\XemTatCa.Designer.cs">
+      <DependentUpon>XemTatCa.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Common\XemTheoDuAnLv1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -283,6 +289,7 @@
     <Compile Include="View\QuanLyDuAn\ThanhToan\TaoHoacCapNhatTT.Designer.cs">
       <DependentUpon>TaoHoacCapNhatTT.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Template\DanhSachCongViecTemplate.cs" />
     <Compile Include="View\Template\DanhSachDuAnTemplate.cs" />
     <Compile Include="View\Template\DanhSachHopDongTemplate.cs" />
     <Compile Include="View\Template\DanhSachKhachHangTemplate.cs" />
@@ -307,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Common\DanhSachLv0.resx">
       <DependentUpon>DanhSachLv0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Common\XemTatCa.resx">
+      <DependentUpon>XemTatCa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Common\XemTheoDuAnLv1.resx">
       <DependentUpon>XemTheoDuAnLv1.cs</DependentUpon>
