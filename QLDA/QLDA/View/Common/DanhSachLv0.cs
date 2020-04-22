@@ -4,6 +4,7 @@ using QLDA.View.DanhMuc.NhanVien;
 using QLDA.View.QuanLyDuAn.DuAn;
 using QLDA.View.Template;
 using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -24,6 +25,7 @@ namespace QLDA.View.Common
         public DanhSachLv0(ViewMode lvType)
         {
             InitializeComponent();
+
             _repository = RepositoryWrapper.Create();
             this.Dock = DockStyle.Fill;
             _lvTypeSelected = lvType;
@@ -42,13 +44,13 @@ namespace QLDA.View.Common
         {
             labelDanhSach.Text = Define.DANH_SACH_KHACH_HANG_HEADER;
             lvDanhSach.View = System.Windows.Forms.View.Details;
-            lvDanhSach.Columns.Add(DanhSachKhachHangTemplate.Id, Convert.ToInt32(lvDanhSach.Width * 0.1), HorizontalAlignment.Center);
+            lvDanhSach.Columns.Add(DanhSachKhachHangTemplate.Id, Convert.ToInt32(lvDanhSach.Width * 0.2), HorizontalAlignment.Center);
             lvDanhSach.Columns.Add(DanhSachKhachHangTemplate.Name, Convert.ToInt32(lvDanhSach.Width * 0.2), HorizontalAlignment.Center);
-            lvDanhSach.Columns.Add(DanhSachKhachHangTemplate.Address, Convert.ToInt32(lvDanhSach.Width * 0.2), HorizontalAlignment.Center);
-            lvDanhSach.Columns.Add(DanhSachKhachHangTemplate.PhoneNumber, Convert.ToInt32(lvDanhSach.Width * 0.2), HorizontalAlignment.Center);
+            lvDanhSach.Columns.Add(DanhSachKhachHangTemplate.Address, Convert.ToInt32(lvDanhSach.Width * 0.1), HorizontalAlignment.Center);
+            lvDanhSach.Columns.Add(DanhSachKhachHangTemplate.PhoneNumber, Convert.ToInt32(lvDanhSach.Width * 0.1), HorizontalAlignment.Center);
             lvDanhSach.Columns.Add(DanhSachKhachHangTemplate.MST, Convert.ToInt32(lvDanhSach.Width * 0.1), HorizontalAlignment.Center);
             lvDanhSach.Columns.Add(DanhSachKhachHangTemplate.STK, Convert.ToInt32(lvDanhSach.Width * 0.1), HorizontalAlignment.Center);
-            lvDanhSach.Columns.Add(DanhSachKhachHangTemplate.BankName, Convert.ToInt32(lvDanhSach.Width * 0.1), HorizontalAlignment.Center);
+            lvDanhSach.Columns.Add(DanhSachKhachHangTemplate.BankName, Convert.ToInt32(lvDanhSach.Width * 0.2), HorizontalAlignment.Center);
 
             InitDataListViewKhachHang();
             //int i = 1;
@@ -250,6 +252,25 @@ namespace QLDA.View.Common
                     InitDataListViewDuAn(true);
                 }
             }
+        }
+
+        private void lvDanhSach_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.Graphics.FillRectangle(Brushes.DarkGray, e.Bounds);
+            e.DrawText();
+        }
+
+        private void lvDanhSach_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
+        {
+            e.DrawDefault = true;
+            //if(e.ItemState&&ListViewItemStates.Focused) {
+            //    e.Graphics.FillRectangle(SystemBrushes.Highlight, e.Bounds);
+            //    e.Graphics.DrawString(e.Item.Text, lv.Font, SystemBrushes.HighlightText, e.Bounds);
+            //}
+            //else {
+            //    e.DrawBackground();
+            //    e.DrawText();
+            //}
         }
     }
 }

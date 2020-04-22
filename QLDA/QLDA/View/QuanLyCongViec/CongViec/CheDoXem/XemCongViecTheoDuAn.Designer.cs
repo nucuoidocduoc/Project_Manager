@@ -36,9 +36,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lvDuAn = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -46,21 +48,23 @@
             this.panel1.Controls.Add(this.lvCv);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(226, 0);
+            this.panel1.Location = new System.Drawing.Point(204, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(980, 592);
+            this.panel1.Size = new System.Drawing.Size(1002, 592);
             this.panel1.TabIndex = 11;
             // 
             // lvCv
             // 
             this.lvCv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvCv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvCv.FullRowSelect = true;
             this.lvCv.HideSelection = false;
             this.lvCv.Location = new System.Drawing.Point(0, 45);
             this.lvCv.Name = "lvCv";
-            this.lvCv.Size = new System.Drawing.Size(980, 547);
+            this.lvCv.Size = new System.Drawing.Size(1002, 547);
             this.lvCv.TabIndex = 6;
             this.lvCv.UseCompatibleStateImageBehavior = false;
+            this.lvCv.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvCv_DrawColumnHeader);
             // 
             // panel2
             // 
@@ -70,15 +74,15 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(980, 45);
+            this.panel2.Size = new System.Drawing.Size(1002, 45);
             this.panel2.TabIndex = 0;
             // 
             // label2
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label2.Location = new System.Drawing.Point(796, 0);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(652, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(184, 45);
+            this.label2.Size = new System.Drawing.Size(140, 45);
             this.label2.TabIndex = 3;
             this.label2.Text = "Chọn quy trình";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -87,7 +91,7 @@
             // 
             this.cbxQT.FormattingEnabled = true;
             this.cbxQT.ItemHeight = 23;
-            this.cbxQT.Location = new System.Drawing.Point(574, 10);
+            this.cbxQT.Location = new System.Drawing.Point(798, 10);
             this.cbxQT.Name = "cbxQT";
             this.cbxQT.Size = new System.Drawing.Size(184, 29);
             this.cbxQT.TabIndex = 2;
@@ -97,6 +101,7 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 45);
@@ -109,7 +114,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox1.Location = new System.Drawing.Point(190, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 592);
+            this.pictureBox1.Size = new System.Drawing.Size(14, 592);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
@@ -118,6 +123,7 @@
             this.lvDuAn.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
             this.lvDuAn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lvDuAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvDuAn.FullRowSelect = true;
             this.lvDuAn.HideSelection = false;
             this.lvDuAn.Location = new System.Drawing.Point(0, 0);
@@ -127,6 +133,7 @@
             this.lvDuAn.TabIndex = 9;
             this.lvDuAn.UseCompatibleStateImageBehavior = false;
             this.lvDuAn.View = System.Windows.Forms.View.Details;
+            this.lvDuAn.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvDuAn_DrawColumnHeader);
             this.lvDuAn.SelectedIndexChanged += new System.EventHandler(this.lvDuAn_SelectedIndexChanged);
             // 
             // columnHeader1
@@ -134,11 +141,21 @@
             this.columnHeader1.Text = "Dự án";
             this.columnHeader1.Width = 185;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox2.Location = new System.Drawing.Point(1192, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(14, 592);
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
             // XemCongViecTheoDuAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(78)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lvDuAn);
@@ -148,6 +165,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -163,5 +181,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListView lvDuAn;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

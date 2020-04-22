@@ -1,13 +1,7 @@
 ﻿using QLDA.Repository;
 using QLDA.View.Template;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLDA.View.QuanLyDuAn.HopDong
@@ -49,9 +43,10 @@ namespace QLDA.View.QuanLyDuAn.HopDong
             foreach (var duAn in duAns) {
                 cbxDuAn.Items.Add(new ItemComboboxTemplate() { Id = duAn.Ma_DA, Prefix = Define.PREFIX_DU_AN + duAn.Ma_DA, Content = duAn.Ten });
             }
-            cbxTrangThai.Items.Add(Define.PENDING);
             cbxTrangThai.Items.Add(Define.FINISHED);
+            cbxTrangThai.Items.Add(Define.PAUSE);
             cbxTrangThai.Items.Add(Define.UNFINISH);
+            cbxTrangThai.SelectedIndex = 0;
             return true;
         }
 

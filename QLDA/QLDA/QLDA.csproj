@@ -164,7 +164,7 @@
     </Compile>
     <Compile Include="Context\RepositoryContext.cs" />
     <Compile Include="Model\CongViec.cs" />
-    <Compile Include="Model\DangNhap.cs" />
+    <Compile Include="Model\TaiKhoan.cs" />
     <Compile Include="Model\DuAn.cs" />
     <Compile Include="Model\HopDong.cs" />
     <Compile Include="Model\KhachHang.cs" />
@@ -375,6 +375,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resource\HomeIcon.png" />
     <Content Include="Resource\manager.ico" />
   </ItemGroup>
   <ItemGroup>

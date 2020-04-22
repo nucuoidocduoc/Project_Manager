@@ -6,6 +6,7 @@ using QLDA.View.QuanLyDuAn.ThanhToan;
 using QLDA.View.Template;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -131,7 +132,7 @@ namespace QLDA.View.Common
                     tt.Hinh_Thuc,
                     tt.Thoi_Gian_TT.ToLongDateString()
                 };
-                lvXemTatCa.Items.Add(new ListViewItem(values));
+                lvXemTatCa.Items.Add(new ListViewItem(values) { Tag = tt.Ma_TT });
             }
         }
 
@@ -319,6 +320,12 @@ namespace QLDA.View.Common
                     xemChiTietQT.ShowDialog();
                     break;
             }
+        }
+
+        private void lvXemTatCa_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.Graphics.FillRectangle(Brushes.DarkGray, e.Bounds);
+            e.DrawText();
         }
     }
 }

@@ -29,9 +29,14 @@
         {
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelDanhSachDA = new System.Windows.Forms.Panel();
+            this.lvCv = new System.Windows.Forms.ListView();
             this.label8 = new System.Windows.Forms.Label();
             this.panelThongTin = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.txtStatus = new MetroFramework.Controls.MetroTextBox();
+            this.txtDuAn = new MetroFramework.Controls.MetroTextBox();
+            this.txtNV = new MetroFramework.Controls.MetroTextBox();
+            this.txtLoaiQT = new MetroFramework.Controls.MetroTextBox();
             this.dtEndDate = new MetroFramework.Controls.MetroDateTime();
             this.dtStartDate = new MetroFramework.Controls.MetroDateTime();
             this.txtTen = new MetroFramework.Controls.MetroTextBox();
@@ -43,11 +48,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtLoaiQT = new MetroFramework.Controls.MetroTextBox();
-            this.txtNV = new MetroFramework.Controls.MetroTextBox();
-            this.txtDuAn = new MetroFramework.Controls.MetroTextBox();
-            this.txtStatus = new MetroFramework.Controls.MetroTextBox();
-            this.lvCv = new System.Windows.Forms.ListView();
             this.panelMain.SuspendLayout();
             this.panelDanhSachDA.SuspendLayout();
             this.panelThongTin.SuspendLayout();
@@ -57,7 +57,7 @@
             // 
             // panelMain
             // 
-            this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(78)))));
+            this.panelMain.BackColor = System.Drawing.Color.Transparent;
             this.panelMain.Controls.Add(this.panelDanhSachDA);
             this.panelMain.Controls.Add(this.panelThongTin);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -76,6 +76,18 @@
             this.panelDanhSachDA.Size = new System.Drawing.Size(688, 246);
             this.panelDanhSachDA.TabIndex = 1;
             // 
+            // lvCv
+            // 
+            this.lvCv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvCv.HideSelection = false;
+            this.lvCv.Location = new System.Drawing.Point(12, 35);
+            this.lvCv.Name = "lvCv";
+            this.lvCv.OwnerDraw = true;
+            this.lvCv.Size = new System.Drawing.Size(664, 199);
+            this.lvCv.TabIndex = 9;
+            this.lvCv.UseCompatibleStateImageBehavior = false;
+            this.lvCv.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvCv_DrawColumnHeader);
+            // 
             // label8
             // 
             this.label8.Dock = System.Windows.Forms.DockStyle.Top;
@@ -91,6 +103,7 @@
             // 
             // panelThongTin
             // 
+            this.panelThongTin.BackColor = System.Drawing.Color.Transparent;
             this.panelThongTin.Controls.Add(this.panelContent);
             this.panelThongTin.Controls.Add(this.panelLabel);
             this.panelThongTin.Dock = System.Windows.Forms.DockStyle.Top;
@@ -114,9 +127,138 @@
             this.panelContent.Size = new System.Drawing.Size(462, 361);
             this.panelContent.TabIndex = 1;
             // 
+            // txtStatus
+            // 
+            // 
+            // 
+            // 
+            this.txtStatus.CustomButton.Image = null;
+            this.txtStatus.CustomButton.Location = new System.Drawing.Point(218, 1);
+            this.txtStatus.CustomButton.Name = "";
+            this.txtStatus.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtStatus.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtStatus.CustomButton.TabIndex = 1;
+            this.txtStatus.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtStatus.CustomButton.UseSelectable = true;
+            this.txtStatus.CustomButton.Visible = false;
+            this.txtStatus.Enabled = false;
+            this.txtStatus.Lines = new string[0];
+            this.txtStatus.Location = new System.Drawing.Point(17, 315);
+            this.txtStatus.MaxLength = 32767;
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.PasswordChar = '\0';
+            this.txtStatus.ReadOnly = true;
+            this.txtStatus.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtStatus.SelectedText = "";
+            this.txtStatus.SelectionLength = 0;
+            this.txtStatus.SelectionStart = 0;
+            this.txtStatus.ShortcutsEnabled = true;
+            this.txtStatus.Size = new System.Drawing.Size(240, 23);
+            this.txtStatus.TabIndex = 16;
+            this.txtStatus.UseSelectable = true;
+            this.txtStatus.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtStatus.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txtDuAn
+            // 
+            // 
+            // 
+            // 
+            this.txtDuAn.CustomButton.Image = null;
+            this.txtDuAn.CustomButton.Location = new System.Drawing.Point(218, 1);
+            this.txtDuAn.CustomButton.Name = "";
+            this.txtDuAn.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDuAn.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDuAn.CustomButton.TabIndex = 1;
+            this.txtDuAn.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDuAn.CustomButton.UseSelectable = true;
+            this.txtDuAn.CustomButton.Visible = false;
+            this.txtDuAn.Enabled = false;
+            this.txtDuAn.Lines = new string[0];
+            this.txtDuAn.Location = new System.Drawing.Point(17, 165);
+            this.txtDuAn.MaxLength = 32767;
+            this.txtDuAn.Name = "txtDuAn";
+            this.txtDuAn.PasswordChar = '\0';
+            this.txtDuAn.ReadOnly = true;
+            this.txtDuAn.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDuAn.SelectedText = "";
+            this.txtDuAn.SelectionLength = 0;
+            this.txtDuAn.SelectionStart = 0;
+            this.txtDuAn.ShortcutsEnabled = true;
+            this.txtDuAn.Size = new System.Drawing.Size(240, 23);
+            this.txtDuAn.TabIndex = 15;
+            this.txtDuAn.UseSelectable = true;
+            this.txtDuAn.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDuAn.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txtNV
+            // 
+            // 
+            // 
+            // 
+            this.txtNV.CustomButton.Image = null;
+            this.txtNV.CustomButton.Location = new System.Drawing.Point(218, 1);
+            this.txtNV.CustomButton.Name = "";
+            this.txtNV.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtNV.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtNV.CustomButton.TabIndex = 1;
+            this.txtNV.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtNV.CustomButton.UseSelectable = true;
+            this.txtNV.CustomButton.Visible = false;
+            this.txtNV.Enabled = false;
+            this.txtNV.Lines = new string[0];
+            this.txtNV.Location = new System.Drawing.Point(17, 114);
+            this.txtNV.MaxLength = 32767;
+            this.txtNV.Name = "txtNV";
+            this.txtNV.PasswordChar = '\0';
+            this.txtNV.ReadOnly = true;
+            this.txtNV.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNV.SelectedText = "";
+            this.txtNV.SelectionLength = 0;
+            this.txtNV.SelectionStart = 0;
+            this.txtNV.ShortcutsEnabled = true;
+            this.txtNV.Size = new System.Drawing.Size(240, 23);
+            this.txtNV.TabIndex = 14;
+            this.txtNV.UseSelectable = true;
+            this.txtNV.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtNV.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txtLoaiQT
+            // 
+            // 
+            // 
+            // 
+            this.txtLoaiQT.CustomButton.Image = null;
+            this.txtLoaiQT.CustomButton.Location = new System.Drawing.Point(218, 1);
+            this.txtLoaiQT.CustomButton.Name = "";
+            this.txtLoaiQT.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtLoaiQT.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtLoaiQT.CustomButton.TabIndex = 1;
+            this.txtLoaiQT.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtLoaiQT.CustomButton.UseSelectable = true;
+            this.txtLoaiQT.CustomButton.Visible = false;
+            this.txtLoaiQT.Enabled = false;
+            this.txtLoaiQT.Lines = new string[0];
+            this.txtLoaiQT.Location = new System.Drawing.Point(17, 63);
+            this.txtLoaiQT.MaxLength = 32767;
+            this.txtLoaiQT.Name = "txtLoaiQT";
+            this.txtLoaiQT.PasswordChar = '\0';
+            this.txtLoaiQT.ReadOnly = true;
+            this.txtLoaiQT.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtLoaiQT.SelectedText = "";
+            this.txtLoaiQT.SelectionLength = 0;
+            this.txtLoaiQT.SelectionStart = 0;
+            this.txtLoaiQT.ShortcutsEnabled = true;
+            this.txtLoaiQT.Size = new System.Drawing.Size(240, 23);
+            this.txtLoaiQT.TabIndex = 13;
+            this.txtLoaiQT.UseSelectable = true;
+            this.txtLoaiQT.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtLoaiQT.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // dtEndDate
             // 
             this.dtEndDate.Enabled = false;
+            this.dtEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtEndDate.Location = new System.Drawing.Point(17, 264);
             this.dtEndDate.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtEndDate.Name = "dtEndDate";
@@ -126,6 +268,7 @@
             // dtStartDate
             // 
             this.dtStartDate.Enabled = false;
+            this.dtStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtStartDate.Location = new System.Drawing.Point(17, 212);
             this.dtStartDate.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtStartDate.Name = "dtStartDate";
@@ -263,154 +406,16 @@
             this.label1.Text = "Tên quy trình";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtLoaiQT
-            // 
-            // 
-            // 
-            // 
-            this.txtLoaiQT.CustomButton.Image = null;
-            this.txtLoaiQT.CustomButton.Location = new System.Drawing.Point(218, 1);
-            this.txtLoaiQT.CustomButton.Name = "";
-            this.txtLoaiQT.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtLoaiQT.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtLoaiQT.CustomButton.TabIndex = 1;
-            this.txtLoaiQT.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtLoaiQT.CustomButton.UseSelectable = true;
-            this.txtLoaiQT.CustomButton.Visible = false;
-            this.txtLoaiQT.Enabled = false;
-            this.txtLoaiQT.Lines = new string[0];
-            this.txtLoaiQT.Location = new System.Drawing.Point(17, 63);
-            this.txtLoaiQT.MaxLength = 32767;
-            this.txtLoaiQT.Name = "txtLoaiQT";
-            this.txtLoaiQT.PasswordChar = '\0';
-            this.txtLoaiQT.ReadOnly = true;
-            this.txtLoaiQT.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtLoaiQT.SelectedText = "";
-            this.txtLoaiQT.SelectionLength = 0;
-            this.txtLoaiQT.SelectionStart = 0;
-            this.txtLoaiQT.ShortcutsEnabled = true;
-            this.txtLoaiQT.Size = new System.Drawing.Size(240, 23);
-            this.txtLoaiQT.TabIndex = 13;
-            this.txtLoaiQT.UseSelectable = true;
-            this.txtLoaiQT.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtLoaiQT.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // txtNV
-            // 
-            // 
-            // 
-            // 
-            this.txtNV.CustomButton.Image = null;
-            this.txtNV.CustomButton.Location = new System.Drawing.Point(218, 1);
-            this.txtNV.CustomButton.Name = "";
-            this.txtNV.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtNV.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtNV.CustomButton.TabIndex = 1;
-            this.txtNV.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtNV.CustomButton.UseSelectable = true;
-            this.txtNV.CustomButton.Visible = false;
-            this.txtNV.Enabled = false;
-            this.txtNV.Lines = new string[0];
-            this.txtNV.Location = new System.Drawing.Point(17, 114);
-            this.txtNV.MaxLength = 32767;
-            this.txtNV.Name = "txtNV";
-            this.txtNV.PasswordChar = '\0';
-            this.txtNV.ReadOnly = true;
-            this.txtNV.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtNV.SelectedText = "";
-            this.txtNV.SelectionLength = 0;
-            this.txtNV.SelectionStart = 0;
-            this.txtNV.ShortcutsEnabled = true;
-            this.txtNV.Size = new System.Drawing.Size(240, 23);
-            this.txtNV.TabIndex = 14;
-            this.txtNV.UseSelectable = true;
-            this.txtNV.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtNV.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // txtDuAn
-            // 
-            // 
-            // 
-            // 
-            this.txtDuAn.CustomButton.Image = null;
-            this.txtDuAn.CustomButton.Location = new System.Drawing.Point(218, 1);
-            this.txtDuAn.CustomButton.Name = "";
-            this.txtDuAn.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtDuAn.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDuAn.CustomButton.TabIndex = 1;
-            this.txtDuAn.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtDuAn.CustomButton.UseSelectable = true;
-            this.txtDuAn.CustomButton.Visible = false;
-            this.txtDuAn.Enabled = false;
-            this.txtDuAn.Lines = new string[0];
-            this.txtDuAn.Location = new System.Drawing.Point(17, 165);
-            this.txtDuAn.MaxLength = 32767;
-            this.txtDuAn.Name = "txtDuAn";
-            this.txtDuAn.PasswordChar = '\0';
-            this.txtDuAn.ReadOnly = true;
-            this.txtDuAn.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDuAn.SelectedText = "";
-            this.txtDuAn.SelectionLength = 0;
-            this.txtDuAn.SelectionStart = 0;
-            this.txtDuAn.ShortcutsEnabled = true;
-            this.txtDuAn.Size = new System.Drawing.Size(240, 23);
-            this.txtDuAn.TabIndex = 15;
-            this.txtDuAn.UseSelectable = true;
-            this.txtDuAn.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtDuAn.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // txtStatus
-            // 
-            // 
-            // 
-            // 
-            this.txtStatus.CustomButton.Image = null;
-            this.txtStatus.CustomButton.Location = new System.Drawing.Point(218, 1);
-            this.txtStatus.CustomButton.Name = "";
-            this.txtStatus.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtStatus.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtStatus.CustomButton.TabIndex = 1;
-            this.txtStatus.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtStatus.CustomButton.UseSelectable = true;
-            this.txtStatus.CustomButton.Visible = false;
-            this.txtStatus.Enabled = false;
-            this.txtStatus.Lines = new string[0];
-            this.txtStatus.Location = new System.Drawing.Point(17, 315);
-            this.txtStatus.MaxLength = 32767;
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.PasswordChar = '\0';
-            this.txtStatus.ReadOnly = true;
-            this.txtStatus.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtStatus.SelectedText = "";
-            this.txtStatus.SelectionLength = 0;
-            this.txtStatus.SelectionStart = 0;
-            this.txtStatus.ShortcutsEnabled = true;
-            this.txtStatus.Size = new System.Drawing.Size(240, 23);
-            this.txtStatus.TabIndex = 16;
-            this.txtStatus.UseSelectable = true;
-            this.txtStatus.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtStatus.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // lvCv
-            // 
-            this.lvCv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvCv.HideSelection = false;
-            this.lvCv.Location = new System.Drawing.Point(0, 35);
-            this.lvCv.Name = "lvCv";
-            this.lvCv.Size = new System.Drawing.Size(688, 211);
-            this.lvCv.TabIndex = 9;
-            this.lvCv.UseCompatibleStateImageBehavior = false;
-            // 
             // XemChiTietQuyTrinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(78)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(688, 607);
             this.Controls.Add(this.panelMain);
             this.ForeColor = System.Drawing.Color.LightGray;
             this.Name = "XemChiTietQuyTrinh";
-            this.Text = "TaoHoacCapNhatQT";
+            this.Text = "Xem Chi Tiết";
             this.panelMain.ResumeLayout(false);
             this.panelDanhSachDA.ResumeLayout(false);
             this.panelThongTin.ResumeLayout(false);

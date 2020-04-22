@@ -146,7 +146,7 @@ namespace QLDA
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
         }
+        #endregion
 
-        #endregion other
     }
 }

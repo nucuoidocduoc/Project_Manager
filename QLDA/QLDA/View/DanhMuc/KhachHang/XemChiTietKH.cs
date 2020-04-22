@@ -78,5 +78,11 @@ namespace QLDA.View.DanhMuc.KhachHang
                 }
             }
         }
+
+        private void lvDSDA_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.Graphics.FillRectangle(Brushes.DarkGray, e.Bounds);
+            e.DrawText();
+        }
     }
 }

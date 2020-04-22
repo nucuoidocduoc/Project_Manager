@@ -79,6 +79,7 @@ namespace QLDA.View.QuanLyCongViec.QuyTrinh
                         cbxDuAn.SelectedItem = item;
                     }
                 }
+                cbxDuAn.Enabled = false;
             }
         }
 

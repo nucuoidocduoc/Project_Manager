@@ -148,5 +148,17 @@ namespace QLDA.View.QuanLyCongViec.CongViec.CheDoXem
             _currentIdQTSelected = ((ItemComboboxTemplate)cbxQT.SelectedItem).Id;
             InitDsCV();
         }
+
+        private void lvCv_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.Graphics.FillRectangle(Brushes.DarkGray, e.Bounds);
+            e.DrawText();
+        }
+
+        private void lvDuAn_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.Graphics.FillRectangle(Brushes.DarkGray, e.Bounds);
+            e.DrawText();
+        }
     }
 }

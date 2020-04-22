@@ -38,15 +38,14 @@
             this.dtThoiGianKT = new MetroFramework.Controls.MetroDateTime();
             this.dtThoiGianBD = new MetroFramework.Controls.MetroDateTime();
             this.txtTrangThai = new MetroFramework.Controls.MetroTextBox();
-            this.txtThanhTien = new MetroFramework.Controls.MetroTextBox();
             this.panelHeader2 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panelThongTin1 = new System.Windows.Forms.Panel();
             this.panelContent1 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
             this.txtTongDauTu = new MetroFramework.Controls.MetroTextBox();
             this.txtGiamDoc = new MetroFramework.Controls.MetroTextBox();
             this.txtDiaDiem = new MetroFramework.Controls.MetroTextBox();
@@ -64,8 +63,8 @@
             this.lvDSHD = new System.Windows.Forms.ListView();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
             this.lvDSQT = new System.Windows.Forms.ListView();
+            this.label11 = new System.Windows.Forms.Label();
             this.panelThongTinDuAn.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -113,6 +112,7 @@
             // label9
             // 
             this.label9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(229, 56);
@@ -135,9 +135,9 @@
             this.panelThongTin2.Controls.Add(this.panelContent2);
             this.panelThongTin2.Controls.Add(this.panelHeader2);
             this.panelThongTin2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelThongTin2.Location = new System.Drawing.Point(461, 0);
+            this.panelThongTin2.Location = new System.Drawing.Point(480, 0);
             this.panelThongTin2.Name = "panelThongTin2";
-            this.panelThongTin2.Size = new System.Drawing.Size(467, 250);
+            this.panelThongTin2.Size = new System.Drawing.Size(448, 250);
             this.panelThongTin2.TabIndex = 3;
             // 
             // panelContent2
@@ -146,17 +146,17 @@
             this.panelContent2.Controls.Add(this.dtThoiGianKT);
             this.panelContent2.Controls.Add(this.dtThoiGianBD);
             this.panelContent2.Controls.Add(this.txtTrangThai);
-            this.panelContent2.Controls.Add(this.txtThanhTien);
             this.panelContent2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent2.Location = new System.Drawing.Point(229, 0);
             this.panelContent2.Name = "panelContent2";
-            this.panelContent2.Size = new System.Drawing.Size(238, 250);
+            this.panelContent2.Size = new System.Drawing.Size(219, 250);
             this.panelContent2.TabIndex = 3;
             // 
             // dtThoiGianTT
             // 
             this.dtThoiGianTT.Enabled = false;
-            this.dtThoiGianTT.Location = new System.Drawing.Point(6, 125);
+            this.dtThoiGianTT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtThoiGianTT.Location = new System.Drawing.Point(0, 86);
             this.dtThoiGianTT.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtThoiGianTT.Name = "dtThoiGianTT";
             this.dtThoiGianTT.Size = new System.Drawing.Size(200, 29);
@@ -165,7 +165,8 @@
             // dtThoiGianKT
             // 
             this.dtThoiGianKT.Enabled = false;
-            this.dtThoiGianKT.Location = new System.Drawing.Point(6, 87);
+            this.dtThoiGianKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtThoiGianKT.Location = new System.Drawing.Point(0, 48);
             this.dtThoiGianKT.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtThoiGianKT.Name = "dtThoiGianKT";
             this.dtThoiGianKT.Size = new System.Drawing.Size(200, 29);
@@ -174,7 +175,8 @@
             // dtThoiGianBD
             // 
             this.dtThoiGianBD.Enabled = false;
-            this.dtThoiGianBD.Location = new System.Drawing.Point(6, 46);
+            this.dtThoiGianBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtThoiGianBD.Location = new System.Drawing.Point(0, 7);
             this.dtThoiGianBD.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtThoiGianBD.Name = "dtThoiGianBD";
             this.dtThoiGianBD.Size = new System.Drawing.Size(200, 29);
@@ -195,7 +197,7 @@
             this.txtTrangThai.CustomButton.UseSelectable = true;
             this.txtTrangThai.CustomButton.Visible = false;
             this.txtTrangThai.Lines = new string[0];
-            this.txtTrangThai.Location = new System.Drawing.Point(6, 169);
+            this.txtTrangThai.Location = new System.Drawing.Point(0, 130);
             this.txtTrangThai.MaxLength = 32767;
             this.txtTrangThai.Name = "txtTrangThai";
             this.txtTrangThai.PasswordChar = '\0';
@@ -211,44 +213,12 @@
             this.txtTrangThai.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTrangThai.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // txtThanhTien
-            // 
-            // 
-            // 
-            // 
-            this.txtThanhTien.CustomButton.Image = null;
-            this.txtThanhTien.CustomButton.Location = new System.Drawing.Point(176, 1);
-            this.txtThanhTien.CustomButton.Name = "";
-            this.txtThanhTien.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtThanhTien.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtThanhTien.CustomButton.TabIndex = 1;
-            this.txtThanhTien.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtThanhTien.CustomButton.UseSelectable = true;
-            this.txtThanhTien.CustomButton.Visible = false;
-            this.txtThanhTien.Lines = new string[0];
-            this.txtThanhTien.Location = new System.Drawing.Point(6, 8);
-            this.txtThanhTien.MaxLength = 32767;
-            this.txtThanhTien.Name = "txtThanhTien";
-            this.txtThanhTien.PasswordChar = '\0';
-            this.txtThanhTien.ReadOnly = true;
-            this.txtThanhTien.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtThanhTien.SelectedText = "";
-            this.txtThanhTien.SelectionLength = 0;
-            this.txtThanhTien.SelectionStart = 0;
-            this.txtThanhTien.ShortcutsEnabled = true;
-            this.txtThanhTien.Size = new System.Drawing.Size(198, 23);
-            this.txtThanhTien.TabIndex = 2;
-            this.txtThanhTien.UseSelectable = true;
-            this.txtThanhTien.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtThanhTien.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // panelHeader2
             // 
             this.panelHeader2.Controls.Add(this.label14);
             this.panelHeader2.Controls.Add(this.label13);
             this.panelHeader2.Controls.Add(this.label8);
             this.panelHeader2.Controls.Add(this.label7);
-            this.panelHeader2.Controls.Add(this.label6);
             this.panelHeader2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelHeader2.Location = new System.Drawing.Point(0, 0);
             this.panelHeader2.Name = "panelHeader2";
@@ -258,7 +228,8 @@
             // label14
             // 
             this.label14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label14.Location = new System.Drawing.Point(0, 160);
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(0, 120);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(229, 40);
             this.label14.TabIndex = 10;
@@ -268,7 +239,8 @@
             // label13
             // 
             this.label13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label13.Location = new System.Drawing.Point(0, 120);
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(0, 80);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(229, 40);
             this.label13.TabIndex = 9;
@@ -278,7 +250,8 @@
             // label8
             // 
             this.label8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label8.Location = new System.Drawing.Point(0, 80);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(0, 40);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(229, 40);
             this.label8.TabIndex = 8;
@@ -288,22 +261,13 @@
             // label7
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label7.Location = new System.Drawing.Point(0, 40);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(229, 40);
             this.label7.TabIndex = 7;
             this.label7.Text = "Thời gian bắt đầu";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Location = new System.Drawing.Point(0, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(229, 40);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Thành tiền";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelThongTin1
             // 
@@ -312,11 +276,12 @@
             this.panelThongTin1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelThongTin1.Location = new System.Drawing.Point(0, 0);
             this.panelThongTin1.Name = "panelThongTin1";
-            this.panelThongTin1.Size = new System.Drawing.Size(461, 250);
+            this.panelThongTin1.Size = new System.Drawing.Size(480, 250);
             this.panelThongTin1.TabIndex = 2;
             // 
             // panelContent1
             // 
+            this.panelContent1.Controls.Add(this.label15);
             this.panelContent1.Controls.Add(this.txtTongDauTu);
             this.panelContent1.Controls.Add(this.txtGiamDoc);
             this.panelContent1.Controls.Add(this.txtDiaDiem);
@@ -326,8 +291,18 @@
             this.panelContent1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent1.Location = new System.Drawing.Point(229, 0);
             this.panelContent1.Name = "panelContent1";
-            this.panelContent1.Size = new System.Drawing.Size(232, 250);
+            this.panelContent1.Size = new System.Drawing.Size(251, 250);
             this.panelContent1.TabIndex = 1;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(210, 214);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(30, 13);
+            this.label15.TabIndex = 6;
+            this.label15.Text = "VND";
             // 
             // txtTongDauTu
             // 
@@ -532,6 +507,7 @@
             // label5
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(0, 200);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(229, 40);
@@ -542,6 +518,7 @@
             // label12
             // 
             this.label12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(0, 160);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(229, 40);
@@ -552,6 +529,7 @@
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(0, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(229, 40);
@@ -562,6 +540,7 @@
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(0, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(229, 40);
@@ -572,6 +551,7 @@
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(0, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(229, 40);
@@ -582,6 +562,7 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(229, 40);
@@ -601,17 +582,19 @@
             // 
             // lvDSHD
             // 
-            this.lvDSHD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvDSHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvDSHD.HideSelection = false;
-            this.lvDSHD.Location = new System.Drawing.Point(0, 43);
+            this.lvDSHD.Location = new System.Drawing.Point(25, 43);
             this.lvDSHD.Name = "lvDSHD";
-            this.lvDSHD.Size = new System.Drawing.Size(928, 152);
+            this.lvDSHD.Size = new System.Drawing.Size(884, 152);
             this.lvDSHD.TabIndex = 2;
             this.lvDSHD.UseCompatibleStateImageBehavior = false;
+            this.lvDSHD.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvDSHD_DrawColumnHeader);
             // 
             // label10
             // 
             this.label10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(0, 0);
             this.label10.Name = "label10";
             this.label10.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
@@ -630,9 +613,20 @@
             this.panel2.Size = new System.Drawing.Size(928, 144);
             this.panel2.TabIndex = 2;
             // 
+            // lvDSQT
+            // 
+            this.lvDSQT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvDSQT.HideSelection = false;
+            this.lvDSQT.Location = new System.Drawing.Point(25, 43);
+            this.lvDSQT.Name = "lvDSQT";
+            this.lvDSQT.Size = new System.Drawing.Size(884, 89);
+            this.lvDSQT.TabIndex = 3;
+            this.lvDSQT.UseCompatibleStateImageBehavior = false;
+            // 
             // label11
             // 
             this.label11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(0, 0);
             this.label11.Name = "label11";
             this.label11.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
@@ -641,21 +635,11 @@
             this.label11.Text = "Các quy trình của dự án";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lvDSQT
-            // 
-            this.lvDSQT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvDSQT.HideSelection = false;
-            this.lvDSQT.Location = new System.Drawing.Point(0, 43);
-            this.lvDSQT.Name = "lvDSQT";
-            this.lvDSQT.Size = new System.Drawing.Size(928, 101);
-            this.lvDSQT.TabIndex = 3;
-            this.lvDSQT.UseCompatibleStateImageBehavior = false;
-            // 
             // XemChiTietDuAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(78)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(928, 645);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -672,6 +656,7 @@
             this.panelHeader2.ResumeLayout(false);
             this.panelThongTin1.ResumeLayout(false);
             this.panelContent1.ResumeLayout(false);
+            this.panelContent1.PerformLayout();
             this.panelHeader1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -691,7 +676,6 @@
         private System.Windows.Forms.Panel panelHeader2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panelThongTin1;
         private System.Windows.Forms.Panel panelContent1;
         private MetroFramework.Controls.MetroTextBox txtTen;
@@ -704,7 +688,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label11;
-        private MetroFramework.Controls.MetroTextBox txtThanhTien;
         private MetroFramework.Controls.MetroTextBox txtDiaDiem;
         private MetroFramework.Controls.MetroTextBox txtNhom;
         private MetroFramework.Controls.MetroTextBox txtChuDauTu;
@@ -720,5 +703,6 @@
         private MetroFramework.Controls.MetroDateTime dtThoiGianBD;
         private System.Windows.Forms.ListView lvDSHD;
         private System.Windows.Forms.ListView lvDSQT;
+        private System.Windows.Forms.Label label15;
     }
 }

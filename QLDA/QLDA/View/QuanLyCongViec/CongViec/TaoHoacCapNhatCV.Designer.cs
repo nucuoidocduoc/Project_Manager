@@ -31,6 +31,8 @@
             this.btnLuu = new MetroFramework.Controls.MetroButton();
             this.panelThongTin = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.cbxDuAn = new MetroFramework.Controls.MetroComboBox();
+            this.txtTaiLieu = new MetroFramework.Controls.MetroTextBox();
             this.cbxTrangThai = new MetroFramework.Controls.MetroComboBox();
             this.dtRealEnd = new MetroFramework.Controls.MetroDateTime();
             this.dtEnd = new MetroFramework.Controls.MetroDateTime();
@@ -39,17 +41,15 @@
             this.cbxUuTien = new MetroFramework.Controls.MetroComboBox();
             this.txtTen = new MetroFramework.Controls.MetroTextBox();
             this.panelLabel = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtTaiLieu = new MetroFramework.Controls.MetroTextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbxDuAn = new MetroFramework.Controls.MetroComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelThongTin.SuspendLayout();
             this.panelContent.SuspendLayout();
             this.panelLabel.SuspendLayout();
@@ -102,6 +102,47 @@
             this.panelContent.Size = new System.Drawing.Size(351, 462);
             this.panelContent.TabIndex = 1;
             // 
+            // cbxDuAn
+            // 
+            this.cbxDuAn.FormattingEnabled = true;
+            this.cbxDuAn.ItemHeight = 23;
+            this.cbxDuAn.Location = new System.Drawing.Point(17, 163);
+            this.cbxDuAn.Name = "cbxDuAn";
+            this.cbxDuAn.Size = new System.Drawing.Size(240, 29);
+            this.cbxDuAn.TabIndex = 14;
+            this.cbxDuAn.UseSelectable = true;
+            this.cbxDuAn.SelectedIndexChanged += new System.EventHandler(this.cbxDuAn_SelectedIndexChanged);
+            // 
+            // txtTaiLieu
+            // 
+            // 
+            // 
+            // 
+            this.txtTaiLieu.CustomButton.Image = null;
+            this.txtTaiLieu.CustomButton.Location = new System.Drawing.Point(218, 1);
+            this.txtTaiLieu.CustomButton.Name = "";
+            this.txtTaiLieu.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtTaiLieu.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtTaiLieu.CustomButton.TabIndex = 1;
+            this.txtTaiLieu.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtTaiLieu.CustomButton.UseSelectable = true;
+            this.txtTaiLieu.CustomButton.Visible = false;
+            this.txtTaiLieu.Lines = new string[0];
+            this.txtTaiLieu.Location = new System.Drawing.Point(17, 365);
+            this.txtTaiLieu.MaxLength = 32767;
+            this.txtTaiLieu.Name = "txtTaiLieu";
+            this.txtTaiLieu.PasswordChar = '\0';
+            this.txtTaiLieu.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtTaiLieu.SelectedText = "";
+            this.txtTaiLieu.SelectionLength = 0;
+            this.txtTaiLieu.SelectionStart = 0;
+            this.txtTaiLieu.ShortcutsEnabled = true;
+            this.txtTaiLieu.Size = new System.Drawing.Size(240, 23);
+            this.txtTaiLieu.TabIndex = 13;
+            this.txtTaiLieu.UseSelectable = true;
+            this.txtTaiLieu.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtTaiLieu.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // cbxTrangThai
             // 
             this.cbxTrangThai.FormattingEnabled = true;
@@ -114,6 +155,7 @@
             // 
             // dtRealEnd
             // 
+            this.dtRealEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtRealEnd.Location = new System.Drawing.Point(17, 316);
             this.dtRealEnd.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtRealEnd.Name = "dtRealEnd";
@@ -122,6 +164,7 @@
             // 
             // dtEnd
             // 
+            this.dtEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtEnd.Location = new System.Drawing.Point(17, 264);
             this.dtEnd.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtEnd.Name = "dtEnd";
@@ -205,88 +248,10 @@
             this.panelLabel.Size = new System.Drawing.Size(187, 462);
             this.panelLabel.TabIndex = 0;
             // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.ForeColor = System.Drawing.Color.LightGray;
-            this.label3.Location = new System.Drawing.Point(0, 100);
-            this.label3.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(187, 50);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Người thực hiện";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.ForeColor = System.Drawing.Color.LightGray;
-            this.label2.Location = new System.Drawing.Point(0, 50);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(187, 50);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Mức độ ưu tiên";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 50);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tên công việc";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtTaiLieu
-            // 
-            // 
-            // 
-            // 
-            this.txtTaiLieu.CustomButton.Image = null;
-            this.txtTaiLieu.CustomButton.Location = new System.Drawing.Point(218, 1);
-            this.txtTaiLieu.CustomButton.Name = "";
-            this.txtTaiLieu.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtTaiLieu.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtTaiLieu.CustomButton.TabIndex = 1;
-            this.txtTaiLieu.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtTaiLieu.CustomButton.UseSelectable = true;
-            this.txtTaiLieu.CustomButton.Visible = false;
-            this.txtTaiLieu.Lines = new string[0];
-            this.txtTaiLieu.Location = new System.Drawing.Point(17, 365);
-            this.txtTaiLieu.MaxLength = 32767;
-            this.txtTaiLieu.Name = "txtTaiLieu";
-            this.txtTaiLieu.PasswordChar = '\0';
-            this.txtTaiLieu.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtTaiLieu.SelectedText = "";
-            this.txtTaiLieu.SelectionLength = 0;
-            this.txtTaiLieu.SelectionStart = 0;
-            this.txtTaiLieu.ShortcutsEnabled = true;
-            this.txtTaiLieu.Size = new System.Drawing.Size(240, 23);
-            this.txtTaiLieu.TabIndex = 13;
-            this.txtTaiLieu.UseSelectable = true;
-            this.txtTaiLieu.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtTaiLieu.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // label9
-            // 
-            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label9.ForeColor = System.Drawing.Color.LightGray;
-            this.label9.Location = new System.Drawing.Point(0, 150);
-            this.label9.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(187, 50);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "Dự án";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label7
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label7.ForeColor = System.Drawing.Color.LightGray;
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(0, 400);
             this.label7.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label7.Name = "label7";
@@ -298,7 +263,7 @@
             // label8
             // 
             this.label8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label8.ForeColor = System.Drawing.Color.LightGray;
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(0, 350);
             this.label8.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label8.Name = "label8";
@@ -310,7 +275,7 @@
             // label6
             // 
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.ForeColor = System.Drawing.Color.LightGray;
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(0, 300);
             this.label6.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label6.Name = "label6";
@@ -322,7 +287,7 @@
             // label5
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label5.ForeColor = System.Drawing.Color.LightGray;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(0, 250);
             this.label5.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label5.Name = "label5";
@@ -334,7 +299,7 @@
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.ForeColor = System.Drawing.Color.LightGray;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(0, 200);
             this.label4.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label4.Name = "label4";
@@ -343,22 +308,59 @@
             this.label4.Text = "Quy trình";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cbxDuAn
+            // label9
             // 
-            this.cbxDuAn.FormattingEnabled = true;
-            this.cbxDuAn.ItemHeight = 23;
-            this.cbxDuAn.Location = new System.Drawing.Point(17, 163);
-            this.cbxDuAn.Name = "cbxDuAn";
-            this.cbxDuAn.Size = new System.Drawing.Size(240, 29);
-            this.cbxDuAn.TabIndex = 14;
-            this.cbxDuAn.UseSelectable = true;
-            this.cbxDuAn.SelectedIndexChanged += new System.EventHandler(this.cbxDuAn_SelectedIndexChanged);
+            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(0, 150);
+            this.label9.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(187, 50);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Dự án";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(0, 100);
+            this.label3.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(187, 50);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Người thực hiện";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(0, 50);
+            this.label2.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(187, 50);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Mức độ ưu tiên";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(187, 50);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tên công việc";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TaoHoacCapNhatCV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(78)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(538, 532);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);

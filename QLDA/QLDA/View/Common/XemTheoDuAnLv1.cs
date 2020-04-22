@@ -218,5 +218,17 @@ namespace QLDA.View.Common
                 InitDsQT();
             }
         }
+
+        private void lvDanhSachLv1_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.Graphics.FillRectangle(Brushes.DarkGray, e.Bounds);
+            e.DrawText();
+        }
+
+        private void lvDuAn_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.Graphics.FillRectangle(Brushes.DarkGray, e.Bounds);
+            e.DrawText();
+        }
     }
 }

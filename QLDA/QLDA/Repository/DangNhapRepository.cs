@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace QLDA.Repository
 {
-    public class DangNhapRepository : RepositoryBase<DangNhap>
+    public class DangNhapRepository : RepositoryBase<TaiKhoan>
     {
         public DangNhapRepository(RepositoryContext repositoryContext) : base(repositoryContext)
         {
         }
 
-        public override void Update(DangNhap entity)
+        public override void Update(TaiKhoan entity)
         {
             throw new NotImplementedException();
         }

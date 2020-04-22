@@ -1,6 +1,7 @@
 ﻿using QLDA.Repository;
 using QLDA.View.Template;
 using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -70,6 +71,12 @@ namespace QLDA.View.QuanLyCongViec.QuyTrinh
             lvCv.Columns.Add(DanhSachCongViecTemplate.RealEndDate, Convert.ToInt32(lvCv.Width * 0.1), HorizontalAlignment.Center);
             //lvCv.Columns.Add(DanhSachCongViecTemplate.Member, Convert.ToInt32(lvCv.Width * 0.1), HorizontalAlignment.Center);
             lvCv.Columns.Add(DanhSachCongViecTemplate.Status, Convert.ToInt32(lvCv.Width * 0.1), HorizontalAlignment.Center);
+        }
+
+        private void lvCv_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.Graphics.FillRectangle(Brushes.DarkGray, e.Bounds);
+            e.DrawText();
         }
     }
 }

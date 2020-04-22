@@ -115,6 +115,7 @@
             // label12
             // 
             this.label12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(0, 277);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(169, 80);
@@ -167,6 +168,7 @@
             // dtThoiGianBD
             // 
             this.dtThoiGianBD.AllowDrop = true;
+            this.dtThoiGianBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtThoiGianBD.Location = new System.Drawing.Point(9, 12);
             this.dtThoiGianBD.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtThoiGianBD.Name = "dtThoiGianBD";
@@ -176,6 +178,7 @@
             // dtThoiGianTT
             // 
             this.dtThoiGianTT.AllowDrop = true;
+            this.dtThoiGianTT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtThoiGianTT.Location = new System.Drawing.Point(7, 115);
             this.dtThoiGianTT.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtThoiGianTT.Name = "dtThoiGianTT";
@@ -185,6 +188,7 @@
             // dtThoiGianKT
             // 
             this.dtThoiGianKT.AllowDrop = true;
+            this.dtThoiGianKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtThoiGianKT.Location = new System.Drawing.Point(7, 60);
             this.dtThoiGianKT.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtThoiGianKT.Name = "dtThoiGianKT";
@@ -206,6 +210,7 @@
             // label11
             // 
             this.label11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(0, 150);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(175, 50);
@@ -216,6 +221,7 @@
             // label10
             // 
             this.label10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(0, 100);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(175, 50);
@@ -226,6 +232,7 @@
             // label8
             // 
             this.label8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(0, 50);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(175, 50);
@@ -236,6 +243,7 @@
             // label7
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(175, 50);
@@ -266,22 +274,22 @@
             this.panelContent1.Size = new System.Drawing.Size(238, 277);
             this.panelContent1.TabIndex = 1;
             // 
-            // cbxChuDauTu
+            // cbxKhachHang
             // 
             this.cbxKhachHang.FormattingEnabled = true;
             this.cbxKhachHang.ItemHeight = 23;
             this.cbxKhachHang.Location = new System.Drawing.Point(6, 60);
-            this.cbxKhachHang.Name = "cbxChuDauTu";
+            this.cbxKhachHang.Name = "cbxKhachHang";
             this.cbxKhachHang.Size = new System.Drawing.Size(198, 29);
             this.cbxKhachHang.TabIndex = 5;
             this.cbxKhachHang.UseSelectable = true;
             // 
-            // cbxGiamDoc
+            // cbxNhanVien
             // 
             this.cbxNhanVien.FormattingEnabled = true;
             this.cbxNhanVien.ItemHeight = 23;
             this.cbxNhanVien.Location = new System.Drawing.Point(6, 212);
-            this.cbxNhanVien.Name = "cbxGiamDoc";
+            this.cbxNhanVien.Name = "cbxNhanVien";
             this.cbxNhanVien.Size = new System.Drawing.Size(198, 29);
             this.cbxNhanVien.TabIndex = 4;
             this.cbxNhanVien.UseSelectable = true;
@@ -393,6 +401,7 @@
             // label9
             // 
             this.label9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(0, 200);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(169, 50);
@@ -403,6 +412,7 @@
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(0, 150);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(169, 50);
@@ -413,6 +423,7 @@
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(0, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(169, 50);
@@ -423,6 +434,7 @@
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(0, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(169, 50);
@@ -433,6 +445,7 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(169, 50);
@@ -474,7 +487,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(78)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(817, 410);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelThongTinDuAn);

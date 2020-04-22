@@ -39,13 +39,14 @@ namespace QLDA
 
         #endregion message
 
-        #region status
+        #region status du an
 
         public const string FINISHED = "Đã hoàn thành";
         public const string PENDING = "Đang đấu thầu";
-        public const string UNFINISH = "Chưa hoàn thành";
+        public const string UNFINISH = "Đang thực hiện";
+        public const string PAUSE = "Đang tạm hoãn";
 
-        #endregion status
+        #endregion status du an
 
         public static bool ConfirmDelete()
         {

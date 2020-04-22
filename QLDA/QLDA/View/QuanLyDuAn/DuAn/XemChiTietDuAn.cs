@@ -2,6 +2,7 @@
 using QLDA.View.Template;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -79,6 +80,7 @@ namespace QLDA.View.QuanLyDuAn.DuAn
             dtThoiGianKT.Value = duAn.Thoi_Gian_KT;
             dtThoiGianTT.Value = duAn.Thoi_Gian_KT_TT;
             txtDienGiai.Text = duAn.Dien_Giai;
+            txtTrangThai.Text = duAn.Trang_Thai;
         }
 
         private void InitDSHD(ICollection<Model.HopDong> hopDongs)
@@ -107,6 +109,12 @@ namespace QLDA.View.QuanLyDuAn.DuAn
                     };
                 lvDSHD.Items.Add(new ListViewItem(itemValues));
             }
+        }
+
+        private void lvDSHD_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.Graphics.FillRectangle(Brushes.DarkGray, e.Bounds);
+            e.DrawText();
         }
     }
 }

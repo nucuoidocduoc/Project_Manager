@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace QLDA.Model
 {
-    [Table("Dang_Nhap")]
-    public class DangNhap
+    [Table("Tai_Khoan")]
+    public class TaiKhoan
     {
         [Key]
         public int Ma_DN { get; set; }

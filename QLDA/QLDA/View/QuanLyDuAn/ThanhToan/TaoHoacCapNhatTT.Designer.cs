@@ -67,7 +67,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(78)))));
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.btnHuy);
             this.panel1.Controls.Add(this.btnLuu);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -99,7 +99,7 @@
             // 
             // panelThongTinDuAn
             // 
-            this.panelThongTinDuAn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(78)))));
+            this.panelThongTinDuAn.BackColor = System.Drawing.Color.Transparent;
             this.panelThongTinDuAn.Controls.Add(this.txtDienGiai);
             this.panelThongTinDuAn.Controls.Add(this.label12);
             this.panelThongTinDuAn.Controls.Add(this.panel3);
@@ -145,6 +145,7 @@
             // label12
             // 
             this.label12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(0, 264);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(163, 65);
@@ -154,6 +155,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.panelThongTin2);
             this.panel3.Controls.Add(this.panelThongTin1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -215,6 +217,7 @@
             // label7
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(0, 50);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(154, 50);
@@ -225,6 +228,7 @@
             // label6
             // 
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(154, 50);
@@ -268,6 +272,7 @@
             // 
             // dtNgayThanhToan
             // 
+            this.dtNgayThanhToan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtNgayThanhToan.Location = new System.Drawing.Point(6, 64);
             this.dtNgayThanhToan.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtNgayThanhToan.Name = "dtNgayThanhToan";
@@ -360,6 +365,7 @@
             // label9
             // 
             this.label9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(0, 200);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(163, 50);
@@ -370,6 +376,7 @@
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(0, 150);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(163, 50);
@@ -380,6 +387,7 @@
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(0, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(163, 50);
@@ -390,6 +398,7 @@
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(0, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(163, 50);
@@ -400,6 +409,7 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(163, 50);
@@ -411,6 +421,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(794, 385);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelThongTinDuAn);

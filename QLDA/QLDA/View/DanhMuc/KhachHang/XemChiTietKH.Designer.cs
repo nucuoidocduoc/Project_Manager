@@ -29,6 +29,7 @@
         {
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelDanhSachDA = new System.Windows.Forms.Panel();
+            this.lvDSDA = new System.Windows.Forms.ListView();
             this.label8 = new System.Windows.Forms.Label();
             this.panelThongTin = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
@@ -47,7 +48,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lvDSDA = new System.Windows.Forms.ListView();
             this.panelMain.SuspendLayout();
             this.panelDanhSachDA.SuspendLayout();
             this.panelThongTin.SuspendLayout();
@@ -57,7 +57,7 @@
             // 
             // panelMain
             // 
-            this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(78)))));
+            this.panelMain.BackColor = System.Drawing.Color.Transparent;
             this.panelMain.Controls.Add(this.panelDanhSachDA);
             this.panelMain.Controls.Add(this.panelThongTin);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -76,10 +76,20 @@
             this.panelDanhSachDA.Size = new System.Drawing.Size(688, 246);
             this.panelDanhSachDA.TabIndex = 1;
             // 
+            // lvDSDA
+            // 
+            this.lvDSDA.HideSelection = false;
+            this.lvDSDA.Location = new System.Drawing.Point(31, 35);
+            this.lvDSDA.Name = "lvDSDA";
+            this.lvDSDA.Size = new System.Drawing.Size(629, 185);
+            this.lvDSDA.TabIndex = 9;
+            this.lvDSDA.UseCompatibleStateImageBehavior = false;
+            this.lvDSDA.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvDSDA_DrawColumnHeader);
+            // 
             // label8
             // 
             this.label8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label8.ForeColor = System.Drawing.Color.LightGray;
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(0, 0);
             this.label8.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label8.Name = "label8";
@@ -91,6 +101,7 @@
             // 
             // panelThongTin
             // 
+            this.panelThongTin.BackColor = System.Drawing.Color.Transparent;
             this.panelThongTin.Controls.Add(this.panelContent);
             this.panelThongTin.Controls.Add(this.panelLabel);
             this.panelThongTin.Dock = System.Windows.Forms.DockStyle.Top;
@@ -101,6 +112,7 @@
             // 
             // panelContent
             // 
+            this.panelContent.BackColor = System.Drawing.Color.Transparent;
             this.panelContent.Controls.Add(this.txtTenNH);
             this.panelContent.Controls.Add(this.txtTKNH);
             this.panelContent.Controls.Add(this.txtSDT);
@@ -349,7 +361,7 @@
             // label7
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label7.ForeColor = System.Drawing.Color.LightGray;
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(0, 300);
             this.label7.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label7.Name = "label7";
@@ -361,7 +373,7 @@
             // label6
             // 
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.ForeColor = System.Drawing.Color.LightGray;
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(0, 250);
             this.label6.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label6.Name = "label6";
@@ -373,7 +385,7 @@
             // label5
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label5.ForeColor = System.Drawing.Color.LightGray;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(0, 200);
             this.label5.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label5.Name = "label5";
@@ -385,7 +397,7 @@
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.ForeColor = System.Drawing.Color.LightGray;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(0, 150);
             this.label4.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label4.Name = "label4";
@@ -397,7 +409,7 @@
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.ForeColor = System.Drawing.Color.LightGray;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(0, 100);
             this.label3.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label3.Name = "label3";
@@ -409,7 +421,7 @@
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.ForeColor = System.Drawing.Color.LightGray;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(0, 50);
             this.label2.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label2.Name = "label2";
@@ -421,7 +433,7 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.ForeColor = System.Drawing.Color.LightGray;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label1.Name = "label1";
@@ -430,24 +442,17 @@
             this.label1.Text = "Mã khách hàng";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lvDSDA
-            // 
-            this.lvDSDA.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvDSDA.HideSelection = false;
-            this.lvDSDA.Location = new System.Drawing.Point(0, 35);
-            this.lvDSDA.Name = "lvDSDA";
-            this.lvDSDA.Size = new System.Drawing.Size(688, 211);
-            this.lvDSDA.TabIndex = 9;
-            this.lvDSDA.UseCompatibleStateImageBehavior = false;
-            // 
             // XemChiTietKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(78)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(688, 607);
             this.Controls.Add(this.panelMain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "XemChiTietKH";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin chi tiết";
             this.panelMain.ResumeLayout(false);
             this.panelDanhSachDA.ResumeLayout(false);

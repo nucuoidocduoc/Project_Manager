@@ -75,5 +75,11 @@ namespace QLDA.View.QuanLyDuAn.HopDong
                 lvThanhToan.Items.Add(new ListViewItem(values));
             }
         }
+
+        private void lvThanhToan_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.Graphics.FillRectangle(Brushes.DarkGray, e.Bounds);
+            e.DrawText();
+        }
     }
 }
