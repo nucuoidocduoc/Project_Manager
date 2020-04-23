@@ -53,6 +53,7 @@ namespace QLDA.View.Common
             lvDanhSach.Columns.Add(DanhSachKhachHangTemplate.BankName, Convert.ToInt32(lvDanhSach.Width * 0.2), HorizontalAlignment.Center);
 
             InitDataListViewKhachHang();
+            labelDanhSach.Text = "Danh sách khách hàng";
             //int i = 1;
         }
 
@@ -67,6 +68,7 @@ namespace QLDA.View.Common
             lvDanhSach.Columns.Add(DanhSachNhanVienTemplate.PhoneNumber, Convert.ToInt32(lvDanhSach.Width * 0.2), HorizontalAlignment.Center);
             lvDanhSach.Columns.Add(DanhSachNhanVienTemplate.Email, Convert.ToInt32(lvDanhSach.Width * 0.2), HorizontalAlignment.Center);
             InitDataListViewNhanVien();
+            labelDanhSach.Text = "Danh sách nhân viên";
         }
 
         private void InitDuAn()
@@ -82,6 +84,7 @@ namespace QLDA.View.Common
             lvDanhSach.Columns.Add(DanhSachDuAnTemplate.Owner, Convert.ToInt32(lvDanhSach.Width * 0.1), HorizontalAlignment.Center);
             lvDanhSach.Columns.Add(DanhSachDuAnTemplate.Status, Convert.ToInt32(lvDanhSach.Width * 0.1), HorizontalAlignment.Center);
             InitDataListViewDuAn();
+            labelDanhSach.Text = "Danh sách dự án";
         }
 
         public void InitDataListViewKhachHang(bool isReNewRepository = false)
@@ -123,8 +126,8 @@ namespace QLDA.View.Common
                     Define.PREFIX_DU_AN + item.Ma_DA,
                     item.Ten, item.Nhom,
                     item.Dia_Diem,
-                    item.Thoi_Gian_BD.ToLongDateString(),
-                    item.Thoi_Gian_KT.ToLongDateString(),
+                    item.Thoi_Gian_BD.ToShortDateString(),
+                    item.Thoi_Gian_KT.ToShortDateString(),
                     item.KhachHang.Ten,
                     item.Trang_Thai
                 };
@@ -256,21 +259,13 @@ namespace QLDA.View.Common
 
         private void lvDanhSach_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
         {
-            e.Graphics.FillRectangle(Brushes.DarkGray, e.Bounds);
+            e.Graphics.FillRectangle(Define.BrushHeaderLv, e.Bounds);
             e.DrawText();
         }
 
         private void lvDanhSach_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
         {
             e.DrawDefault = true;
-            //if(e.ItemState&&ListViewItemStates.Focused) {
-            //    e.Graphics.FillRectangle(SystemBrushes.Highlight, e.Bounds);
-            //    e.Graphics.DrawString(e.Item.Text, lv.Font, SystemBrushes.HighlightText, e.Bounds);
-            //}
-            //else {
-            //    e.DrawBackground();
-            //    e.DrawText();
-            //}
         }
     }
 }

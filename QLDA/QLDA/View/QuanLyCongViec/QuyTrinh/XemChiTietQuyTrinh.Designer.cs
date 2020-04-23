@@ -87,6 +87,7 @@
             this.lvCv.TabIndex = 9;
             this.lvCv.UseCompatibleStateImageBehavior = false;
             this.lvCv.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvCv_DrawColumnHeader);
+            this.lvCv.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.lvCv_DrawSubItem);
             // 
             // label8
             // 
@@ -415,6 +416,7 @@
             this.Controls.Add(this.panelMain);
             this.ForeColor = System.Drawing.Color.LightGray;
             this.Name = "XemChiTietQuyTrinh";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Xem Chi Tiết";
             this.panelMain.ResumeLayout(false);
             this.panelDanhSachDA.ResumeLayout(false);

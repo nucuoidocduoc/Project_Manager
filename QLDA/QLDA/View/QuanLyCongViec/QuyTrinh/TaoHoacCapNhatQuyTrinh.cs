@@ -1,13 +1,7 @@
 ﻿using QLDA.Repository;
 using QLDA.View.Template;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLDA.View.QuanLyCongViec.QuyTrinh
@@ -68,6 +62,7 @@ namespace QLDA.View.QuanLyCongViec.QuyTrinh
                     cbxDuAn.SelectedItem = item;
                 }
             }
+            Text = "Chỉnh sửa quy trình " + Define.PREFIX_QUI_TRINH + qtUpdate.Ma_QT;
         }
 
         private void InitCreate()
@@ -81,6 +76,8 @@ namespace QLDA.View.QuanLyCongViec.QuyTrinh
                 }
                 cbxDuAn.Enabled = false;
             }
+            btnLuu.Enabled = false;
+            Text = "Tạo mới quy trình";
         }
 
         private void InitCombobox()
@@ -127,6 +124,9 @@ namespace QLDA.View.QuanLyCongViec.QuyTrinh
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (!Validation()) {
+                return;
+            }
             if (_isCreate) {
                 Model.QuyTrinh quyTrinh = new Model.QuyTrinh() {
                     Ten = txtTen.Text,
@@ -158,9 +158,24 @@ namespace QLDA.View.QuanLyCongViec.QuyTrinh
             Close();
         }
 
+        private bool Validation()
+        {
+            if (txtTen.Text.Length > 50) {
+                MessageBox.Show("Tên quy trình phải nhỏ hơn hoặc bằng 50 ký tự.");
+                return false;
+            }
+
+            return true;
+        }
+
         private void btnHuy_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void txtTen_TextChanged(object sender, EventArgs e)
+        {
+            btnLuu.Enabled = !string.IsNullOrEmpty(txtTen.Text);
         }
     }
 }

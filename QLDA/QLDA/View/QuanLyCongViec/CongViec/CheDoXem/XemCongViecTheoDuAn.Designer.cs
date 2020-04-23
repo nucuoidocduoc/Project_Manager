@@ -50,7 +50,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(204, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1002, 592);
+            this.panel1.Size = new System.Drawing.Size(988, 592);
             this.panel1.TabIndex = 11;
             // 
             // lvCv
@@ -61,10 +61,12 @@
             this.lvCv.HideSelection = false;
             this.lvCv.Location = new System.Drawing.Point(0, 45);
             this.lvCv.Name = "lvCv";
-            this.lvCv.Size = new System.Drawing.Size(1002, 547);
+            this.lvCv.OwnerDraw = true;
+            this.lvCv.Size = new System.Drawing.Size(988, 547);
             this.lvCv.TabIndex = 6;
             this.lvCv.UseCompatibleStateImageBehavior = false;
             this.lvCv.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvCv_DrawColumnHeader);
+            this.lvCv.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.lvCv_DrawSubItem);
             // 
             // panel2
             // 
@@ -74,7 +76,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1002, 45);
+            this.panel2.Size = new System.Drawing.Size(988, 45);
             this.panel2.TabIndex = 0;
             // 
             // label2
@@ -129,11 +131,13 @@
             this.lvDuAn.Location = new System.Drawing.Point(0, 0);
             this.lvDuAn.MultiSelect = false;
             this.lvDuAn.Name = "lvDuAn";
+            this.lvDuAn.OwnerDraw = true;
             this.lvDuAn.Size = new System.Drawing.Size(190, 592);
             this.lvDuAn.TabIndex = 9;
             this.lvDuAn.UseCompatibleStateImageBehavior = false;
             this.lvDuAn.View = System.Windows.Forms.View.Details;
             this.lvDuAn.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvDuAn_DrawColumnHeader);
+            this.lvDuAn.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.lvDuAn_DrawSubItem);
             this.lvDuAn.SelectedIndexChanged += new System.EventHandler(this.lvDuAn_SelectedIndexChanged);
             // 
             // columnHeader1
@@ -155,8 +159,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lvDuAn);
             this.ForeColor = System.Drawing.Color.LightGray;

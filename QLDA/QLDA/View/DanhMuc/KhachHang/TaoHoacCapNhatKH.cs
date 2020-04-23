@@ -1,12 +1,6 @@
 ﻿using QLDA.Repository;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLDA.View.DanhMuc.KhachHang
@@ -24,6 +18,7 @@ namespace QLDA.View.DanhMuc.KhachHang
             InitializeComponent();
             btnLuu.Enabled = false;
             _repository = RepositoryWrapper.Create();
+            Text = "Tạo mới khách hàng";
         }
 
         public TaoHoacCapNhatKH(int idUpdate)
@@ -79,6 +74,7 @@ namespace QLDA.View.DanhMuc.KhachHang
             txtMST.Text = _khachHangUpdate.MST;
             txtSTK.Text = _khachHangUpdate.STK;
             txtTenNH.Text = _khachHangUpdate.Ten_NH;
+            Text = "Chỉnh sửa thông tin khách hàng " + Define.PREFIX_KHACH_HANG + _khachHangUpdate.Ma_KH;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -118,6 +114,13 @@ namespace QLDA.View.DanhMuc.KhachHang
                 return false;
             }
             return true;
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) {
+                e.Handled = true;
+            }
         }
     }
 }

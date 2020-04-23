@@ -64,8 +64,8 @@ namespace QLDA.View.Common
             foreach (var item in hds) {
                 string[] itemValues = new string[] { Define.PREFIX_HOP_DONG + item.Ma_DA,
                     item.Ten,
-                    item.Thoi_Diem_Ky.ToLongDateString(),
-                    item.Thoi_Gian_KT.ToLongDateString(),
+                    item.Thoi_Diem_Ky.ToShortDateString(),
+                    item.Thoi_Gian_KT.ToShortDateString(),
                     item.Tong_Gia_Tri,
                     item.Trang_Thai
                     };
@@ -97,8 +97,8 @@ namespace QLDA.View.Common
                 string[] itemValues = new string[] { Define.PREFIX_HOP_DONG + item.Ma_DA,
                     item.Ten,
                     item.Loai_QT,
-                    item.Thoi_Gian_BD.ToLongDateString(),
-                    item.Thoi_Gian_KT.ToLongDateString(),
+                    item.Thoi_Gian_BD.ToShortDateString(),
+                    item.Thoi_Gian_KT.ToShortDateString(),
                     item.Trang_Thai
                     };
                 lvXemTatCa.Items.Add(new ListViewItem(itemValues) { Tag = item.Ma_QT });
@@ -109,7 +109,7 @@ namespace QLDA.View.Common
         {
             lvXemTatCa.Columns.Add(DanhSachQuyTrinhTemplate.Id, Convert.ToInt32(lvXemTatCa.Width * 0.1), HorizontalAlignment.Center);
             lvXemTatCa.Columns.Add(DanhSachQuyTrinhTemplate.Name, Convert.ToInt32(lvXemTatCa.Width * 0.2), HorizontalAlignment.Center);
-            lvXemTatCa.Columns.Add(DanhSachQuyTrinhTemplate.Type, Convert.ToInt32(lvXemTatCa.Width * 0.1), HorizontalAlignment.Center);
+            lvXemTatCa.Columns.Add(DanhSachQuyTrinhTemplate.Type, Convert.ToInt32(lvXemTatCa.Width * 0.2), HorizontalAlignment.Center);
             lvXemTatCa.Columns.Add(DanhSachQuyTrinhTemplate.StartDate, Convert.ToInt32(lvXemTatCa.Width * 0.2), HorizontalAlignment.Center);
             lvXemTatCa.Columns.Add(DanhSachQuyTrinhTemplate.EndDate, Convert.ToInt32(lvXemTatCa.Width * 0.2), HorizontalAlignment.Center);
             lvXemTatCa.Columns.Add(DanhSachQuyTrinhTemplate.Status, Convert.ToInt32(lvXemTatCa.Width * 0.1), HorizontalAlignment.Center);
@@ -130,7 +130,7 @@ namespace QLDA.View.Common
                     tt.So_Tien,
                     tt.Loai_Tien,
                     tt.Hinh_Thuc,
-                    tt.Thoi_Gian_TT.ToLongDateString()
+                    tt.Thoi_Gian_TT.ToShortDateString()
                 };
                 lvXemTatCa.Items.Add(new ListViewItem(values) { Tag = tt.Ma_TT });
             }
@@ -139,10 +139,10 @@ namespace QLDA.View.Common
         private void InitTemplateThanhToan()
         {
             lvXemTatCa.Columns.Add(DanhSachThanhToanTemplate.Id, Convert.ToInt32(lvXemTatCa.Width * 0.1), HorizontalAlignment.Center);
-            lvXemTatCa.Columns.Add(DanhSachThanhToanTemplate.Name, Convert.ToInt32(lvXemTatCa.Width * 0.2), HorizontalAlignment.Center);
+            lvXemTatCa.Columns.Add(DanhSachThanhToanTemplate.Name, Convert.ToInt32(lvXemTatCa.Width * 0.3), HorizontalAlignment.Center);
             lvXemTatCa.Columns.Add(DanhSachThanhToanTemplate.Much, Convert.ToInt32(lvXemTatCa.Width * 0.1), HorizontalAlignment.Center);
             lvXemTatCa.Columns.Add(DanhSachThanhToanTemplate.Type, Convert.ToInt32(lvXemTatCa.Width * 0.1), HorizontalAlignment.Center);
-            lvXemTatCa.Columns.Add(DanhSachThanhToanTemplate.Mode, Convert.ToInt32(lvXemTatCa.Width * 0.3), HorizontalAlignment.Center);
+            lvXemTatCa.Columns.Add(DanhSachThanhToanTemplate.Mode, Convert.ToInt32(lvXemTatCa.Width * 0.2), HorizontalAlignment.Center);
             lvXemTatCa.Columns.Add(DanhSachThanhToanTemplate.Date, Convert.ToInt32(lvXemTatCa.Width * 0.2), HorizontalAlignment.Center);
         }
 
@@ -158,8 +158,8 @@ namespace QLDA.View.Common
                     Define.PREFIX_THANH_TOAN+cv.Ma_CV,
                     cv.Ten,
                     cv.Muc_Do_UT.ToString(),
-                    cv.Thoi_Gian_HH.ToLongDateString(),
-                    cv.Thoi_Gian_Giao.ToLongDateString(),
+                    cv.Thoi_Gian_HH.ToShortDateString(),
+                    cv.Thoi_Gian_Giao.ToShortDateString(),
                     cv.Trang_Thai
                     };
                 lvXemTatCa.Items.Add(new ListViewItem(values) { Tag = cv.Ma_CV });
@@ -168,12 +168,11 @@ namespace QLDA.View.Common
 
         private void InitTemplateCongViec()
         {
-            lvXemTatCa.Columns.Add(DanhSachCongViecTemplate.Id, Convert.ToInt32(lvXemTatCa.Width * 0.1), HorizontalAlignment.Center);
+            lvXemTatCa.Columns.Add(DanhSachCongViecTemplate.Id, Convert.ToInt32(lvXemTatCa.Width * 0.2), HorizontalAlignment.Center);
             lvXemTatCa.Columns.Add(DanhSachCongViecTemplate.Name, Convert.ToInt32(lvXemTatCa.Width * 0.2), HorizontalAlignment.Center);
             lvXemTatCa.Columns.Add(DanhSachCongViecTemplate.Prior, Convert.ToInt32(lvXemTatCa.Width * 0.1), HorizontalAlignment.Center);
-            lvXemTatCa.Columns.Add(DanhSachCongViecTemplate.EndDate, Convert.ToInt32(lvXemTatCa.Width * 0.1), HorizontalAlignment.Center);
-            lvXemTatCa.Columns.Add(DanhSachCongViecTemplate.RealEndDate, Convert.ToInt32(lvXemTatCa.Width * 0.1), HorizontalAlignment.Center);
-
+            lvXemTatCa.Columns.Add(DanhSachCongViecTemplate.EndDate, Convert.ToInt32(lvXemTatCa.Width * 0.2), HorizontalAlignment.Center);
+            lvXemTatCa.Columns.Add(DanhSachCongViecTemplate.RealEndDate, Convert.ToInt32(lvXemTatCa.Width * 0.2), HorizontalAlignment.Center);
             lvXemTatCa.Columns.Add(DanhSachCongViecTemplate.Status, Convert.ToInt32(lvXemTatCa.Width * 0.1), HorizontalAlignment.Center);
         }
 
@@ -218,6 +217,7 @@ namespace QLDA.View.Common
         public void Updatee()
         {
             if (lvXemTatCa.SelectedItems.Count < 1) {
+                MessageBox.Show(Define.PLEASE_SELECT);
                 return;
             }
             int idUpdate = (int)lvXemTatCa.SelectedItems[0].Tag;
@@ -259,6 +259,7 @@ namespace QLDA.View.Common
         public void Delete()
         {
             if (lvXemTatCa.SelectedItems.Count < 1) {
+                MessageBox.Show(Define.PLEASE_SELECT);
                 return;
             }
             int idDelete = (int)lvXemTatCa.SelectedItems[0].Tag;
@@ -324,8 +325,13 @@ namespace QLDA.View.Common
 
         private void lvXemTatCa_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
         {
-            e.Graphics.FillRectangle(Brushes.DarkGray, e.Bounds);
+            e.Graphics.FillRectangle(Define.BrushHeaderLv, e.Bounds);
             e.DrawText();
+        }
+
+        private void lvXemTatCa_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
+        {
+            e.DrawDefault = true;
         }
     }
 }

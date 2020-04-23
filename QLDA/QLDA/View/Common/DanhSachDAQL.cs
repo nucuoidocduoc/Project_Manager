@@ -68,6 +68,7 @@ namespace QLDA.View.Common
                 Delete = control.Delete;
                 btnXemChiTiet.Visible = true;
             }
+            labelDanhSach.Text = "Danh sách hợp đồng";
         }
 
         private void InitThanhToan()
@@ -93,6 +94,7 @@ namespace QLDA.View.Common
                 Delete = control.Delete;
                 btnXemChiTiet.Visible = false;
             }
+            labelDanhSach.Text = "Danh sách thanh toán";
         }
 
         private void InitQuyTrinh()
@@ -119,6 +121,7 @@ namespace QLDA.View.Common
                 Delete = control.Delete;
                 btnXemChiTiet.Visible = true;
             }
+            labelDanhSach.Text = "Danh sách quy trình";
         }
 
         private void InitCongViec()
@@ -145,6 +148,7 @@ namespace QLDA.View.Common
                 Delete = control.Delete;
                 btnXemChiTiet.Visible = false;
             }
+            labelDanhSach.Text = "Danh sách công việc";
         }
 
         private void btnXemChiTiet_Click(object sender, EventArgs e)

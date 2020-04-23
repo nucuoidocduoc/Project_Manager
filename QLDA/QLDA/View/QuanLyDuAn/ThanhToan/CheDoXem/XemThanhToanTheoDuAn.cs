@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using QLDA.Repository;
+﻿using QLDA.Repository;
 using QLDA.View.Template;
+using System;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace QLDA.View.QuanLyDuAn.ThanhToan.CheDoXem
 {
@@ -51,7 +45,7 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan.CheDoXem
                     tt.So_Tien,
                     tt.Loai_Tien,
                     tt.Hinh_Thuc,
-                    tt.Thoi_Gian_TT.ToLongDateString()
+                    tt.Thoi_Gian_TT.ToShortDateString()
                 };
                 lvThanhToan.Items.Add(new ListViewItem(values) { Tag = tt.Ma_TT });
             }
@@ -95,13 +89,25 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan.CheDoXem
             CalculateWorthHD();
         }
 
-        private void CalculateWorthHD()
+        private void CalculateWorthHD(bool isReloadRepository = false)
         {
+            if (isReloadRepository) {
+                _repository = RepositoryWrapper.Create();
+            }
             var hd = _repository.HopDong.FindByCondition(x => x.Ma_HD == _currentIdHDSelected).FirstOrDefault();
             if (hd == null) {
                 return;
             }
             var thanhToans = _repository.ThanhToan.FindByCondition(x => x.Ma_HD == _currentIdHDSelected).ToList();
+            double value = 0;
+            foreach (var tt in thanhToans) {
+                value += Define.GetMoney(tt);
+            }
+            if (double.TryParse(hd.Tong_Gia_Tri, out double toTal)) {
+                txtTongGiaTri.Text = toTal.ToString();
+                txtDaThanhToan.Text = value.ToString();
+                txtChuaThanhToan.Text = (toTal - value).ToString();
+            }
         }
 
         private void lvDuAn_SelectedIndexChanged(object sender, EventArgs e)
@@ -129,7 +135,11 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan.CheDoXem
                 add.ShowDialog();
                 if (add.HasReloadList) {
                     InitDsTT(true);
+                    CalculateWorthHD(true);
                 }
+            }
+            else {
+                MessageBox.Show(Define.PLEASE_SELECT);
             }
         }
 
@@ -141,7 +151,11 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan.CheDoXem
                 update.ShowDialog();
                 if (update.HasReloadList) {
                     InitDsTT(true);
+                    CalculateWorthHD(true);
                 }
+            }
+            else {
+                MessageBox.Show(Define.PLEASE_SELECT);
             }
         }
 
@@ -154,8 +168,34 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan.CheDoXem
                     _repository.ThanhToan.Delete(tt);
                     _repository.SaveChange();
                     InitDsTT(true);
+                    CalculateWorthHD(true);
                 }
             }
+            else {
+                MessageBox.Show(Define.PLEASE_SELECT);
+            }
+        }
+
+        private void lvThanhToan_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.Graphics.FillRectangle(Define.BrushHeaderLv, e.Bounds);
+            e.DrawText();
+        }
+
+        private void lvDuAn_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.Graphics.FillRectangle(Define.BrushHeaderLv, e.Bounds);
+            e.DrawText();
+        }
+
+        private void lvThanhToan_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
+        {
+            e.DrawDefault = true;
+        }
+
+        private void lvDuAn_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
+        {
+            e.DrawDefault = true;
         }
     }
 }

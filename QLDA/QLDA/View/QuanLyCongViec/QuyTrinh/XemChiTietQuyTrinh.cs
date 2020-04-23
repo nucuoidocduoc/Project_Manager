@@ -52,13 +52,14 @@ namespace QLDA.View.QuanLyCongViec.QuyTrinh
                     Define.PREFIX_THANH_TOAN+cv.Ma_CV,
                     cv.Ten,
                     cv.Muc_Do_UT.ToString(),
-                    cv.Thoi_Gian_HH.ToLongDateString(),
-                    cv.Thoi_Gian_Giao.ToLongDateString(),
+                    cv.Thoi_Gian_HH.ToShortDateString(),
+                    cv.Thoi_Gian_Giao.ToShortDateString(),
                     cv.Trang_Thai
                     };
                     lvCv.Items.Add(new ListViewItem(values));
                 }
             }
+            Text = "Chi tiết quy trình " + Define.PREFIX_QUI_TRINH + qt.Ma_QT;
         }
 
         private void InitTemplateCv()
@@ -66,17 +67,22 @@ namespace QLDA.View.QuanLyCongViec.QuyTrinh
             lvCv.View = System.Windows.Forms.View.Details;
             lvCv.Columns.Add(DanhSachCongViecTemplate.Id, Convert.ToInt32(lvCv.Width * 0.1), HorizontalAlignment.Center);
             lvCv.Columns.Add(DanhSachCongViecTemplate.Name, Convert.ToInt32(lvCv.Width * 0.2), HorizontalAlignment.Center);
-            lvCv.Columns.Add(DanhSachCongViecTemplate.Prior, Convert.ToInt32(lvCv.Width * 0.1), HorizontalAlignment.Center);
-            lvCv.Columns.Add(DanhSachCongViecTemplate.EndDate, Convert.ToInt32(lvCv.Width * 0.1), HorizontalAlignment.Center);
-            lvCv.Columns.Add(DanhSachCongViecTemplate.RealEndDate, Convert.ToInt32(lvCv.Width * 0.1), HorizontalAlignment.Center);
+            lvCv.Columns.Add(DanhSachCongViecTemplate.Prior, Convert.ToInt32(lvCv.Width * 0.2), HorizontalAlignment.Center);
+            lvCv.Columns.Add(DanhSachCongViecTemplate.EndDate, Convert.ToInt32(lvCv.Width * 0.2), HorizontalAlignment.Center);
+            lvCv.Columns.Add(DanhSachCongViecTemplate.RealEndDate, Convert.ToInt32(lvCv.Width * 0.2), HorizontalAlignment.Center);
             //lvCv.Columns.Add(DanhSachCongViecTemplate.Member, Convert.ToInt32(lvCv.Width * 0.1), HorizontalAlignment.Center);
             lvCv.Columns.Add(DanhSachCongViecTemplate.Status, Convert.ToInt32(lvCv.Width * 0.1), HorizontalAlignment.Center);
         }
 
         private void lvCv_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
         {
-            e.Graphics.FillRectangle(Brushes.DarkGray, e.Bounds);
+            e.Graphics.FillRectangle(Define.BrushHeaderLv, e.Bounds);
             e.DrawText();
+        }
+
+        private void lvCv_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
+        {
+            e.DrawDefault = true;
         }
     }
 }

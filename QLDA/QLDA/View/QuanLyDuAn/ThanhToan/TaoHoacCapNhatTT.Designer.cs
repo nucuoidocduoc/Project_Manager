@@ -318,6 +318,7 @@
             this.txtSoTien.UseSelectable = true;
             this.txtSoTien.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSoTien.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtSoTien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoTien_KeyPress);
             // 
             // txtTen
             // 
@@ -348,6 +349,7 @@
             this.txtTen.UseSelectable = true;
             this.txtTen.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTen.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTen.TextChanged += new System.EventHandler(this.txtTen_TextChanged);
             // 
             // panelHeader1
             // 
@@ -426,6 +428,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelThongTinDuAn);
             this.Name = "TaoHoacCapNhatTT";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TaoHoacCapNhatTT";
             this.panel1.ResumeLayout(false);
             this.panelThongTinDuAn.ResumeLayout(false);

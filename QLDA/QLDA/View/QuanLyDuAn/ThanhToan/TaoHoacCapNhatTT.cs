@@ -73,14 +73,16 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
             else {
                 InitHD();
             }
+            btnLuu.Enabled = false;
+            Text = "Tạo mới thanh toán";
         }
 
         private void InitCBX()
         {
             cbxHinhThuc.Items.Add("Chuyển khoản");
             cbxHinhThuc.Items.Add("Tiền mặt");
-            cbxLoaiTien.Items.Add("USD");
-            cbxLoaiTien.Items.Add("VND");
+            cbxLoaiTien.Items.Add(Define.VND);
+            cbxLoaiTien.Items.Add(Define.USD);
             cbxHinhThuc.SelectedIndex = 0;
             cbxLoaiTien.SelectedIndex = 0;
         }
@@ -121,6 +123,7 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
 
             cbxHD.Enabled = false;
             cbxDuAn.Enabled = false;
+            Text = "Chỉnh sửa thanh toán " + Define.PREFIX_THANH_TOAN + _thanhToanUpdate.Ma_TT;
         }
 
         private void InitDuAn()
@@ -156,6 +159,9 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (!Validation()) {
+                return;
+            }
             if (_isCreate) {
                 Model.ThanhToan thanhToan = new Model.ThanhToan() {
                     Ten = txtTen.Text,
@@ -183,9 +189,44 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
             Close();
         }
 
+        private bool Validation()
+        {
+            if (txtTen.Text.Length > 50) {
+                MessageBox.Show("Tên thanh toán phải nhỏ hơn hoặc bằng 50 ký tự.");
+                return false;
+            }
+
+            if (txtDienGiai.Text.Length > 255) {
+                MessageBox.Show("Diễn giải phải nhỏ hơn hoặc bằng 255 ký tự.");
+                return false;
+            }
+            if (txtSoTien.Text.Length > 50) {
+                MessageBox.Show("Số tiền phải nhỏ hơn hoặc bằng 50 ký tự.");
+                return false;
+            }
+            return true;
+        }
+
         private void btnHuy_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void txtSoTien_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && (txtSoTien.Text.IndexOf('.') > -1)) {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTen_TextChanged(object sender, EventArgs e)
+        {
+            btnLuu.Enabled = !string.IsNullOrEmpty(txtTen.Text);
         }
     }
 }

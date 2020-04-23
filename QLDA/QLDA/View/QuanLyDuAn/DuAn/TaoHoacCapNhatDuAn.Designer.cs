@@ -493,6 +493,7 @@
             this.Controls.Add(this.panelThongTinDuAn);
             this.ForeColor = System.Drawing.Color.LightGray;
             this.Name = "TaoHoacCapNhatDuAn";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TaoHoacCapNhatDuAn";
             this.panelThongTinDuAn.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

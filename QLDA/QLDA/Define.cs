@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,10 +49,34 @@ namespace QLDA
 
         #endregion status du an
 
+        public const string USD = "USD";
+
+        public const string VND = "VND";
+
+        public const double ConvertMoneyUSDToVND = 23000;
+
+        public static Brush BrushHeaderLv = Brushes.DarkGray;
+
         public static bool ConfirmDelete()
         {
             var btn = MessageBox.Show(Define.CONFIRM_DELETE, Define.TITLE_CONFIRM, MessageBoxButtons.YesNo);
             return btn.Equals(DialogResult.Yes);
+        }
+
+        public static double GetMoney(Model.ThanhToan thanhToan)
+        {
+            if (double.TryParse(thanhToan.So_Tien, out double value)) {
+                if (thanhToan.Loai_Tien.Equals(Define.VND)) {
+                    return value;
+                }
+                else if (thanhToan.Loai_Tien.Equals(Define.USD)) {
+                    return value * Define.ConvertMoneyUSDToVND;
+                }
+            }
+            else {
+                return 0;
+            }
+            return 0;
         }
     }
 

@@ -46,6 +46,7 @@ namespace QLDA.View.QuanLyDuAn.DuAn
             if (duAnView.Cac_Quy_Trinh != null) {
                 InitDSQT(duAnView.Cac_Quy_Trinh);
             }
+            Text = "Chi tiết dự án " + Define.PREFIX_DU_AN + duAnView.Ma_DA;
         }
 
         private void InitTemplateDs()
@@ -61,7 +62,7 @@ namespace QLDA.View.QuanLyDuAn.DuAn
             lvDSQT.View = System.Windows.Forms.View.Details;
             lvDSQT.Columns.Add(DanhSachQuyTrinhTemplate.Id, Convert.ToInt32(lvDSQT.Width * 0.1), HorizontalAlignment.Center);
             lvDSQT.Columns.Add(DanhSachQuyTrinhTemplate.Name, Convert.ToInt32(lvDSQT.Width * 0.2), HorizontalAlignment.Center);
-            lvDSQT.Columns.Add(DanhSachQuyTrinhTemplate.Type, Convert.ToInt32(lvDSQT.Width * 0.1), HorizontalAlignment.Center);
+            lvDSQT.Columns.Add(DanhSachQuyTrinhTemplate.Type, Convert.ToInt32(lvDSQT.Width * 0.2), HorizontalAlignment.Center);
             lvDSQT.Columns.Add(DanhSachQuyTrinhTemplate.StartDate, Convert.ToInt32(lvDSQT.Width * 0.2), HorizontalAlignment.Center);
             lvDSQT.Columns.Add(DanhSachQuyTrinhTemplate.EndDate, Convert.ToInt32(lvDSQT.Width * 0.2), HorizontalAlignment.Center);
             lvDSQT.Columns.Add(DanhSachQuyTrinhTemplate.Status, Convert.ToInt32(lvDSQT.Width * 0.1), HorizontalAlignment.Center);
@@ -88,8 +89,8 @@ namespace QLDA.View.QuanLyDuAn.DuAn
             foreach (var item in hopDongs) {
                 string[] itemValues = new string[] { Define.PREFIX_HOP_DONG + item.Ma_HD,
                     item.Ten,
-                    item.Thoi_Diem_Ky.ToLongDateString(),
-                    item.Thoi_Gian_KT.ToLongDateString(),
+                    item.Thoi_Diem_Ky.ToShortDateString(),
+                    item.Thoi_Gian_KT.ToShortDateString(),
                     item.Tong_Gia_Tri,
                     item.Trang_Thai
                     };
@@ -103,18 +104,34 @@ namespace QLDA.View.QuanLyDuAn.DuAn
                 string[] itemValues = new string[] { Define.PREFIX_HOP_DONG + item.Ma_DA,
                     item.Ten,
                     item.Loai_QT,
-                    item.Thoi_Gian_BD.ToLongDateString(),
-                    item.Thoi_Gian_KT.ToLongDateString(),
+                    item.Thoi_Gian_BD.ToShortDateString(),
+                    item.Thoi_Gian_KT.ToShortDateString(),
                     item.Trang_Thai
                     };
-                lvDSHD.Items.Add(new ListViewItem(itemValues));
+                lvDSQT.Items.Add(new ListViewItem(itemValues));
             }
         }
 
         private void lvDSHD_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
         {
-            e.Graphics.FillRectangle(Brushes.DarkGray, e.Bounds);
+            e.Graphics.FillRectangle(Define.BrushHeaderLv, e.Bounds);
             e.DrawText();
+        }
+
+        private void lvDSHD_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
+        {
+            e.DrawDefault = true;
+        }
+
+        private void lvDSQT_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.Graphics.FillRectangle(Define.BrushHeaderLv, e.Bounds);
+            e.DrawText();
+        }
+
+        private void lvDSQT_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
+        {
+            e.DrawDefault = true;
         }
     }
 }

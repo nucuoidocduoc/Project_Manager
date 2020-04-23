@@ -16,5 +16,6 @@ namespace QLDA.Model
 
         public string Ten { get; set; }
         public string MK { get; set; }
+        public string Email { get; set; }
     }
 }

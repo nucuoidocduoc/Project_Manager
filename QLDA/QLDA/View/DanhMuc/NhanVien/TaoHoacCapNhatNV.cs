@@ -19,6 +19,7 @@ namespace QLDA.View.DanhMuc.NhanVien
             _repository = RepositoryWrapper.Create();
             Text = Define.THEM_MOI_NHAN_VIEN;
             btnLuu.Enabled = false;
+            Text = "Tạo mới nhân viên";
         }
 
         public TaoHoacCapNhatNV(int idUpdate)
@@ -40,6 +41,7 @@ namespace QLDA.View.DanhMuc.NhanVien
             txtDC.Text = _nhanVienUpdate.Dia_Chi;
             txtSDT.Text = _nhanVienUpdate.SDT;
             txtEmail.Text = _nhanVienUpdate.Email;
+            Text = "Chỉnh sửa thông tin nhân viên " + Define.PREFIX_NHAN_VIEN + _nhanVienUpdate.Ma_NV;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -103,6 +105,13 @@ namespace QLDA.View.DanhMuc.NhanVien
             }
 
             return true;
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) {
+                e.Handled = true;
+            }
         }
     }
 }

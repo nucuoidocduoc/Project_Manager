@@ -58,7 +58,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(401, 336);
+            this.panel1.Size = new System.Drawing.Size(401, 315);
             this.panel1.TabIndex = 0;
             // 
             // panelGiaTri
@@ -72,7 +72,7 @@
             this.panelGiaTri.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGiaTri.Location = new System.Drawing.Point(143, 0);
             this.panelGiaTri.Name = "panelGiaTri";
-            this.panelGiaTri.Size = new System.Drawing.Size(258, 336);
+            this.panelGiaTri.Size = new System.Drawing.Size(258, 315);
             this.panelGiaTri.TabIndex = 1;
             // 
             // txtTenNH
@@ -194,6 +194,7 @@
             this.txtSDT.UseSelectable = true;
             this.txtSDT.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSDT.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // txtDC
             // 
@@ -267,7 +268,7 @@
             this.panelTenTruong.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelTenTruong.Location = new System.Drawing.Point(0, 0);
             this.panelTenTruong.Name = "panelTenTruong";
-            this.panelTenTruong.Size = new System.Drawing.Size(143, 336);
+            this.panelTenTruong.Size = new System.Drawing.Size(143, 315);
             this.panelTenTruong.TabIndex = 0;
             // 
             // label6
@@ -341,9 +342,9 @@
             this.panel2.Controls.Add(this.btnHuy);
             this.panel2.Controls.Add(this.btnLuu);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 336);
+            this.panel2.Location = new System.Drawing.Point(0, 315);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(401, 58);
+            this.panel2.Size = new System.Drawing.Size(401, 54);
             this.panel2.TabIndex = 1;
             // 
             // btnHuy
@@ -371,10 +372,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(401, 394);
+            this.ClientSize = new System.Drawing.Size(401, 369);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "TaoHoacCapNhatKH";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TaoHoacCapNhatKH";
             this.panel1.ResumeLayout(false);
             this.panelGiaTri.ResumeLayout(false);

@@ -67,8 +67,8 @@ namespace QLDA.View.Common
             foreach (var item in hds) {
                 string[] itemValues = new string[] { Define.PREFIX_HOP_DONG + item.Ma_DA,
                     item.Ten,
-                    item.Thoi_Diem_Ky.ToLongDateString(),
-                    item.Thoi_Gian_KT.ToLongDateString(),
+                    item.Thoi_Diem_Ky.ToShortDateString(),
+                    item.Thoi_Gian_KT.ToShortDateString(),
                     item.Tong_Gia_Tri,
                     item.Trang_Thai
                     };
@@ -93,8 +93,8 @@ namespace QLDA.View.Common
                 string[] itemValues = new string[] { Define.PREFIX_HOP_DONG + item.Ma_DA,
                     item.Ten,
                     item.Loai_QT,
-                    item.Thoi_Gian_BD.ToLongDateString(),
-                    item.Thoi_Gian_KT.ToLongDateString(),
+                    item.Thoi_Gian_BD.ToShortDateString(),
+                    item.Thoi_Gian_KT.ToShortDateString(),
                     item.Trang_Thai
                     };
                 lvDanhSachLv1.Items.Add(new ListViewItem(itemValues) { Tag = item.Ma_QT });
@@ -117,7 +117,7 @@ namespace QLDA.View.Common
             lvDanhSachLv1.View = System.Windows.Forms.View.Details;
             lvDanhSachLv1.Columns.Add(DanhSachQuyTrinhTemplate.Id, Convert.ToInt32(lvDanhSachLv1.Width * 0.1), HorizontalAlignment.Center);
             lvDanhSachLv1.Columns.Add(DanhSachQuyTrinhTemplate.Name, Convert.ToInt32(lvDanhSachLv1.Width * 0.2), HorizontalAlignment.Center);
-            lvDanhSachLv1.Columns.Add(DanhSachQuyTrinhTemplate.Type, Convert.ToInt32(lvDanhSachLv1.Width * 0.1), HorizontalAlignment.Center);
+            lvDanhSachLv1.Columns.Add(DanhSachQuyTrinhTemplate.Type, Convert.ToInt32(lvDanhSachLv1.Width * 0.2), HorizontalAlignment.Center);
             lvDanhSachLv1.Columns.Add(DanhSachQuyTrinhTemplate.StartDate, Convert.ToInt32(lvDanhSachLv1.Width * 0.2), HorizontalAlignment.Center);
             lvDanhSachLv1.Columns.Add(DanhSachQuyTrinhTemplate.EndDate, Convert.ToInt32(lvDanhSachLv1.Width * 0.2), HorizontalAlignment.Center);
             lvDanhSachLv1.Columns.Add(DanhSachQuyTrinhTemplate.Status, Convert.ToInt32(lvDanhSachLv1.Width * 0.1), HorizontalAlignment.Center);
@@ -221,14 +221,24 @@ namespace QLDA.View.Common
 
         private void lvDanhSachLv1_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
         {
-            e.Graphics.FillRectangle(Brushes.DarkGray, e.Bounds);
+            e.Graphics.FillRectangle(Define.BrushHeaderLv, e.Bounds);
             e.DrawText();
         }
 
         private void lvDuAn_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
         {
-            e.Graphics.FillRectangle(Brushes.DarkGray, e.Bounds);
+            e.Graphics.FillRectangle(Define.BrushHeaderLv, e.Bounds);
             e.DrawText();
+        }
+
+        private void lvDuAn_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
+        {
+            e.DrawDefault = true;
+        }
+
+        private void lvDanhSachLv1_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
+        {
+            e.DrawDefault = true;
         }
     }
 }

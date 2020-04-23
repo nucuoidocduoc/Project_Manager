@@ -10,7 +10,7 @@ namespace QLDA.View.Template
     {
         public const string Id = "Mã dự án";
         public const string Name = "Tên dự án";
-        public const string Group = "Nhóm của dự án";
+        public const string Group = "Nhóm";
         public const string Location = "Địa điểm";
         public const string StartDate = "Thời gian bắt đầu";
         public const string EndDate = "Thời gian kết thúc";

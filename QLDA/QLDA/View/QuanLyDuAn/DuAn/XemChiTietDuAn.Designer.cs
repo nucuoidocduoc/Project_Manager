@@ -101,6 +101,7 @@
             // txtDienGiai
             // 
             this.txtDienGiai.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDienGiai.Enabled = false;
             this.txtDienGiai.Location = new System.Drawing.Point(229, 0);
             this.txtDienGiai.Multiline = true;
             this.txtDienGiai.Name = "txtDienGiai";
@@ -196,6 +197,7 @@
             this.txtTrangThai.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtTrangThai.CustomButton.UseSelectable = true;
             this.txtTrangThai.CustomButton.Visible = false;
+            this.txtTrangThai.Enabled = false;
             this.txtTrangThai.Lines = new string[0];
             this.txtTrangThai.Location = new System.Drawing.Point(0, 130);
             this.txtTrangThai.MaxLength = 32767;
@@ -318,6 +320,7 @@
             this.txtTongDauTu.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtTongDauTu.CustomButton.UseSelectable = true;
             this.txtTongDauTu.CustomButton.Visible = false;
+            this.txtTongDauTu.Enabled = false;
             this.txtTongDauTu.Lines = new string[0];
             this.txtTongDauTu.Location = new System.Drawing.Point(6, 210);
             this.txtTongDauTu.MaxLength = 32767;
@@ -349,6 +352,7 @@
             this.txtGiamDoc.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtGiamDoc.CustomButton.UseSelectable = true;
             this.txtGiamDoc.CustomButton.Visible = false;
+            this.txtGiamDoc.Enabled = false;
             this.txtGiamDoc.Lines = new string[0];
             this.txtGiamDoc.Location = new System.Drawing.Point(6, 170);
             this.txtGiamDoc.MaxLength = 32767;
@@ -380,6 +384,7 @@
             this.txtDiaDiem.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtDiaDiem.CustomButton.UseSelectable = true;
             this.txtDiaDiem.CustomButton.Visible = false;
+            this.txtDiaDiem.Enabled = false;
             this.txtDiaDiem.Lines = new string[0];
             this.txtDiaDiem.Location = new System.Drawing.Point(6, 131);
             this.txtDiaDiem.MaxLength = 32767;
@@ -411,6 +416,7 @@
             this.txtNhom.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtNhom.CustomButton.UseSelectable = true;
             this.txtNhom.CustomButton.Visible = false;
+            this.txtNhom.Enabled = false;
             this.txtNhom.Lines = new string[0];
             this.txtNhom.Location = new System.Drawing.Point(6, 92);
             this.txtNhom.MaxLength = 32767;
@@ -442,6 +448,7 @@
             this.txtChuDauTu.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtChuDauTu.CustomButton.UseSelectable = true;
             this.txtChuDauTu.CustomButton.Visible = false;
+            this.txtChuDauTu.Enabled = false;
             this.txtChuDauTu.Lines = new string[0];
             this.txtChuDauTu.Location = new System.Drawing.Point(6, 50);
             this.txtChuDauTu.MaxLength = 32767;
@@ -473,6 +480,7 @@
             this.txtTen.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtTen.CustomButton.UseSelectable = true;
             this.txtTen.CustomButton.Visible = false;
+            this.txtTen.Enabled = false;
             this.txtTen.Lines = new string[0];
             this.txtTen.Location = new System.Drawing.Point(6, 8);
             this.txtTen.MaxLength = 32767;
@@ -584,12 +592,14 @@
             // 
             this.lvDSHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvDSHD.HideSelection = false;
-            this.lvDSHD.Location = new System.Drawing.Point(25, 43);
+            this.lvDSHD.Location = new System.Drawing.Point(12, 43);
             this.lvDSHD.Name = "lvDSHD";
-            this.lvDSHD.Size = new System.Drawing.Size(884, 152);
+            this.lvDSHD.OwnerDraw = true;
+            this.lvDSHD.Size = new System.Drawing.Size(904, 152);
             this.lvDSHD.TabIndex = 2;
             this.lvDSHD.UseCompatibleStateImageBehavior = false;
             this.lvDSHD.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvDSHD_DrawColumnHeader);
+            this.lvDSHD.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.lvDSHD_DrawSubItem);
             // 
             // label10
             // 
@@ -617,11 +627,14 @@
             // 
             this.lvDSQT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvDSQT.HideSelection = false;
-            this.lvDSQT.Location = new System.Drawing.Point(25, 43);
+            this.lvDSQT.Location = new System.Drawing.Point(12, 43);
             this.lvDSQT.Name = "lvDSQT";
-            this.lvDSQT.Size = new System.Drawing.Size(884, 89);
+            this.lvDSQT.OwnerDraw = true;
+            this.lvDSQT.Size = new System.Drawing.Size(904, 89);
             this.lvDSQT.TabIndex = 3;
             this.lvDSQT.UseCompatibleStateImageBehavior = false;
+            this.lvDSQT.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvDSQT_DrawColumnHeader);
+            this.lvDSQT.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.lvDSQT_DrawSubItem);
             // 
             // label11
             // 
@@ -646,6 +659,7 @@
             this.Controls.Add(this.panelThongTinDuAn);
             this.ForeColor = System.Drawing.Color.Silver;
             this.Name = "XemChiTietDuAn";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "XemChiTietDuAn";
             this.panelThongTinDuAn.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

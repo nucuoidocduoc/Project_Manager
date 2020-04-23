@@ -36,9 +36,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.labelDanhSach = new System.Windows.Forms.Label();
             this.rbtnXemTheoDuAn = new System.Windows.Forms.RadioButton();
             this.rbtnXemTatCa = new System.Windows.Forms.RadioButton();
+            this.labelDanhSach = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -138,23 +138,12 @@
             this.panel4.Size = new System.Drawing.Size(1206, 61);
             this.panel4.TabIndex = 0;
             // 
-            // labelDanhSach
-            // 
-            this.labelDanhSach.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelDanhSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDanhSach.Location = new System.Drawing.Point(0, 0);
-            this.labelDanhSach.Name = "labelDanhSach";
-            this.labelDanhSach.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.labelDanhSach.Size = new System.Drawing.Size(241, 61);
-            this.labelDanhSach.TabIndex = 0;
-            this.labelDanhSach.Text = "Danh sách";
-            this.labelDanhSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // rbtnXemTheoDuAn
             // 
             this.rbtnXemTheoDuAn.Checked = true;
             this.rbtnXemTheoDuAn.Dock = System.Windows.Forms.DockStyle.Right;
             this.rbtnXemTheoDuAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnXemTheoDuAn.ForeColor = System.Drawing.Color.White;
             this.rbtnXemTheoDuAn.Location = new System.Drawing.Point(896, 0);
             this.rbtnXemTheoDuAn.Name = "rbtnXemTheoDuAn";
             this.rbtnXemTheoDuAn.Size = new System.Drawing.Size(155, 61);
@@ -168,6 +157,7 @@
             // 
             this.rbtnXemTatCa.Dock = System.Windows.Forms.DockStyle.Right;
             this.rbtnXemTatCa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnXemTatCa.ForeColor = System.Drawing.Color.White;
             this.rbtnXemTatCa.Location = new System.Drawing.Point(1051, 0);
             this.rbtnXemTatCa.Name = "rbtnXemTatCa";
             this.rbtnXemTatCa.Size = new System.Drawing.Size(155, 61);
@@ -175,6 +165,19 @@
             this.rbtnXemTatCa.TabStop = true;
             this.rbtnXemTatCa.Text = "Xem tất cả";
             this.rbtnXemTatCa.UseVisualStyleBackColor = true;
+            // 
+            // labelDanhSach
+            // 
+            this.labelDanhSach.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelDanhSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDanhSach.ForeColor = System.Drawing.Color.White;
+            this.labelDanhSach.Location = new System.Drawing.Point(0, 0);
+            this.labelDanhSach.Name = "labelDanhSach";
+            this.labelDanhSach.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.labelDanhSach.Size = new System.Drawing.Size(241, 61);
+            this.labelDanhSach.TabIndex = 0;
+            this.labelDanhSach.Text = "Danh sách";
+            this.labelDanhSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // DanhSachDAQL
             // 

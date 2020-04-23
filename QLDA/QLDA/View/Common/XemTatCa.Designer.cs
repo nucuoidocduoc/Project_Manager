@@ -65,11 +65,13 @@
             this.lvXemTatCa.Location = new System.Drawing.Point(20, 0);
             this.lvXemTatCa.MultiSelect = false;
             this.lvXemTatCa.Name = "lvXemTatCa";
+            this.lvXemTatCa.OwnerDraw = true;
             this.lvXemTatCa.Size = new System.Drawing.Size(1167, 592);
             this.lvXemTatCa.TabIndex = 0;
             this.lvXemTatCa.UseCompatibleStateImageBehavior = false;
             this.lvXemTatCa.View = System.Windows.Forms.View.Details;
             this.lvXemTatCa.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvXemTatCa_DrawColumnHeader);
+            this.lvXemTatCa.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.lvXemTatCa_DrawSubItem);
             // 
             // panel4
             // 

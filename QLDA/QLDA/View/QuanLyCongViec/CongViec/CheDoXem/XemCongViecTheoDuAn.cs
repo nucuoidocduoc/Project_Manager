@@ -50,11 +50,12 @@ namespace QLDA.View.QuanLyCongViec.CongViec.CheDoXem
                     Define.PREFIX_THANH_TOAN+cv.Ma_CV,
                     cv.Ten,
                     cv.Muc_Do_UT.ToString(),
-                    cv.Thoi_Gian_HH.ToLongDateString(),
-                    cv.Thoi_Gian_Giao.ToLongDateString(),
+                    cv.Thoi_Gian_HH.ToShortDateString(),
+                    cv.Thoi_Gian_Giao.ToShortDateString(),
+                    cv.Tai_Lieu,
                     cv.Trang_Thai
                     };
-                lvCv.Items.Add(new ListViewItem(values) { Tag=cv.Ma_CV});
+                lvCv.Items.Add(new ListViewItem(values) { Tag = cv.Ma_CV });
             }
         }
 
@@ -65,8 +66,8 @@ namespace QLDA.View.QuanLyCongViec.CongViec.CheDoXem
             lvCv.Columns.Add(DanhSachCongViecTemplate.Name, Convert.ToInt32(lvCv.Width * 0.2), HorizontalAlignment.Center);
             lvCv.Columns.Add(DanhSachCongViecTemplate.Prior, Convert.ToInt32(lvCv.Width * 0.1), HorizontalAlignment.Center);
             lvCv.Columns.Add(DanhSachCongViecTemplate.EndDate, Convert.ToInt32(lvCv.Width * 0.1), HorizontalAlignment.Center);
-            lvCv.Columns.Add(DanhSachCongViecTemplate.RealEndDate, Convert.ToInt32(lvCv.Width * 0.1), HorizontalAlignment.Center);
-
+            lvCv.Columns.Add(DanhSachCongViecTemplate.RealEndDate, Convert.ToInt32(lvCv.Width * 0.2), HorizontalAlignment.Center);
+            lvCv.Columns.Add(DanhSachCongViecTemplate.Storage, Convert.ToInt32(lvCv.Width * 0.2), HorizontalAlignment.Center);
             lvCv.Columns.Add(DanhSachCongViecTemplate.Status, Convert.ToInt32(lvCv.Width * 0.1), HorizontalAlignment.Center);
         }
 
@@ -105,6 +106,9 @@ namespace QLDA.View.QuanLyCongViec.CongViec.CheDoXem
                     InitDsCV(true);
                 }
             }
+            else {
+                MessageBox.Show(Define.PLEASE_SELECT);
+            }
         }
 
         public void Updatee()
@@ -116,6 +120,9 @@ namespace QLDA.View.QuanLyCongViec.CongViec.CheDoXem
                 if (update.HasReloadList) {
                     InitDsCV(true);
                 }
+            }
+            else {
+                MessageBox.Show(Define.PLEASE_SELECT);
             }
         }
 
@@ -129,6 +136,9 @@ namespace QLDA.View.QuanLyCongViec.CongViec.CheDoXem
                     _repository.SaveChange();
                     InitDsCV(true);
                 }
+            }
+            else {
+                MessageBox.Show(Define.PLEASE_SELECT);
             }
         }
 
@@ -151,14 +161,24 @@ namespace QLDA.View.QuanLyCongViec.CongViec.CheDoXem
 
         private void lvCv_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
         {
-            e.Graphics.FillRectangle(Brushes.DarkGray, e.Bounds);
+            e.Graphics.FillRectangle(Define.BrushHeaderLv, e.Bounds);
             e.DrawText();
         }
 
         private void lvDuAn_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
         {
-            e.Graphics.FillRectangle(Brushes.DarkGray, e.Bounds);
+            e.Graphics.FillRectangle(Define.BrushHeaderLv, e.Bounds);
             e.DrawText();
+        }
+
+        private void lvCv_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
+        {
+            e.DrawDefault = true;
+        }
+
+        private void lvDuAn_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
+        {
+            e.DrawDefault = true;
         }
     }
 }

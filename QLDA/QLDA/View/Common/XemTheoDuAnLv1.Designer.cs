@@ -45,10 +45,12 @@
             this.lvDanhSachLv1.Location = new System.Drawing.Point(201, 0);
             this.lvDanhSachLv1.MultiSelect = false;
             this.lvDanhSachLv1.Name = "lvDanhSachLv1";
-            this.lvDanhSachLv1.Size = new System.Drawing.Size(1005, 592);
+            this.lvDanhSachLv1.OwnerDraw = true;
+            this.lvDanhSachLv1.Size = new System.Drawing.Size(994, 592);
             this.lvDanhSachLv1.TabIndex = 5;
             this.lvDanhSachLv1.UseCompatibleStateImageBehavior = false;
             this.lvDanhSachLv1.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvDanhSachLv1_DrawColumnHeader);
+            this.lvDanhSachLv1.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.lvDanhSachLv1_DrawSubItem);
             // 
             // pictureBox1
             // 
@@ -70,11 +72,13 @@
             this.lvDuAn.Location = new System.Drawing.Point(0, 0);
             this.lvDuAn.MultiSelect = false;
             this.lvDuAn.Name = "lvDuAn";
+            this.lvDuAn.OwnerDraw = true;
             this.lvDuAn.Size = new System.Drawing.Size(190, 592);
             this.lvDuAn.TabIndex = 3;
             this.lvDuAn.UseCompatibleStateImageBehavior = false;
             this.lvDuAn.View = System.Windows.Forms.View.Details;
             this.lvDuAn.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvDuAn_DrawColumnHeader);
+            this.lvDuAn.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.lvDuAn_DrawSubItem);
             this.lvDuAn.SelectedIndexChanged += new System.EventHandler(this.lvDuAn_SelectedIndexChanged);
             // 
             // columnHeader1
@@ -96,8 +100,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(83)))), ((int)(((byte)(139)))));
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lvDanhSachLv1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lvDuAn);
             this.ForeColor = System.Drawing.Color.LightGray;

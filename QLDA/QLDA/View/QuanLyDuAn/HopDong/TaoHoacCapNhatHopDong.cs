@@ -28,6 +28,8 @@ namespace QLDA.View.QuanLyDuAn.HopDong
             InitCombobox();
             if (isCreate) {
                 InitCreate();
+                btnLuu.Enabled = false;
+                Text = "Tạo hợp đồng";
             }
             else {
                 InitUpdate();
@@ -87,10 +89,14 @@ namespace QLDA.View.QuanLyDuAn.HopDong
                 }
             }
             cbxDuAn.Enabled = false;
+            Text = "Chỉnh sử hợp đồng " + Define.PREFIX_HOP_DONG + _hopDongUpdate.Ma_HD;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (!Validation()) {
+                return;
+            }
             if (_isCreate) {
                 Model.HopDong hopDong = new Model.HopDong() {
                     Ten = txtTen.Text,
@@ -119,9 +125,28 @@ namespace QLDA.View.QuanLyDuAn.HopDong
             Close();
         }
 
+        private bool Validation()
+        {
+            if (txtTen.Text.Length > 50) {
+                MessageBox.Show("Tên hợp đồng phải nhỏ hơn hoặc bằng 50 ký tự.");
+                return false;
+            }
+
+            if (txtDienGiai.Text.Length > 255) {
+                MessageBox.Show("Diễn giải phải nhỏ hơn hoặc bằng 255 ký tự.");
+                return false;
+            }
+            return true;
+        }
+
         private void btnHuy_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void txtTen_TextChanged(object sender, EventArgs e)
+        {
+            btnLuu.Enabled = !string.IsNullOrEmpty(txtTen.Text);
         }
     }
 }

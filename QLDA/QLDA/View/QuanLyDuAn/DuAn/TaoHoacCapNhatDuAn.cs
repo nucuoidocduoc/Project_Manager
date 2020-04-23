@@ -122,6 +122,9 @@ namespace QLDA.View.QuanLyDuAn.DuAn
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (!Validation()) {
+                return;
+            }
             if (_idUpdate == null) {
                 // tao moi
                 var newDuAn = new Model.DuAn() {
@@ -173,15 +176,20 @@ namespace QLDA.View.QuanLyDuAn.DuAn
         private bool Validation()
         {
             if (txtTen.Text.Length > 50) {
+                MessageBox.Show("Tên dự án phải nhỏ hơn hoặc bằng 50 ký tự.");
                 return false;
             }
             if (txtNhom.Text.Length > 50) {
+                MessageBox.Show("Nhóm dự án phải nhỏ hơn hoặc bằng 50 ký tự.");
                 return false;
             }
             if (txtDiaDiem.Text.Length > 100) {
+                MessageBox.Show("Địa điểm phải nhỏ hơn hoặc bằng 100 ký tự.");
                 return false;
             }
+
             if (txtDienGiai.Text.Length > 255) {
+                MessageBox.Show("Diễn giải phải nhỏ hơn hoặc bằng 255 ký tự.");
                 return false;
             }
             return true;

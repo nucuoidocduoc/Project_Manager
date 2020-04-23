@@ -289,6 +289,30 @@
     <Compile Include="View\QuanLyDuAn\ThanhToan\TaoHoacCapNhatTT.Designer.cs">
       <DependentUpon>TaoHoacCapNhatTT.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\TaiKhoan\ForgotPassControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\TaiKhoan\ForgotPassControl.Designer.cs">
+      <DependentUpon>ForgotPassControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TaiKhoan\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TaiKhoan\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TaiKhoan\LoginControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\TaiKhoan\LoginControl.Designer.cs">
+      <DependentUpon>LoginControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TaiKhoan\RegisterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\TaiKhoan\RegisterControl.Designer.cs">
+      <DependentUpon>RegisterControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Template\DanhSachCongViecTemplate.cs" />
     <Compile Include="View\Template\DanhSachDuAnTemplate.cs" />
     <Compile Include="View\Template\DanhSachHopDongTemplate.cs" />
@@ -360,6 +384,18 @@
     <EmbeddedResource Include="View\QuanLyDuAn\ThanhToan\TaoHoacCapNhatTT.resx">
       <DependentUpon>TaoHoacCapNhatTT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\TaiKhoan\ForgotPassControl.resx">
+      <DependentUpon>ForgotPassControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TaiKhoan\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TaiKhoan\LoginControl.resx">
+      <DependentUpon>LoginControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TaiKhoan\RegisterControl.resx">
+      <DependentUpon>RegisterControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -380,7 +416,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="View\BaoCao\" />
-    <Folder Include="View\TaiKhoan\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

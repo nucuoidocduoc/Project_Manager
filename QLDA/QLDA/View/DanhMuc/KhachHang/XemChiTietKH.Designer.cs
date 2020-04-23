@@ -39,7 +39,6 @@
             this.txtMST = new MetroFramework.Controls.MetroTextBox();
             this.txtDC = new MetroFramework.Controls.MetroTextBox();
             this.txtTenKH = new MetroFramework.Controls.MetroTextBox();
-            this.txtMaKH = new MetroFramework.Controls.MetroTextBox();
             this.panelLabel = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -47,7 +46,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.panelDanhSachDA.SuspendLayout();
             this.panelThongTin.SuspendLayout();
@@ -63,7 +61,7 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(688, 607);
+            this.panelMain.Size = new System.Drawing.Size(688, 562);
             this.panelMain.TabIndex = 0;
             // 
             // panelDanhSachDA
@@ -71,20 +69,22 @@
             this.panelDanhSachDA.Controls.Add(this.lvDSDA);
             this.panelDanhSachDA.Controls.Add(this.label8);
             this.panelDanhSachDA.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDanhSachDA.Location = new System.Drawing.Point(0, 361);
+            this.panelDanhSachDA.Location = new System.Drawing.Point(0, 313);
             this.panelDanhSachDA.Name = "panelDanhSachDA";
-            this.panelDanhSachDA.Size = new System.Drawing.Size(688, 246);
+            this.panelDanhSachDA.Size = new System.Drawing.Size(688, 249);
             this.panelDanhSachDA.TabIndex = 1;
             // 
             // lvDSDA
             // 
             this.lvDSDA.HideSelection = false;
-            this.lvDSDA.Location = new System.Drawing.Point(31, 35);
+            this.lvDSDA.Location = new System.Drawing.Point(12, 35);
             this.lvDSDA.Name = "lvDSDA";
-            this.lvDSDA.Size = new System.Drawing.Size(629, 185);
+            this.lvDSDA.OwnerDraw = true;
+            this.lvDSDA.Size = new System.Drawing.Size(664, 202);
             this.lvDSDA.TabIndex = 9;
             this.lvDSDA.UseCompatibleStateImageBehavior = false;
             this.lvDSDA.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvDSDA_DrawColumnHeader);
+            this.lvDSDA.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.lvDSDA_DrawSubItem);
             // 
             // label8
             // 
@@ -107,7 +107,7 @@
             this.panelThongTin.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelThongTin.Location = new System.Drawing.Point(0, 0);
             this.panelThongTin.Name = "panelThongTin";
-            this.panelThongTin.Size = new System.Drawing.Size(688, 361);
+            this.panelThongTin.Size = new System.Drawing.Size(688, 313);
             this.panelThongTin.TabIndex = 0;
             // 
             // panelContent
@@ -119,11 +119,10 @@
             this.panelContent.Controls.Add(this.txtMST);
             this.panelContent.Controls.Add(this.txtDC);
             this.panelContent.Controls.Add(this.txtTenKH);
-            this.panelContent.Controls.Add(this.txtMaKH);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(226, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(462, 361);
+            this.panelContent.Size = new System.Drawing.Size(462, 313);
             this.panelContent.TabIndex = 1;
             // 
             // txtTenNH
@@ -140,8 +139,9 @@
             this.txtTenNH.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtTenNH.CustomButton.UseSelectable = true;
             this.txtTenNH.CustomButton.Visible = false;
+            this.txtTenNH.Enabled = false;
             this.txtTenNH.Lines = new string[0];
-            this.txtTenNH.Location = new System.Drawing.Point(17, 315);
+            this.txtTenNH.Location = new System.Drawing.Point(17, 268);
             this.txtTenNH.MaxLength = 32767;
             this.txtTenNH.Name = "txtTenNH";
             this.txtTenNH.PasswordChar = '\0';
@@ -171,8 +171,9 @@
             this.txtTKNH.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtTKNH.CustomButton.UseSelectable = true;
             this.txtTKNH.CustomButton.Visible = false;
+            this.txtTKNH.Enabled = false;
             this.txtTKNH.Lines = new string[0];
-            this.txtTKNH.Location = new System.Drawing.Point(17, 265);
+            this.txtTKNH.Location = new System.Drawing.Point(17, 218);
             this.txtTKNH.MaxLength = 32767;
             this.txtTKNH.Name = "txtTKNH";
             this.txtTKNH.PasswordChar = '\0';
@@ -202,8 +203,9 @@
             this.txtSDT.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtSDT.CustomButton.UseSelectable = true;
             this.txtSDT.CustomButton.Visible = false;
+            this.txtSDT.Enabled = false;
             this.txtSDT.Lines = new string[0];
-            this.txtSDT.Location = new System.Drawing.Point(17, 214);
+            this.txtSDT.Location = new System.Drawing.Point(17, 167);
             this.txtSDT.MaxLength = 32767;
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.PasswordChar = '\0';
@@ -233,8 +235,9 @@
             this.txtMST.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtMST.CustomButton.UseSelectable = true;
             this.txtMST.CustomButton.Visible = false;
+            this.txtMST.Enabled = false;
             this.txtMST.Lines = new string[0];
-            this.txtMST.Location = new System.Drawing.Point(17, 162);
+            this.txtMST.Location = new System.Drawing.Point(17, 115);
             this.txtMST.MaxLength = 32767;
             this.txtMST.Name = "txtMST";
             this.txtMST.PasswordChar = '\0';
@@ -264,8 +267,9 @@
             this.txtDC.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtDC.CustomButton.UseSelectable = true;
             this.txtDC.CustomButton.Visible = false;
+            this.txtDC.Enabled = false;
             this.txtDC.Lines = new string[0];
-            this.txtDC.Location = new System.Drawing.Point(17, 113);
+            this.txtDC.Location = new System.Drawing.Point(17, 66);
             this.txtDC.MaxLength = 32767;
             this.txtDC.Name = "txtDC";
             this.txtDC.PasswordChar = '\0';
@@ -295,8 +299,9 @@
             this.txtTenKH.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtTenKH.CustomButton.UseSelectable = true;
             this.txtTenKH.CustomButton.Visible = false;
+            this.txtTenKH.Enabled = false;
             this.txtTenKH.Lines = new string[0];
-            this.txtTenKH.Location = new System.Drawing.Point(17, 62);
+            this.txtTenKH.Location = new System.Drawing.Point(17, 15);
             this.txtTenKH.MaxLength = 32767;
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.PasswordChar = '\0';
@@ -312,37 +317,6 @@
             this.txtTenKH.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTenKH.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // txtMaKH
-            // 
-            // 
-            // 
-            // 
-            this.txtMaKH.CustomButton.Image = null;
-            this.txtMaKH.CustomButton.Location = new System.Drawing.Point(218, 1);
-            this.txtMaKH.CustomButton.Name = "";
-            this.txtMaKH.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtMaKH.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtMaKH.CustomButton.TabIndex = 1;
-            this.txtMaKH.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtMaKH.CustomButton.UseSelectable = true;
-            this.txtMaKH.CustomButton.Visible = false;
-            this.txtMaKH.Lines = new string[0];
-            this.txtMaKH.Location = new System.Drawing.Point(17, 12);
-            this.txtMaKH.MaxLength = 32767;
-            this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.PasswordChar = '\0';
-            this.txtMaKH.ReadOnly = true;
-            this.txtMaKH.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtMaKH.SelectedText = "";
-            this.txtMaKH.SelectionLength = 0;
-            this.txtMaKH.SelectionStart = 0;
-            this.txtMaKH.ShortcutsEnabled = true;
-            this.txtMaKH.Size = new System.Drawing.Size(240, 23);
-            this.txtMaKH.TabIndex = 0;
-            this.txtMaKH.UseSelectable = true;
-            this.txtMaKH.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtMaKH.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // panelLabel
             // 
             this.panelLabel.Controls.Add(this.label7);
@@ -351,18 +325,17 @@
             this.panelLabel.Controls.Add(this.label4);
             this.panelLabel.Controls.Add(this.label3);
             this.panelLabel.Controls.Add(this.label2);
-            this.panelLabel.Controls.Add(this.label1);
             this.panelLabel.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLabel.Location = new System.Drawing.Point(0, 0);
             this.panelLabel.Name = "panelLabel";
-            this.panelLabel.Size = new System.Drawing.Size(226, 361);
+            this.panelLabel.Size = new System.Drawing.Size(226, 313);
             this.panelLabel.TabIndex = 0;
             // 
             // label7
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Top;
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(0, 300);
+            this.label7.Location = new System.Drawing.Point(0, 250);
             this.label7.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(226, 50);
@@ -374,7 +347,7 @@
             // 
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(0, 250);
+            this.label6.Location = new System.Drawing.Point(0, 200);
             this.label6.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(226, 50);
@@ -386,7 +359,7 @@
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Top;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(0, 200);
+            this.label5.Location = new System.Drawing.Point(0, 150);
             this.label5.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(226, 50);
@@ -398,7 +371,7 @@
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(0, 150);
+            this.label4.Location = new System.Drawing.Point(0, 100);
             this.label4.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(226, 50);
@@ -410,7 +383,7 @@
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(0, 100);
+            this.label3.Location = new System.Drawing.Point(0, 50);
             this.label3.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(226, 50);
@@ -422,7 +395,7 @@
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(0, 50);
+            this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(226, 50);
@@ -430,24 +403,12 @@
             this.label2.Text = "Tên khách hàng";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 50);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã khách hàng";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // XemChiTietKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(688, 607);
+            this.ClientSize = new System.Drawing.Size(688, 562);
             this.Controls.Add(this.panelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "XemChiTietKH";
@@ -476,7 +437,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private MetroFramework.Controls.MetroTextBox txtTenNH;
         private MetroFramework.Controls.MetroTextBox txtTKNH;
@@ -484,7 +444,6 @@
         private MetroFramework.Controls.MetroTextBox txtMST;
         private MetroFramework.Controls.MetroTextBox txtDC;
         private MetroFramework.Controls.MetroTextBox txtTenKH;
-        private MetroFramework.Controls.MetroTextBox txtMaKH;
         private System.Windows.Forms.ListView lvDSDA;
     }
 }

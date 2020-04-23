@@ -59,6 +59,7 @@ namespace QLDA.View.QuanLyDuAn.HopDong
             if (hd.Cac_Thanh_Toan != null) {
                 InitLvTT(hd.Cac_Thanh_Toan);
             }
+            CalculateWorthHD();
         }
 
         private void InitLvTT(ICollection<Model.ThanhToan> thanhToans)
@@ -70,7 +71,7 @@ namespace QLDA.View.QuanLyDuAn.HopDong
                     tt.So_Tien,
                     tt.Loai_Tien,
                     tt.Hinh_Thuc,
-                    tt.Thoi_Gian_TT.ToLongDateString()
+                    tt.Thoi_Gian_TT.ToShortDateString()
                 };
                 lvThanhToan.Items.Add(new ListViewItem(values));
             }
@@ -78,8 +79,34 @@ namespace QLDA.View.QuanLyDuAn.HopDong
 
         private void lvThanhToan_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
         {
-            e.Graphics.FillRectangle(Brushes.DarkGray, e.Bounds);
+            e.Graphics.FillRectangle(Define.BrushHeaderLv, e.Bounds);
             e.DrawText();
+        }
+
+        private void lvThanhToan_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
+        {
+            e.DrawDefault = true;
+        }
+
+        private void CalculateWorthHD(bool isReloadRepository = false)
+        {
+            if (isReloadRepository) {
+                _repository = RepositoryWrapper.Create();
+            }
+            var hd = _repository.HopDong.FindByCondition(x => x.Ma_HD == _idHd).FirstOrDefault();
+            if (hd == null) {
+                return;
+            }
+            var thanhToans = _repository.ThanhToan.FindByCondition(x => x.Ma_HD == _idHd).ToList();
+            double value = 0;
+            foreach (var tt in thanhToans) {
+                value += Define.GetMoney(tt);
+            }
+            if (double.TryParse(hd.Tong_Gia_Tri, out double toTal)) {
+                txtTongGiaTri.Text = toTal.ToString();
+                txtDaThanhToan.Text = value.ToString();
+                txtChuaThanhToan.Text = (toTal - value).ToString();
+            }
         }
     }
 }

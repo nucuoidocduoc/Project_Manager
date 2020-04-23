@@ -30,6 +30,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelThongTin2 = new System.Windows.Forms.Panel();
             this.panelContent2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtTongGiaTri = new MetroFramework.Controls.MetroTextBox();
             this.cbxTrangThai = new MetroFramework.Controls.MetroComboBox();
             this.panelHeader2 = new System.Windows.Forms.Panel();
@@ -52,7 +53,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnHuy = new MetroFramework.Controls.MetroButton();
             this.btnLuu = new MetroFramework.Controls.MetroButton();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panelThongTin2.SuspendLayout();
             this.panelContent2.SuspendLayout();
@@ -71,7 +71,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.ForeColor = System.Drawing.Color.White;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(964, 226);
             this.panel3.TabIndex = 2;
@@ -82,7 +82,7 @@
             this.panelThongTin2.Controls.Add(this.panelHeader2);
             this.panelThongTin2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelThongTin2.Location = new System.Drawing.Point(482, 0);
-            this.panelThongTin2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelThongTin2.Margin = new System.Windows.Forms.Padding(4);
             this.panelThongTin2.Name = "panelThongTin2";
             this.panelThongTin2.Size = new System.Drawing.Size(482, 226);
             this.panelThongTin2.TabIndex = 3;
@@ -94,10 +94,21 @@
             this.panelContent2.Controls.Add(this.cbxTrangThai);
             this.panelContent2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent2.Location = new System.Drawing.Point(153, 0);
-            this.panelContent2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelContent2.Margin = new System.Windows.Forms.Padding(4);
             this.panelContent2.Name = "panelContent2";
             this.panelContent2.Size = new System.Drawing.Size(329, 226);
             this.panelContent2.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(284, 20);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 16);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "VND";
             // 
             // txtTongGiaTri
             // 
@@ -105,10 +116,10 @@
             // 
             // 
             this.txtTongGiaTri.CustomButton.Image = null;
-            this.txtTongGiaTri.CustomButton.Location = new System.Drawing.Point(212, 2);
-            this.txtTongGiaTri.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTongGiaTri.CustomButton.Location = new System.Drawing.Point(238, 2);
+            this.txtTongGiaTri.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtTongGiaTri.CustomButton.Name = "";
-            this.txtTongGiaTri.CustomButton.Size = new System.Drawing.Size(20, 18);
+            this.txtTongGiaTri.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtTongGiaTri.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtTongGiaTri.CustomButton.TabIndex = 1;
             this.txtTongGiaTri.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -116,7 +127,7 @@
             this.txtTongGiaTri.CustomButton.Visible = false;
             this.txtTongGiaTri.Lines = new string[0];
             this.txtTongGiaTri.Location = new System.Drawing.Point(11, 14);
-            this.txtTongGiaTri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTongGiaTri.Margin = new System.Windows.Forms.Padding(4);
             this.txtTongGiaTri.MaxLength = 32767;
             this.txtTongGiaTri.Name = "txtTongGiaTri";
             this.txtTongGiaTri.PasswordChar = '\0';
@@ -136,7 +147,7 @@
             this.cbxTrangThai.FormattingEnabled = true;
             this.cbxTrangThai.ItemHeight = 23;
             this.cbxTrangThai.Location = new System.Drawing.Point(11, 62);
-            this.cbxTrangThai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxTrangThai.Margin = new System.Windows.Forms.Padding(4);
             this.cbxTrangThai.Name = "cbxTrangThai";
             this.cbxTrangThai.Size = new System.Drawing.Size(263, 29);
             this.cbxTrangThai.TabIndex = 13;
@@ -148,7 +159,7 @@
             this.panelHeader2.Controls.Add(this.label12);
             this.panelHeader2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelHeader2.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelHeader2.Margin = new System.Windows.Forms.Padding(4);
             this.panelHeader2.Name = "panelHeader2";
             this.panelHeader2.Size = new System.Drawing.Size(153, 226);
             this.panelHeader2.TabIndex = 2;
@@ -181,7 +192,7 @@
             this.panelThongTin1.Controls.Add(this.panelHeader1);
             this.panelThongTin1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelThongTin1.Location = new System.Drawing.Point(0, 0);
-            this.panelThongTin1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelThongTin1.Margin = new System.Windows.Forms.Padding(4);
             this.panelThongTin1.Name = "panelThongTin1";
             this.panelThongTin1.Size = new System.Drawing.Size(482, 226);
             this.panelThongTin1.TabIndex = 2;
@@ -194,7 +205,7 @@
             this.panelContent1.Controls.Add(this.txtTen);
             this.panelContent1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent1.Location = new System.Drawing.Point(167, 0);
-            this.panelContent1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelContent1.Margin = new System.Windows.Forms.Padding(4);
             this.panelContent1.Name = "panelContent1";
             this.panelContent1.Size = new System.Drawing.Size(315, 226);
             this.panelContent1.TabIndex = 1;
@@ -203,7 +214,7 @@
             // 
             this.dtEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtEndDate.Location = new System.Drawing.Point(11, 162);
-            this.dtEndDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtEndDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtEndDate.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtEndDate.Name = "dtEndDate";
             this.dtEndDate.Size = new System.Drawing.Size(263, 29);
@@ -213,7 +224,7 @@
             // 
             this.dtStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtStartDate.Location = new System.Drawing.Point(11, 112);
-            this.dtStartDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtStartDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtStartDate.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtStartDate.Name = "dtStartDate";
             this.dtStartDate.Size = new System.Drawing.Size(263, 29);
@@ -224,7 +235,7 @@
             this.cbxDuAn.FormattingEnabled = true;
             this.cbxDuAn.ItemHeight = 23;
             this.cbxDuAn.Location = new System.Drawing.Point(11, 59);
-            this.cbxDuAn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxDuAn.Margin = new System.Windows.Forms.Padding(4);
             this.cbxDuAn.Name = "cbxDuAn";
             this.cbxDuAn.Size = new System.Drawing.Size(263, 29);
             this.cbxDuAn.TabIndex = 1;
@@ -236,10 +247,10 @@
             // 
             // 
             this.txtTen.CustomButton.Image = null;
-            this.txtTen.CustomButton.Location = new System.Drawing.Point(212, 2);
-            this.txtTen.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTen.CustomButton.Location = new System.Drawing.Point(238, 2);
+            this.txtTen.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtTen.CustomButton.Name = "";
-            this.txtTen.CustomButton.Size = new System.Drawing.Size(20, 18);
+            this.txtTen.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtTen.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtTen.CustomButton.TabIndex = 1;
             this.txtTen.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -247,7 +258,7 @@
             this.txtTen.CustomButton.Visible = false;
             this.txtTen.Lines = new string[0];
             this.txtTen.Location = new System.Drawing.Point(11, 10);
-            this.txtTen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(4);
             this.txtTen.MaxLength = 32767;
             this.txtTen.Name = "txtTen";
             this.txtTen.PasswordChar = '\0';
@@ -261,6 +272,7 @@
             this.txtTen.UseSelectable = true;
             this.txtTen.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTen.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTen.TextChanged += new System.EventHandler(this.txtTen_TextChanged);
             // 
             // panelHeader1
             // 
@@ -270,7 +282,7 @@
             this.panelHeader1.Controls.Add(this.label1);
             this.panelHeader1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelHeader1.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelHeader1.Margin = new System.Windows.Forms.Padding(4);
             this.panelHeader1.Name = "panelHeader1";
             this.panelHeader1.Size = new System.Drawing.Size(167, 226);
             this.panelHeader1.TabIndex = 0;
@@ -325,7 +337,7 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 226);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(964, 68);
             this.panel1.TabIndex = 3;
@@ -336,10 +348,10 @@
             // 
             // 
             this.txtDienGiai.CustomButton.Image = null;
-            this.txtDienGiai.CustomButton.Location = new System.Drawing.Point(612, 2);
-            this.txtDienGiai.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDienGiai.CustomButton.Location = new System.Drawing.Point(688, 2);
+            this.txtDienGiai.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtDienGiai.CustomButton.Name = "";
-            this.txtDienGiai.CustomButton.Size = new System.Drawing.Size(56, 50);
+            this.txtDienGiai.CustomButton.Size = new System.Drawing.Size(63, 63);
             this.txtDienGiai.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtDienGiai.CustomButton.TabIndex = 1;
             this.txtDienGiai.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -348,7 +360,7 @@
             this.txtDienGiai.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtDienGiai.Lines = new string[0];
             this.txtDienGiai.Location = new System.Drawing.Point(174, 0);
-            this.txtDienGiai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDienGiai.Margin = new System.Windows.Forms.Padding(4);
             this.txtDienGiai.MaxLength = 32767;
             this.txtDienGiai.Name = "txtDienGiai";
             this.txtDienGiai.PasswordChar = '\0';
@@ -380,7 +392,7 @@
             this.panel2.Controls.Add(this.btnLuu);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 294);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(964, 78);
             this.panel2.TabIndex = 4;
@@ -388,7 +400,7 @@
             // btnHuy
             // 
             this.btnHuy.Location = new System.Drawing.Point(619, 27);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(100, 28);
             this.btnHuy.TabIndex = 1;
@@ -399,24 +411,13 @@
             // btnLuu
             // 
             this.btnLuu.Location = new System.Drawing.Point(259, 27);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(100, 28);
             this.btnLuu.TabIndex = 0;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseSelectable = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(284, 20);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 16);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "VND";
             // 
             // TaoHoacCapNhatHopDong
             // 
@@ -429,7 +430,7 @@
             this.Controls.Add(this.panel3);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TaoHoacCapNhatHopDong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TaoHoacCapNhatHopDong";

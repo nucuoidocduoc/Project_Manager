@@ -230,6 +230,7 @@
             this.txtTen.UseSelectable = true;
             this.txtTen.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTen.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTen.TextChanged += new System.EventHandler(this.txtTen_TextChanged);
             // 
             // panelLabel
             // 
@@ -367,6 +368,7 @@
             this.Controls.Add(this.panelThongTin);
             this.ForeColor = System.Drawing.Color.LightGray;
             this.Name = "TaoHoacCapNhatCV";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "XemChiTietCongViec";
             this.panelThongTin.ResumeLayout(false);
             this.panelContent.ResumeLayout(false);

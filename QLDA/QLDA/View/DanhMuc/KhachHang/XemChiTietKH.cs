@@ -3,12 +3,8 @@ using QLDA.Repository;
 using QLDA.View.Template;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLDA.View.DanhMuc.KhachHang
@@ -36,7 +32,7 @@ namespace QLDA.View.DanhMuc.KhachHang
             }
 
             _repository.RepositoryContext.Entry(kh).Collection(x => x.Cac_Du_An).Load();
-            txtMaKH.Text = kh.Ma_KH.ToString();
+            //txtMaKH.Text = kh.Ma_KH.ToString();
             txtTenKH.Text = kh.Ten;
             txtDC.Text = kh.Dia_Chi;
             txtMST.Text = kh.MST;
@@ -46,6 +42,7 @@ namespace QLDA.View.DanhMuc.KhachHang
             if (kh.Cac_Du_An != null && kh.Cac_Du_An.Count > 0) {
                 InitDataListViewDuAn(kh.Cac_Du_An);
             }
+            Text = "Chi tiết khách hàng " + Define.PREFIX_KHACH_HANG + kh.Ma_KH;
         }
 
         private void InitDuAn()
@@ -81,8 +78,13 @@ namespace QLDA.View.DanhMuc.KhachHang
 
         private void lvDSDA_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
         {
-            e.Graphics.FillRectangle(Brushes.DarkGray, e.Bounds);
+            e.Graphics.FillRectangle(Define.BrushHeaderLv, e.Bounds);
             e.DrawText();
+        }
+
+        private void lvDSDA_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
+        {
+            e.DrawDefault = true;
         }
     }
 }

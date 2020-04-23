@@ -1,13 +1,7 @@
 ﻿using QLDA.Repository;
 using QLDA.View.Template;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLDA.View.QuanLyCongViec.CongViec
@@ -70,6 +64,7 @@ namespace QLDA.View.QuanLyCongViec.CongViec
             else {
                 InitQT();
             }
+            Text = "Tạo mới công việc";
         }
 
         private void InitUpdate()
@@ -120,6 +115,7 @@ namespace QLDA.View.QuanLyCongViec.CongViec
 
             cbxDuAn.Enabled = false;
             cbxQT.Enabled = false;
+            Text = "Chỉnh sửa công việc " + Define.PREFIX_CONG_VIEC + cvUpdate.Ma_CV;
         }
 
         private void InitCBX()
@@ -172,6 +168,9 @@ namespace QLDA.View.QuanLyCongViec.CongViec
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (!Validation()) {
+                return;
+            }
             if (_isCreate) {
                 Model.CongViec cv = new Model.CongViec() {
                     Ten = txtTen.Text,
@@ -203,6 +202,16 @@ namespace QLDA.View.QuanLyCongViec.CongViec
             Close();
         }
 
+        private bool Validation()
+        {
+            if (txtTen.Text.Length > 50) {
+                MessageBox.Show("Tên công việc phải nhỏ hơn hoặc bằng 50 ký tự.");
+                return false;
+            }
+
+            return true;
+        }
+
         private void btnHuy_Click(object sender, EventArgs e)
         {
             Close();
@@ -211,6 +220,11 @@ namespace QLDA.View.QuanLyCongViec.CongViec
         private void cbxDuAn_SelectedIndexChanged(object sender, EventArgs e)
         {
             InitQT();
+        }
+
+        private void txtTen_TextChanged(object sender, EventArgs e)
+        {
+            btnLuu.Enabled = !string.IsNullOrEmpty(txtTen.Text);
         }
     }
 }
