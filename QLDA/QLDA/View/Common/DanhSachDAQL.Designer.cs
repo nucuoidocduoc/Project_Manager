@@ -52,15 +52,15 @@
             this.panel3.Controls.Add(this.btnXoa);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.ForeColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(0, 658);
+            this.panel3.Location = new System.Drawing.Point(0, 558);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1206, 59);
+            this.panel3.Size = new System.Drawing.Size(911, 53);
             this.panel3.TabIndex = 8;
             // 
             // btnXemChiTiet
             // 
             this.btnXemChiTiet.ForeColor = System.Drawing.Color.White;
-            this.btnXemChiTiet.Location = new System.Drawing.Point(755, 18);
+            this.btnXemChiTiet.Location = new System.Drawing.Point(524, 17);
             this.btnXemChiTiet.Name = "btnXemChiTiet";
             this.btnXemChiTiet.Size = new System.Drawing.Size(75, 23);
             this.btnXemChiTiet.TabIndex = 7;
@@ -71,7 +71,7 @@
             // btnThemMoi
             // 
             this.btnThemMoi.ForeColor = System.Drawing.Color.White;
-            this.btnThemMoi.Location = new System.Drawing.Point(850, 18);
+            this.btnThemMoi.Location = new System.Drawing.Point(619, 17);
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.Size = new System.Drawing.Size(75, 23);
             this.btnThemMoi.TabIndex = 6;
@@ -82,7 +82,7 @@
             // btnCapNhat
             // 
             this.btnCapNhat.ForeColor = System.Drawing.Color.White;
-            this.btnCapNhat.Location = new System.Drawing.Point(949, 18);
+            this.btnCapNhat.Location = new System.Drawing.Point(718, 17);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(75, 23);
             this.btnCapNhat.TabIndex = 5;
@@ -93,7 +93,7 @@
             // btnXoa
             // 
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(1051, 18);
+            this.btnXoa.Location = new System.Drawing.Point(820, 17);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 4;
@@ -103,10 +103,11 @@
             // 
             // panelContent
             // 
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelContent.Location = new System.Drawing.Point(0, 67);
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelContent.Location = new System.Drawing.Point(0, 39);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1206, 592);
+            this.panelContent.Size = new System.Drawing.Size(911, 519);
             this.panelContent.TabIndex = 7;
             // 
             // panel1
@@ -116,15 +117,15 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1206, 67);
+            this.panel1.Size = new System.Drawing.Size(911, 39);
             this.panel1.TabIndex = 6;
             // 
             // panel5
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 61);
+            this.panel5.Location = new System.Drawing.Point(0, 36);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1206, 6);
+            this.panel5.Size = new System.Drawing.Size(911, 3);
             this.panel5.TabIndex = 1;
             // 
             // panel4
@@ -135,18 +136,18 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1206, 61);
+            this.panel4.Size = new System.Drawing.Size(911, 36);
             this.panel4.TabIndex = 0;
             // 
             // rbtnXemTheoDuAn
             // 
             this.rbtnXemTheoDuAn.Checked = true;
             this.rbtnXemTheoDuAn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rbtnXemTheoDuAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnXemTheoDuAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtnXemTheoDuAn.ForeColor = System.Drawing.Color.White;
-            this.rbtnXemTheoDuAn.Location = new System.Drawing.Point(896, 0);
+            this.rbtnXemTheoDuAn.Location = new System.Drawing.Point(601, 0);
             this.rbtnXemTheoDuAn.Name = "rbtnXemTheoDuAn";
-            this.rbtnXemTheoDuAn.Size = new System.Drawing.Size(155, 61);
+            this.rbtnXemTheoDuAn.Size = new System.Drawing.Size(155, 36);
             this.rbtnXemTheoDuAn.TabIndex = 3;
             this.rbtnXemTheoDuAn.TabStop = true;
             this.rbtnXemTheoDuAn.Text = "Xem theo dự án";
@@ -156,11 +157,11 @@
             // rbtnXemTatCa
             // 
             this.rbtnXemTatCa.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rbtnXemTatCa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnXemTatCa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtnXemTatCa.ForeColor = System.Drawing.Color.White;
-            this.rbtnXemTatCa.Location = new System.Drawing.Point(1051, 0);
+            this.rbtnXemTatCa.Location = new System.Drawing.Point(756, 0);
             this.rbtnXemTatCa.Name = "rbtnXemTatCa";
-            this.rbtnXemTatCa.Size = new System.Drawing.Size(155, 61);
+            this.rbtnXemTatCa.Size = new System.Drawing.Size(155, 36);
             this.rbtnXemTatCa.TabIndex = 2;
             this.rbtnXemTatCa.TabStop = true;
             this.rbtnXemTatCa.Text = "Xem tất cả";
@@ -169,12 +170,12 @@
             // labelDanhSach
             // 
             this.labelDanhSach.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelDanhSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDanhSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDanhSach.ForeColor = System.Drawing.Color.White;
             this.labelDanhSach.Location = new System.Drawing.Point(0, 0);
             this.labelDanhSach.Name = "labelDanhSach";
             this.labelDanhSach.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.labelDanhSach.Size = new System.Drawing.Size(241, 61);
+            this.labelDanhSach.Size = new System.Drawing.Size(241, 36);
             this.labelDanhSach.TabIndex = 0;
             this.labelDanhSach.Text = "Danh sách";
             this.labelDanhSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -184,12 +185,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(83)))), ((int)(((byte)(139)))));
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelContent);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.LightGray;
             this.Name = "DanhSachDAQL";
-            this.Size = new System.Drawing.Size(1206, 717);
+            this.Size = new System.Drawing.Size(911, 611);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

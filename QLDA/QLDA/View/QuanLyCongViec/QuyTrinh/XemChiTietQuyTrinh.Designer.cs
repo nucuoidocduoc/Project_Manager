@@ -63,7 +63,7 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(688, 607);
+            this.panelMain.Size = new System.Drawing.Size(688, 525);
             this.panelMain.TabIndex = 1;
             // 
             // panelDanhSachDA
@@ -71,9 +71,9 @@
             this.panelDanhSachDA.Controls.Add(this.lvCv);
             this.panelDanhSachDA.Controls.Add(this.label8);
             this.panelDanhSachDA.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDanhSachDA.Location = new System.Drawing.Point(0, 361);
+            this.panelDanhSachDA.Location = new System.Drawing.Point(0, 274);
             this.panelDanhSachDA.Name = "panelDanhSachDA";
-            this.panelDanhSachDA.Size = new System.Drawing.Size(688, 246);
+            this.panelDanhSachDA.Size = new System.Drawing.Size(688, 251);
             this.panelDanhSachDA.TabIndex = 1;
             // 
             // lvCv
@@ -110,7 +110,7 @@
             this.panelThongTin.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelThongTin.Location = new System.Drawing.Point(0, 0);
             this.panelThongTin.Name = "panelThongTin";
-            this.panelThongTin.Size = new System.Drawing.Size(688, 361);
+            this.panelThongTin.Size = new System.Drawing.Size(688, 274);
             this.panelThongTin.TabIndex = 0;
             // 
             // panelContent
@@ -125,7 +125,7 @@
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(226, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(462, 361);
+            this.panelContent.Size = new System.Drawing.Size(462, 274);
             this.panelContent.TabIndex = 1;
             // 
             // txtStatus
@@ -144,7 +144,7 @@
             this.txtStatus.CustomButton.Visible = false;
             this.txtStatus.Enabled = false;
             this.txtStatus.Lines = new string[0];
-            this.txtStatus.Location = new System.Drawing.Point(17, 315);
+            this.txtStatus.Location = new System.Drawing.Point(17, 228);
             this.txtStatus.MaxLength = 32767;
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.PasswordChar = '\0';
@@ -176,7 +176,7 @@
             this.txtDuAn.CustomButton.Visible = false;
             this.txtDuAn.Enabled = false;
             this.txtDuAn.Lines = new string[0];
-            this.txtDuAn.Location = new System.Drawing.Point(17, 165);
+            this.txtDuAn.Location = new System.Drawing.Point(17, 118);
             this.txtDuAn.MaxLength = 32767;
             this.txtDuAn.Name = "txtDuAn";
             this.txtDuAn.PasswordChar = '\0';
@@ -208,7 +208,7 @@
             this.txtNV.CustomButton.Visible = false;
             this.txtNV.Enabled = false;
             this.txtNV.Lines = new string[0];
-            this.txtNV.Location = new System.Drawing.Point(17, 114);
+            this.txtNV.Location = new System.Drawing.Point(17, 80);
             this.txtNV.MaxLength = 32767;
             this.txtNV.Name = "txtNV";
             this.txtNV.PasswordChar = '\0';
@@ -240,7 +240,7 @@
             this.txtLoaiQT.CustomButton.Visible = false;
             this.txtLoaiQT.Enabled = false;
             this.txtLoaiQT.Lines = new string[0];
-            this.txtLoaiQT.Location = new System.Drawing.Point(17, 63);
+            this.txtLoaiQT.Location = new System.Drawing.Point(17, 44);
             this.txtLoaiQT.MaxLength = 32767;
             this.txtLoaiQT.Name = "txtLoaiQT";
             this.txtLoaiQT.PasswordChar = '\0';
@@ -260,7 +260,7 @@
             // 
             this.dtEndDate.Enabled = false;
             this.dtEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtEndDate.Location = new System.Drawing.Point(17, 264);
+            this.dtEndDate.Location = new System.Drawing.Point(17, 191);
             this.dtEndDate.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtEndDate.Name = "dtEndDate";
             this.dtEndDate.Size = new System.Drawing.Size(200, 29);
@@ -270,7 +270,7 @@
             // 
             this.dtStartDate.Enabled = false;
             this.dtStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtStartDate.Location = new System.Drawing.Point(17, 212);
+            this.dtStartDate.Location = new System.Drawing.Point(17, 152);
             this.dtStartDate.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtStartDate.Name = "dtStartDate";
             this.dtStartDate.Size = new System.Drawing.Size(200, 29);
@@ -292,7 +292,7 @@
             this.txtTen.CustomButton.Visible = false;
             this.txtTen.Enabled = false;
             this.txtTen.Lines = new string[0];
-            this.txtTen.Location = new System.Drawing.Point(17, 12);
+            this.txtTen.Location = new System.Drawing.Point(17, 7);
             this.txtTen.MaxLength = 32767;
             this.txtTen.Name = "txtTen";
             this.txtTen.PasswordChar = '\0';
@@ -320,17 +320,17 @@
             this.panelLabel.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLabel.Location = new System.Drawing.Point(0, 0);
             this.panelLabel.Name = "panelLabel";
-            this.panelLabel.Size = new System.Drawing.Size(226, 361);
+            this.panelLabel.Size = new System.Drawing.Size(226, 274);
             this.panelLabel.TabIndex = 0;
             // 
             // label7
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Top;
             this.label7.ForeColor = System.Drawing.Color.LightGray;
-            this.label7.Location = new System.Drawing.Point(0, 300);
+            this.label7.Location = new System.Drawing.Point(0, 216);
             this.label7.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(226, 50);
+            this.label7.Size = new System.Drawing.Size(226, 34);
             this.label7.TabIndex = 6;
             this.label7.Text = "Trạng thái";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -339,10 +339,10 @@
             // 
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
             this.label6.ForeColor = System.Drawing.Color.LightGray;
-            this.label6.Location = new System.Drawing.Point(0, 250);
+            this.label6.Location = new System.Drawing.Point(0, 186);
             this.label6.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(226, 50);
+            this.label6.Size = new System.Drawing.Size(226, 30);
             this.label6.TabIndex = 5;
             this.label6.Text = "Thời gian kết thúc";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -351,10 +351,10 @@
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Top;
             this.label5.ForeColor = System.Drawing.Color.LightGray;
-            this.label5.Location = new System.Drawing.Point(0, 200);
+            this.label5.Location = new System.Drawing.Point(0, 150);
             this.label5.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(226, 50);
+            this.label5.Size = new System.Drawing.Size(226, 36);
             this.label5.TabIndex = 4;
             this.label5.Text = "Thời gian bắt đầu";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -363,10 +363,10 @@
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
             this.label4.ForeColor = System.Drawing.Color.LightGray;
-            this.label4.Location = new System.Drawing.Point(0, 150);
+            this.label4.Location = new System.Drawing.Point(0, 111);
             this.label4.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(226, 50);
+            this.label4.Size = new System.Drawing.Size(226, 39);
             this.label4.TabIndex = 3;
             this.label4.Text = "Dự án";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -375,10 +375,10 @@
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.ForeColor = System.Drawing.Color.LightGray;
-            this.label3.Location = new System.Drawing.Point(0, 100);
+            this.label3.Location = new System.Drawing.Point(0, 73);
             this.label3.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(226, 50);
+            this.label3.Size = new System.Drawing.Size(226, 38);
             this.label3.TabIndex = 2;
             this.label3.Text = "Chủ nhiệm";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -387,10 +387,10 @@
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.ForeColor = System.Drawing.Color.LightGray;
-            this.label2.Location = new System.Drawing.Point(0, 50);
+            this.label2.Location = new System.Drawing.Point(0, 35);
             this.label2.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(226, 50);
+            this.label2.Size = new System.Drawing.Size(226, 38);
             this.label2.TabIndex = 1;
             this.label2.Text = "Loại quy trình";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -402,7 +402,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 50);
+            this.label1.Size = new System.Drawing.Size(226, 35);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên quy trình";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -412,7 +412,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(688, 607);
+            this.ClientSize = new System.Drawing.Size(688, 525);
             this.Controls.Add(this.panelMain);
             this.ForeColor = System.Drawing.Color.LightGray;
             this.Name = "XemChiTietQuyTrinh";

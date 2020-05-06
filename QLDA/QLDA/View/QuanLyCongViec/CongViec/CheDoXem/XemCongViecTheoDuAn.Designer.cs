@@ -48,21 +48,21 @@
             this.panel1.Controls.Add(this.lvCv);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(204, 0);
+            this.panel1.Location = new System.Drawing.Point(168, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(988, 592);
+            this.panel1.Size = new System.Drawing.Size(729, 519);
             this.panel1.TabIndex = 11;
             // 
             // lvCv
             // 
             this.lvCv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvCv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvCv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvCv.FullRowSelect = true;
             this.lvCv.HideSelection = false;
-            this.lvCv.Location = new System.Drawing.Point(0, 45);
+            this.lvCv.Location = new System.Drawing.Point(0, 39);
             this.lvCv.Name = "lvCv";
             this.lvCv.OwnerDraw = true;
-            this.lvCv.Size = new System.Drawing.Size(988, 547);
+            this.lvCv.Size = new System.Drawing.Size(729, 480);
             this.lvCv.TabIndex = 6;
             this.lvCv.UseCompatibleStateImageBehavior = false;
             this.lvCv.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvCv_DrawColumnHeader);
@@ -76,24 +76,26 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(988, 45);
+            this.panel2.Size = new System.Drawing.Size(729, 39);
             this.panel2.TabIndex = 0;
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(652, 0);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(388, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 45);
+            this.label2.Size = new System.Drawing.Size(140, 22);
             this.label2.TabIndex = 3;
             this.label2.Text = "Chọn quy trình";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cbxQT
             // 
+            this.cbxQT.FontSize = MetroFramework.MetroComboBoxSize.Small;
             this.cbxQT.FormattingEnabled = true;
             this.cbxQT.ItemHeight = 23;
-            this.cbxQT.Location = new System.Drawing.Point(798, 10);
+            this.cbxQT.Location = new System.Drawing.Point(534, 5);
             this.cbxQT.Name = "cbxQT";
             this.cbxQT.Size = new System.Drawing.Size(184, 29);
             this.cbxQT.TabIndex = 2;
@@ -103,10 +105,11 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 45);
+            this.label1.Size = new System.Drawing.Size(184, 39);
             this.label1.TabIndex = 1;
             this.label1.Text = "Danh sách công việc";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -114,9 +117,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Location = new System.Drawing.Point(190, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(154, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(14, 592);
+            this.pictureBox1.Size = new System.Drawing.Size(14, 519);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
@@ -125,14 +128,14 @@
             this.lvDuAn.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
             this.lvDuAn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lvDuAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvDuAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvDuAn.FullRowSelect = true;
             this.lvDuAn.HideSelection = false;
             this.lvDuAn.Location = new System.Drawing.Point(0, 0);
             this.lvDuAn.MultiSelect = false;
             this.lvDuAn.Name = "lvDuAn";
             this.lvDuAn.OwnerDraw = true;
-            this.lvDuAn.Size = new System.Drawing.Size(190, 592);
+            this.lvDuAn.Size = new System.Drawing.Size(154, 519);
             this.lvDuAn.TabIndex = 9;
             this.lvDuAn.UseCompatibleStateImageBehavior = false;
             this.lvDuAn.View = System.Windows.Forms.View.Details;
@@ -143,14 +146,14 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Dự án";
-            this.columnHeader1.Width = 185;
+            this.columnHeader1.Width = 150;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Location = new System.Drawing.Point(1192, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(897, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(14, 592);
+            this.pictureBox2.Size = new System.Drawing.Size(14, 519);
             this.pictureBox2.TabIndex = 12;
             this.pictureBox2.TabStop = false;
             // 
@@ -163,9 +166,9 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lvDuAn);
-            this.ForeColor = System.Drawing.Color.LightGray;
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "XemCongViecTheoDuAn";
-            this.Size = new System.Drawing.Size(1206, 592);
+            this.Size = new System.Drawing.Size(911, 519);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

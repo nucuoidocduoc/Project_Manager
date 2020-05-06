@@ -51,15 +51,15 @@
             this.panelFooter.Controls.Add(this.btnCapNhat);
             this.panelFooter.Controls.Add(this.btnXoa);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 658);
+            this.panelFooter.Location = new System.Drawing.Point(0, 573);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(1206, 59);
+            this.panelFooter.Size = new System.Drawing.Size(911, 38);
             this.panelFooter.TabIndex = 7;
             // 
             // btnXemChiTiet
             // 
             this.btnXemChiTiet.ForeColor = System.Drawing.Color.White;
-            this.btnXemChiTiet.Location = new System.Drawing.Point(740, 17);
+            this.btnXemChiTiet.Location = new System.Drawing.Point(505, 7);
             this.btnXemChiTiet.Name = "btnXemChiTiet";
             this.btnXemChiTiet.Size = new System.Drawing.Size(75, 23);
             this.btnXemChiTiet.TabIndex = 3;
@@ -70,7 +70,7 @@
             // btnThemMoi
             // 
             this.btnThemMoi.ForeColor = System.Drawing.Color.White;
-            this.btnThemMoi.Location = new System.Drawing.Point(834, 17);
+            this.btnThemMoi.Location = new System.Drawing.Point(599, 7);
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.Size = new System.Drawing.Size(75, 23);
             this.btnThemMoi.TabIndex = 2;
@@ -81,7 +81,7 @@
             // btnCapNhat
             // 
             this.btnCapNhat.ForeColor = System.Drawing.Color.White;
-            this.btnCapNhat.Location = new System.Drawing.Point(933, 17);
+            this.btnCapNhat.Location = new System.Drawing.Point(698, 7);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(75, 23);
             this.btnCapNhat.TabIndex = 1;
@@ -92,7 +92,7 @@
             // btnXoa
             // 
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(1035, 17);
+            this.btnXoa.Location = new System.Drawing.Point(797, 7);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 0;
@@ -107,7 +107,7 @@
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1206, 42);
+            this.panelHeader.Size = new System.Drawing.Size(911, 36);
             this.panelHeader.TabIndex = 6;
             // 
             // panel3
@@ -115,17 +115,17 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 42);
+            this.panel3.Size = new System.Drawing.Size(10, 36);
             this.panel3.TabIndex = 1;
             // 
             // labelDanhSach
             // 
             this.labelDanhSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelDanhSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDanhSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDanhSach.ForeColor = System.Drawing.Color.White;
             this.labelDanhSach.Location = new System.Drawing.Point(12, 5);
             this.labelDanhSach.Name = "labelDanhSach";
-            this.labelDanhSach.Size = new System.Drawing.Size(242, 32);
+            this.labelDanhSach.Size = new System.Drawing.Size(242, 28);
             this.labelDanhSach.TabIndex = 0;
             this.labelDanhSach.Text = "Danh sách ";
             this.labelDanhSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -133,7 +133,7 @@
             // lvDanhSach
             // 
             this.lvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvDanhSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvDanhSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvDanhSach.FullRowSelect = true;
             this.lvDanhSach.HideSelection = false;
             this.lvDanhSach.Location = new System.Drawing.Point(10, 0);
@@ -141,7 +141,7 @@
             this.lvDanhSach.Name = "lvDanhSach";
             this.lvDanhSach.OwnerDraw = true;
             this.lvDanhSach.Scrollable = false;
-            this.lvDanhSach.Size = new System.Drawing.Size(1186, 616);
+            this.lvDanhSach.Size = new System.Drawing.Size(891, 537);
             this.lvDanhSach.TabIndex = 8;
             this.lvDanhSach.UseCompatibleStateImageBehavior = false;
             this.lvDanhSach.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvDanhSach_DrawColumnHeader);
@@ -153,17 +153,17 @@
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 42);
+            this.panel1.Location = new System.Drawing.Point(0, 36);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1206, 616);
+            this.panel1.Size = new System.Drawing.Size(911, 537);
             this.panel1.TabIndex = 9;
             // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(1196, 0);
+            this.panel4.Location = new System.Drawing.Point(901, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 616);
+            this.panel4.Size = new System.Drawing.Size(10, 537);
             this.panel4.TabIndex = 10;
             // 
             // panel2
@@ -171,7 +171,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 616);
+            this.panel2.Size = new System.Drawing.Size(10, 537);
             this.panel2.TabIndex = 9;
             // 
             // DanhSachLv0
@@ -184,7 +184,7 @@
             this.Controls.Add(this.panelHeader);
             this.ForeColor = System.Drawing.Color.LightGray;
             this.Name = "DanhSachLv0";
-            this.Size = new System.Drawing.Size(1206, 717);
+            this.Size = new System.Drawing.Size(911, 611);
             this.panelFooter.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

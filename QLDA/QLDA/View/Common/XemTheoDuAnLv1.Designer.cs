@@ -39,14 +39,14 @@
             // lvDanhSachLv1
             // 
             this.lvDanhSachLv1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvDanhSachLv1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvDanhSachLv1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvDanhSachLv1.FullRowSelect = true;
             this.lvDanhSachLv1.HideSelection = false;
-            this.lvDanhSachLv1.Location = new System.Drawing.Point(201, 0);
+            this.lvDanhSachLv1.Location = new System.Drawing.Point(163, 0);
             this.lvDanhSachLv1.MultiSelect = false;
             this.lvDanhSachLv1.Name = "lvDanhSachLv1";
             this.lvDanhSachLv1.OwnerDraw = true;
-            this.lvDanhSachLv1.Size = new System.Drawing.Size(994, 592);
+            this.lvDanhSachLv1.Size = new System.Drawing.Size(737, 519);
             this.lvDanhSachLv1.TabIndex = 5;
             this.lvDanhSachLv1.UseCompatibleStateImageBehavior = false;
             this.lvDanhSachLv1.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvDanhSachLv1_DrawColumnHeader);
@@ -55,9 +55,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Location = new System.Drawing.Point(190, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(152, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(11, 592);
+            this.pictureBox1.Size = new System.Drawing.Size(11, 519);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
@@ -66,14 +66,14 @@
             this.lvDuAn.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
             this.lvDuAn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lvDuAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvDuAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvDuAn.FullRowSelect = true;
             this.lvDuAn.HideSelection = false;
             this.lvDuAn.Location = new System.Drawing.Point(0, 0);
             this.lvDuAn.MultiSelect = false;
             this.lvDuAn.Name = "lvDuAn";
             this.lvDuAn.OwnerDraw = true;
-            this.lvDuAn.Size = new System.Drawing.Size(190, 592);
+            this.lvDuAn.Size = new System.Drawing.Size(152, 519);
             this.lvDuAn.TabIndex = 3;
             this.lvDuAn.UseCompatibleStateImageBehavior = false;
             this.lvDuAn.View = System.Windows.Forms.View.Details;
@@ -84,14 +84,14 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Dự án";
-            this.columnHeader1.Width = 186;
+            this.columnHeader1.Width = 150;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Location = new System.Drawing.Point(1195, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(900, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(11, 592);
+            this.pictureBox2.Size = new System.Drawing.Size(11, 519);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
@@ -106,7 +106,7 @@
             this.Controls.Add(this.lvDuAn);
             this.ForeColor = System.Drawing.Color.LightGray;
             this.Name = "XemTheoDuAnLv1";
-            this.Size = new System.Drawing.Size(1206, 592);
+            this.Size = new System.Drawing.Size(911, 519);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
