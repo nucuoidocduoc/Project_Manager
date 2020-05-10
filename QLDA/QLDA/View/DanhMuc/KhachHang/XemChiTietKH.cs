@@ -63,7 +63,7 @@ namespace QLDA.View.DanhMuc.KhachHang
             foreach (var item in items) {
                 string[] itemValues = new string[] {
                     Define.PREFIX_DU_AN + item.Ma_DA,
-                    item.Ten, item.Nhom,
+                    item.Ten, item.Nhom_DA.Ten,
                     item.Dia_Diem,item.Thoi_Gian_BD.ToString(),
                     item.Thoi_Gian_KT.ToString(),
                     item.Thoi_Gian_KT_TT.ToString(),

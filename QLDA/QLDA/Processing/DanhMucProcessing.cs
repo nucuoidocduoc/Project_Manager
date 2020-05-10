@@ -30,6 +30,18 @@ namespace QLDA.Processing
                     controlSelected = new DanhSachLv0(ViewMode.NhanVien);
                     break;
 
+                case ViewMode.NhomDA:
+                    controlSelected = new DanhSachLv0(ViewMode.NhomDA);
+                    break;
+
+                case ViewMode.TienTe:
+                    controlSelected = new DanhSachLv0(ViewMode.TienTe);
+                    break;
+
+                case ViewMode.TaiKhoan:
+                    controlSelected = new DanhSachLv0(ViewMode.TaiKhoan);
+                    break;
+
                 default:
                     return;
             }

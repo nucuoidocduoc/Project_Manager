@@ -1,13 +1,7 @@
 ﻿using QLDA.Repository;
 using QLDA.View.Template;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLDA.View.QuanLyDuAn.DuAn
@@ -24,6 +18,10 @@ namespace QLDA.View.QuanLyDuAn.DuAn
         {
             InitializeComponent();
             _repository = RepositoryWrapper.Create();
+            if (_repository.NhomDA.FindAll().Count() < 1) {
+                MessageBox.Show("Không thể khởi tạo dự án, vì hiện tại chưa có nhóm dự án nào");
+                Close();
+            }
             btnLuu.Enabled = false;
             if (!InitCreate()) {
                 Close();
@@ -44,6 +42,7 @@ namespace QLDA.View.QuanLyDuAn.DuAn
             if (_duAnUpdate == null) {
                 return;
             }
+
             InitCombobox();
             if (_duAnUpdate.Ma_NV != null) {
                 foreach (var item in cbxNhanVien.Items) {
@@ -63,6 +62,15 @@ namespace QLDA.View.QuanLyDuAn.DuAn
                     }
                 }
             }
+            if (_duAnUpdate.Ma_Nhom != null) {
+                foreach (var item in cbxNhomDuAn.Items) {
+                    ItemComboboxTemplate template = (ItemComboboxTemplate)item;
+                    if (template.Id != null && template.Id == _duAnUpdate.Ma_Nhom) {
+                        cbxNhomDuAn.SelectedItem = item;
+                        break;
+                    }
+                }
+            }
             if (!string.IsNullOrEmpty(_duAnUpdate.Trang_Thai)) {
                 foreach (var item in cbxTrangThai.Items) {
                     string template = (string)item;
@@ -76,7 +84,6 @@ namespace QLDA.View.QuanLyDuAn.DuAn
             txtTen.Text = _duAnUpdate.Ten;
             txtDiaDiem.Text = _duAnUpdate.Dia_Diem;
             txtDienGiai.Text = _duAnUpdate.Dien_Giai;
-            txtNhom.Text = _duAnUpdate.Nhom;
             dtThoiGianBD.Value = _duAnUpdate.Thoi_Gian_BD;
             dtThoiGianKT.Value = _duAnUpdate.Thoi_Gian_KT;
             dtThoiGianTT.Value = _duAnUpdate.Thoi_Gian_KT_TT;
@@ -89,6 +96,11 @@ namespace QLDA.View.QuanLyDuAn.DuAn
                 MessageBox.Show("Cần có chủ đầu tư để khởi tạo dự án");
                 return false;
             }
+            var nhomDAs = _repository.NhomDA.FindAll().ToList();
+            if (nhomDAs.Count < 1) {
+                MessageBox.Show("Cần có nhóm dự án để khởi tạo dự án");
+                return false;
+            }
             var nhanViens = _repository.NhanVien.FindAll().ToList();
 
             cbxNhanVien.Items.Add(new ItemComboboxTemplate() { Content = "None" });
@@ -99,12 +111,16 @@ namespace QLDA.View.QuanLyDuAn.DuAn
             foreach (var kh in khachHangs) {
                 cbxKhachHang.Items.Add(new ItemComboboxTemplate() { Id = kh.Ma_KH, Prefix = Define.PREFIX_KHACH_HANG + kh.Ma_KH, Content = kh.Ten });
             }
+            foreach (var nhom in nhomDAs) {
+                cbxNhomDuAn.Items.Add(new ItemComboboxTemplate() { Id = nhom.Ma_Nhom, Content = nhom.Ten });
+            }
             cbxTrangThai.Items.Add(Define.PENDING);
             cbxTrangThai.Items.Add(Define.FINISHED);
             cbxTrangThai.Items.Add(Define.UNFINISH);
             cbxKhachHang.SelectedIndex = 0;
             cbxNhanVien.SelectedIndex = 0;
             cbxTrangThai.SelectedIndex = 0;
+            cbxNhomDuAn.SelectedIndex = 0;
             return true;
         }
 
@@ -130,7 +146,7 @@ namespace QLDA.View.QuanLyDuAn.DuAn
                 var newDuAn = new Model.DuAn() {
                     Ten = txtTen.Text,
                     Ma_KH = ((ItemComboboxTemplate)cbxKhachHang.SelectedItem).Id,
-                    Nhom = txtNhom.Text,
+                    Ma_Nhom = ((ItemComboboxTemplate)cbxNhomDuAn.SelectedItem).Id,
                     Dia_Diem = txtDiaDiem.Text,
 
                     Thoi_Gian_BD = dtThoiGianBD.Value,
@@ -148,7 +164,7 @@ namespace QLDA.View.QuanLyDuAn.DuAn
                 // update
                 _duAnUpdate.Ten = txtTen.Text;
                 _duAnUpdate.Ma_KH = ((ItemComboboxTemplate)cbxKhachHang.SelectedItem).Id;
-                _duAnUpdate.Nhom = txtNhom.Text;
+                _duAnUpdate.Ma_Nhom = ((ItemComboboxTemplate)cbxNhomDuAn.SelectedItem).Id;
                 _duAnUpdate.Dia_Diem = txtDiaDiem.Text;
 
                 _duAnUpdate.Thoi_Gian_BD = dtThoiGianBD.Value;
@@ -179,10 +195,7 @@ namespace QLDA.View.QuanLyDuAn.DuAn
                 MessageBox.Show("Tên dự án phải nhỏ hơn hoặc bằng 50 ký tự.");
                 return false;
             }
-            if (txtNhom.Text.Length > 50) {
-                MessageBox.Show("Nhóm dự án phải nhỏ hơn hoặc bằng 50 ký tự.");
-                return false;
-            }
+
             if (txtDiaDiem.Text.Length > 100) {
                 MessageBox.Show("Địa điểm phải nhỏ hơn hoặc bằng 100 ký tự.");
                 return false;

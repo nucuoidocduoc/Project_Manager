@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace QLDA.Repository
 {
-    public class DangNhapRepository : RepositoryBase<TaiKhoan>
+    public class TaiKhoanRepository : RepositoryBase<TaiKhoan>
     {
-        public DangNhapRepository(RepositoryContext repositoryContext) : base(repositoryContext)
+        public TaiKhoanRepository(RepositoryContext repositoryContext) : base(repositoryContext)
         {
         }
 

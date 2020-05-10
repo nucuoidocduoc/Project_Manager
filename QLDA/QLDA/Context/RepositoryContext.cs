@@ -1,11 +1,6 @@
 ﻿using QLDA.Model;
-using System;
-using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QLDA.Context
 {
@@ -23,6 +18,9 @@ namespace QLDA.Context
         public DbSet<ThanhToan> Thanh_Toans { get; set; }
         public DbSet<QuyTrinh> QuyTrinhs { get; set; }
         public DbSet<CongViec> CongViecs { get; set; }
+        public DbSet<TienTe> TienTes { get; set; }
+        public DbSet<NhomDA> NhomDAs { get; set; }
+        public DbSet<TaiKhoan> TaiKhoans { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

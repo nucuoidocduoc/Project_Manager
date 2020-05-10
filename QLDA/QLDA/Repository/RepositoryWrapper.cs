@@ -35,6 +35,9 @@ namespace QLDA.Repository
         private ThanhToanRepository _thanhToanRepository;
         private QuyTrinhRepository _quyTrinhRepository;
         private CongViecRepository _congViecRepository;
+        private NhomDARepository _nhomDuAnRepository;
+        private TienTeRepository _tienTeRepository;
+        private TaiKhoanRepository _taiKhoanRepository;
 
         public KhachHangRepository KhachHang
         {
@@ -110,6 +113,39 @@ namespace QLDA.Repository
                     _congViecRepository = new CongViecRepository(_repositoryContext);
                 }
                 return _congViecRepository;
+            }
+        }
+
+        public NhomDARepository NhomDA
+        {
+            get
+            {
+                if (_nhomDuAnRepository == null) {
+                    _nhomDuAnRepository = new NhomDARepository(_repositoryContext);
+                }
+                return _nhomDuAnRepository;
+            }
+        }
+
+        public TienTeRepository TienTe
+        {
+            get
+            {
+                if (_tienTeRepository == null) {
+                    _tienTeRepository = new TienTeRepository(_repositoryContext);
+                }
+                return _tienTeRepository;
+            }
+        }
+
+        public TaiKhoanRepository TaiKhoan
+        {
+            get
+            {
+                if (_taiKhoanRepository == null) {
+                    _taiKhoanRepository = new TaiKhoanRepository(_repositoryContext);
+                }
+                return _taiKhoanRepository;
             }
         }
 

@@ -39,11 +39,12 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan.CheDoXem
             lvThanhToan.Items.Clear();
             var thanhToans = _repository.ThanhToan.FindByCondition(x => x.Ma_HD == _currentIdHDSelected).ToList();
             foreach (var tt in thanhToans) {
+                _repository.RepositoryContext.Entry(tt).Reference(x => x.Loai_Tien).Load();
                 string[] values = new string[] {
                     Define.PREFIX_THANH_TOAN+tt.Ma_TT,
                     tt.Ten,
                     tt.So_Tien,
-                    tt.Loai_Tien,
+                    (tt.Loai_Tien==null)?string.Empty:tt.Loai_Tien.Ten,
                     tt.Hinh_Thuc,
                     tt.Thoi_Gian_TT.ToShortDateString()
                 };
@@ -101,6 +102,7 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan.CheDoXem
             var thanhToans = _repository.ThanhToan.FindByCondition(x => x.Ma_HD == _currentIdHDSelected).ToList();
             double value = 0;
             foreach (var tt in thanhToans) {
+                _repository.RepositoryContext.Entry(tt).Reference(x => x.Loai_Tien).Load();
                 value += Define.GetMoney(tt);
             }
             if (double.TryParse(hd.Tong_Gia_Tri, out double toTal)) {

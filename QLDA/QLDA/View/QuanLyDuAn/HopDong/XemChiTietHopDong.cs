@@ -65,11 +65,12 @@ namespace QLDA.View.QuanLyDuAn.HopDong
         private void InitLvTT(ICollection<Model.ThanhToan> thanhToans)
         {
             foreach (var tt in thanhToans) {
+                _repository.RepositoryContext.Entry(tt).Reference(x => x.Loai_Tien).Load();
                 string[] values = new string[] {
                     Define.PREFIX_THANH_TOAN+tt.Ma_TT,
                     tt.Ten,
                     tt.So_Tien,
-                    tt.Loai_Tien,
+                    (tt.Loai_Tien==null)?string.Empty:tt.Loai_Tien.Ten,
                     tt.Hinh_Thuc,
                     tt.Thoi_Gian_TT.ToShortDateString()
                 };
@@ -100,6 +101,7 @@ namespace QLDA.View.QuanLyDuAn.HopDong
             var thanhToans = _repository.ThanhToan.FindByCondition(x => x.Ma_HD == _idHd).ToList();
             double value = 0;
             foreach (var tt in thanhToans) {
+                _repository.RepositoryContext.Entry(tt).Reference(x => x.Loai_Tien).Load();
                 value += Define.GetMoney(tt);
             }
             if (double.TryParse(hd.Tong_Gia_Tri, out double toTal)) {

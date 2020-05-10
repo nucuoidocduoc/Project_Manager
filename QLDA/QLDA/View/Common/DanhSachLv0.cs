@@ -1,10 +1,12 @@
 ﻿using QLDA.Repository;
 using QLDA.View.DanhMuc.KhachHang;
 using QLDA.View.DanhMuc.NhanVien;
+using QLDA.View.DanhMuc.NhomDA;
+using QLDA.View.DanhMuc.TienTe;
 using QLDA.View.QuanLyDuAn.DuAn;
+using QLDA.View.TaiKhoan;
 using QLDA.View.Template;
 using System;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -37,6 +39,15 @@ namespace QLDA.View.Common
             }
             else if (lvType.Equals(ViewMode.DuAn)) {
                 InitDuAn();
+            }
+            else if (lvType.Equals(ViewMode.NhomDA)) {
+                InitNhomDA();
+            }
+            else if (lvType.Equals(ViewMode.TienTe)) {
+                InitTienTe();
+            }
+            else if (lvType.Equals(ViewMode.TaiKhoan)) {
+                InitTaiKhoan();
             }
         }
 
@@ -87,6 +98,45 @@ namespace QLDA.View.Common
             labelDanhSach.Text = "Danh sách dự án";
         }
 
+        private void InitNhomDA()
+        {
+            labelDanhSach.Text = Define.DANH_SACH_NHOM_DA_HEADER;
+            btnXemChiTiet.Visible = false;
+            lvDanhSach.View = System.Windows.Forms.View.Details;
+            lvDanhSach.Columns.Add(DanhSachDuAnTemplate.Id, Convert.ToInt32(lvDanhSach.Width * 0.3), HorizontalAlignment.Center);
+            lvDanhSach.Columns.Add(DanhSachDuAnTemplate.Name, Convert.ToInt32(lvDanhSach.Width * 0.3), HorizontalAlignment.Center);
+            lvDanhSach.Columns.Add(DanhSachNhomDATemplate.Description, Convert.ToInt32(lvDanhSach.Width * 0.4), HorizontalAlignment.Center);
+            InitDataListViewNhomDA();
+            labelDanhSach.Text = "Danh sách nhóm dự án";
+        }
+
+        private void InitTienTe()
+        {
+            labelDanhSach.Text = Define.DANH_SACH_TIEN_TE;
+            btnXemChiTiet.Visible = false;
+            lvDanhSach.View = System.Windows.Forms.View.Details;
+            lvDanhSach.Columns.Add(DanhSachDuAnTemplate.Id, Convert.ToInt32(lvDanhSach.Width * 0.2), HorizontalAlignment.Center);
+            lvDanhSach.Columns.Add(DanhSachDuAnTemplate.Name, Convert.ToInt32(lvDanhSach.Width * 0.2), HorizontalAlignment.Center);
+            lvDanhSach.Columns.Add(DanhSachTienTeTemplate.Rate, Convert.ToInt32(lvDanhSach.Width * 0.2), HorizontalAlignment.Center);
+            lvDanhSach.Columns.Add(DanhSachNhomDATemplate.Description, Convert.ToInt32(lvDanhSach.Width * 0.4), HorizontalAlignment.Center);
+            InitDataListViewTienTe();
+            labelDanhSach.Text = "Danh sách tiền tệ";
+        }
+
+        private void InitTaiKhoan()
+        {
+            labelDanhSach.Text = Define.DANH_SACH_TAI_KHOAN;
+            btnCapNhat.Enabled = false;
+            btnXemChiTiet.Visible = false;
+            lvDanhSach.View = System.Windows.Forms.View.Details;
+            lvDanhSach.Columns.Add(DanhSachTaiKhoanTemplate.Id, Convert.ToInt32(lvDanhSach.Width * 0.2), HorizontalAlignment.Center);
+            lvDanhSach.Columns.Add(DanhSachTaiKhoanTemplate.Name, Convert.ToInt32(lvDanhSach.Width * 0.2), HorizontalAlignment.Center);
+            lvDanhSach.Columns.Add(DanhSachTaiKhoanTemplate.Email, Convert.ToInt32(lvDanhSach.Width * 0.2), HorizontalAlignment.Center);
+            lvDanhSach.Columns.Add(DanhSachTaiKhoanTemplate.Role, Convert.ToInt32(lvDanhSach.Width * 0.4), HorizontalAlignment.Center);
+            InitDataListViewTaiKhoan();
+            labelDanhSach.Text = "Danh sách tài khoản";
+        }
+
         public void InitDataListViewKhachHang(bool isReNewRepository = false)
         {
             var items = RepositoryWrapper.Create().KhachHang.FindAll().ToList();
@@ -121,10 +171,19 @@ namespace QLDA.View.Common
             }
 
             var items = _repository.RepositoryContext.DuAns.Include("KhachHang").ToList();
+
             foreach (var item in items) {
+                //string nhom = string.Empty;
+                //if (item.Ma_Nhom != null) {
+                //    var nhomDA = _repository.NhomDA.FindByCondition(x => x.Ma_Nhom == item.Ma_Nhom).FirstOrDefault();
+                //    if (nhomDA != null) {
+                //        nhom = nhomDA.Ten;
+                //    }
+                //}
+                _repository.RepositoryContext.Entry(item).Reference(x => x.Nhom_DA).Load();
                 string[] itemValues = new string[] {
                     Define.PREFIX_DU_AN + item.Ma_DA,
-                    item.Ten, item.Nhom,
+                    item.Ten, (item.Nhom_DA==null)?string.Empty:item.Nhom_DA.Ten,
                     item.Dia_Diem,
                     item.Thoi_Gian_BD.ToShortDateString(),
                     item.Thoi_Gian_KT.ToShortDateString(),
@@ -134,6 +193,71 @@ namespace QLDA.View.Common
 
                 if (itemValues.Length > 0) {
                     lvDanhSach.Items.Add(new ListViewItem(itemValues) { Tag = item.Ma_DA });
+                }
+            }
+        }
+
+        public void InitDataListViewNhomDA(bool isReNewRepository = false)
+        {
+            if (isReNewRepository) {
+                _repository = RepositoryWrapper.Create();
+            }
+
+            var items = _repository.NhomDA.FindAll().ToList();
+
+            foreach (var item in items) {
+                string[] itemValues = new string[] {
+                    Define.PREFIX_NHOM_DA + item.Ma_Nhom,
+                    item.Ten,
+                    item.Dien_Giai
+                };
+
+                if (itemValues.Length > 0) {
+                    lvDanhSach.Items.Add(new ListViewItem(itemValues) { Tag = item.Ma_Nhom });
+                }
+            }
+        }
+
+        public void InitDataListViewTienTe(bool isReNewRepository = false)
+        {
+            if (isReNewRepository) {
+                _repository = RepositoryWrapper.Create();
+            }
+
+            var items = _repository.TienTe.FindAll().ToList();
+
+            foreach (var item in items) {
+                string[] itemValues = new string[] {
+                    Define.PREFIX_TIEN_TE + item.Ma_Tien_Te,
+                    item.Ten,
+                    item.Ti_gia.ToString(),
+                    item.Dien_Giai
+                };
+
+                if (itemValues.Length > 0) {
+                    lvDanhSach.Items.Add(new ListViewItem(itemValues) { Tag = item.Ma_Tien_Te });
+                }
+            }
+        }
+
+        public void InitDataListViewTaiKhoan(bool isReNewRepository = false)
+        {
+            if (isReNewRepository) {
+                _repository = RepositoryWrapper.Create();
+            }
+
+            var items = _repository.TaiKhoan.FindAll().ToList();
+
+            foreach (var item in items) {
+                string[] itemValues = new string[] {
+                    Define.PREFIX_TAI_KHOAN + item.Ma_TK,
+                    item.Ten,
+                    item.Email,
+                    item.Role
+                };
+
+                if (itemValues.Length > 0) {
+                    lvDanhSach.Items.Add(new ListViewItem(itemValues) { Tag = item.Ma_TK });
                 }
             }
         }
@@ -182,6 +306,30 @@ namespace QLDA.View.Common
                     InitDataListViewDuAn(true);
                 }
             }
+            else if (_lvTypeSelected.Equals(ViewMode.NhomDA)) {
+                var addNhomDA = new TaoHoacCapNhatNhomDA();
+                addNhomDA.ShowDialog();
+                if (addNhomDA.HasReloadList) {
+                    lvDanhSach.Items.Clear();
+                    InitDataListViewNhomDA(true);
+                }
+            }
+            else if (_lvTypeSelected.Equals(ViewMode.TienTe)) {
+                var addTienTe = new TaoHoacCapNhatTienTe();
+                addTienTe.ShowDialog();
+                if (addTienTe.HasReloadList) {
+                    lvDanhSach.Items.Clear();
+                    InitDataListViewTienTe(true);
+                }
+            }
+            else if (_lvTypeSelected.Equals(ViewMode.TaiKhoan)) {
+                var addTaiKhoan = new RegisterAccount();
+                addTaiKhoan.ShowDialog();
+                if (addTaiKhoan.HasReloadList) {
+                    lvDanhSach.Items.Clear();
+                    InitDataListViewTaiKhoan(true);
+                }
+            }
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
@@ -215,6 +363,22 @@ namespace QLDA.View.Common
                 if (addDA.HasReloadList) {
                     lvDanhSach.Items.Clear();
                     InitDataListViewDuAn(true);
+                }
+            }
+            else if (_lvTypeSelected.Equals(ViewMode.NhomDA)) {
+                var addNhomDA = new TaoHoacCapNhatNhomDA(idUpdate);
+                addNhomDA.ShowDialog();
+                if (addNhomDA.HasReloadList) {
+                    lvDanhSach.Items.Clear();
+                    InitDataListViewNhomDA(true);
+                }
+            }
+            else if (_lvTypeSelected.Equals(ViewMode.TienTe)) {
+                var addTienTe = new TaoHoacCapNhatTienTe(idUpdate);
+                addTienTe.ShowDialog();
+                if (addTienTe.HasReloadList) {
+                    lvDanhSach.Items.Clear();
+                    InitDataListViewTienTe(true);
                 }
             }
         }
@@ -253,6 +417,34 @@ namespace QLDA.View.Common
                     _repository.SaveChange();
                     lvDanhSach.Items.Clear();
                     InitDataListViewDuAn(true);
+                }
+            }
+            else if (_lvTypeSelected.Equals(ViewMode.NhomDA)) {
+                var count = _repository.DuAn.FindByCondition(x => x.Ma_Nhom == idUpdate).Count();
+                if (count > 0) {
+                    MessageBox.Show("Không thể xóa vì đang có dự án sử dụng nhóm dự án này");
+                    return;
+                }
+                var record = _repository.NhomDA.FindByCondition(x => x.Ma_Nhom == idUpdate).FirstOrDefault();
+                if (record != null && Define.ConfirmDelete()) {
+                    _repository.NhomDA.Delete(record);
+                    _repository.SaveChange();
+                    lvDanhSach.Items.Clear();
+                    InitDataListViewNhomDA(true);
+                }
+            }
+            else if (_lvTypeSelected.Equals(ViewMode.TienTe)) {
+                var count = _repository.ThanhToan.FindByCondition(x => x.Ma_Tien_Te == idUpdate).Count();
+                if (count > 0) {
+                    MessageBox.Show("Không thể xóa vì đang có thanh toans sử dụng đơn vị tiền tệ này");
+                    return;
+                }
+                var record = _repository.TienTe.FindByCondition(x => x.Ma_Tien_Te == idUpdate).FirstOrDefault();
+                if (record != null && Define.ConfirmDelete()) {
+                    _repository.TienTe.Delete(record);
+                    _repository.SaveChange();
+                    lvDanhSach.Items.Clear();
+                    InitDataListViewTienTe(true);
                 }
             }
         }

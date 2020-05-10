@@ -1,13 +1,7 @@
 ﻿using QLDA.Repository;
 using QLDA.View.Template;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLDA.View.QuanLyDuAn.ThanhToan
@@ -31,9 +25,14 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
         public TaoHoacCapNhatTT(int id, bool isCreate = false)
         {
             InitializeComponent();
+
             _id = id;
             _isCreate = isCreate;
             _repository = RepositoryWrapper.Create();
+            if (_repository.TienTe.FindAll().Count() < 1) {
+                MessageBox.Show("Không thể khởi tạo thanh toán, vì hiện tại chưa có đơn vị tiền tệ nào");
+                Close();
+            }
             InitCBX();
             if (isCreate) {
                 InitCreate();
@@ -81,8 +80,16 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
         {
             cbxHinhThuc.Items.Add("Chuyển khoản");
             cbxHinhThuc.Items.Add("Tiền mặt");
-            cbxLoaiTien.Items.Add(Define.VND);
-            cbxLoaiTien.Items.Add(Define.USD);
+            var loaiTiens = _repository.TienTe.FindAll().ToList();
+            if (loaiTiens.Count < 1) {
+                MessageBox.Show("Cần phải có ít nhất một đơn vị tiền tệ để tiến hành khởi tạo thanh toán");
+                return;
+            }
+            //cbxLoaiTien.Items.Add(Define.VND);
+            //cbxLoaiTien.Items.Add(Define.USD);
+            foreach (var tienTe in loaiTiens) {
+                cbxLoaiTien.Items.Add(new ItemComboboxTemplate() { Id = tienTe.Ma_Tien_Te, Content = tienTe.Ten });
+            }
             cbxHinhThuc.SelectedIndex = 0;
             cbxLoaiTien.SelectedIndex = 0;
         }
@@ -117,7 +124,15 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
             txtTen.Text = _thanhToanUpdate.Ten;
             txtSoTien.Text = _thanhToanUpdate.So_Tien;
             cbxHinhThuc.SelectedValue = _thanhToanUpdate.Hinh_Thuc;
-            cbxLoaiTien.SelectedValue = _thanhToanUpdate.Loai_Tien;
+            if (_thanhToanUpdate.Ma_Tien_Te != null) {
+                foreach (var item in cbxLoaiTien.Items) {
+                    ItemComboboxTemplate template = (ItemComboboxTemplate)item;
+                    if (template.Id != null && template.Id == _thanhToanUpdate.Ma_Tien_Te) {
+                        cbxLoaiTien.SelectedItem = item;
+                        break;
+                    }
+                }
+            }
             txtDienGiai.Text = _thanhToanUpdate.Dien_Giai;
             dtNgayThanhToan.Value = _thanhToanUpdate.Thoi_Gian_TT;
 
@@ -166,7 +181,7 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
                 Model.ThanhToan thanhToan = new Model.ThanhToan() {
                     Ten = txtTen.Text,
                     So_Tien = txtSoTien.Text,
-                    Loai_Tien = cbxLoaiTien.SelectedItem.ToString(),
+                    Ma_Tien_Te = (int)((ItemComboboxTemplate)cbxLoaiTien.SelectedItem).Id,
                     Hinh_Thuc = cbxHinhThuc.SelectedItem.ToString(),
                     Dien_Giai = txtDienGiai.Text,
                     Thoi_Gian_TT = dtNgayThanhToan.Value,
@@ -179,7 +194,7 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
             else {
                 _thanhToanUpdate.Ten = txtTen.Text;
                 _thanhToanUpdate.So_Tien = txtSoTien.Text;
-                _thanhToanUpdate.Loai_Tien = cbxLoaiTien.SelectedItem.ToString();
+                _thanhToanUpdate.Ma_Tien_Te = (int)((ItemComboboxTemplate)cbxLoaiTien.SelectedItem).Id;
                 _thanhToanUpdate.Hinh_Thuc = cbxHinhThuc.SelectedItem.ToString();
                 _thanhToanUpdate.Dien_Giai = txtDienGiai.Text;
                 _thanhToanUpdate.Thoi_Gian_TT = dtNgayThanhToan.Value;

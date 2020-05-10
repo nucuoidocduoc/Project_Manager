@@ -47,7 +47,6 @@
             this.cbxKhachHang = new MetroFramework.Controls.MetroComboBox();
             this.cbxNhanVien = new MetroFramework.Controls.MetroComboBox();
             this.txtDiaDiem = new MetroFramework.Controls.MetroTextBox();
-            this.txtNhom = new MetroFramework.Controls.MetroTextBox();
             this.txtTen = new MetroFramework.Controls.MetroTextBox();
             this.panelHeader1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -58,6 +57,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnHuy = new MetroFramework.Controls.MetroButton();
             this.btnLuu = new MetroFramework.Controls.MetroButton();
+            this.cbxNhomDuAn = new MetroFramework.Controls.MetroComboBox();
             this.panelThongTinDuAn.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelThongTin2.SuspendLayout();
@@ -263,10 +263,10 @@
             // 
             // panelContent1
             // 
+            this.panelContent1.Controls.Add(this.cbxNhomDuAn);
             this.panelContent1.Controls.Add(this.cbxKhachHang);
             this.panelContent1.Controls.Add(this.cbxNhanVien);
             this.panelContent1.Controls.Add(this.txtDiaDiem);
-            this.panelContent1.Controls.Add(this.txtNhom);
             this.panelContent1.Controls.Add(this.txtTen);
             this.panelContent1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent1.Location = new System.Drawing.Point(169, 0);
@@ -323,36 +323,6 @@
             this.txtDiaDiem.UseSelectable = true;
             this.txtDiaDiem.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDiaDiem.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // txtNhom
-            // 
-            // 
-            // 
-            // 
-            this.txtNhom.CustomButton.Image = null;
-            this.txtNhom.CustomButton.Location = new System.Drawing.Point(176, 1);
-            this.txtNhom.CustomButton.Name = "";
-            this.txtNhom.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtNhom.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtNhom.CustomButton.TabIndex = 1;
-            this.txtNhom.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtNhom.CustomButton.UseSelectable = true;
-            this.txtNhom.CustomButton.Visible = false;
-            this.txtNhom.Lines = new string[0];
-            this.txtNhom.Location = new System.Drawing.Point(6, 115);
-            this.txtNhom.MaxLength = 32767;
-            this.txtNhom.Name = "txtNhom";
-            this.txtNhom.PasswordChar = '\0';
-            this.txtNhom.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtNhom.SelectedText = "";
-            this.txtNhom.SelectionLength = 0;
-            this.txtNhom.SelectionStart = 0;
-            this.txtNhom.ShortcutsEnabled = true;
-            this.txtNhom.Size = new System.Drawing.Size(198, 23);
-            this.txtNhom.TabIndex = 2;
-            this.txtNhom.UseSelectable = true;
-            this.txtNhom.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtNhom.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtTen
             // 
@@ -483,6 +453,16 @@
             this.btnLuu.UseSelectable = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
+            // cbxNhomDuAn
+            // 
+            this.cbxNhomDuAn.FormattingEnabled = true;
+            this.cbxNhomDuAn.ItemHeight = 23;
+            this.cbxNhomDuAn.Location = new System.Drawing.Point(6, 113);
+            this.cbxNhomDuAn.Name = "cbxNhomDuAn";
+            this.cbxNhomDuAn.Size = new System.Drawing.Size(198, 29);
+            this.cbxNhomDuAn.TabIndex = 6;
+            this.cbxNhomDuAn.UseSelectable = true;
+            // 
             // TaoHoacCapNhatDuAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -528,7 +508,6 @@
         private MetroFramework.Controls.MetroComboBox cbxKhachHang;
         private MetroFramework.Controls.MetroComboBox cbxNhanVien;
         private MetroFramework.Controls.MetroTextBox txtDiaDiem;
-        private MetroFramework.Controls.MetroTextBox txtNhom;
         private MetroFramework.Controls.MetroTextBox txtTen;
         private System.Windows.Forms.Panel panelHeader1;
         private System.Windows.Forms.Label label9;
@@ -541,5 +520,6 @@
         private MetroFramework.Controls.MetroButton btnLuu;
         private MetroFramework.Controls.MetroComboBox cbxTrangThai;
         private MetroFramework.Controls.MetroDateTime dtThoiGianBD;
+        private MetroFramework.Controls.MetroComboBox cbxNhomDuAn;
     }
 }

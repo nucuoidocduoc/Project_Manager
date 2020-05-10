@@ -124,11 +124,19 @@ namespace QLDA.View.Common
             var thanhToans = _repository.ThanhToan.FindAll().OrderBy(x => x.Ma_HD).ToList();
 
             foreach (var tt in thanhToans) {
+                //string loaiTien = string.Empty;
+                //if (tt.Ma_Tien_Te != null) {
+                //    var maTien = _repository.TienTe.FindByCondition(x => x.Ma_Tien_Te == tt.Ma_Tien_Te).FirstOrDefault();
+                //    if (maTien != null) {
+                //        loaiTien = maTien.Ten;
+                //    }
+                //}
+                _repository.RepositoryContext.Entry(tt).Reference(x => x.Loai_Tien).Load();
                 string[] values = new string[] {
                     Define.PREFIX_THANH_TOAN+tt.Ma_TT,
                     tt.Ten,
                     tt.So_Tien,
-                    tt.Loai_Tien,
+                    (tt.Loai_Tien==null)?string.Empty:tt.Loai_Tien.Ten,
                     tt.Hinh_Thuc,
                     tt.Thoi_Gian_TT.ToShortDateString()
                 };

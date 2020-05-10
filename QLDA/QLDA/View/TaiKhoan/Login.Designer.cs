@@ -33,8 +33,6 @@
             this.txtMK = new MetroFramework.Controls.MetroTextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.linkForgot = new System.Windows.Forms.LinkLabel();
-            this.linkRegister = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -105,7 +103,7 @@
             this.txtMK.Location = new System.Drawing.Point(194, 92);
             this.txtMK.MaxLength = 32767;
             this.txtMK.Name = "txtMK";
-            this.txtMK.PasswordChar = '\0';
+            this.txtMK.PasswordChar = '*';
             this.txtMK.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtMK.SelectedText = "";
             this.txtMK.SelectionLength = 0;
@@ -127,6 +125,7 @@
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnCancel
             // 
@@ -138,30 +137,7 @@
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Hủy bỏ";
             this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // linkForgot
-            // 
-            this.linkForgot.AutoSize = true;
-            this.linkForgot.LinkColor = System.Drawing.Color.White;
-            this.linkForgot.Location = new System.Drawing.Point(329, 118);
-            this.linkForgot.Name = "linkForgot";
-            this.linkForgot.Size = new System.Drawing.Size(80, 13);
-            this.linkForgot.TabIndex = 6;
-            this.linkForgot.TabStop = true;
-            this.linkForgot.Text = "Quên mật khẩu";
-            this.linkForgot.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkForgot_LinkClicked);
-            // 
-            // linkRegister
-            // 
-            this.linkRegister.AutoSize = true;
-            this.linkRegister.LinkColor = System.Drawing.Color.White;
-            this.linkRegister.Location = new System.Drawing.Point(329, 141);
-            this.linkRegister.Name = "linkRegister";
-            this.linkRegister.Size = new System.Drawing.Size(47, 13);
-            this.linkRegister.TabIndex = 7;
-            this.linkRegister.TabStop = true;
-            this.linkRegister.Text = "Đăng ký";
-            this.linkRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkRegister_LinkClicked);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // Login
             // 
@@ -169,8 +145,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(523, 258);
-            this.Controls.Add(this.linkRegister);
-            this.Controls.Add(this.linkForgot);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtMK);
@@ -195,7 +169,5 @@
         private MetroFramework.Controls.MetroTextBox txtMK;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.LinkLabel linkForgot;
-        private System.Windows.Forms.LinkLabel linkRegister;
     }
 }

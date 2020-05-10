@@ -13,6 +13,9 @@ namespace QLDA
         public const string DANH_SACH_KHACH_HANG_HEADER = "Danh sách khách hàng";
         public const string DANH_SACH_NHAN_VIEN_HEADER = "Danh sách nhân viên";
         public const string DANH_SACH_DU_AN_HEADER = "Danh sách dự án";
+        public const string DANH_SACH_NHOM_DA_HEADER = "Danh sách nhóm dự án";
+        public const string DANH_SACH_TIEN_TE = "Danh sách đơn vị tiền tệ";
+        public const string DANH_SACH_TAI_KHOAN = "Danh sách tài khoản";
         public const string DETAIL_INFO_PROJECT = "Thông tin chi tiết dự án";
 
         public const string THEM_MOI_NHAN_VIEN = "Thêm mới nhân viên";
@@ -30,6 +33,9 @@ namespace QLDA
         public const string PREFIX_QUI_TRINH = "QT-";
         public const string PREFIX_CONG_VIEC = "CV-";
         public const string PREFIX_THANH_TOAN = "TT-";
+        public const string PREFIX_NHOM_DA = "NDA-";
+        public const string PREFIX_TIEN_TE = "TIT-";
+        public const string PREFIX_TAI_KHOAN = "TK-";
 
         #region message
 
@@ -66,17 +72,17 @@ namespace QLDA
         public static double GetMoney(Model.ThanhToan thanhToan)
         {
             if (double.TryParse(thanhToan.So_Tien, out double value)) {
-                if (thanhToan.Loai_Tien.Equals(Define.VND)) {
-                    return value;
-                }
-                else if (thanhToan.Loai_Tien.Equals(Define.USD)) {
-                    return value * Define.ConvertMoneyUSDToVND;
-                }
+                //if (thanhToan.Loai_Tien.Equals(Define.VND)) {
+                //    return value;
+                //}
+                //else if (thanhToan.Loai_Tien.Equals(Define.USD)) {
+                //    return value * Define.ConvertMoneyUSDToVND;
+                //}
+                return value * thanhToan.Loai_Tien.Ti_gia;
             }
             else {
                 return 0;
             }
-            return 0;
         }
     }
 
@@ -88,7 +94,10 @@ namespace QLDA
         HopDong,
         ThanhToan,
         QuyTrinh,
-        CongViec
+        CongViec,
+        TienTe,
+        NhomDA,
+        TaiKhoan
     }
 
     //public enum Lv0

@@ -33,17 +33,6 @@ namespace QLDA
             _quanLyCongViecProcessing = new QLCVProcessing(this);
         }
 
-        //private void InitConnectDatabase()
-        //{
-        //    string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["sqlConnection"].ConnectionString;
-        //    SqlConnection connection = new SqlConnection(connectionString);
-        //    connection.Open();
-        //    RepositoryContext repositoryContext = new RepositoryContext(connection, false);
-
-        //    //MessageBox.Show(repositoryContext.KhachHangs.FirstOrDefault().Ten_NH);
-        //    RepositoryWrapper = new RepositoryWrapper(repositoryContext);
-        //}
-
         private void VisiblePanel()
         {
             panelDanhMuc.Visible = false;
@@ -102,6 +91,16 @@ namespace QLDA
             _danhMucProcess.Show(ViewMode.NhanVien);
         }
 
+        private void btnNhomDA_Click(object sender, EventArgs e)
+        {
+            _danhMucProcess.Show(ViewMode.NhomDA);
+        }
+
+        private void btnTienTe_Click(object sender, EventArgs e)
+        {
+            _danhMucProcess.Show(ViewMode.TienTe);
+        }
+
         #endregion danh muc
 
         #region quan ly du an
@@ -146,7 +145,12 @@ namespace QLDA
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
         }
-        #endregion
 
+        #endregion other
+
+        private void btnTaiKhoan_Click_1(object sender, EventArgs e)
+        {
+            _danhMucProcess.Show(ViewMode.TaiKhoan);
+        }
     }
 }

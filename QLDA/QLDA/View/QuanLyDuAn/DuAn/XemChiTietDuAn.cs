@@ -34,6 +34,7 @@ namespace QLDA.View.QuanLyDuAn.DuAn
             if (duAnView == null) {
                 return;
             }
+            _repository.RepositoryContext.Entry(duAnView).Reference(x => x.Nhom_DA).Load();
             Text = Define.DETAIL_INFO_PROJECT + " " + Define.PREFIX_DU_AN + duAnView.Ma_DA;
             _repository.RepositoryContext.Entry(duAnView).Collection(d => d.Cac_Quy_Trinh).Load();
             _repository.RepositoryContext.Entry(duAnView).Collection(d => d.Cac_Hop_Dong).Load();
@@ -72,7 +73,7 @@ namespace QLDA.View.QuanLyDuAn.DuAn
         {
             txtTen.Text = duAn.Ten;
             txtChuDauTu.Text = Define.PREFIX_KHACH_HANG + duAn.KhachHang.Ma_KH + " " + duAn.KhachHang.Ten;
-            txtNhom.Text = duAn.Nhom;
+            txtNhom.Text = (duAn.Nhom_DA == null) ? string.Empty : duAn.Nhom_DA.Ten;
             txtDiaDiem.Text = duAn.Dia_Diem;
             if (duAn.NhanVien != null) {
                 txtGiamDoc.Text = Define.PREFIX_NHAN_VIEN + duAn.NhanVien.Ma_NV + " " + duAn.NhanVien.Ten;
