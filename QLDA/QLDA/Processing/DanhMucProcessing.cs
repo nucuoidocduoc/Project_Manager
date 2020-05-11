@@ -39,7 +39,7 @@ namespace QLDA.Processing
                     break;
 
                 case ViewMode.TaiKhoan:
-                    controlSelected = new DanhSachLv0(ViewMode.TaiKhoan);
+                    controlSelected = new DanhSachLv0(ViewMode.TaiKhoan, _mainForm);
                     break;
 
                 default:

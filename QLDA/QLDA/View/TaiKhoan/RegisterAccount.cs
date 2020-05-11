@@ -1,12 +1,6 @@
 ﻿using QLDA.Repository;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLDA.View.TaiKhoan
@@ -19,8 +13,8 @@ namespace QLDA.View.TaiKhoan
         {
             InitializeComponent();
             _repositoryWrapper = RepositoryWrapper.Create();
-            cbxRole.Items.Add("User");
-            cbxRole.Items.Add("Admin");
+            cbxRole.Items.Add(Define.User);
+            cbxRole.Items.Add(Define.Admin);
             cbxRole.SelectedIndex = 0;
         }
 
@@ -54,12 +48,22 @@ namespace QLDA.View.TaiKhoan
                 MessageBox.Show("Tên tài khoản không hợp lệ");
                 return false;
             }
+            var count = _repositoryWrapper.TaiKhoan.FindByCondition(x => x.Ten.Equals(txtTen.Text)).Count();
+            if (count > 0) {
+                MessageBox.Show("Tên tài khoản đã được đăng ký hãy nhập tên khác");
+                return false;
+            }
             if (string.IsNullOrEmpty(txtMK.Text) || txtMK.Text.Length > 50) {
                 MessageBox.Show("Mật khẩu không hợp lệ");
                 return false;
             }
             if (string.IsNullOrEmpty(txtEmail.Text) || txtEmail.Text.Length > 255 || !txtEmail.Text.Contains("@")) {
                 MessageBox.Show("Email không hợp lệ");
+                return false;
+            }
+            var countEmail = _repositoryWrapper.TaiKhoan.FindByCondition(x => x.Email.Equals(txtEmail.Text)).Count();
+            if (countEmail > 0) {
+                MessageBox.Show("Email đã được đăng ký, hãy nhập email khác");
                 return false;
             }
             return true;

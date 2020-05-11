@@ -78,6 +78,9 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan.CheDoXem
                 lvThanhToan.Items.Clear();
                 cbxHopDong.SelectedItem = null;
                 _currentIdHDSelected = null;
+                txtTongGiaTri.Text = string.Empty;
+                txtDaThanhToan.Text = string.Empty;
+                txtChuaThanhToan.Text = string.Empty;
                 Refresh();
                 return;
             }

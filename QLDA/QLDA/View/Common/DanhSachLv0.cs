@@ -7,6 +7,7 @@ using QLDA.View.QuanLyDuAn.DuAn;
 using QLDA.View.TaiKhoan;
 using QLDA.View.Template;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -16,6 +17,7 @@ namespace QLDA.View.Common
     {
         private ViewMode _lvTypeSelected;
         private RepositoryWrapper _repository;
+        private MainForm _mainForm;
 
         public DanhSachLv0()
         {
@@ -24,10 +26,18 @@ namespace QLDA.View.Common
             _repository = RepositoryWrapper.Create();
         }
 
-        public DanhSachLv0(ViewMode lvType)
+        public DanhSachLv0(MainForm mainForm)
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
+            _repository = RepositoryWrapper.Create();
+            _mainForm = mainForm;
+        }
 
+        public DanhSachLv0(ViewMode lvType, MainForm mainForm = null)
+        {
+            InitializeComponent();
+            _mainForm = mainForm;
             _repository = RepositoryWrapper.Create();
             this.Dock = DockStyle.Fill;
             _lvTypeSelected = lvType;
@@ -129,10 +139,11 @@ namespace QLDA.View.Common
             btnCapNhat.Enabled = false;
             btnXemChiTiet.Visible = false;
             lvDanhSach.View = System.Windows.Forms.View.Details;
-            lvDanhSach.Columns.Add(DanhSachTaiKhoanTemplate.Id, Convert.ToInt32(lvDanhSach.Width * 0.2), HorizontalAlignment.Center);
+            lvDanhSach.Columns.Add(DanhSachTaiKhoanTemplate.Id, Convert.ToInt32(lvDanhSach.Width * 0.1), HorizontalAlignment.Center);
             lvDanhSach.Columns.Add(DanhSachTaiKhoanTemplate.Name, Convert.ToInt32(lvDanhSach.Width * 0.2), HorizontalAlignment.Center);
+            lvDanhSach.Columns.Add(DanhSachTaiKhoanTemplate.MK, Convert.ToInt32(lvDanhSach.Width * 0.2), HorizontalAlignment.Center);
             lvDanhSach.Columns.Add(DanhSachTaiKhoanTemplate.Email, Convert.ToInt32(lvDanhSach.Width * 0.2), HorizontalAlignment.Center);
-            lvDanhSach.Columns.Add(DanhSachTaiKhoanTemplate.Role, Convert.ToInt32(lvDanhSach.Width * 0.4), HorizontalAlignment.Center);
+            lvDanhSach.Columns.Add(DanhSachTaiKhoanTemplate.Role, Convert.ToInt32(lvDanhSach.Width * 0.3), HorizontalAlignment.Center);
             InitDataListViewTaiKhoan();
             labelDanhSach.Text = "Danh sách tài khoản";
         }
@@ -245,13 +256,23 @@ namespace QLDA.View.Common
             if (isReNewRepository) {
                 _repository = RepositoryWrapper.Create();
             }
-
-            var items = _repository.TaiKhoan.FindAll().ToList();
+            var accountLogin = _repository.TaiKhoan.FindByCondition(x => x.Ma_TK == _mainForm.IdAccount).FirstOrDefault();
+            List<Model.TaiKhoan> items = new List<Model.TaiKhoan>();
+            if (accountLogin.Role.Equals(Define.Admin)) {
+                items = _repository.TaiKhoan.FindAll().ToList();
+            }
+            else {
+                items.Add(accountLogin);
+                btnThemMoi.Enabled = false;
+                btnXoa.Enabled = false;
+            }
+            //var items = _repository.TaiKhoan.FindAll().ToList();
 
             foreach (var item in items) {
                 string[] itemValues = new string[] {
                     Define.PREFIX_TAI_KHOAN + item.Ma_TK,
                     item.Ten,
+                    item.MK,
                     item.Email,
                     item.Role
                 };

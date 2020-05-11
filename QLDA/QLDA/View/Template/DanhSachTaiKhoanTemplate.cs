@@ -10,6 +10,7 @@ namespace QLDA.View.Template
     {
         public const string Id = "Mã tài khoản";
         public const string Name = "Tên tài khoản";
+        public const string MK = "Mật khẩu";
         public const string Email = "Email";
         public const string Role = "Role";
     }

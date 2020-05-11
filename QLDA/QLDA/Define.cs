@@ -55,9 +55,9 @@ namespace QLDA
 
         #endregion status du an
 
-        public const string USD = "USD";
+        public const string Admin = "Admin";
 
-        public const string VND = "VND";
+        public const string User = "User";
 
         public const double ConvertMoneyUSDToVND = 23000;
 
@@ -97,7 +97,8 @@ namespace QLDA
         CongViec,
         TienTe,
         NhomDA,
-        TaiKhoan
+        TaiKhoan,
+        Chart
     }
 
     //public enum Lv0

@@ -124,8 +124,8 @@ namespace QLDA.View.QuanLyCongViec.CongViec
             cbxUuTien.Items.Add("2");
             cbxUuTien.Items.Add("3");
             cbxUuTien.Items.Add("4");
-            cbxTrangThai.Items.Add("Đã hoàn thành");
-            cbxTrangThai.Items.Add("Chưa hoàn thành");
+            cbxTrangThai.Items.Add(Define.FINISHED);
+            cbxTrangThai.Items.Add(Define.UNFINISH);
             cbxUuTien.SelectedIndex = 0;
             cbxTrangThai.SelectedIndex = 0;
         }

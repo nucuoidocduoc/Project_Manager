@@ -117,6 +117,7 @@ namespace QLDA.View.QuanLyDuAn.DuAn
             cbxTrangThai.Items.Add(Define.PENDING);
             cbxTrangThai.Items.Add(Define.FINISHED);
             cbxTrangThai.Items.Add(Define.UNFINISH);
+            cbxTrangThai.Items.Add(Define.PAUSE);
             cbxKhachHang.SelectedIndex = 0;
             cbxNhanVien.SelectedIndex = 0;
             cbxTrangThai.SelectedIndex = 0;

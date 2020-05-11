@@ -64,6 +64,15 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework">
       <HintPath>Lib\MetroFramework.dll</HintPath>
     </Reference>
@@ -115,6 +124,8 @@
     <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
@@ -144,6 +155,7 @@
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -153,6 +165,8 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Define.cs" />
@@ -174,8 +188,10 @@
     <Compile Include="Model\ThanhToan.cs" />
     <Compile Include="Model\TienTe.cs" />
     <Compile Include="Processing\DanhMucProcessing.cs" />
+    <Compile Include="Processing\OtherProcessing.cs" />
     <Compile Include="Processing\QLCVProcessing.cs" />
     <Compile Include="Processing\QLDAProcessing.cs" />
+    <Compile Include="Processing\TKProcessing.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CongViecRepository.cs" />
@@ -191,6 +207,12 @@
     <Compile Include="Repository\TaiKhoanRepository.cs" />
     <Compile Include="Repository\ThanhToanRepository.cs" />
     <Compile Include="Repository\TienTeRepository.cs" />
+    <Compile Include="View\Charts\Chart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Charts\Chart.Designer.cs">
+      <DependentUpon>Chart.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Common\DanhSachDAQL.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -305,6 +327,12 @@
     <Compile Include="View\QuanLyDuAn\ThanhToan\TaoHoacCapNhatTT.Designer.cs">
       <DependentUpon>TaoHoacCapNhatTT.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\TaiKhoan\AccountDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\TaiKhoan\AccountDetail.Designer.cs">
+      <DependentUpon>AccountDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\TaiKhoan\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -340,6 +368,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Charts\Chart.resx">
+      <DependentUpon>Chart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Common\DanhSachDAQL.resx">
       <DependentUpon>DanhSachDAQL.cs</DependentUpon>
     </EmbeddedResource>
@@ -396,6 +427,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\QuanLyDuAn\ThanhToan\TaoHoacCapNhatTT.resx">
       <DependentUpon>TaoHoacCapNhatTT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TaiKhoan\AccountDetail.resx">
+      <DependentUpon>AccountDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TaiKhoan\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

@@ -1,8 +1,12 @@
-﻿using QLDA.Context;
+﻿using LiveCharts;
+using LiveCharts.Wpf;
+using QLDA.Context;
 using QLDA.Processing;
 using QLDA.Repository;
+using QLDA.View.TaiKhoan;
 using System;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace QLDA
@@ -11,10 +15,13 @@ namespace QLDA
     {
         //public static RepositoryWrapper RepositoryWrapper;
         //private ViewMode _viewSelected;
+        public int IdAccount { get; set; }
 
         private DanhMucProcessing _danhMucProcess;
         private QLDAProcessing _quanLyDuAnProcess;
         private QLCVProcessing _quanLyCongViecProcessing;
+        private OtherProcessing _otherProcessing;
+        private RepositoryWrapper _repository;
 
         public MainForm()
         {
@@ -24,6 +31,16 @@ namespace QLDA
             InitProcessing();
         }
 
+        public MainForm(int idAccount)
+        {
+            InitializeComponent();
+            IdAccount = idAccount;
+            VisiblePanel();
+            //InitConnectDatabase();
+            InitProcessing();
+            btnTrangChu_Click(null, null);
+        }
+
         #region init
 
         private void InitProcessing()
@@ -31,6 +48,7 @@ namespace QLDA
             _danhMucProcess = new DanhMucProcessing(this);
             _quanLyDuAnProcess = new QLDAProcessing(this);
             _quanLyCongViecProcessing = new QLCVProcessing(this);
+            _otherProcessing = new OtherProcessing(this);
         }
 
         private void VisiblePanel()
@@ -151,6 +169,12 @@ namespace QLDA
         private void btnTaiKhoan_Click_1(object sender, EventArgs e)
         {
             _danhMucProcess.Show(ViewMode.TaiKhoan);
+        }
+
+        private void btnTrangChu_Click(object sender, EventArgs e)
+        {
+            VisiblePanel();
+            _otherProcessing.Show(ViewMode.Chart);
         }
     }
 }

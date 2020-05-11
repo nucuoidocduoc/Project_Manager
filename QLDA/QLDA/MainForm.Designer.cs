@@ -364,6 +364,7 @@
             this.btnTrangChu.TabIndex = 1;
             this.btnTrangChu.Text = "Trang chủ";
             this.btnTrangChu.UseVisualStyleBackColor = true;
+            this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
             // 
             // panelLogo
             // 
@@ -375,6 +376,7 @@
             // 
             // panelMainContent
             // 
+            this.panelMainContent.BackColor = System.Drawing.Color.White;
             this.panelMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMainContent.Location = new System.Drawing.Point(173, 0);
             this.panelMainContent.Name = "panelMainContent";
