@@ -163,6 +163,7 @@
             this.btnHelp.Text = "Trợ giúp";
             this.btnHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += btnTroGiup_Click_1;
             // 
             // panelTK
             // 
