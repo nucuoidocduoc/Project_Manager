@@ -61,14 +61,14 @@
             this.lvDuAn.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
             this.lvDuAn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lvDuAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvDuAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvDuAn.FullRowSelect = true;
             this.lvDuAn.HideSelection = false;
             this.lvDuAn.Location = new System.Drawing.Point(0, 0);
             this.lvDuAn.MultiSelect = false;
             this.lvDuAn.Name = "lvDuAn";
             this.lvDuAn.OwnerDraw = true;
-            this.lvDuAn.Size = new System.Drawing.Size(153, 518);
+            this.lvDuAn.Size = new System.Drawing.Size(160, 603);
             this.lvDuAn.TabIndex = 3;
             this.lvDuAn.UseCompatibleStateImageBehavior = false;
             this.lvDuAn.View = System.Windows.Forms.View.Details;
@@ -85,9 +85,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Location = new System.Drawing.Point(153, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(160, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(13, 518);
+            this.pictureBox1.Size = new System.Drawing.Size(13, 603);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
@@ -99,14 +99,14 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(732, 39);
+            this.panel2.Size = new System.Drawing.Size(959, 39);
             this.panel2.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(391, 2);
+            this.label2.Location = new System.Drawing.Point(629, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(134, 26);
             this.label2.TabIndex = 3;
@@ -117,10 +117,10 @@
             // 
             this.cbxHopDong.FontSize = MetroFramework.MetroComboBoxSize.Small;
             this.cbxHopDong.FormattingEnabled = true;
-            this.cbxHopDong.ItemHeight = 23;
-            this.cbxHopDong.Location = new System.Drawing.Point(531, 3);
+            this.cbxHopDong.ItemHeight = 19;
+            this.cbxHopDong.Location = new System.Drawing.Point(769, 8);
             this.cbxHopDong.Name = "cbxHopDong";
-            this.cbxHopDong.Size = new System.Drawing.Size(184, 29);
+            this.cbxHopDong.Size = new System.Drawing.Size(184, 25);
             this.cbxHopDong.TabIndex = 2;
             this.cbxHopDong.UseSelectable = true;
             this.cbxHopDong.SelectedIndexChanged += new System.EventHandler(this.cbxHopDong_SelectedIndexChanged);
@@ -143,7 +143,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 39);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(732, 479);
+            this.panel3.Size = new System.Drawing.Size(959, 564);
             this.panel3.TabIndex = 7;
             // 
             // panelContent2
@@ -162,7 +162,7 @@
             this.panelContent2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelContent2.Location = new System.Drawing.Point(0, 0);
             this.panelContent2.Name = "panelContent2";
-            this.panelContent2.Size = new System.Drawing.Size(732, 479);
+            this.panelContent2.Size = new System.Drawing.Size(959, 564);
             this.panelContent2.TabIndex = 5;
             // 
             // label7
@@ -170,7 +170,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(26, 442);
+            this.label7.Location = new System.Drawing.Point(217, 509);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(116, 18);
             this.label7.TabIndex = 9;
@@ -181,7 +181,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(26, 413);
+            this.label6.Location = new System.Drawing.Point(217, 480);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 18);
             this.label6.TabIndex = 8;
@@ -192,7 +192,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(26, 381);
+            this.label3.Location = new System.Drawing.Point(217, 448);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 18);
             this.label3.TabIndex = 7;
@@ -201,14 +201,14 @@
             // lvThanhToan
             // 
             this.lvThanhToan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lvThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvThanhToan.FullRowSelect = true;
             this.lvThanhToan.HideSelection = false;
             this.lvThanhToan.Location = new System.Drawing.Point(0, 0);
             this.lvThanhToan.MultiSelect = false;
             this.lvThanhToan.Name = "lvThanhToan";
             this.lvThanhToan.OwnerDraw = true;
-            this.lvThanhToan.Size = new System.Drawing.Size(732, 368);
+            this.lvThanhToan.Size = new System.Drawing.Size(959, 412);
             this.lvThanhToan.TabIndex = 6;
             this.lvThanhToan.UseCompatibleStateImageBehavior = false;
             this.lvThanhToan.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvThanhToan_DrawColumnHeader);
@@ -219,7 +219,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(450, 442);
+            this.label8.Location = new System.Drawing.Point(641, 509);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 16);
             this.label8.TabIndex = 5;
@@ -230,7 +230,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(450, 413);
+            this.label5.Location = new System.Drawing.Point(641, 480);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 16);
             this.label5.TabIndex = 4;
@@ -241,7 +241,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(450, 385);
+            this.label4.Location = new System.Drawing.Point(641, 452);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 16);
             this.label4.TabIndex = 3;
@@ -262,7 +262,7 @@
             this.txtChuaThanhToan.CustomButton.UseSelectable = true;
             this.txtChuaThanhToan.CustomButton.Visible = false;
             this.txtChuaThanhToan.Lines = new string[0];
-            this.txtChuaThanhToan.Location = new System.Drawing.Point(160, 439);
+            this.txtChuaThanhToan.Location = new System.Drawing.Point(351, 506);
             this.txtChuaThanhToan.MaxLength = 32767;
             this.txtChuaThanhToan.Name = "txtChuaThanhToan";
             this.txtChuaThanhToan.PasswordChar = '\0';
@@ -293,7 +293,7 @@
             this.txtDaThanhToan.CustomButton.UseSelectable = true;
             this.txtDaThanhToan.CustomButton.Visible = false;
             this.txtDaThanhToan.Lines = new string[0];
-            this.txtDaThanhToan.Location = new System.Drawing.Point(160, 410);
+            this.txtDaThanhToan.Location = new System.Drawing.Point(351, 477);
             this.txtDaThanhToan.MaxLength = 32767;
             this.txtDaThanhToan.Name = "txtDaThanhToan";
             this.txtDaThanhToan.PasswordChar = '\0';
@@ -324,7 +324,7 @@
             this.txtTongGiaTri.CustomButton.UseSelectable = true;
             this.txtTongGiaTri.CustomButton.Visible = false;
             this.txtTongGiaTri.Lines = new string[0];
-            this.txtTongGiaTri.Location = new System.Drawing.Point(160, 381);
+            this.txtTongGiaTri.Location = new System.Drawing.Point(351, 448);
             this.txtTongGiaTri.MaxLength = 32767;
             this.txtTongGiaTri.Name = "txtTongGiaTri";
             this.txtTongGiaTri.PasswordChar = '\0';
@@ -346,18 +346,18 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(166, 0);
+            this.panel1.Location = new System.Drawing.Point(173, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(732, 518);
+            this.panel1.Size = new System.Drawing.Size(959, 603);
             this.panel1.TabIndex = 5;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Location = new System.Drawing.Point(898, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(1132, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(13, 518);
+            this.pictureBox2.Size = new System.Drawing.Size(13, 603);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
@@ -372,7 +372,7 @@
             this.Controls.Add(this.lvDuAn);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "XemThanhToanTheoDuAn";
-            this.Size = new System.Drawing.Size(911, 518);
+            this.Size = new System.Drawing.Size(1145, 603);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

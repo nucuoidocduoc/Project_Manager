@@ -334,7 +334,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 50);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tên khách hàng";
+            this.label1.Text = "Tên chủ đầu tư";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2

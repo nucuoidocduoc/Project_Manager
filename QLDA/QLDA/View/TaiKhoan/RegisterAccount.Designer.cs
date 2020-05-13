@@ -224,6 +224,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "RegisterAccount";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterAccount";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -17,10 +17,18 @@ namespace QLDA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var login = new Login();
-            Application.Run(login);
-            if (login.DialogResult == DialogResult.OK) {
-                Application.Run(new MainForm(login.IdLogin));
+            bool isLogout = true;
+            while (isLogout) {
+                var login = new Login();
+                Application.Run(login);
+                if (login.DialogResult == DialogResult.OK) {
+                    var main = new MainForm(login.IdLogin);
+                    Application.Run(main);
+                    isLogout = main.IsLogOut;
+                }
+                else {
+                    isLogout = false;
+                }
             }
         }
     }

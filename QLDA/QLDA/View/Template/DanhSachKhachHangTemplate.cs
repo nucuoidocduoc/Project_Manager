@@ -8,8 +8,8 @@ namespace QLDA.View.Template
 {
     public static class DanhSachKhachHangTemplate
     {
-        public const string Id = "Mã khách hàng";
-        public const string Name = "Tên khách hàng";
+        public const string Id = "Mã chủ đầu tư";
+        public const string Name = "Tên chủ đầu tư";
         public const string Address = "Địa chỉ";
         public const string PhoneNumber = "Số điện thoại";
         public const string MST = "Mã số thuế";

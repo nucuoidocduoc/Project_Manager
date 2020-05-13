@@ -136,7 +136,6 @@ namespace QLDA.View.Common
         private void InitTaiKhoan()
         {
             labelDanhSach.Text = Define.DANH_SACH_TAI_KHOAN;
-            btnCapNhat.Enabled = false;
             btnXemChiTiet.Visible = false;
             lvDanhSach.View = System.Windows.Forms.View.Details;
             lvDanhSach.Columns.Add(DanhSachTaiKhoanTemplate.Id, Convert.ToInt32(lvDanhSach.Width * 0.1), HorizontalAlignment.Center);
@@ -257,9 +256,13 @@ namespace QLDA.View.Common
                 _repository = RepositoryWrapper.Create();
             }
             var accountLogin = _repository.TaiKhoan.FindByCondition(x => x.Ma_TK == _mainForm.IdAccount).FirstOrDefault();
+
             List<Model.TaiKhoan> items = new List<Model.TaiKhoan>();
             if (accountLogin.Role.Equals(Define.Admin)) {
                 items = _repository.TaiKhoan.FindAll().ToList();
+                if (!accountLogin.Ten.Equals("admin")) {
+                    btnXoa.Enabled = false;
+                }
             }
             else {
                 items.Add(accountLogin);
@@ -402,6 +405,14 @@ namespace QLDA.View.Common
                     InitDataListViewTienTe(true);
                 }
             }
+            else if (_lvTypeSelected.Equals(ViewMode.TaiKhoan)) {
+                var tkUpdate = new RegisterAccount(idUpdate);
+                tkUpdate.ShowDialog();
+                if (tkUpdate.HasReloadList) {
+                    lvDanhSach.Items.Clear();
+                    InitDataListViewTaiKhoan(true);
+                }
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -457,7 +468,7 @@ namespace QLDA.View.Common
             else if (_lvTypeSelected.Equals(ViewMode.TienTe)) {
                 var count = _repository.ThanhToan.FindByCondition(x => x.Ma_Tien_Te == idUpdate).Count();
                 if (count > 0) {
-                    MessageBox.Show("Không thể xóa vì đang có thanh toans sử dụng đơn vị tiền tệ này");
+                    MessageBox.Show("Không thể xóa vì đang có thanh toán sử dụng đơn vị tiền tệ này");
                     return;
                 }
                 var record = _repository.TienTe.FindByCondition(x => x.Ma_Tien_Te == idUpdate).FirstOrDefault();
@@ -466,6 +477,19 @@ namespace QLDA.View.Common
                     _repository.SaveChange();
                     lvDanhSach.Items.Clear();
                     InitDataListViewTienTe(true);
+                }
+            }
+            else if (_lvTypeSelected.Equals(ViewMode.TaiKhoan)) {
+                var tk = _repository.TaiKhoan.FindByCondition(x => x.Ma_TK == idUpdate).FirstOrDefault();
+                if (tk.Ten.Equals("admin")) {
+                    MessageBox.Show("Không thể xóa tài khoản này");
+                    return;
+                }
+                if (tk != null && Define.ConfirmDelete()) {
+                    _repository.TaiKhoan.Delete(tk);
+                    _repository.SaveChange();
+                    lvDanhSach.Items.Clear();
+                    InitDataListViewTaiKhoan(true);
                 }
             }
         }

@@ -242,6 +242,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "TaoHoacCapNhatTienTe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TaoHoacCapNhatNhomDA";
             this.panel1.ResumeLayout(false);
             this.panelGiaTri.ResumeLayout(false);

@@ -17,6 +17,7 @@ namespace QLDA
         //private ViewMode _viewSelected;
         public int IdAccount { get; set; }
 
+        public bool IsLogOut { get; private set; }
         private DanhMucProcessing _danhMucProcess;
         private QLDAProcessing _quanLyDuAnProcess;
         private QLCVProcessing _quanLyCongViecProcessing;
@@ -56,6 +57,8 @@ namespace QLDA
             panelDanhMuc.Visible = false;
             panelQLDA.Visible = false;
             panelQLCV.Visible = false;
+            panelTK.Visible = false;
+            panelHelp.Visible = false;
         }
 
         #endregion init
@@ -168,13 +171,34 @@ namespace QLDA
 
         private void btnTaiKhoan_Click_1(object sender, EventArgs e)
         {
-            _danhMucProcess.Show(ViewMode.TaiKhoan);
+            if (panelTK.Visible) {
+                panelTK.Visible = false;
+                return;
+            }
+            VisiblePanel();
+
+            panelTK.Visible = true;
         }
 
         private void btnTrangChu_Click(object sender, EventArgs e)
         {
             VisiblePanel();
             _otherProcessing.Show(ViewMode.Chart);
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            IsLogOut = true;
+            Close();
+        }
+
+        private void btnQLTK_Click(object sender, EventArgs e)
+        {
+            _danhMucProcess.Show(ViewMode.TaiKhoan);
         }
     }
 }

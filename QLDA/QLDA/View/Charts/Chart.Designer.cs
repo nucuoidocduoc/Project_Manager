@@ -36,7 +36,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(327, 87);
+            this.label1.Location = new System.Drawing.Point(472, 107);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(173, 20);
             this.label1.TabIndex = 1;
@@ -44,7 +44,7 @@
             // 
             // pieChart1
             // 
-            this.pieChart1.Location = new System.Drawing.Point(156, 144);
+            this.pieChart1.Location = new System.Drawing.Point(301, 164);
             this.pieChart1.Name = "pieChart1";
             this.pieChart1.Size = new System.Drawing.Size(531, 349);
             this.pieChart1.TabIndex = 0;
@@ -60,7 +60,7 @@
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "Chart";
-            this.Size = new System.Drawing.Size(911, 611);
+            this.Size = new System.Drawing.Size(1145, 695);
             this.Load += new System.EventHandler(this.Chart_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

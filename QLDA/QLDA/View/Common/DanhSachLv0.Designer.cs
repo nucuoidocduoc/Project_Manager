@@ -51,17 +51,17 @@
             this.panelFooter.Controls.Add(this.btnCapNhat);
             this.panelFooter.Controls.Add(this.btnXoa);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 573);
+            this.panelFooter.Location = new System.Drawing.Point(0, 642);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(911, 38);
+            this.panelFooter.Size = new System.Drawing.Size(1145, 53);
             this.panelFooter.TabIndex = 7;
             // 
             // btnXemChiTiet
             // 
             this.btnXemChiTiet.ForeColor = System.Drawing.Color.White;
-            this.btnXemChiTiet.Location = new System.Drawing.Point(505, 7);
+            this.btnXemChiTiet.Location = new System.Drawing.Point(750, 9);
             this.btnXemChiTiet.Name = "btnXemChiTiet";
-            this.btnXemChiTiet.Size = new System.Drawing.Size(75, 23);
+            this.btnXemChiTiet.Size = new System.Drawing.Size(88, 33);
             this.btnXemChiTiet.TabIndex = 3;
             this.btnXemChiTiet.Text = "Xem chi tiết";
             this.btnXemChiTiet.UseSelectable = true;
@@ -70,9 +70,9 @@
             // btnThemMoi
             // 
             this.btnThemMoi.ForeColor = System.Drawing.Color.White;
-            this.btnThemMoi.Location = new System.Drawing.Point(599, 7);
+            this.btnThemMoi.Location = new System.Drawing.Point(844, 9);
             this.btnThemMoi.Name = "btnThemMoi";
-            this.btnThemMoi.Size = new System.Drawing.Size(75, 23);
+            this.btnThemMoi.Size = new System.Drawing.Size(88, 33);
             this.btnThemMoi.TabIndex = 2;
             this.btnThemMoi.Text = "Thêm mới";
             this.btnThemMoi.UseSelectable = true;
@@ -81,9 +81,9 @@
             // btnCapNhat
             // 
             this.btnCapNhat.ForeColor = System.Drawing.Color.White;
-            this.btnCapNhat.Location = new System.Drawing.Point(698, 7);
+            this.btnCapNhat.Location = new System.Drawing.Point(938, 9);
             this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(75, 23);
+            this.btnCapNhat.Size = new System.Drawing.Size(88, 33);
             this.btnCapNhat.TabIndex = 1;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseSelectable = true;
@@ -92,9 +92,9 @@
             // btnXoa
             // 
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(797, 7);
+            this.btnXoa.Location = new System.Drawing.Point(1032, 9);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.Size = new System.Drawing.Size(88, 33);
             this.btnXoa.TabIndex = 0;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseSelectable = true;
@@ -107,7 +107,7 @@
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(911, 36);
+            this.panelHeader.Size = new System.Drawing.Size(1145, 36);
             this.panelHeader.TabIndex = 6;
             // 
             // panel3
@@ -133,7 +133,7 @@
             // lvDanhSach
             // 
             this.lvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvDanhSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvDanhSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvDanhSach.FullRowSelect = true;
             this.lvDanhSach.HideSelection = false;
             this.lvDanhSach.Location = new System.Drawing.Point(10, 0);
@@ -141,7 +141,7 @@
             this.lvDanhSach.Name = "lvDanhSach";
             this.lvDanhSach.OwnerDraw = true;
             this.lvDanhSach.Scrollable = false;
-            this.lvDanhSach.Size = new System.Drawing.Size(891, 537);
+            this.lvDanhSach.Size = new System.Drawing.Size(1125, 606);
             this.lvDanhSach.TabIndex = 8;
             this.lvDanhSach.UseCompatibleStateImageBehavior = false;
             this.lvDanhSach.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvDanhSach_DrawColumnHeader);
@@ -155,15 +155,15 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 36);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(911, 537);
+            this.panel1.Size = new System.Drawing.Size(1145, 606);
             this.panel1.TabIndex = 9;
             // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(901, 0);
+            this.panel4.Location = new System.Drawing.Point(1135, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 537);
+            this.panel4.Size = new System.Drawing.Size(10, 606);
             this.panel4.TabIndex = 10;
             // 
             // panel2
@@ -171,7 +171,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 537);
+            this.panel2.Size = new System.Drawing.Size(10, 606);
             this.panel2.TabIndex = 9;
             // 
             // DanhSachLv0
@@ -184,7 +184,7 @@
             this.Controls.Add(this.panelHeader);
             this.ForeColor = System.Drawing.Color.LightGray;
             this.Name = "DanhSachLv0";
-            this.Size = new System.Drawing.Size(911, 611);
+            this.Size = new System.Drawing.Size(1145, 695);
             this.panelFooter.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
