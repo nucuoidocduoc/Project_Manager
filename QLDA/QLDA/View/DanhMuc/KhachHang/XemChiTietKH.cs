@@ -27,7 +27,8 @@ namespace QLDA.View.DanhMuc.KhachHang
             _idViewDetail = idViewDetail;
             InitDuAn();
             var kh = _repository.KhachHang.FindByCondition(x => x.Ma_KH == _idViewDetail).FirstOrDefault();
-            if (kh == null) {
+            if (kh == null)
+            {
                 return;
             }
 
@@ -39,7 +40,8 @@ namespace QLDA.View.DanhMuc.KhachHang
             txtSDT.Text = kh.SDT;
             txtTKNH.Text = kh.STK;
             txtTenNH.Text = kh.Ten_NH;
-            if (kh.Cac_Du_An != null && kh.Cac_Du_An.Count > 0) {
+            if (kh.Cac_Du_An != null && kh.Cac_Du_An.Count > 0)
+            {
                 InitDataListViewDuAn(kh.Cac_Du_An);
             }
             Text = "Chi tiết khách hàng " + Define.PREFIX_KHACH_HANG + kh.Ma_KH;
@@ -60,17 +62,20 @@ namespace QLDA.View.DanhMuc.KhachHang
 
         public void InitDataListViewDuAn(ICollection<DuAn> items)
         {
-            foreach (var item in items) {
+            foreach (var item in items)
+            {
+                _repository.RepositoryContext.Entry(item).Reference(x => x.Nhom_DA).Load();
                 string[] itemValues = new string[] {
                     Define.PREFIX_DU_AN + item.Ma_DA,
-                    item.Ten, item.Nhom_DA.Ten,
+                    item.Ten,  (item.Nhom_DA==null)?string.Empty:item.Nhom_DA.Ten,
                     item.Dia_Diem,item.Thoi_Gian_BD.ToString(),
                     item.Thoi_Gian_KT.ToString(),
                     item.Thoi_Gian_KT_TT.ToString(),
                     item.Trang_Thai
                 };
 
-                if (itemValues.Length > 0) {
+                if (itemValues.Length > 0)
+                {
                     lvDSDA.Items.Add(new ListViewItem(itemValues) { Tag = item.Ma_DA });
                 }
             }

@@ -370,6 +370,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\Charts\Chart.resx">
       <DependentUpon>Chart.cs</DependentUpon>
@@ -455,6 +456,36 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\148963.png" />
+    <None Include="Resources\interface.png" />
+    <None Include="Resources\148957.png" />
+    <None Include="Resources\dm.PNG" />
+    <None Include="Resources\dm1.PNG" />
+    <None Include="Resources\dm2.PNG" />
+    <None Include="Resources\dem-file.png" />
+    <None Include="Resources\people.png" />
+    <None Include="Resources\people %281%29.png" />
+    <None Include="Resources\business.png" />
+    <None Include="Resources\business1.png" />
+    <None Include="Resources\personal.png" />
+    <None Include="Resources\location.png" />
+    <None Include="Resources\business-and-finance.png" />
+    <None Include="Resources\document.png" />
+    <None Include="Resources\draw.png" />
+    <None Include="Resources\handshake.png" />
+    <None Include="Resources\handshake %281%29.png" />
+    <None Include="Resources\trienkhai.png" />
+    <None Include="Resources\quytrinh.png" />
+    <None Include="Resources\quytrinh1.png" />
+    <None Include="Resources\files.png" />
+    <None Include="Resources\pay.png" />
+    <None Include="Resources\analytics.png" />
+    <None Include="Resources\education.png" />
+    <None Include="Resources\interface1.png" />
+    <None Include="Resources\signs.png" />
+    <None Include="Resources\management.png" />
+    <None Include="Resources\folder.png" />
+    <None Include="Resources\monitor.png" />
     <Content Include="Resource\HomeIcon.png" />
     <Content Include="Resource\manager.ico" />
   </ItemGroup>

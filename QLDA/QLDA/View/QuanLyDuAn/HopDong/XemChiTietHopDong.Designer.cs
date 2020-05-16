@@ -313,7 +313,7 @@
             // 
             // 
             this.txtTen.CustomButton.Image = null;
-            this.txtTen.CustomButton.Location = new System.Drawing.Point(176, 1);
+            this.txtTen.CustomButton.Location = new System.Drawing.Point(200, 1);
             this.txtTen.CustomButton.Name = "";
             this.txtTen.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtTen.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -333,7 +333,7 @@
             this.txtTen.SelectionLength = 0;
             this.txtTen.SelectionStart = 0;
             this.txtTen.ShortcutsEnabled = true;
-            this.txtTen.Size = new System.Drawing.Size(198, 23);
+            this.txtTen.Size = new System.Drawing.Size(222, 23);
             this.txtTen.TabIndex = 0;
             this.txtTen.UseSelectable = true;
             this.txtTen.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));

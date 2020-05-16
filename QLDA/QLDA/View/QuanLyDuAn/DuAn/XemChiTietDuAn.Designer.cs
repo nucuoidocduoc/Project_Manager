@@ -344,7 +344,7 @@
             // 
             // 
             this.txtGiamDoc.CustomButton.Image = null;
-            this.txtGiamDoc.CustomButton.Location = new System.Drawing.Point(176, 1);
+            this.txtGiamDoc.CustomButton.Location = new System.Drawing.Point(217, 1);
             this.txtGiamDoc.CustomButton.Name = "";
             this.txtGiamDoc.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtGiamDoc.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -364,7 +364,7 @@
             this.txtGiamDoc.SelectionLength = 0;
             this.txtGiamDoc.SelectionStart = 0;
             this.txtGiamDoc.ShortcutsEnabled = true;
-            this.txtGiamDoc.Size = new System.Drawing.Size(198, 23);
+            this.txtGiamDoc.Size = new System.Drawing.Size(239, 23);
             this.txtGiamDoc.TabIndex = 4;
             this.txtGiamDoc.UseSelectable = true;
             this.txtGiamDoc.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -376,7 +376,7 @@
             // 
             // 
             this.txtDiaDiem.CustomButton.Image = null;
-            this.txtDiaDiem.CustomButton.Location = new System.Drawing.Point(176, 1);
+            this.txtDiaDiem.CustomButton.Location = new System.Drawing.Point(217, 1);
             this.txtDiaDiem.CustomButton.Name = "";
             this.txtDiaDiem.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtDiaDiem.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -396,7 +396,7 @@
             this.txtDiaDiem.SelectionLength = 0;
             this.txtDiaDiem.SelectionStart = 0;
             this.txtDiaDiem.ShortcutsEnabled = true;
-            this.txtDiaDiem.Size = new System.Drawing.Size(198, 23);
+            this.txtDiaDiem.Size = new System.Drawing.Size(239, 23);
             this.txtDiaDiem.TabIndex = 3;
             this.txtDiaDiem.UseSelectable = true;
             this.txtDiaDiem.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -408,7 +408,7 @@
             // 
             // 
             this.txtNhom.CustomButton.Image = null;
-            this.txtNhom.CustomButton.Location = new System.Drawing.Point(176, 1);
+            this.txtNhom.CustomButton.Location = new System.Drawing.Point(217, 1);
             this.txtNhom.CustomButton.Name = "";
             this.txtNhom.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtNhom.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -428,7 +428,7 @@
             this.txtNhom.SelectionLength = 0;
             this.txtNhom.SelectionStart = 0;
             this.txtNhom.ShortcutsEnabled = true;
-            this.txtNhom.Size = new System.Drawing.Size(198, 23);
+            this.txtNhom.Size = new System.Drawing.Size(239, 23);
             this.txtNhom.TabIndex = 2;
             this.txtNhom.UseSelectable = true;
             this.txtNhom.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -440,7 +440,7 @@
             // 
             // 
             this.txtChuDauTu.CustomButton.Image = null;
-            this.txtChuDauTu.CustomButton.Location = new System.Drawing.Point(176, 1);
+            this.txtChuDauTu.CustomButton.Location = new System.Drawing.Point(217, 1);
             this.txtChuDauTu.CustomButton.Name = "";
             this.txtChuDauTu.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtChuDauTu.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -460,7 +460,7 @@
             this.txtChuDauTu.SelectionLength = 0;
             this.txtChuDauTu.SelectionStart = 0;
             this.txtChuDauTu.ShortcutsEnabled = true;
-            this.txtChuDauTu.Size = new System.Drawing.Size(198, 23);
+            this.txtChuDauTu.Size = new System.Drawing.Size(239, 23);
             this.txtChuDauTu.TabIndex = 1;
             this.txtChuDauTu.UseSelectable = true;
             this.txtChuDauTu.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -472,7 +472,7 @@
             // 
             // 
             this.txtTen.CustomButton.Image = null;
-            this.txtTen.CustomButton.Location = new System.Drawing.Point(176, 1);
+            this.txtTen.CustomButton.Location = new System.Drawing.Point(217, 1);
             this.txtTen.CustomButton.Name = "";
             this.txtTen.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtTen.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -492,7 +492,7 @@
             this.txtTen.SelectionLength = 0;
             this.txtTen.SelectionStart = 0;
             this.txtTen.ShortcutsEnabled = true;
-            this.txtTen.Size = new System.Drawing.Size(198, 23);
+            this.txtTen.Size = new System.Drawing.Size(239, 23);
             this.txtTen.TabIndex = 0;
             this.txtTen.UseSelectable = true;
             this.txtTen.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
