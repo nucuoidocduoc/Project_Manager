@@ -67,8 +67,7 @@ namespace QLDA
 
         private void btnDanhMuc_Click(object sender, EventArgs e)
         {
-            if (panelDanhMuc.Visible)
-            {
+            if (panelDanhMuc.Visible) {
                 panelDanhMuc.Visible = false;
                 return;
             }
@@ -81,8 +80,7 @@ namespace QLDA
 
         private void btnQLDA_Click(object sender, EventArgs e)
         {
-            if (panelQLDA.Visible)
-            {
+            if (panelQLDA.Visible) {
                 panelQLDA.Visible = false;
                 return;
             }
@@ -92,8 +90,7 @@ namespace QLDA
 
         private void btnQLCV_Click(object sender, EventArgs e)
         {
-            if (panelQLCV.Visible)
-            {
+            if (panelQLCV.Visible) {
                 panelQLCV.Visible = false;
                 return;
             }
@@ -164,6 +161,10 @@ namespace QLDA
 
         private void btnBaoCao_Click(object sender, EventArgs e)
         {
+            panelMainContent.Controls.Clear();
+            var report = new View.BaoCao.Report();
+            panelMainContent.Controls.Add(report);
+            report.Dock = DockStyle.Fill;
         }
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
@@ -174,8 +175,7 @@ namespace QLDA
 
         private void btnTaiKhoan_Click_1(object sender, EventArgs e)
         {
-            if (panelTK.Visible)
-            {
+            if (panelTK.Visible) {
                 panelTK.Visible = false;
                 return;
             }
@@ -186,8 +186,7 @@ namespace QLDA
 
         private void btnTroGiup_Click_1(object sender, EventArgs e)
         {
-            if (panelHelp.Visible)
-            {
+            if (panelHelp.Visible) {
                 panelHelp.Visible = false;
                 return;
             }
@@ -219,8 +218,7 @@ namespace QLDA
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
-            if (panelHelp.Visible)
-            {
+            if (panelHelp.Visible) {
                 panelHelp.Visible = false;
                 return;
             }

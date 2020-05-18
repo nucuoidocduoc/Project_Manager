@@ -58,6 +58,11 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -158,6 +163,8 @@
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -173,6 +180,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Define.cs" />
+    <Compile Include="DTOReport\CongViecReport.cs" />
+    <Compile Include="DTOReport\DoanhThuReport.cs" />
+    <Compile Include="DTOReport\DuAnReport.cs" />
+    <Compile Include="DTOReport\HopDongReport.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +221,42 @@
     <Compile Include="Repository\TaiKhoanRepository.cs" />
     <Compile Include="Repository\ThanhToanRepository.cs" />
     <Compile Include="Repository\TienTeRepository.cs" />
+    <Compile Include="View\BaoCao\CVReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CVReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\BaoCao\DADangThucHienReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DADangThucHienReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\BaoCao\DTReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DTReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\BaoCao\HDDangThucHienReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDDangThucHienReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\BaoCao\PrintReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BaoCao\PrintReportForm.Designer.cs">
+      <DependentUpon>PrintReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BaoCao\Report.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\BaoCao\Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Charts\Chart.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -372,6 +419,28 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\BaoCao\CVReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CVReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BaoCao\DADangThucHienReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DADangThucHienReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BaoCao\DTReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DTReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BaoCao\HDDangThucHienReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HDDangThucHienReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BaoCao\PrintReportForm.resx">
+      <DependentUpon>PrintReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BaoCao\Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Charts\Chart.resx">
       <DependentUpon>Chart.cs</DependentUpon>
     </EmbeddedResource>
@@ -486,11 +555,13 @@
     <None Include="Resources\management.png" />
     <None Include="Resources\folder.png" />
     <None Include="Resources\monitor.png" />
+    <Content Include="Resources\logo.PNG" />
     <Content Include="Resource\HomeIcon.png" />
     <Content Include="Resource\manager.ico" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="View\BaoCao\" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

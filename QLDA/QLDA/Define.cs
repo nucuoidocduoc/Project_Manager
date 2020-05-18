@@ -37,6 +37,11 @@ namespace QLDA
         public const string PREFIX_TIEN_TE = "TIT-";
         public const string PREFIX_TAI_KHOAN = "TK-";
 
+        public const string DA_TYPE = "Dự án";
+        public const string CV_TYPE = "Công việc";
+        public const string DT_TYPE = "Doanh thu";
+        public const string HD_TYPE = "Hợp đồng";
+
         #region message
 
         public const string CONFIRM_DELETE = "Bạn có thực sự muốn xóa";
