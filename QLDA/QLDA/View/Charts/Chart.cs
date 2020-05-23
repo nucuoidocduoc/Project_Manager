@@ -16,7 +16,7 @@ namespace QLDA.View.Charts
             InitializeComponent();
             _repository = RepositoryWrapper.Create();
             InitChartDA();
-            //InitChartCV();
+            InitChartCV();
         }
 
         private void InitChartDA()
@@ -34,7 +34,7 @@ namespace QLDA.View.Charts
                 {
                     Title = Define.FINISHED,
                     Values = new ChartValues<double> {countFinish},
-                    PushOut = 15,
+                    PushOut = 10,
                     DataLabels = true,
                     LabelPoint = labelPoint
                 },
@@ -69,37 +69,38 @@ namespace QLDA.View.Charts
         private void Chart_Load(object sender, EventArgs e)
         {
             pieChart1.Visible = true;
+            pieChart2.Visible = true;
         }
 
-        //private void InitChartCV()
-        //{
-        //    int countFinish = _repository.CongViec.FindByCondition(x => x.Trang_Thai.Equals(Define.FINISHED)).Count();
-        //    int countPending = _repository.CongViec.FindByCondition(x => x.Trang_Thai.Equals(Define.PENDING)).Count();
-        //    int countInprogress = _repository.CongViec.FindByCondition(x => x.Trang_Thai.Equals(Define.UNFINISH)).Count();
-        //    int countDelay = _repository.CongViec.FindByCondition(x => x.Trang_Thai.Equals(Define.PAUSE)).Count();
-        //    Func<ChartPoint, string> labelPoint = chartPoint =>
-        //        string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
+        private void InitChartCV()
+        {
+            int countFinish = _repository.CongViec.FindByCondition(x => x.Trang_Thai.Equals(Define.FINISHED)).Count();
+            //int countPending = _repository.CongViec.FindByCondition(x => x.Trang_Thai.Equals(Define.PENDING)).Count();
+            int countInprogress = _repository.CongViec.FindByCondition(x => x.Trang_Thai.Equals(Define.UNFINISH)).Count();
+            //int countDelay = _repository.CongViec.FindByCondition(x => x.Trang_Thai.Equals(Define.PAUSE)).Count();
+            Func<ChartPoint, string> labelPoint = chartPoint =>
+                string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
 
-        //    pieChartCV.Series = new SeriesCollection
-        //    {
-        //        new PieSeries
-        //        {
-        //            Title = Define.FINISHED,
-        //            Values = new ChartValues<double> {countFinish},
-        //            PushOut = 15,
-        //            DataLabels = true,
-        //            LabelPoint = labelPoint
-        //        },
-        //        new PieSeries
-        //        {
-        //            Title = Define.UNFINISH,
-        //            Values = new ChartValues<double> {countInprogress},
-        //            DataLabels = true,
-        //            LabelPoint = labelPoint
-        //        }
-        //    };
+            pieChart2.Series = new SeriesCollection
+            {
+                new PieSeries
+                {
+                    Title = Define.FINISHED,
+                    Values = new ChartValues<double> {countFinish},
+                    PushOut = 10,
+                    DataLabels = true,
+                    LabelPoint = labelPoint
+                },
+                new PieSeries
+                {
+                    Title = Define.UNFINISH,
+                    Values = new ChartValues<double> {countInprogress},
+                    DataLabels = true,
+                    LabelPoint = labelPoint
+                }
+            };
 
-        //    pieChartCV.LegendLocation = LegendLocation.Bottom;
-        //}
+            pieChart2.LegendLocation = LegendLocation.Bottom;
+        }
     }
 }

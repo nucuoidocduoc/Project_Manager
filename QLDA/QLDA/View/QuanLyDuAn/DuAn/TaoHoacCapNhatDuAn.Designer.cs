@@ -44,6 +44,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panelThongTin1 = new System.Windows.Forms.Panel();
             this.panelContent1 = new System.Windows.Forms.Panel();
+            this.cbxNhomDuAn = new MetroFramework.Controls.MetroComboBox();
             this.cbxKhachHang = new MetroFramework.Controls.MetroComboBox();
             this.cbxNhanVien = new MetroFramework.Controls.MetroComboBox();
             this.txtDiaDiem = new MetroFramework.Controls.MetroTextBox();
@@ -57,7 +58,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnHuy = new MetroFramework.Controls.MetroButton();
             this.btnLuu = new MetroFramework.Controls.MetroButton();
-            this.cbxNhomDuAn = new MetroFramework.Controls.MetroComboBox();
             this.panelThongTinDuAn.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelThongTin2.SuspendLayout();
@@ -164,6 +164,7 @@
             this.cbxTrangThai.Size = new System.Drawing.Size(198, 29);
             this.cbxTrangThai.TabIndex = 9;
             this.cbxTrangThai.UseSelectable = true;
+            this.cbxTrangThai.SelectedIndexChanged += new System.EventHandler(this.cbxTrangThai_SelectedIndexChanged);
             // 
             // dtThoiGianBD
             // 
@@ -273,6 +274,16 @@
             this.panelContent1.Name = "panelContent1";
             this.panelContent1.Size = new System.Drawing.Size(238, 277);
             this.panelContent1.TabIndex = 1;
+            // 
+            // cbxNhomDuAn
+            // 
+            this.cbxNhomDuAn.FormattingEnabled = true;
+            this.cbxNhomDuAn.ItemHeight = 23;
+            this.cbxNhomDuAn.Location = new System.Drawing.Point(6, 113);
+            this.cbxNhomDuAn.Name = "cbxNhomDuAn";
+            this.cbxNhomDuAn.Size = new System.Drawing.Size(198, 29);
+            this.cbxNhomDuAn.TabIndex = 6;
+            this.cbxNhomDuAn.UseSelectable = true;
             // 
             // cbxKhachHang
             // 
@@ -452,16 +463,6 @@
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseSelectable = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // cbxNhomDuAn
-            // 
-            this.cbxNhomDuAn.FormattingEnabled = true;
-            this.cbxNhomDuAn.ItemHeight = 23;
-            this.cbxNhomDuAn.Location = new System.Drawing.Point(6, 113);
-            this.cbxNhomDuAn.Name = "cbxNhomDuAn";
-            this.cbxNhomDuAn.Size = new System.Drawing.Size(198, 29);
-            this.cbxNhomDuAn.TabIndex = 6;
-            this.cbxNhomDuAn.UseSelectable = true;
             // 
             // TaoHoacCapNhatDuAn
             // 

@@ -38,7 +38,7 @@
             this.reportView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportView.Location = new System.Drawing.Point(0, 0);
             this.reportView.Name = "reportView";
-            this.reportView.Size = new System.Drawing.Size(800, 450);
+            this.reportView.Size = new System.Drawing.Size(914, 657);
             this.reportView.TabIndex = 0;
             this.reportView.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -46,7 +46,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(914, 657);
             this.Controls.Add(this.reportView);
             this.Name = "PrintReportForm";
             this.Text = "PrintReportForm";

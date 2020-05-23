@@ -30,39 +30,31 @@ namespace QLDA.View.BaoCao
 
         private void InitReport()
         {
-            if (_reportType.Equals("DT"))
-            {
+            if (_reportType.Equals("DT")) {
                 InitDT();
             }
-            else if (_reportType.Equals("DA"))
-            {
+            else if (_reportType.Equals("DA")) {
                 InitDA();
             }
-            else if (_reportType.Equals("HD"))
-            {
+            else if (_reportType.Equals("HD")) {
                 InitHD();
             }
-            else if (_reportType.Equals("CV"))
-            {
+            else if (_reportType.Equals("CV")) {
                 InitCV();
             }
-            else if (_reportType.Equals("CDT"))
-            {
+            else if (_reportType.Equals("CDT")) {
             }
         }
 
         private bool IsSatisfyDate(DateTime from, DateTime to)
         {
-            if (from >= _from && from < _to)
-            {
+            if (from >= _from && from < _to) {
                 return true;
             }
-            else if (from < _from && to > _from)
-            {
+            else if (from < _from && to > _from) {
                 return true;
             }
-            else
-            {
+            else {
                 return false;
             }
         }
@@ -72,35 +64,45 @@ namespace QLDA.View.BaoCao
             List<DTOReport.DoanhThuReport> doanhThuReports = new List<DTOReport.DoanhThuReport>();
             var dictionary = new Dictionary<int, double>();
 
-            var dAs = _repositoryWrapper.DuAn.FindByCondition(x => !x.Trang_Thai.Equals(Define.PENDING)).ToList();
-            foreach (var da in dAs)
-            {
-                _repositoryWrapper.RepositoryContext.Entry(da).Collection(x => x.Cac_Hop_Dong).Load();
-                if (da.Cac_Hop_Dong.Count > 0)
-                {
-                    if (dictionary.ContainsKey((int)da.Ma_KH))
-                    {
-                        dictionary[(int)da.Ma_KH] = dictionary[(int)da.Ma_KH] + da.Cac_Hop_Dong.Sum(x => double.Parse(x.Tong_Gia_Tri));
+            var tts = _repositoryWrapper.ThanhToan.FindByCondition(x => x.Thoi_Gian_TT >= _from && x.Thoi_Gian_TT <= _to).ToList();
+            foreach (var tt in tts) {
+                _repositoryWrapper.RepositoryContext.Entry(tt).Reference(x => x.HopDong).Load();
+                _repositoryWrapper.RepositoryContext.Entry(tt).Reference(x => x.Loai_Tien).Load();
+                if (tt.HopDong != null) {
+                    _repositoryWrapper.RepositoryContext.Entry(tt.HopDong).Reference(x => x.DuAn).Load();
+
+                    if (dictionary.ContainsKey((int)tt.HopDong.DuAn.Ma_KH)) {
+                        dictionary[(int)tt.HopDong.DuAn.Ma_KH] = dictionary[(int)tt.HopDong.DuAn.Ma_KH] + double.Parse(tt.So_Tien) * tt.Loai_Tien.Ti_gia;
                     }
-                    else
-                    {
-                        dictionary.Add((int)da.Ma_KH, da.Cac_Hop_Dong.Sum(x => double.Parse(x.Tong_Gia_Tri)));
+                    else {
+                        dictionary.Add((int)tt.HopDong.DuAn.Ma_KH, double.Parse(tt.So_Tien) * tt.Loai_Tien.Ti_gia);
                     }
                 }
             }
 
-            foreach (var key in dictionary.Keys)
-            {
+            //var dAs = _repositoryWrapper.DuAn.FindByCondition(x => !x.Trang_Thai.Equals(Define.PENDING)).ToList();
+            //foreach (var da in dAs) {
+            //    _repositoryWrapper.RepositoryContext.Entry(da).Collection(x => x.Cac_Hop_Dong).Load();
+            //    if (da.Cac_Hop_Dong.Count > 0) {
+            //        if (dictionary.ContainsKey((int)da.Ma_KH)) {
+            //            dictionary[(int)da.Ma_KH] = dictionary[(int)da.Ma_KH] + da.Cac_Hop_Dong.Sum(x => double.Parse(x.Tong_Gia_Tri));
+            //        }
+            //        else {
+            //            dictionary.Add((int)da.Ma_KH, da.Cac_Hop_Dong.Sum(x => double.Parse(x.Tong_Gia_Tri)));
+            //        }
+            //    }
+            //}
+
+            foreach (var key in dictionary.Keys) {
                 var kh = _repositoryWrapper.KhachHang.FindByCondition(x => x.Ma_KH == key).FirstOrDefault();
-                if (kh != null)
-                {
+                if (kh != null) {
                     doanhThuReports.Add(DTOReport.DoanhThuReport.Create(kh, dictionary[key]));
                 }
             }
             var report = new DTReport();
             report.SetDataSource(doanhThuReports);
-            //report.SetParameterValue("fromDate", _from.ToShortDateString());
-            //report.SetParameterValue("toDate", _to.ToShortDateString());
+            report.SetParameterValue("fromDate", _from.ToShortDateString());
+            report.SetParameterValue("toDate", _to.ToShortDateString());
             reportView.ReportSource = report;
             reportView.Refresh();
         }
@@ -109,10 +111,8 @@ namespace QLDA.View.BaoCao
         {
             List<DTOReport.DuAnReport> duAnReports = new List<DTOReport.DuAnReport>();
             var duAns = _repositoryWrapper.DuAn.FindByCondition(x => (x.Thoi_Gian_BD > _from && x.Thoi_Gian_BD < _to) || (x.Thoi_Gian_BD < _from && x.Thoi_Gian_KT > _from)).ToList();
-            if (duAns.Count > 0)
-            {
-                foreach (var da in duAns)
-                {
+            if (duAns.Count > 0) {
+                foreach (var da in duAns) {
                     _repositoryWrapper.RepositoryContext.Entry(da).Reference(x => x.KhachHang).Load();
                     var rp = DTOReport.DuAnReport.Create(da);
                     duAnReports.Add(rp);
@@ -132,16 +132,13 @@ namespace QLDA.View.BaoCao
             List<DTOReport.HopDongReport> hopDongReports = new List<DTOReport.HopDongReport>();
             var hds = _repositoryWrapper.HopDong.FindByCondition(x => (x.Thoi_Diem_Ky > _from && x.Thoi_Diem_Ky < _to) || (x.Thoi_Diem_Ky < _from && x.Thoi_Gian_KT > _from)).ToList();
 
-            if (hds.Count > 0)
-            {
-                foreach (var hd in hds)
-                {
+            if (hds.Count > 0) {
+                foreach (var hd in hds) {
                     _repositoryWrapper.RepositoryContext.Entry(hd).Collection(x => x.Cac_Thanh_Toan).Load();
                     _repositoryWrapper.RepositoryContext.Entry(hd).Reference(x => x.DuAn).Load();
                     _repositoryWrapper.RepositoryContext.Entry(hd.DuAn).Reference(x => x.KhachHang).Load();
                     double value = 0;
-                    foreach (var tt in hd.Cac_Thanh_Toan)
-                    {
+                    foreach (var tt in hd.Cac_Thanh_Toan) {
                         _repositoryWrapper.RepositoryContext.Entry(tt).Reference(x => x.Loai_Tien).Load();
                         value += Define.GetMoney(tt);
                     }
@@ -160,10 +157,8 @@ namespace QLDA.View.BaoCao
         {
             List<DTOReport.CongViecReport> congViecReports = new List<DTOReport.CongViecReport>();
             var cvs = _repositoryWrapper.CongViec.FindByCondition(x => (x.Thoi_Gian_Giao > _from && x.Thoi_Gian_Giao < _to) || (x.Thoi_Gian_Giao < _from && x.Thoi_Gian_HH > _from)).ToList();
-            if (cvs.Count > 0)
-            {
-                foreach (var cv in cvs)
-                {
+            if (cvs.Count > 0) {
+                foreach (var cv in cvs) {
                     _repositoryWrapper.RepositoryContext.Entry(cv).Reference(x => x.NhanVien).Load();
                     _repositoryWrapper.RepositoryContext.Entry(cv).Reference(x => x.QuyTrinh).Load();
                     congViecReports.Add(DTOReport.CongViecReport.Create(cv));

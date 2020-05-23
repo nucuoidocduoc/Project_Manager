@@ -35,6 +35,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnXem = new MetroFramework.Controls.MetroButton();
+            this.panelCDT = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.panelCV = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panelHD = new System.Windows.Forms.Panel();
@@ -43,16 +45,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel2DT = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panelCDT = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panelCDT.SuspendLayout();
             this.panelCV.SuspendLayout();
             this.panelHD.SuspendLayout();
             this.panelDA.SuspendLayout();
             this.panel2DT.SuspendLayout();
-            this.panelCDT.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtFrom
@@ -141,6 +141,28 @@
             this.btnXem.UseSelectable = true;
             this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
+            // panelCDT
+            // 
+            this.panelCDT.Controls.Add(this.label7);
+            this.panelCDT.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelCDT.Location = new System.Drawing.Point(0, 248);
+            this.panelCDT.Name = "panelCDT";
+            this.panelCDT.Size = new System.Drawing.Size(786, 62);
+            this.panelCDT.TabIndex = 4;
+            this.panelCDT.Visible = false;
+            this.panelCDT.Click += new System.EventHandler(this.panelCDT_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(327, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(103, 24);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Chủ đầu tư";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
             // panelCV
             // 
             this.panelCV.Controls.Add(this.label6);
@@ -225,27 +247,6 @@
             this.label3.Text = "Doanh thu kinh doanh";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(327, 18);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 24);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Chủ đầu tư";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // panelCDT
-            // 
-            this.panelCDT.Controls.Add(this.label7);
-            this.panelCDT.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelCDT.Location = new System.Drawing.Point(0, 248);
-            this.panelCDT.Name = "panelCDT";
-            this.panelCDT.Size = new System.Drawing.Size(786, 62);
-            this.panelCDT.TabIndex = 4;
-            this.panelCDT.Click += new System.EventHandler(this.panelCDT_Click);
-            // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,6 +260,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panelCDT.ResumeLayout(false);
+            this.panelCDT.PerformLayout();
             this.panelCV.ResumeLayout(false);
             this.panelCV.PerformLayout();
             this.panelHD.ResumeLayout(false);
@@ -267,8 +270,6 @@
             this.panelDA.PerformLayout();
             this.panel2DT.ResumeLayout(false);
             this.panel2DT.PerformLayout();
-            this.panelCDT.ResumeLayout(false);
-            this.panelCDT.PerformLayout();
             this.ResumeLayout(false);
 
         }

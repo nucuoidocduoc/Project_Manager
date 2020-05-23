@@ -87,6 +87,10 @@ namespace QLDA.View.QuanLyDuAn.DuAn
             dtThoiGianBD.Value = _duAnUpdate.Thoi_Gian_BD;
             dtThoiGianKT.Value = _duAnUpdate.Thoi_Gian_KT;
             dtThoiGianTT.Value = _duAnUpdate.Thoi_Gian_KT_TT;
+            if (cbxTrangThai.SelectedItem.ToString().Equals(Define.PENDING)) {
+                dtThoiGianTT.Enabled = false;
+            }
+            Text = "Cập nhật dự án";
         }
 
         private bool InitCombobox()
@@ -134,6 +138,8 @@ namespace QLDA.View.QuanLyDuAn.DuAn
             dtThoiGianBD.Value = DateTime.Now;
             dtThoiGianKT.Value = DateTime.Now;
             dtThoiGianTT.Value = DateTime.Now;
+            dtThoiGianTT.Enabled = false;
+            Text = "Tạo mới dự án";
             return true;
         }
 
@@ -212,6 +218,16 @@ namespace QLDA.View.QuanLyDuAn.DuAn
         private void txtTen_TextChanged(object sender, EventArgs e)
         {
             btnLuu.Enabled = !string.IsNullOrEmpty(txtTen.Text);
+        }
+
+        private void cbxTrangThai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxTrangThai.SelectedItem.ToString().Equals(Define.PENDING)) {
+                dtThoiGianTT.Enabled = false;
+            }
+            else {
+                dtThoiGianTT.Enabled = true;
+            }
         }
     }
 }

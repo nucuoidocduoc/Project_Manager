@@ -411,7 +411,7 @@
             this.btnTienTe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTienTe.Location = new System.Drawing.Point(0, 120);
             this.btnTienTe.Name = "btnTienTe";
-            this.btnTienTe.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnTienTe.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnTienTe.Size = new System.Drawing.Size(205, 40);
             this.btnTienTe.TabIndex = 3;
             this.btnTienTe.Text = "Đơn vị tiền tệ";
@@ -428,7 +428,7 @@
             this.btnNhomDA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNhomDA.Location = new System.Drawing.Point(0, 80);
             this.btnNhomDA.Name = "btnNhomDA";
-            this.btnNhomDA.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnNhomDA.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnNhomDA.Size = new System.Drawing.Size(205, 40);
             this.btnNhomDA.TabIndex = 2;
             this.btnNhomDA.Text = "Nhóm dự án";
@@ -445,7 +445,7 @@
             this.btnDanhMucNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDanhMucNV.Location = new System.Drawing.Point(0, 40);
             this.btnDanhMucNV.Name = "btnDanhMucNV";
-            this.btnDanhMucNV.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnDanhMucNV.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnDanhMucNV.Size = new System.Drawing.Size(205, 40);
             this.btnDanhMucNV.TabIndex = 1;
             this.btnDanhMucNV.Text = "Nhân viên";
@@ -462,7 +462,7 @@
             this.btnDanhMucKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDanhMucKH.Location = new System.Drawing.Point(0, 0);
             this.btnDanhMucKH.Name = "btnDanhMucKH";
-            this.btnDanhMucKH.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnDanhMucKH.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnDanhMucKH.Size = new System.Drawing.Size(205, 40);
             this.btnDanhMucKH.TabIndex = 0;
             this.btnDanhMucKH.Text = "Chủ đầu tư";
