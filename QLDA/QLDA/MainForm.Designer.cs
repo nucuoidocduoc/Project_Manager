@@ -92,7 +92,7 @@
             this.panelHelp.Controls.Add(this.button5);
             this.panelHelp.Controls.Add(this.button6);
             this.panelHelp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHelp.Location = new System.Drawing.Point(0, 755);
+            this.panelHelp.Location = new System.Drawing.Point(0, 709);
             this.panelHelp.Name = "panelHelp";
             this.panelHelp.Size = new System.Drawing.Size(205, 87);
             this.panelHelp.TabIndex = 13;
@@ -120,7 +120,6 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = global::QLDA.Properties.Resources.folder;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.Location = new System.Drawing.Point(0, 40);
             this.button5.Name = "button5";
@@ -137,7 +136,6 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Image = global::QLDA.Properties.Resources.monitor;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.Location = new System.Drawing.Point(0, 0);
             this.button6.Name = "button6";
@@ -156,7 +154,7 @@
             this.btnHelp.ForeColor = System.Drawing.Color.White;
             this.btnHelp.Image = global::QLDA.Properties.Resources.management;
             this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.Location = new System.Drawing.Point(0, 715);
+            this.btnHelp.Location = new System.Drawing.Point(0, 669);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnHelp.Size = new System.Drawing.Size(205, 40);
@@ -171,7 +169,7 @@
             this.panelTK.Controls.Add(this.btnLogOut);
             this.panelTK.Controls.Add(this.btnQLTK);
             this.panelTK.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTK.Location = new System.Drawing.Point(0, 629);
+            this.panelTK.Location = new System.Drawing.Point(0, 583);
             this.panelTK.Name = "panelTK";
             this.panelTK.Size = new System.Drawing.Size(205, 86);
             this.panelTK.TabIndex = 11;
@@ -183,7 +181,6 @@
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.White;
-            this.btnLogOut.Image = global::QLDA.Properties.Resources.signs;
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogOut.Location = new System.Drawing.Point(0, 40);
             this.btnLogOut.Name = "btnLogOut";
@@ -201,7 +198,6 @@
             this.btnQLTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLTK.ForeColor = System.Drawing.Color.White;
-            this.btnQLTK.Image = global::QLDA.Properties.Resources.interface1;
             this.btnQLTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQLTK.Location = new System.Drawing.Point(0, 0);
             this.btnQLTK.Name = "btnQLTK";
@@ -219,9 +215,9 @@
             this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaiKhoan.ForeColor = System.Drawing.Color.White;
-            this.btnTaiKhoan.Image = global::QLDA.Properties.Resources.education;
+            this.btnTaiKhoan.Image = global::QLDA.Properties.Resources.interface1;
             this.btnTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaiKhoan.Location = new System.Drawing.Point(0, 589);
+            this.btnTaiKhoan.Location = new System.Drawing.Point(0, 543);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
             this.btnTaiKhoan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnTaiKhoan.Size = new System.Drawing.Size(205, 40);
@@ -239,7 +235,7 @@
             this.btnBaoCao.ForeColor = System.Drawing.Color.White;
             this.btnBaoCao.Image = global::QLDA.Properties.Resources.analytics;
             this.btnBaoCao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBaoCao.Location = new System.Drawing.Point(0, 549);
+            this.btnBaoCao.Location = new System.Drawing.Point(0, 503);
             this.btnBaoCao.Name = "btnBaoCao";
             this.btnBaoCao.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnBaoCao.Size = new System.Drawing.Size(205, 40);
@@ -255,9 +251,9 @@
             this.panelQLCV.Controls.Add(this.btnCongViec);
             this.panelQLCV.Controls.Add(this.btnQuyTrinh);
             this.panelQLCV.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelQLCV.Location = new System.Drawing.Point(0, 416);
+            this.panelQLCV.Location = new System.Drawing.Point(0, 419);
             this.panelQLCV.Name = "panelQLCV";
-            this.panelQLCV.Size = new System.Drawing.Size(205, 133);
+            this.panelQLCV.Size = new System.Drawing.Size(205, 84);
             this.panelQLCV.TabIndex = 8;
             // 
             // button1
@@ -267,7 +263,6 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::QLDA.Properties.Resources.pay;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(0, 80);
             this.button1.Name = "button1";
@@ -285,7 +280,6 @@
             this.btnCongViec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCongViec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCongViec.ForeColor = System.Drawing.Color.White;
-            this.btnCongViec.Image = global::QLDA.Properties.Resources.files;
             this.btnCongViec.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCongViec.Location = new System.Drawing.Point(0, 40);
             this.btnCongViec.Name = "btnCongViec";
@@ -303,7 +297,6 @@
             this.btnQuyTrinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuyTrinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuyTrinh.ForeColor = System.Drawing.Color.White;
-            this.btnQuyTrinh.Image = global::QLDA.Properties.Resources.quytrinh1;
             this.btnQuyTrinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuyTrinh.Location = new System.Drawing.Point(0, 0);
             this.btnQuyTrinh.Name = "btnQuyTrinh";
@@ -323,7 +316,7 @@
             this.btnQLCV.ForeColor = System.Drawing.Color.White;
             this.btnQLCV.Image = global::QLDA.Properties.Resources.trienkhai;
             this.btnQLCV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLCV.Location = new System.Drawing.Point(0, 376);
+            this.btnQLCV.Location = new System.Drawing.Point(0, 379);
             this.btnQLCV.Name = "btnQLCV";
             this.btnQLCV.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnQLCV.Size = new System.Drawing.Size(205, 40);
@@ -338,7 +331,7 @@
             this.panelQLDA.Controls.Add(this.btnHopDong);
             this.panelQLDA.Controls.Add(this.btnDuAn);
             this.panelQLDA.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelQLDA.Location = new System.Drawing.Point(0, 287);
+            this.panelQLDA.Location = new System.Drawing.Point(0, 290);
             this.panelQLDA.Name = "panelQLDA";
             this.panelQLDA.Size = new System.Drawing.Size(205, 89);
             this.panelQLDA.TabIndex = 6;
@@ -350,7 +343,6 @@
             this.btnHopDong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHopDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHopDong.ForeColor = System.Drawing.Color.White;
-            this.btnHopDong.Image = global::QLDA.Properties.Resources.handshake;
             this.btnHopDong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHopDong.Location = new System.Drawing.Point(0, 40);
             this.btnHopDong.Name = "btnHopDong";
@@ -368,7 +360,6 @@
             this.btnDuAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDuAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDuAn.ForeColor = System.Drawing.Color.White;
-            this.btnDuAn.Image = global::QLDA.Properties.Resources.draw;
             this.btnDuAn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDuAn.Location = new System.Drawing.Point(0, 0);
             this.btnDuAn.Name = "btnDuAn";
@@ -388,7 +379,7 @@
             this.btnQLDA.ForeColor = System.Drawing.Color.White;
             this.btnQLDA.Image = global::QLDA.Properties.Resources.document;
             this.btnQLDA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLDA.Location = new System.Drawing.Point(0, 247);
+            this.btnQLDA.Location = new System.Drawing.Point(0, 250);
             this.btnQLDA.Name = "btnQLDA";
             this.btnQLDA.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnQLDA.Size = new System.Drawing.Size(205, 40);
@@ -407,7 +398,7 @@
             this.panelDanhMuc.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelDanhMuc.Location = new System.Drawing.Point(0, 85);
             this.panelDanhMuc.Name = "panelDanhMuc";
-            this.panelDanhMuc.Size = new System.Drawing.Size(205, 162);
+            this.panelDanhMuc.Size = new System.Drawing.Size(205, 165);
             this.panelDanhMuc.TabIndex = 4;
             // 
             // btnTienTe
@@ -417,7 +408,6 @@
             this.btnTienTe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTienTe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTienTe.ForeColor = System.Drawing.Color.White;
-            this.btnTienTe.Image = global::QLDA.Properties.Resources.business_and_finance;
             this.btnTienTe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTienTe.Location = new System.Drawing.Point(0, 120);
             this.btnTienTe.Name = "btnTienTe";
@@ -435,7 +425,6 @@
             this.btnNhomDA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNhomDA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhomDA.ForeColor = System.Drawing.Color.White;
-            this.btnNhomDA.Image = global::QLDA.Properties.Resources.location;
             this.btnNhomDA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNhomDA.Location = new System.Drawing.Point(0, 80);
             this.btnNhomDA.Name = "btnNhomDA";
@@ -453,7 +442,6 @@
             this.btnDanhMucNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDanhMucNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDanhMucNV.ForeColor = System.Drawing.Color.White;
-            this.btnDanhMucNV.Image = global::QLDA.Properties.Resources.personal;
             this.btnDanhMucNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDanhMucNV.Location = new System.Drawing.Point(0, 40);
             this.btnDanhMucNV.Name = "btnDanhMucNV";
@@ -471,7 +459,6 @@
             this.btnDanhMucKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDanhMucKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDanhMucKH.ForeColor = System.Drawing.Color.White;
-            this.btnDanhMucKH.Image = global::QLDA.Properties.Resources.business1;
             this.btnDanhMucKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDanhMucKH.Location = new System.Drawing.Point(0, 0);
             this.btnDanhMucKH.Name = "btnDanhMucKH";

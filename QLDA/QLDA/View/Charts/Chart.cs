@@ -74,9 +74,9 @@ namespace QLDA.View.Charts
         //private void InitChartCV()
         //{
         //    int countFinish = _repository.CongViec.FindByCondition(x => x.Trang_Thai.Equals(Define.FINISHED)).Count();
-        //    //int countPending = _repository.CongViec.FindByCondition(x => x.Trang_Thai.Equals(Define.PENDING)).Count();
+        //    int countPending = _repository.CongViec.FindByCondition(x => x.Trang_Thai.Equals(Define.PENDING)).Count();
         //    int countInprogress = _repository.CongViec.FindByCondition(x => x.Trang_Thai.Equals(Define.UNFINISH)).Count();
-        //    //int countDelay = _repository.CongViec.FindByCondition(x => x.Trang_Thai.Equals(Define.PAUSE)).Count();
+        //    int countDelay = _repository.CongViec.FindByCondition(x => x.Trang_Thai.Equals(Define.PAUSE)).Count();
         //    Func<ChartPoint, string> labelPoint = chartPoint =>
         //        string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
 

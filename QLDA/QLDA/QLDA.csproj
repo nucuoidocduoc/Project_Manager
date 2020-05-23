@@ -555,7 +555,11 @@
     <None Include="Resources\management.png" />
     <None Include="Resources\folder.png" />
     <None Include="Resources\monitor.png" />
+    <None Include="Resources\1_154221.jpg" />
+    <None Include="Resources\cao-toc-hanoi-hai-phong.jpg" />
     <Content Include="Resources\logo.PNG" />
+    <None Include="Resources\Tổng-hợp-những-hình-ảnh-đẹp-về-biển-2.jpg" />
+    <None Include="Resources\unnamed.jpg" />
     <Content Include="Resource\HomeIcon.png" />
     <Content Include="Resource\manager.ico" />
   </ItemGroup>

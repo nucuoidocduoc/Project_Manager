@@ -63,6 +63,16 @@ namespace QLDA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1_154221 {
+            get {
+                object obj = ResourceManager.GetObject("1_154221", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _148957 {
             get {
                 object obj = ResourceManager.GetObject("148957", resourceCulture);
@@ -126,6 +136,16 @@ namespace QLDA.Properties {
         internal static System.Drawing.Bitmap business1 {
             get {
                 object obj = ResourceManager.GetObject("business1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cao_toc_hanoi_hai_phong {
+            get {
+                object obj = ResourceManager.GetObject("cao-toc-hanoi-hai-phong", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,9 +373,29 @@ namespace QLDA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Tổng_hợp_những_hình_ảnh_đẹp_về_biển_2 {
+            get {
+                object obj = ResourceManager.GetObject("Tổng-hợp-những-hình-ảnh-đẹp-về-biển-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap trienkhai {
             get {
                 object obj = ResourceManager.GetObject("trienkhai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap unnamed {
+            get {
+                object obj = ResourceManager.GetObject("unnamed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
