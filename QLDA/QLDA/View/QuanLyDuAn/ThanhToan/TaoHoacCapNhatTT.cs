@@ -29,15 +29,18 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
             _id = id;
             _isCreate = isCreate;
             _repository = RepositoryWrapper.Create();
-            if (_repository.TienTe.FindAll().Count() < 1) {
+            if (_repository.TienTe.FindAll().Count() < 1)
+            {
                 MessageBox.Show("Không thể khởi tạo thanh toán, vì hiện tại chưa có đơn vị tiền tệ nào");
                 Close();
             }
             InitCBX();
-            if (isCreate) {
+            if (isCreate)
+            {
                 InitCreate();
             }
-            else {
+            else
+            {
                 InitUpdate();
             }
         }
@@ -46,22 +49,28 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
         {
             InitDuAn();
 
-            if (_id >= 0) {
+            if (_id >= 0)
+            {
                 var hd = _repository.HopDong.FindByCondition(x => x.Ma_HD == _id).FirstOrDefault();
-                if (hd == null) {
+                if (hd == null)
+                {
                     return;
                 }
-                foreach (var item in cbxDuAn.Items) {
+                foreach (var item in cbxDuAn.Items)
+                {
                     int idItem = (int)((ItemComboboxTemplate)item).Id;
-                    if (hd.Ma_DA == idItem) {
+                    if (hd.Ma_DA == idItem)
+                    {
                         cbxDuAn.SelectedItem = item;
 
                         break;
                     }
                 }
-                foreach (var item in cbxHD.Items) {
+                foreach (var item in cbxHD.Items)
+                {
                     int idItem = (int)((ItemComboboxTemplate)item).Id;
-                    if (hd.Ma_HD == idItem) {
+                    if (hd.Ma_HD == idItem)
+                    {
                         cbxHD.SelectedItem = item;
                         break;
                     }
@@ -69,7 +78,8 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
                 cbxHD.Enabled = false;
                 cbxDuAn.Enabled = false;
             }
-            else {
+            else
+            {
                 InitHD();
             }
             btnLuu.Enabled = false;
@@ -81,13 +91,15 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
             cbxHinhThuc.Items.Add("Chuyển khoản");
             cbxHinhThuc.Items.Add("Tiền mặt");
             var loaiTiens = _repository.TienTe.FindAll().ToList();
-            if (loaiTiens.Count < 1) {
+            if (loaiTiens.Count < 1)
+            {
                 MessageBox.Show("Cần phải có ít nhất một đơn vị tiền tệ để tiến hành khởi tạo thanh toán");
                 return;
             }
             //cbxLoaiTien.Items.Add(Define.VND);
             //cbxLoaiTien.Items.Add(Define.USD);
-            foreach (var tienTe in loaiTiens) {
+            foreach (var tienTe in loaiTiens)
+            {
                 cbxLoaiTien.Items.Add(new ItemComboboxTemplate() { Id = tienTe.Ma_Tien_Te, Content = tienTe.Ten });
             }
             cbxHinhThuc.SelectedIndex = 0;
@@ -98,24 +110,30 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
         {
             InitDuAn();
             _thanhToanUpdate = _repository.ThanhToan.FindByCondition(x => x.Ma_TT == _id).FirstOrDefault();
-            if (_thanhToanUpdate == null) {
+            if (_thanhToanUpdate == null)
+            {
                 return;
             }
             var hd = _repository.HopDong.FindByCondition(x => x.Ma_HD == _thanhToanUpdate.Ma_HD).FirstOrDefault();
-            if (hd == null) {
+            if (hd == null)
+            {
                 return;
             }
-            foreach (var item in cbxDuAn.Items) {
+            foreach (var item in cbxDuAn.Items)
+            {
                 int idItem = (int)((ItemComboboxTemplate)item).Id;
-                if (hd.Ma_DA == idItem) {
+                if (hd.Ma_DA == idItem)
+                {
                     cbxDuAn.SelectedItem = item;
                     InitHD();
                     break;
                 }
             }
-            foreach (var item in cbxHD.Items) {
+            foreach (var item in cbxHD.Items)
+            {
                 int idItem = (int)((ItemComboboxTemplate)item).Id;
-                if (hd.Ma_HD == idItem) {
+                if (hd.Ma_HD == idItem)
+                {
                     cbxHD.SelectedItem = item;
                     break;
                 }
@@ -123,11 +141,14 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
 
             txtTen.Text = _thanhToanUpdate.Ten;
             txtSoTien.Text = _thanhToanUpdate.So_Tien;
-            cbxHinhThuc.SelectedValue = _thanhToanUpdate.Hinh_Thuc;
-            if (_thanhToanUpdate.Ma_Tien_Te != null) {
-                foreach (var item in cbxLoaiTien.Items) {
+            cbxHinhThuc.SelectedItem = _thanhToanUpdate.Hinh_Thuc;
+            if (_thanhToanUpdate.Ma_Tien_Te != null)
+            {
+                foreach (var item in cbxLoaiTien.Items)
+                {
                     ItemComboboxTemplate template = (ItemComboboxTemplate)item;
-                    if (template.Id != null && template.Id == _thanhToanUpdate.Ma_Tien_Te) {
+                    if (template.Id != null && template.Id == _thanhToanUpdate.Ma_Tien_Te)
+                    {
                         cbxLoaiTien.SelectedItem = item;
                         break;
                     }
@@ -144,10 +165,12 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
         private void InitDuAn()
         {
             var duAns = _repository.DuAn.FindAll().ToList();
-            if (duAns == null || duAns.Count < 1) {
+            if (duAns == null || duAns.Count < 1)
+            {
                 return;
             }
-            foreach (var item in duAns) {
+            foreach (var item in duAns)
+            {
                 cbxDuAn.Items.Add(new ItemComboboxTemplate() { Id = item.Ma_DA, Prefix = Define.PREFIX_DU_AN + item.Ma_DA, Content = item.Ten });
             }
             cbxDuAn.SelectedIndex = 0;
@@ -158,10 +181,12 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
             cbxHD.Items.Clear();
             int idDuAnSelected = (int)((ItemComboboxTemplate)cbxDuAn.SelectedItem).Id;
             var hopDongs = _repository.HopDong.FindByCondition(x => x.Ma_DA == idDuAnSelected).ToList();
-            if (hopDongs == null || hopDongs.Count < 1) {
+            if (hopDongs == null || hopDongs.Count < 1)
+            {
                 return;
             }
-            foreach (var item in hopDongs) {
+            foreach (var item in hopDongs)
+            {
                 cbxHD.Items.Add(new ItemComboboxTemplate() { Id = item.Ma_HD, Prefix = Define.PREFIX_HOP_DONG + item.Ma_HD, Content = item.Ten });
             }
             cbxHD.SelectedIndex = 0;
@@ -174,11 +199,14 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (!Validation()) {
+            if (!Validation())
+            {
                 return;
             }
-            if (_isCreate) {
-                Model.ThanhToan thanhToan = new Model.ThanhToan() {
+            if (_isCreate)
+            {
+                Model.ThanhToan thanhToan = new Model.ThanhToan()
+                {
                     Ten = txtTen.Text,
                     So_Tien = txtSoTien.Text,
                     Ma_Tien_Te = (int)((ItemComboboxTemplate)cbxLoaiTien.SelectedItem).Id,
@@ -191,7 +219,8 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
                 _repository.SaveChange();
                 HasReloadList = true;
             }
-            else {
+            else
+            {
                 _thanhToanUpdate.Ten = txtTen.Text;
                 _thanhToanUpdate.So_Tien = txtSoTien.Text;
                 _thanhToanUpdate.Ma_Tien_Te = (int)((ItemComboboxTemplate)cbxLoaiTien.SelectedItem).Id;
@@ -206,16 +235,19 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
 
         private bool Validation()
         {
-            if (txtTen.Text.Length > 50) {
+            if (txtTen.Text.Length > 50)
+            {
                 MessageBox.Show("Tên thanh toán phải nhỏ hơn hoặc bằng 50 ký tự.");
                 return false;
             }
 
-            if (txtDienGiai.Text.Length > 255) {
+            if (txtDienGiai.Text.Length > 255)
+            {
                 MessageBox.Show("Diễn giải phải nhỏ hơn hoặc bằng 255 ký tự.");
                 return false;
             }
-            if (txtSoTien.Text.Length > 50) {
+            if (txtSoTien.Text.Length > 50)
+            {
                 MessageBox.Show("Số tiền phải nhỏ hơn hoặc bằng 50 ký tự.");
                 return false;
             }
@@ -229,12 +261,14 @@ namespace QLDA.View.QuanLyDuAn.ThanhToan
 
         private void txtSoTien_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
                 e.Handled = true;
             }
 
             // If you want, you can allow decimal (float) numbers
-            if ((e.KeyChar == '.') && (txtSoTien.Text.IndexOf('.') > -1)) {
+            if ((e.KeyChar == '.') && (txtSoTien.Text.IndexOf('.') > -1))
+            {
                 e.Handled = true;
             }
         }
