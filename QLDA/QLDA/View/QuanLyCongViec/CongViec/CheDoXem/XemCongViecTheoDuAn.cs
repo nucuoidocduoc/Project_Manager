@@ -46,10 +46,12 @@ namespace QLDA.View.QuanLyCongViec.CongViec.CheDoXem
             var cvs = _repository.CongViec.FindByCondition(x => x.Ma_QT == _currentIdQTSelected).ToList();
 
             foreach (var cv in cvs) {
+                _repository.RepositoryContext.Entry(cv).Reference(x => x.NhanVien).Load();
                 string[] values = new string[] {
                     Define.PREFIX_THANH_TOAN+cv.Ma_CV,
                     cv.Ten,
                     cv.Muc_Do_UT.ToString(),
+                    cv.NhanVien!=null?cv.NhanVien.Ten:string.Empty,
                     cv.Thoi_Gian_HH.ToShortDateString(),
                     cv.Thoi_Gian_Giao.ToShortDateString(),
                     cv.Tai_Lieu,
@@ -65,9 +67,10 @@ namespace QLDA.View.QuanLyCongViec.CongViec.CheDoXem
             lvCv.Columns.Add(DanhSachCongViecTemplate.Id, Convert.ToInt32(lvCv.Width * 0.1), HorizontalAlignment.Center);
             lvCv.Columns.Add(DanhSachCongViecTemplate.Name, Convert.ToInt32(lvCv.Width * 0.2), HorizontalAlignment.Center);
             lvCv.Columns.Add(DanhSachCongViecTemplate.Prior, Convert.ToInt32(lvCv.Width * 0.1), HorizontalAlignment.Center);
+            lvCv.Columns.Add(DanhSachCongViecTemplate.Member, Convert.ToInt32(lvCv.Width * 0.2), HorizontalAlignment.Center);
             lvCv.Columns.Add(DanhSachCongViecTemplate.EndDate, Convert.ToInt32(lvCv.Width * 0.1), HorizontalAlignment.Center);
-            lvCv.Columns.Add(DanhSachCongViecTemplate.RealEndDate, Convert.ToInt32(lvCv.Width * 0.2), HorizontalAlignment.Center);
-            lvCv.Columns.Add(DanhSachCongViecTemplate.Storage, Convert.ToInt32(lvCv.Width * 0.2), HorizontalAlignment.Center);
+            lvCv.Columns.Add(DanhSachCongViecTemplate.RealEndDate, Convert.ToInt32(lvCv.Width * 0.1), HorizontalAlignment.Center);
+            lvCv.Columns.Add(DanhSachCongViecTemplate.Storage, Convert.ToInt32(lvCv.Width * 0.1), HorizontalAlignment.Center);
             lvCv.Columns.Add(DanhSachCongViecTemplate.Status, Convert.ToInt32(lvCv.Width * 0.1), HorizontalAlignment.Center);
         }
 
