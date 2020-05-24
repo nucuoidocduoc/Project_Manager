@@ -71,7 +71,7 @@ namespace QLDA.View.QuanLyCongViec.CongViec
         {
             InitDuAn();
             InitNV();
-            var cvUpdate = _repository.CongViec.FindByCondition(x => x.Ma_CV == _id).FirstOrDefault();
+            var cvUpdate = _repository.CongViec.FindByCondition(x => x.Ma_QT == _id).FirstOrDefault();
             if (cvUpdate == null) {
                 return;
             }
@@ -179,11 +179,8 @@ namespace QLDA.View.QuanLyCongViec.CongViec
                     Thoi_Gian_HH = dtEnd.Value,
                     Tai_Lieu = txtTaiLieu.Text,
                     Trang_Thai = cbxTrangThai.SelectedItem.ToString(),
-                    Ma_QT = (int)((ItemComboboxTemplate)cbxQT.SelectedItem).Id,
+                    Ma_QT = (int)((ItemComboboxTemplate)cbxQT.SelectedItem).Id
                 };
-                if (((ItemComboboxTemplate)cbxNhanVien.SelectedItem).Id != null) {
-                    cv.Ma_NV = (int)((ItemComboboxTemplate)cbxNhanVien.SelectedItem).Id;
-                }
                 _repository.CongViec.Add(cv);
                 _repository.SaveChange();
                 HasReloadList = true;
@@ -198,13 +195,6 @@ namespace QLDA.View.QuanLyCongViec.CongViec
                     cv.Tai_Lieu = txtTaiLieu.Text;
                     cv.Trang_Thai = cbxTrangThai.SelectedItem.ToString();
                     cv.Ma_QT = (int)((ItemComboboxTemplate)cbxQT.SelectedItem).Id;
-                    if (((ItemComboboxTemplate)cbxNhanVien.SelectedItem).Id != null) {
-                        cv.Ma_NV = (int)((ItemComboboxTemplate)cbxNhanVien.SelectedItem).Id;
-                    }
-                    else {
-                        cv.Ma_NV = null;
-                    }
-                    //cv.Ma_NV = (int)((ItemComboboxTemplate)cbxNhanVien.SelectedItem).Id;
                     _repository.SaveChange();
                     HasReloadList = true;
                 }

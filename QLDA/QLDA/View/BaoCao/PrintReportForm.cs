@@ -161,12 +161,7 @@ namespace QLDA.View.BaoCao
                 foreach (var cv in cvs) {
                     _repositoryWrapper.RepositoryContext.Entry(cv).Reference(x => x.NhanVien).Load();
                     _repositoryWrapper.RepositoryContext.Entry(cv).Reference(x => x.QuyTrinh).Load();
-                    _repositoryWrapper.RepositoryContext.Entry(cv.QuyTrinh).Reference(x => x.NhanVien).Load();
-                    string nguoiGiao = string.Empty;
-                    if (cv.QuyTrinh.NhanVien != null) {
-                        nguoiGiao = cv.QuyTrinh.NhanVien.Ten;
-                    }
-                    congViecReports.Add(DTOReport.CongViecReport.Create(cv, nguoiGiao));
+                    congViecReports.Add(DTOReport.CongViecReport.Create(cv));
                 }
             }
             var report = new CVReport();

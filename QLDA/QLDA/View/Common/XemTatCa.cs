@@ -162,12 +162,10 @@ namespace QLDA.View.Common
             lvXemTatCa.Items.Clear();
             var cvs = _repository.CongViec.FindAll().OrderBy(x => x.Ma_QT).ToList();
             foreach (var cv in cvs) {
-                _repository.RepositoryContext.Entry(cv).Reference(x => x.NhanVien).Load();
                 string[] values = new string[] {
                     Define.PREFIX_THANH_TOAN+cv.Ma_CV,
                     cv.Ten,
                     cv.Muc_Do_UT.ToString(),
-                     cv.NhanVien!=null?cv.NhanVien.Ten:string.Empty,
                     cv.Thoi_Gian_HH.ToShortDateString(),
                     cv.Thoi_Gian_Giao.ToShortDateString(),
                     cv.Trang_Thai
@@ -181,9 +179,8 @@ namespace QLDA.View.Common
             lvXemTatCa.Columns.Add(DanhSachCongViecTemplate.Id, Convert.ToInt32(lvXemTatCa.Width * 0.2), HorizontalAlignment.Center);
             lvXemTatCa.Columns.Add(DanhSachCongViecTemplate.Name, Convert.ToInt32(lvXemTatCa.Width * 0.2), HorizontalAlignment.Center);
             lvXemTatCa.Columns.Add(DanhSachCongViecTemplate.Prior, Convert.ToInt32(lvXemTatCa.Width * 0.1), HorizontalAlignment.Center);
-            lvXemTatCa.Columns.Add(DanhSachCongViecTemplate.Member, Convert.ToInt32(lvXemTatCa.Width * 0.2), HorizontalAlignment.Center);
-            lvXemTatCa.Columns.Add(DanhSachCongViecTemplate.EndDate, Convert.ToInt32(lvXemTatCa.Width * 0.1), HorizontalAlignment.Center);
-            lvXemTatCa.Columns.Add(DanhSachCongViecTemplate.RealEndDate, Convert.ToInt32(lvXemTatCa.Width * 0.1), HorizontalAlignment.Center);
+            lvXemTatCa.Columns.Add(DanhSachCongViecTemplate.EndDate, Convert.ToInt32(lvXemTatCa.Width * 0.2), HorizontalAlignment.Center);
+            lvXemTatCa.Columns.Add(DanhSachCongViecTemplate.RealEndDate, Convert.ToInt32(lvXemTatCa.Width * 0.2), HorizontalAlignment.Center);
             lvXemTatCa.Columns.Add(DanhSachCongViecTemplate.Status, Convert.ToInt32(lvXemTatCa.Width * 0.1), HorizontalAlignment.Center);
         }
 
