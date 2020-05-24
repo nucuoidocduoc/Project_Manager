@@ -29,26 +29,30 @@ namespace QLDA.View.QuanLyCongViec.CongViec.CheDoXem
         private void InitDsDA()
         {
             var dAs = _repository.DuAn.FindAll().ToList();
-            if (dAs == null || dAs.Count < 1) {
+            if (dAs == null || dAs.Count < 1)
+            {
                 return;
             }
-            foreach (var da in dAs) {
+            foreach (var da in dAs)
+            {
                 lvDuAn.Items.Add(new ListViewItem(Define.PREFIX_DU_AN + da.Ma_DA + " " + da.Ten) { Tag = da.Ma_DA });
             }
         }
 
         private void InitDsCV(bool isReloadRepository = false)
         {
-            if (isReloadRepository) {
+            if (isReloadRepository)
+            {
                 _repository = RepositoryWrapper.Create();
             }
             lvCv.Items.Clear();
             var cvs = _repository.CongViec.FindByCondition(x => x.Ma_QT == _currentIdQTSelected).ToList();
 
-            foreach (var cv in cvs) {
+            foreach (var cv in cvs)
+            {
                 _repository.RepositoryContext.Entry(cv).Reference(x => x.NhanVien).Load();
                 string[] values = new string[] {
-                    Define.PREFIX_THANH_TOAN+cv.Ma_CV,
+                    Define.PREFIX_CONG_VIEC+cv.Ma_CV,
                     cv.Ten,
                     cv.Muc_Do_UT.ToString(),
                     cv.NhanVien!=null?cv.NhanVien.Ten:string.Empty,
@@ -76,23 +80,27 @@ namespace QLDA.View.QuanLyCongViec.CongViec.CheDoXem
 
         private void InitDsQT(bool isReloadRepo = false)
         {
-            if (_currentIdDASelected == null) {
+            if (_currentIdDASelected == null)
+            {
                 return;
             }
-            if (isReloadRepo) {
+            if (isReloadRepo)
+            {
                 _repository = RepositoryWrapper.Create();
             }
             cbxQT.Items.Clear();
             var hds = _repository.QuyTrinh.FindByCondition(h => h.Ma_DA == _currentIdDASelected).ToList();
 
-            if (hds.Count < 1) {
+            if (hds.Count < 1)
+            {
                 lvCv.Items.Clear();
                 cbxQT.SelectedItem = null;
                 _currentIdQTSelected = null;
                 Refresh();
                 return;
             }
-            foreach (var item in hds) {
+            foreach (var item in hds)
+            {
                 cbxQT.Items.Add(new ItemComboboxTemplate() { Id = item.Ma_QT, Prefix = Define.PREFIX_HOP_DONG + item.Ma_QT, Content = item.Ten });
             }
             cbxQT.SelectedIndex = 0;
@@ -102,52 +110,62 @@ namespace QLDA.View.QuanLyCongViec.CongViec.CheDoXem
 
         public void Create()
         {
-            if (_currentIdDASelected != null && _currentIdQTSelected != null) {
+            if (_currentIdDASelected != null && _currentIdQTSelected != null)
+            {
                 var add = new TaoHoacCapNhatCV((int)_currentIdQTSelected, true);
                 add.ShowDialog();
-                if (add.HasReloadList) {
+                if (add.HasReloadList)
+                {
                     InitDsCV(true);
                 }
             }
-            else {
+            else
+            {
                 MessageBox.Show(Define.PLEASE_SELECT);
             }
         }
 
         public void Updatee()
         {
-            if (lvCv.SelectedItems.Count > 0) {
+            if (lvCv.SelectedItems.Count > 0)
+            {
                 int idUpdate = (int)lvCv.SelectedItems[0].Tag;
                 var update = new TaoHoacCapNhatCV((int)lvCv.SelectedItems[0].Tag);
                 update.ShowDialog();
-                if (update.HasReloadList) {
+                if (update.HasReloadList)
+                {
                     InitDsCV(true);
                 }
             }
-            else {
+            else
+            {
                 MessageBox.Show(Define.PLEASE_SELECT);
             }
         }
 
         public void Delete()
         {
-            if (lvCv.SelectedItems.Count > 0 && Define.ConfirmDelete()) {
+            if (lvCv.SelectedItems.Count > 0 && Define.ConfirmDelete())
+            {
                 int idDelete = (int)lvCv.SelectedItems[0].Tag;
                 var cv = _repository.CongViec.FindByCondition(x => x.Ma_CV == idDelete).FirstOrDefault();
-                if (cv != null) {
+                if (cv != null)
+                {
                     _repository.CongViec.Delete(cv);
                     _repository.SaveChange();
                     InitDsCV(true);
                 }
             }
-            else {
+            else
+            {
                 MessageBox.Show(Define.PLEASE_SELECT);
             }
         }
 
         private void lvDuAn_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lvDuAn.SelectedItems.Count > 0) {
+            if (lvDuAn.SelectedItems.Count > 0)
+            {
                 _currentIdDASelected = (int)lvDuAn.SelectedItems[0].Tag;
                 InitDsQT();
             }
@@ -155,7 +173,8 @@ namespace QLDA.View.QuanLyCongViec.CongViec.CheDoXem
 
         private void cbxQT_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (_currentIdDASelected == null) {
+            if (_currentIdDASelected == null)
+            {
                 return;
             }
             _currentIdQTSelected = ((ItemComboboxTemplate)cbxQT.SelectedItem).Id;

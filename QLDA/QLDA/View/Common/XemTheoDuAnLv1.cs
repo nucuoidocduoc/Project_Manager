@@ -31,10 +31,12 @@ namespace QLDA.View.Common
             _viewType = viewType;
             _repository = RepositoryWrapper.Create();
             InitDA();
-            if (viewType.Equals(ViewMode.HopDong)) {
+            if (viewType.Equals(ViewMode.HopDong))
+            {
                 InitTemplateHD();
             }
-            else if (viewType.Equals(ViewMode.QuyTrinh)) {
+            else if (viewType.Equals(ViewMode.QuyTrinh))
+            {
                 InitTemplateQT();
             }
         }
@@ -42,30 +44,36 @@ namespace QLDA.View.Common
         private void InitDA(int selectedIndexDA = 0)
         {
             var dAs = _repository.DuAn.FindAll().ToList();
-            if (dAs == null || dAs.Count < 1) {
+            if (dAs == null || dAs.Count < 1)
+            {
                 return;
             }
-            foreach (var da in dAs) {
+            foreach (var da in dAs)
+            {
                 lvDuAn.Items.Add(new ListViewItem(Define.PREFIX_DU_AN + da.Ma_DA + " " + da.Ten) { Tag = da.Ma_DA });
             }
         }
 
         private void InitDsHD(bool isReloadRepo = false)
         {
-            if (_currentIdDASelected == null) {
+            if (_currentIdDASelected == null)
+            {
                 return;
             }
-            if (isReloadRepo) {
+            if (isReloadRepo)
+            {
                 _repository = RepositoryWrapper.Create();
             }
             lvDanhSachLv1.Items.Clear();
             var hds = _repository.HopDong.FindByCondition(h => h.Ma_DA == _currentIdDASelected).ToList();
 
-            if (hds.Count < 1) {
+            if (hds.Count < 1)
+            {
                 return;
             }
-            foreach (var item in hds) {
-                string[] itemValues = new string[] { Define.PREFIX_HOP_DONG + item.Ma_DA,
+            foreach (var item in hds)
+            {
+                string[] itemValues = new string[] { Define.PREFIX_HOP_DONG + item.Ma_HD,
                     item.Ten,
                     item.Thoi_Diem_Ky.ToShortDateString(),
                     item.Thoi_Gian_KT.ToShortDateString(),
@@ -78,19 +86,23 @@ namespace QLDA.View.Common
 
         private void InitDsQT(bool isReloadRepo = false)
         {
-            if (_currentIdDASelected == null) {
+            if (_currentIdDASelected == null)
+            {
                 return;
             }
-            if (isReloadRepo) {
+            if (isReloadRepo)
+            {
                 _repository = RepositoryWrapper.Create();
             }
             lvDanhSachLv1.Items.Clear();
             var qts = _repository.QuyTrinh.FindByCondition(h => h.Ma_DA == _currentIdDASelected).ToList();
-            if (qts.Count < 1) {
+            if (qts.Count < 1)
+            {
                 return;
             }
-            foreach (var item in qts) {
-                string[] itemValues = new string[] { Define.PREFIX_HOP_DONG + item.Ma_DA,
+            foreach (var item in qts)
+            {
+                string[] itemValues = new string[] { Define.PREFIX_QUI_TRINH + item.Ma_QT,
                     item.Ten,
                     item.Loai_QT,
                     item.Thoi_Gian_BD.ToShortDateString(),
@@ -125,15 +137,18 @@ namespace QLDA.View.Common
 
         public void ViewDetail()
         {
-            if (lvDanhSachLv1.SelectedItems.Count < 1) {
+            if (lvDanhSachLv1.SelectedItems.Count < 1)
+            {
                 MessageBox.Show(Define.PLEASE_SELECT);
                 return;
             }
-            if (_viewType.Equals(ViewMode.HopDong)) {
+            if (_viewType.Equals(ViewMode.HopDong))
+            {
                 var chiTietHD = new XemChiTietHopDong((int)lvDanhSachLv1.SelectedItems[0].Tag);
                 chiTietHD.ShowDialog();
             }
-            else {
+            else
+            {
                 var chiTietQT = new XemChiTietQuyTrinh((int)lvDanhSachLv1.SelectedItems[0].Tag);
                 chiTietQT.ShowDialog();
             }
@@ -141,23 +156,28 @@ namespace QLDA.View.Common
 
         public void Updatee()
         {
-            if (lvDanhSachLv1.SelectedItems.Count < 1) {
+            if (lvDanhSachLv1.SelectedItems.Count < 1)
+            {
                 MessageBox.Show(Define.PLEASE_SELECT);
                 return;
             }
 
-            if (_viewType.Equals(ViewMode.HopDong)) {
+            if (_viewType.Equals(ViewMode.HopDong))
+            {
                 var updateHd = new TaoHoacCapNhatHopDong((int)lvDanhSachLv1.SelectedItems[0].Tag);
                 updateHd.ShowDialog();
                 //updateHd.ShowDialog();
-                if (updateHd.HasReloadList) {
+                if (updateHd.HasReloadList)
+                {
                     InitDsHD(true);
                 }
             }
-            else if (_viewType.Equals(ViewMode.QuyTrinh)) {
+            else if (_viewType.Equals(ViewMode.QuyTrinh))
+            {
                 var updateQT = new TaoHoacCapNhatQuyTrinh((int)lvDanhSachLv1.SelectedItems[0].Tag);
                 updateQT.ShowDialog();
-                if (updateQT.HasReloadList) {
+                if (updateQT.HasReloadList)
+                {
                     InitDsQT(true);
                 }
             }
@@ -165,23 +185,28 @@ namespace QLDA.View.Common
 
         public void Create()
         {
-            if (lvDuAn.SelectedItems.Count < 1) {
+            if (lvDuAn.SelectedItems.Count < 1)
+            {
                 MessageBox.Show(Define.PLEASE_SELECT_PROJECT);
                 return;
             }
 
-            if (_viewType.Equals(ViewMode.HopDong)) {
+            if (_viewType.Equals(ViewMode.HopDong))
+            {
                 var createHd = new TaoHoacCapNhatHopDong((int)_currentIdDASelected, true);
 
                 createHd.ShowDialog();
-                if (createHd.HasReloadList) {
+                if (createHd.HasReloadList)
+                {
                     InitDsHD(true);
                 }
             }
-            else if (_viewType.Equals(ViewMode.QuyTrinh)) {
+            else if (_viewType.Equals(ViewMode.QuyTrinh))
+            {
                 var createdQT = new TaoHoacCapNhatQuyTrinh((int)_currentIdDASelected, true);
                 createdQT.ShowDialog();
-                if (createdQT.HasReloadList) {
+                if (createdQT.HasReloadList)
+                {
                     InitDsQT(true);
                 }
             }
@@ -189,15 +214,18 @@ namespace QLDA.View.Common
 
         public void Delete()
         {
-            if (lvDanhSachLv1.SelectedItems.Count < 1) {
+            if (lvDanhSachLv1.SelectedItems.Count < 1)
+            {
                 MessageBox.Show(Define.PLEASE_SELECT);
                 return;
             }
-            if (_viewType.Equals(ViewMode.HopDong)) {
+            if (_viewType.Equals(ViewMode.HopDong))
+            {
                 var idHdDelete = (int)lvDanhSachLv1.SelectedItems[0].Tag;
                 var hd = _repository.HopDong.FindByCondition(x => x.Ma_HD == idHdDelete).FirstOrDefault();
 
-                if (hd != null && Define.ConfirmDelete()) {
+                if (hd != null && Define.ConfirmDelete())
+                {
                     _repository.HopDong.Delete(hd);
                     _repository.SaveChange();
                     InitDsHD();
@@ -207,14 +235,17 @@ namespace QLDA.View.Common
 
         private void lvDuAn_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lvDuAn.SelectedItems.Count < 1) {
+            if (lvDuAn.SelectedItems.Count < 1)
+            {
                 return;
             }
             _currentIdDASelected = (int)lvDuAn.SelectedItems[0].Tag;
-            if (_viewType.Equals(ViewMode.HopDong)) {
+            if (_viewType.Equals(ViewMode.HopDong))
+            {
                 InitDsHD();
             }
-            else if (_viewType.Equals(ViewMode.QuyTrinh)) {
+            else if (_viewType.Equals(ViewMode.QuyTrinh))
+            {
                 InitDsQT();
             }
         }
