@@ -33,17 +33,18 @@
             this.txtMK = new MetroFramework.Controls.MetroTextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(72, 57);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(86, 72);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 16);
+            this.label1.Size = new System.Drawing.Size(98, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên tài khoản";
             // 
@@ -51,11 +52,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(73, 97);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(87, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 16);
+            this.label2.Size = new System.Drawing.Size(71, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mật khẩu";
             // 
@@ -74,7 +75,7 @@
             this.txtTen.CustomButton.UseSelectable = true;
             this.txtTen.CustomButton.Visible = false;
             this.txtTen.Lines = new string[0];
-            this.txtTen.Location = new System.Drawing.Point(194, 54);
+            this.txtTen.Location = new System.Drawing.Point(208, 69);
             this.txtTen.MaxLength = 32767;
             this.txtTen.Name = "txtTen";
             this.txtTen.PasswordChar = '\0';
@@ -105,7 +106,7 @@
             this.txtMK.CustomButton.UseSelectable = true;
             this.txtMK.CustomButton.Visible = false;
             this.txtMK.Lines = new string[0];
-            this.txtMK.Location = new System.Drawing.Point(194, 92);
+            this.txtMK.Location = new System.Drawing.Point(208, 107);
             this.txtMK.MaxLength = 32767;
             this.txtMK.Name = "txtMK";
             this.txtMK.PasswordChar = '*';
@@ -124,6 +125,7 @@
             // btnLogin
             // 
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(100, 168);
             this.btnLogin.Name = "btnLogin";
@@ -136,6 +138,7 @@
             // btnCancel
             // 
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(307, 168);
             this.btnCancel.Name = "btnCancel";
@@ -145,13 +148,23 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(190, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "THÔNG TIN ĐĂNG NHẬP";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
-            this.BackgroundImage = global::QLDA.Properties.Resources.cao_toc_hanoi_hai_phong;
-            this.ClientSize = new System.Drawing.Size(510, 258);
+            this.ClientSize = new System.Drawing.Size(510, 238);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtMK);
@@ -177,5 +190,6 @@
         private MetroFramework.Controls.MetroTextBox txtMK;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label label3;
     }
 }

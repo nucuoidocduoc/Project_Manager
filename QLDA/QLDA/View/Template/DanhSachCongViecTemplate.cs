@@ -13,7 +13,7 @@ namespace QLDA.View.Template
         public const string Prior = "Mức độ ưu tiên";
         public const string EndDate = "Thời gian hết hạn";
         public const string RealEndDate = "Thời gian hoàn thành";
-        public const string Storage = "Kho lư trữ";
+        public const string Storage = "Kho lưu trữ";
         public const string Status = "Trạng thái";
         public const string Member = "Nhân viên";
         public const string QT = "Quá trình";

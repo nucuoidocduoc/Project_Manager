@@ -101,7 +101,7 @@ namespace QLDA.View.QuanLyCongViec.CongViec.CheDoXem
             }
             foreach (var item in hds)
             {
-                cbxQT.Items.Add(new ItemComboboxTemplate() { Id = item.Ma_QT, Prefix = Define.PREFIX_HOP_DONG + item.Ma_QT, Content = item.Ten });
+                cbxQT.Items.Add(new ItemComboboxTemplate() { Id = item.Ma_QT, Prefix = Define.PREFIX_QUI_TRINH + item.Ma_QT, Content = item.Ten });
             }
             cbxQT.SelectedIndex = 0;
             _currentIdQTSelected = hds[0].Ma_QT;

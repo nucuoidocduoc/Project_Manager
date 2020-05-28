@@ -36,28 +36,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(211, 90);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Location = new System.Drawing.Point(61, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 20);
+            this.label1.Size = new System.Drawing.Size(238, 21);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Biểu đồ thống kê dự án";
+            this.label1.Text = "Thống kê dự án theo trạng thái";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pieChart1
             // 
-            this.pieChart1.Location = new System.Drawing.Point(40, 147);
+            this.pieChart1.Location = new System.Drawing.Point(3, 51);
             this.pieChart1.Name = "pieChart1";
-            this.pieChart1.Size = new System.Drawing.Size(531, 349);
+            this.pieChart1.Size = new System.Drawing.Size(357, 261);
             this.pieChart1.TabIndex = 0;
             this.pieChart1.Text = "pieChart1";
             this.pieChart1.Visible = false;
             // 
             // pieChart2
             // 
-            this.pieChart2.Location = new System.Drawing.Point(589, 147);
+            this.pieChart2.Location = new System.Drawing.Point(3, 391);
             this.pieChart2.Name = "pieChart2";
-            this.pieChart2.Size = new System.Drawing.Size(531, 349);
+            this.pieChart2.Size = new System.Drawing.Size(357, 261);
             this.pieChart2.TabIndex = 2;
             this.pieChart2.Text = "pieChart2";
             this.pieChart2.Visible = false;
@@ -65,19 +67,19 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(760, 90);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label2.Location = new System.Drawing.Point(72, 338);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(178, 20);
+            this.label2.Size = new System.Drawing.Size(268, 21);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Biểu đồ thống công việc";
+            this.label2.Text = "Thống kê công việc theo trạng thái";
             // 
             // Chart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Menu;
             this.Controls.Add(this.pieChart2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pieChart1);

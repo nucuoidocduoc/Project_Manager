@@ -92,7 +92,7 @@
             this.panelHelp.Controls.Add(this.button5);
             this.panelHelp.Controls.Add(this.button6);
             this.panelHelp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHelp.Location = new System.Drawing.Point(0, 743);
+            this.panelHelp.Location = new System.Drawing.Point(0, 745);
             this.panelHelp.Name = "panelHelp";
             this.panelHelp.Size = new System.Drawing.Size(205, 87);
             this.panelHelp.TabIndex = 13;
@@ -128,6 +128,7 @@
             this.button5.TabIndex = 1;
             this.button5.Text = "    Hướng dẫn sử dụng";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -144,6 +145,7 @@
             this.button6.TabIndex = 0;
             this.button6.Text = "      Giới thiệu phần mềm";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // btnHelp
             // 
@@ -154,7 +156,7 @@
             this.btnHelp.ForeColor = System.Drawing.Color.White;
             this.btnHelp.Image = global::QLDA.Properties.Resources.management;
             this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.Location = new System.Drawing.Point(0, 703);
+            this.btnHelp.Location = new System.Drawing.Point(0, 705);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnHelp.Size = new System.Drawing.Size(205, 40);
@@ -169,7 +171,7 @@
             this.panelTK.Controls.Add(this.btnLogOut);
             this.panelTK.Controls.Add(this.btnQLTK);
             this.panelTK.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTK.Location = new System.Drawing.Point(0, 617);
+            this.panelTK.Location = new System.Drawing.Point(0, 619);
             this.panelTK.Name = "panelTK";
             this.panelTK.Size = new System.Drawing.Size(205, 86);
             this.panelTK.TabIndex = 11;
@@ -217,7 +219,7 @@
             this.btnTaiKhoan.ForeColor = System.Drawing.Color.White;
             this.btnTaiKhoan.Image = global::QLDA.Properties.Resources.interface1;
             this.btnTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaiKhoan.Location = new System.Drawing.Point(0, 577);
+            this.btnTaiKhoan.Location = new System.Drawing.Point(0, 579);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
             this.btnTaiKhoan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnTaiKhoan.Size = new System.Drawing.Size(205, 40);
@@ -235,7 +237,7 @@
             this.btnBaoCao.ForeColor = System.Drawing.Color.White;
             this.btnBaoCao.Image = global::QLDA.Properties.Resources.analytics;
             this.btnBaoCao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBaoCao.Location = new System.Drawing.Point(0, 537);
+            this.btnBaoCao.Location = new System.Drawing.Point(0, 539);
             this.btnBaoCao.Name = "btnBaoCao";
             this.btnBaoCao.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnBaoCao.Size = new System.Drawing.Size(205, 40);
@@ -253,7 +255,7 @@
             this.panelQLCV.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelQLCV.Location = new System.Drawing.Point(0, 413);
             this.panelQLCV.Name = "panelQLCV";
-            this.panelQLCV.Size = new System.Drawing.Size(205, 124);
+            this.panelQLCV.Size = new System.Drawing.Size(205, 126);
             this.panelQLCV.TabIndex = 8;
             // 
             // button1
