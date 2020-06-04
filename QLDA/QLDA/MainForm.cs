@@ -190,14 +190,7 @@ namespace QLDA
 
         private void btnTroGiup_Click_1(object sender, EventArgs e)
         {
-            if (panelHelp.Visible)
-            {
-                panelHelp.Visible = false;
-                return;
-            }
-            VisiblePanel();
 
-            panelHelp.Visible = true;
         }
 
         private void btnTrangChu_Click(object sender, EventArgs e)

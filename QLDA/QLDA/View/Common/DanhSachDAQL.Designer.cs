@@ -46,6 +46,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.btnXemChiTiet);
             this.panel3.Controls.Add(this.btnThemMoi);
             this.panel3.Controls.Add(this.btnCapNhat);
@@ -130,6 +131,8 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel4.Controls.Add(this.rbtnXemTheoDuAn);
             this.panel4.Controls.Add(this.rbtnXemTatCa);
             this.panel4.Controls.Add(this.labelDanhSach);
@@ -184,7 +187,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(83)))), ((int)(((byte)(139)))));
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);

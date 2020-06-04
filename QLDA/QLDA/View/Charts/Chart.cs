@@ -2,6 +2,8 @@
 using LiveCharts.Wpf;
 using QLDA.Repository;
 using System;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -17,6 +19,7 @@ namespace QLDA.View.Charts
             _repository = RepositoryWrapper.Create();
             InitChartDA();
             InitChartCV();
+            load();
         }
 
         private void InitChartDA()
@@ -43,7 +46,7 @@ namespace QLDA.View.Charts
                     Title = Define.UNFINISH,
                     Values = new ChartValues<double> {countInprogress},
                     DataLabels = true,
-                    LabelPoint = labelPoint
+                    LabelPoint = labelPoint,
                 }
                 ,
                 new PieSeries
@@ -56,6 +59,7 @@ namespace QLDA.View.Charts
                 new PieSeries
                 {
                     Title = Define.PAUSE,
+
                     Values = new ChartValues<double> {countDelay},
                     DataLabels = true,
                     LabelPoint = labelPoint
@@ -63,6 +67,7 @@ namespace QLDA.View.Charts
             };
 
             pieChart1.LegendLocation = LegendLocation.Bottom;
+
             //pieChartDA.BackColor = Color.Wheat;
         }
 
@@ -101,6 +106,23 @@ namespace QLDA.View.Charts
             };
 
             pieChart2.LegendLocation = LegendLocation.Bottom;
+        }
+
+        public void load()
+        {
+            string query = " EXEC USP_LAYGIATRI";
+            DataProvider da = new DataProvider();
+            DataTable ds = da.ExecuteQuery(query);
+
+            listView1.Items.Clear();
+
+            listView1.FullRowSelect = true;
+            int i = 0;
+            foreach (DataRow dr in ds.Rows)
+            {
+                listView1.Items.Add(dr["ThongTin"].ToString());
+                i++;
+            }
         }
     }
 }

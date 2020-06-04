@@ -179,6 +179,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataProvider.cs" />
     <Compile Include="Define.cs" />
     <Compile Include="DTOReport\CongViecReport.cs" />
     <Compile Include="DTOReport\DoanhThuReport.cs" />
@@ -557,9 +558,26 @@
     <None Include="Resources\monitor.png" />
     <None Include="Resources\1_154221.jpg" />
     <None Include="Resources\cao-toc-hanoi-hai-phong.jpg" />
+    <None Include="Resources\anh21.jpg" />
+    <None Include="Resources\12222.PNG" />
+    <None Include="Resources\100477268_1098926203827827_7271352084207763456_n.jpg" />
+    <None Include="Resources\13333.jpg" />
+    <None Include="Resources\144444.jpg" />
+    <None Include="Resources\1444441.jpg" />
+    <None Include="Resources\1444442.jpg" />
+    <None Include="Resources\1444443.jpg" />
+    <None Include="Resources\1444444.jpg" />
+    <None Include="Resources\1444445.jpg" />
+    <None Include="Resources\1444446.jpg" />
+    <None Include="Resources\1444447.jpg" />
+    <None Include="Resources\1444448.jpg" />
+    <None Include="Resources\1444449.jpg" />
+    <None Include="Resources\14444410.jpg" />
     <Content Include="Resources\logo.PNG" />
     <None Include="Resources\Tổng-hợp-những-hình-ảnh-đẹp-về-biển-2.jpg" />
     <None Include="Resources\unnamed.jpg" />
+    <None Include="Resources\tải xuống.jpg" />
+    <None Include="Resources\tải xuống1.jpg" />
     <Content Include="Resource\HomeIcon.png" />
     <Content Include="Resource\manager.ico" />
   </ItemGroup>

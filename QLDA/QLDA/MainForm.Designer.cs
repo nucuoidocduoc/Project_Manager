@@ -28,6 +28,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.panelMainContent = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelHelp = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -55,7 +56,6 @@
             this.btnDanhMucKH = new System.Windows.Forms.Button();
             this.btnDanhMuc = new System.Windows.Forms.Button();
             this.btnTrangChu = new System.Windows.Forms.Button();
-            this.panelMainContent = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelHelp.SuspendLayout();
             this.panelTK.SuspendLayout();
@@ -64,9 +64,21 @@
             this.panelDanhMuc.SuspendLayout();
             this.SuspendLayout();
             // 
+            // panelMainContent
+            // 
+            this.panelMainContent.BackColor = System.Drawing.Color.White;
+            this.panelMainContent.BackgroundImage = global::QLDA.Properties.Resources.anh1;
+            this.panelMainContent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMainContent.Location = new System.Drawing.Point(205, 0);
+            this.panelMainContent.Name = "panelMainContent";
+            this.panelMainContent.Size = new System.Drawing.Size(1145, 695);
+            this.panelMainContent.TabIndex = 1;
+            // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
+            this.panelMenu.BackgroundImage = global::QLDA.Properties.Resources._100477268_1098926203827827_7271352084207763456_n;
             this.panelMenu.Controls.Add(this.panelHelp);
             this.panelMenu.Controls.Add(this.btnHelp);
             this.panelMenu.Controls.Add(this.panelTK);
@@ -92,7 +104,7 @@
             this.panelHelp.Controls.Add(this.button5);
             this.panelHelp.Controls.Add(this.button6);
             this.panelHelp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHelp.Location = new System.Drawing.Point(0, 745);
+            this.panelHelp.Location = new System.Drawing.Point(0, 738);
             this.panelHelp.Name = "panelHelp";
             this.panelHelp.Size = new System.Drawing.Size(205, 87);
             this.panelHelp.TabIndex = 13;
@@ -149,20 +161,22 @@
             // 
             // btnHelp
             // 
+            this.btnHelp.BackColor = System.Drawing.Color.Transparent;
             this.btnHelp.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnHelp.FlatAppearance.BorderSize = 0;
+            this.btnHelp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
             this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHelp.ForeColor = System.Drawing.Color.White;
             this.btnHelp.Image = global::QLDA.Properties.Resources.management;
             this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.Location = new System.Drawing.Point(0, 705);
+            this.btnHelp.Location = new System.Drawing.Point(0, 698);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnHelp.Size = new System.Drawing.Size(205, 40);
             this.btnHelp.TabIndex = 12;
             this.btnHelp.Text = "Trợ giúp";
-            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.UseVisualStyleBackColor = false;
             this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // panelTK
@@ -171,7 +185,7 @@
             this.panelTK.Controls.Add(this.btnLogOut);
             this.panelTK.Controls.Add(this.btnQLTK);
             this.panelTK.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTK.Location = new System.Drawing.Point(0, 619);
+            this.panelTK.Location = new System.Drawing.Point(0, 612);
             this.panelTK.Name = "panelTK";
             this.panelTK.Size = new System.Drawing.Size(205, 86);
             this.panelTK.TabIndex = 11;
@@ -212,38 +226,42 @@
             // 
             // btnTaiKhoan
             // 
+            this.btnTaiKhoan.BackColor = System.Drawing.Color.Transparent;
             this.btnTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTaiKhoan.FlatAppearance.BorderSize = 0;
+            this.btnTaiKhoan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
             this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaiKhoan.ForeColor = System.Drawing.Color.White;
             this.btnTaiKhoan.Image = global::QLDA.Properties.Resources.interface1;
             this.btnTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaiKhoan.Location = new System.Drawing.Point(0, 579);
+            this.btnTaiKhoan.Location = new System.Drawing.Point(0, 572);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
             this.btnTaiKhoan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnTaiKhoan.Size = new System.Drawing.Size(205, 40);
             this.btnTaiKhoan.TabIndex = 10;
             this.btnTaiKhoan.Text = "Tài khoản";
-            this.btnTaiKhoan.UseVisualStyleBackColor = true;
+            this.btnTaiKhoan.UseVisualStyleBackColor = false;
             this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click_1);
             // 
             // btnBaoCao
             // 
+            this.btnBaoCao.BackColor = System.Drawing.Color.Transparent;
             this.btnBaoCao.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBaoCao.FlatAppearance.BorderSize = 0;
+            this.btnBaoCao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
             this.btnBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBaoCao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBaoCao.ForeColor = System.Drawing.Color.White;
             this.btnBaoCao.Image = global::QLDA.Properties.Resources.analytics;
             this.btnBaoCao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBaoCao.Location = new System.Drawing.Point(0, 539);
+            this.btnBaoCao.Location = new System.Drawing.Point(0, 532);
             this.btnBaoCao.Name = "btnBaoCao";
             this.btnBaoCao.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnBaoCao.Size = new System.Drawing.Size(205, 40);
             this.btnBaoCao.TabIndex = 9;
             this.btnBaoCao.Text = "Báo cáo";
-            this.btnBaoCao.UseVisualStyleBackColor = true;
+            this.btnBaoCao.UseVisualStyleBackColor = false;
             this.btnBaoCao.Click += new System.EventHandler(this.btnBaoCao_Click);
             // 
             // panelQLCV
@@ -255,7 +273,7 @@
             this.panelQLCV.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelQLCV.Location = new System.Drawing.Point(0, 413);
             this.panelQLCV.Name = "panelQLCV";
-            this.panelQLCV.Size = new System.Drawing.Size(205, 126);
+            this.panelQLCV.Size = new System.Drawing.Size(205, 119);
             this.panelQLCV.TabIndex = 8;
             // 
             // button1
@@ -266,7 +284,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 80);
+            this.button1.Location = new System.Drawing.Point(0, 79);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(205, 40);
@@ -283,7 +301,7 @@
             this.btnCongViec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCongViec.ForeColor = System.Drawing.Color.White;
             this.btnCongViec.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCongViec.Location = new System.Drawing.Point(0, 40);
+            this.btnCongViec.Location = new System.Drawing.Point(0, 39);
             this.btnCongViec.Name = "btnCongViec";
             this.btnCongViec.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnCongViec.Size = new System.Drawing.Size(205, 40);
@@ -303,7 +321,7 @@
             this.btnQuyTrinh.Location = new System.Drawing.Point(0, 0);
             this.btnQuyTrinh.Name = "btnQuyTrinh";
             this.btnQuyTrinh.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnQuyTrinh.Size = new System.Drawing.Size(205, 40);
+            this.btnQuyTrinh.Size = new System.Drawing.Size(205, 39);
             this.btnQuyTrinh.TabIndex = 0;
             this.btnQuyTrinh.Text = "Quy trình";
             this.btnQuyTrinh.UseVisualStyleBackColor = true;
@@ -311,8 +329,10 @@
             // 
             // btnQLCV
             // 
+            this.btnQLCV.BackColor = System.Drawing.Color.Transparent;
             this.btnQLCV.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQLCV.FlatAppearance.BorderSize = 0;
+            this.btnQLCV.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
             this.btnQLCV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLCV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLCV.ForeColor = System.Drawing.Color.White;
@@ -374,8 +394,10 @@
             // 
             // btnQLDA
             // 
+            this.btnQLDA.BackColor = System.Drawing.Color.Transparent;
             this.btnQLDA.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQLDA.FlatAppearance.BorderSize = 0;
+            this.btnQLDA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
             this.btnQLDA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLDA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLDA.ForeColor = System.Drawing.Color.White;
@@ -473,9 +495,11 @@
             // 
             // btnDanhMuc
             // 
+            this.btnDanhMuc.BackColor = System.Drawing.Color.Transparent;
             this.btnDanhMuc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDanhMuc.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDanhMuc.FlatAppearance.BorderSize = 0;
+            this.btnDanhMuc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
             this.btnDanhMuc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDanhMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDanhMuc.ForeColor = System.Drawing.Color.White;
@@ -492,8 +516,12 @@
             // 
             // btnTrangChu
             // 
+            this.btnTrangChu.BackColor = System.Drawing.Color.Transparent;
             this.btnTrangChu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTrangChu.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
             this.btnTrangChu.FlatAppearance.BorderSize = 0;
+            this.btnTrangChu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnTrangChu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
             this.btnTrangChu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTrangChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTrangChu.ForeColor = System.Drawing.Color.White;
@@ -507,15 +535,6 @@
             this.btnTrangChu.Text = "Trang chủ";
             this.btnTrangChu.UseVisualStyleBackColor = true;
             this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
-            // 
-            // panelMainContent
-            // 
-            this.panelMainContent.BackColor = System.Drawing.Color.White;
-            this.panelMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMainContent.Location = new System.Drawing.Point(205, 0);
-            this.panelMainContent.Name = "panelMainContent";
-            this.panelMainContent.Size = new System.Drawing.Size(1145, 695);
-            this.panelMainContent.TabIndex = 1;
             // 
             // MainForm
             // 
